@@ -1,0 +1,14 @@
+{
+  "name": "@save-analyzer/analyzer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./sekiro": "./src/sekiro/index.ts"
+  },
+  "dependencies": {
+    "@save-analyzer/parser": "workspace:*",
+    "@save-analyzer/shared": "workspace:*"
+  }
+}

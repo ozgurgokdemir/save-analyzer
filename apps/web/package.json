@@ -1,0 +1,11 @@
+{
+  "name": "@save-analyzer/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@save-analyzer/analyzer": "workspace:*",
+    "@save-analyzer/parser": "workspace:*",
+    "@save-analyzer/shared": "workspace:*"
+  }
+}
