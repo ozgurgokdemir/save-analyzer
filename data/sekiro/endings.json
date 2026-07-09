@@ -1,0 +1,460 @@
+{
+  "schemaVersion": 1,
+  "game": "sekiro",
+  "coverage": "ending-routes-with-verified-key-item-inventory-evidence",
+  "statusPolicy": {
+    "completedRequires": "verified ending completion event/progression flag; none is mapped yet",
+    "availableRequires": "all mapped required route items present and no verified permanent block evidence present",
+    "incompleteRequires": "route is still possible by currently verified evidence, but required items, quest steps, or progression are missing",
+    "blockedRequires": "verified permanent block evidence proves the ending can no longer be completed in the current playthrough",
+    "unknownRequires": "insufficient evidence, including potential block evidence whose permanence is not verified",
+    "details": "Ending route analysis reuses verified Key Item analyzer results. Boss Memories, Memory ItemLot flags, and boss status are not used as ending completion evidence."
+  },
+  "endings": [
+    {
+      "id": "shura",
+      "category": "ending",
+      "name": "Shura",
+      "routeRequirementConfidence": "probable",
+      "missingRequirementsPermanentlyBlockRoute": false,
+      "completionEvidence": [
+        {
+          "id": "endingCompletionFlag",
+          "type": "unmapped",
+          "confidence": "unknown",
+          "details": "No verified Shura ending completion flag has been mapped."
+        }
+      ],
+      "availabilityEvidence": [
+        {
+          "id": "lotusOfThePalace",
+          "type": "key_item",
+          "keyItemId": "lotus_of_the_palace",
+          "confidence": "verified",
+          "role": "story_progression_before_owl_choice",
+          "source": "EquipParamGoods row 2500: Lotus of the Palace.",
+          "details": "Community route guidance says the Owl/Iron Code choice occurs after collecting Lotus of the Palace and Shelter Stone."
+        },
+        {
+          "id": "shelterStone",
+          "type": "key_item",
+          "keyItemId": "shelter_stone",
+          "confidence": "verified",
+          "role": "story_progression_before_owl_choice",
+          "source": "EquipParamGoods row 2501: Shelter Stone.",
+          "details": "Community route guidance says the Owl/Iron Code choice occurs after collecting Lotus of the Palace and Shelter Stone."
+        },
+        {
+          "id": "nonShuraBranchIndicator",
+          "type": "key_item",
+          "keyItemId": "aromatic_branch",
+          "confidence": "verified",
+          "role": "non_shura_branch_indicator",
+          "source": "EquipParamGoods row 2502: Aromatic Branch.",
+          "details": "Aromatic Branch is received on the non-Shura branch after Great Shinobi Owl, so its presence is treated as a probable blocker for choosing Shura in the current playthrough."
+        }
+      ],
+      "requiredItems": [
+        {
+          "id": "lotus_of_the_palace",
+          "name": "Lotus of the Palace",
+          "evidenceId": "lotusOfThePalace",
+          "requiredFor": "reach_owl_iron_code_choice",
+          "required": true
+        },
+        {
+          "id": "shelter_stone",
+          "name": "Shelter Stone",
+          "evidenceId": "shelterStone",
+          "requiredFor": "reach_owl_iron_code_choice",
+          "required": true
+        }
+      ],
+      "blockRules": [
+        {
+          "id": "non_shura_branch_committed",
+          "status": "potential_block",
+          "confidence": "probable",
+          "blockType": "route_choice",
+          "permanentlyBlocked": true,
+          "when": [
+            {
+              "evidenceId": "nonShuraBranchIndicator",
+              "state": true
+            }
+          ],
+          "details": "Aromatic Branch is present, indicating the save continued on the non-Shura branch after the Owl choice. Shura requires choosing to obey the Iron Code at that branch."
+        }
+      ],
+      "guidance": {
+        "summary": "Shura requires choosing to obey Owl and follow the Iron Code at the Ashina Castle rooftop choice.",
+        "whatStillNeeded": [
+          "Use a save before the Owl choice or a later playthrough to choose the Iron Code route."
+        ],
+        "criticalChoice": "Obey the Iron Code when Owl asks at Ashina Castle.",
+        "confidence": "probable",
+        "sourceReferences": [
+          {
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      },
+      "sourceReferences": [
+        {
+          "label": "EquipParamGoods.csv",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        },
+        {
+          "label": "Fextralife Endings",
+          "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+        }
+      ]
+    },
+    {
+      "id": "immortal_severance",
+      "category": "ending",
+      "name": "Immortal Severance",
+      "routeRequirementConfidence": "probable",
+      "missingRequirementsPermanentlyBlockRoute": false,
+      "completionEvidence": [
+        {
+          "id": "endingCompletionFlag",
+          "type": "unmapped",
+          "confidence": "unknown",
+          "details": "No verified Immortal Severance ending completion flag has been mapped."
+        }
+      ],
+      "availabilityEvidence": [
+        {
+          "id": "mortalBlade",
+          "type": "key_item",
+          "keyItemId": "mortal_blade",
+          "confidence": "verified",
+          "role": "story_prerequisite",
+          "source": "EquipParamGoods row 2400: Mortal Blade.",
+          "details": "Mortal Blade is a story prerequisite for the severance route."
+        },
+        {
+          "id": "divineDragonsTears",
+          "type": "key_item",
+          "keyItemId": "divine_dragons_tears",
+          "confidence": "verified",
+          "role": "final_choice_item",
+          "source": "EquipParamGoods row 9000: Divine Dragon's Tears.",
+          "details": "Immortal Severance requires giving Divine Dragon's Tears to Kuro at the final choice."
+        },
+        {
+          "id": "nonShuraBranchIndicator",
+          "type": "key_item",
+          "keyItemId": "aromatic_branch",
+          "confidence": "verified",
+          "role": "non_shura_branch_indicator",
+          "source": "EquipParamGoods row 2502: Aromatic Branch.",
+          "details": "Aromatic Branch indicates the save continued on the non-Shura branch after Great Shinobi Owl."
+        }
+      ],
+      "requiredItems": [
+        {
+          "id": "mortal_blade",
+          "name": "Mortal Blade",
+          "evidenceId": "mortalBlade",
+          "requiredFor": "story_prerequisite",
+          "required": true
+        },
+        {
+          "id": "divine_dragons_tears",
+          "name": "Divine Dragon's Tears",
+          "evidenceId": "divineDragonsTears",
+          "requiredFor": "final_choice",
+          "required": true
+        }
+      ],
+      "blockRules": [],
+      "guidance": {
+        "summary": "Immortal Severance is the baseline non-Shura ending: stay loyal to Kuro, defeat the Divine Dragon, then give only Divine Dragon's Tears to Kuro.",
+        "whatStillNeeded": [
+          "Obtain Divine Dragon's Tears.",
+          "At the final choice, give only Divine Dragon's Tears."
+        ],
+        "criticalChoice": "Give Divine Dragon's Tears only.",
+        "confidence": "probable",
+        "sourceReferences": [
+          {
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      },
+      "sourceReferences": [
+        {
+          "label": "EquipParamGoods.csv",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        },
+        {
+          "label": "Fextralife Endings",
+          "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+        }
+      ]
+    },
+    {
+      "id": "purification",
+      "category": "ending",
+      "name": "Purification",
+      "routeRequirementConfidence": "probable",
+      "missingRequirementsPermanentlyBlockRoute": null,
+      "completionEvidence": [
+        {
+          "id": "endingCompletionFlag",
+          "type": "unmapped",
+          "confidence": "unknown",
+          "details": "No verified Purification ending completion flag has been mapped."
+        }
+      ],
+      "availabilityEvidence": [
+        {
+          "id": "divineDragonsTears",
+          "type": "key_item",
+          "keyItemId": "divine_dragons_tears",
+          "confidence": "verified",
+          "role": "final_choice_item",
+          "source": "EquipParamGoods row 9000: Divine Dragon's Tears.",
+          "details": "Purification requires Divine Dragon's Tears at the final choice."
+        },
+        {
+          "id": "fathersBellCharm",
+          "type": "key_item",
+          "keyItemId": "fathers_bell_charm",
+          "confidence": "verified",
+          "role": "quest_access_item",
+          "source": "EquipParamGoods row 9011: Father's Bell Charm.",
+          "details": "Community route guidance says Father's Bell Charm opens the second Hirata memory needed for the Aromatic Flower."
+        },
+        {
+          "id": "aromaticFlower",
+          "type": "key_item",
+          "keyItemId": "aromatic_flower",
+          "confidence": "verified",
+          "role": "final_choice_item",
+          "source": "EquipParamGoods row 2503: Aromatic Flower.",
+          "details": "Purification requires Aromatic Flower with Divine Dragon's Tears at the final choice."
+        },
+        {
+          "id": "fragrantFlowerNote",
+          "type": "key_item",
+          "keyItemId": "fragrant_flower_note",
+          "confidence": "verified",
+          "role": "quest_context_item",
+          "source": "EquipParamGoods row 9212: Fragrant Flower Note.",
+          "details": "Quest-context item; presence is reported but not used alone to mark the route available."
+        }
+      ],
+      "requiredItems": [
+        {
+          "id": "divine_dragons_tears",
+          "name": "Divine Dragon's Tears",
+          "evidenceId": "divineDragonsTears",
+          "requiredFor": "final_choice",
+          "required": true
+        },
+        {
+          "id": "fathers_bell_charm",
+          "name": "Father's Bell Charm",
+          "evidenceId": "fathersBellCharm",
+          "requiredFor": "quest_access",
+          "required": true
+        },
+        {
+          "id": "aromatic_flower",
+          "name": "Aromatic Flower",
+          "evidenceId": "aromaticFlower",
+          "requiredFor": "final_choice",
+          "required": true
+        }
+      ],
+      "blockRules": [],
+      "guidance": {
+        "summary": "Purification requires staying loyal to Kuro, completing the Emma/eavesdrop route before Divine Dragon, using Father's Bell Charm to enter the second Hirata memory, defeating Owl (Father), and giving Aromatic Flower plus Divine Dragon's Tears to Kuro.",
+        "whatStillNeeded": [
+          "Obtain Father's Bell Charm through the Emma/eavesdrop route.",
+          "Defeat Owl (Father) in the second Hirata memory to obtain Aromatic Flower.",
+          "Obtain Divine Dragon's Tears.",
+          "At the final choice, give Aromatic Flower and Divine Dragon's Tears."
+        ],
+        "criticalChoice": "Stay loyal to Kuro at the Owl choice; complete the Purification quest steps before Divine Dragon.",
+        "confidence": "probable",
+        "sourceReferences": [
+          {
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      },
+      "sourceReferences": [
+        {
+          "label": "EquipParamGoods.csv",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        },
+        {
+          "label": "Fextralife Endings",
+          "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "category": "ending",
+      "name": "Return",
+      "routeRequirementConfidence": "probable",
+      "missingRequirementsPermanentlyBlockRoute": null,
+      "completionEvidence": [
+        {
+          "id": "endingCompletionFlag",
+          "type": "unmapped",
+          "confidence": "unknown",
+          "details": "No verified Return ending completion flag has been mapped."
+        }
+      ],
+      "availabilityEvidence": [
+        {
+          "id": "divineDragonsTears",
+          "type": "key_item",
+          "keyItemId": "divine_dragons_tears",
+          "confidence": "verified",
+          "role": "final_choice_item",
+          "source": "EquipParamGoods row 9000: Divine Dragon's Tears.",
+          "details": "Return requires Divine Dragon's Tears at the final choice."
+        },
+        {
+          "id": "frozenTears",
+          "type": "key_item",
+          "keyItemId": "frozen_tears",
+          "confidence": "verified",
+          "role": "final_choice_item",
+          "source": "EquipParamGoods row 9091: Frozen Tears.",
+          "details": "Return requires Frozen Tears with Divine Dragon's Tears at the final choice."
+        },
+        {
+          "id": "freshSerpentViscera",
+          "type": "key_item",
+          "keyItemId": "fresh_serpent_viscera",
+          "confidence": "verified",
+          "role": "quest_prerequisite_item",
+          "source": "EquipParamGoods row 9192: Fresh Serpent Viscera.",
+          "details": "Community route guidance lists Fresh Serpent Viscera as part of the Divine Child quest for Frozen Tears."
+        },
+        {
+          "id": "driedSerpentViscera",
+          "type": "key_item",
+          "keyItemId": "dried_serpent_viscera",
+          "confidence": "verified",
+          "role": "quest_prerequisite_item",
+          "source": "EquipParamGoods row 9193: Dried Serpent Viscera.",
+          "details": "Community route guidance lists Dried Serpent Viscera as part of the Divine Child quest for Frozen Tears."
+        },
+        {
+          "id": "holyChapterDragonsReturn",
+          "type": "key_item",
+          "keyItemId": "holy_chapter_dragons_return",
+          "confidence": "verified",
+          "role": "quest_context_item",
+          "source": "EquipParamGoods row 9209: Holy Chapter: Dragon's Return.",
+          "details": "Quest-context item; absence is reported but not used alone as a route blocker until retention/consumption semantics are verified."
+        },
+        {
+          "id": "holyChapterInfested",
+          "type": "key_item",
+          "keyItemId": "holy_chapter_infested",
+          "confidence": "verified",
+          "role": "quest_context_item",
+          "source": "EquipParamGoods row 9215: Holy Chapter: Infested.",
+          "details": "Quest-context item; absence is reported but not used alone as a route blocker until retention/consumption semantics are verified."
+        },
+        {
+          "id": "holyChapterInfestedAlt",
+          "type": "key_item",
+          "keyItemId": "holy_chapter_infested_alt",
+          "confidence": "verified",
+          "role": "quest_context_item",
+          "source": "EquipParamGoods row 9228: Holy Chapter: Infested.",
+          "details": "Alternate EquipParamGoods row for Holy Chapter: Infested; absence is reported but not used alone as a route blocker."
+        }
+      ],
+      "requiredItems": [
+        {
+          "id": "divine_dragons_tears",
+          "name": "Divine Dragon's Tears",
+          "evidenceId": "divineDragonsTears",
+          "requiredFor": "final_choice",
+          "required": true
+        },
+        {
+          "id": "frozen_tears",
+          "name": "Frozen Tears",
+          "evidenceId": "frozenTears",
+          "requiredFor": "final_choice",
+          "required": true
+        },
+        {
+          "id": "fresh_serpent_viscera",
+          "name": "Fresh Serpent Viscera",
+          "evidenceId": "freshSerpentViscera",
+          "requiredFor": "quest_prerequisite",
+          "required": true
+        },
+        {
+          "id": "dried_serpent_viscera",
+          "name": "Dried Serpent Viscera",
+          "evidenceId": "driedSerpentViscera",
+          "requiredFor": "quest_prerequisite",
+          "required": true
+        }
+      ],
+      "blockRules": [],
+      "guidance": {
+        "summary": "Return requires completing the Divine Child quest, obtaining Frozen Tears, then giving Frozen Tears and Divine Dragon's Tears to Kuro.",
+        "whatStillNeeded": [
+          "Obtain Fresh Serpent Viscera.",
+          "Continue the Divine Child quest until Frozen Tears are obtained.",
+          "Obtain Divine Dragon's Tears.",
+          "At the final choice, give Frozen Tears and Divine Dragon's Tears."
+        ],
+        "criticalChoice": "Complete the Divine Child route before the final Kuro choice.",
+        "confidence": "probable",
+        "sourceReferences": [
+          {
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      },
+      "sourceReferences": [
+        {
+          "label": "EquipParamGoods.csv",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        },
+        {
+          "label": "Fextralife Endings",
+          "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+        }
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "ending_completion_flags",
+      "confidence": "Unknown",
+      "details": "No ending completion event/progression flags have been verified. Completed ending status remains Unknown unless such a flag is mapped."
+    },
+    {
+      "id": "ending_route_npc_quest_flags",
+      "confidence": "Unknown",
+      "details": "NPC quest-step flags for Purification and Return are not mapped yet. Inventory key items provide current item evidence but not every route-step or missability state."
+    },
+    {
+      "id": "holy_chapter_retention_semantics",
+      "confidence": "Unknown",
+      "details": "Holy Chapter quest item retention/consumption semantics are not verified, so those items are reported as quest context and not used alone as Return route blockers."
+    }
+  ]
+}

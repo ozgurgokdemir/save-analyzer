@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "game": "sekiro",
+  "items": [
+    {
+      "id": "prayer_bead",
+      "name": "Prayer Bead",
+      "itemIdHex": "A00F0040",
+      "confidence": "Verified",
+      "evidence": [
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Inventory scan finds one A00F0040 record with quantity 2, matching the known manually analyzed save."
+        }
+      ]
+    },
+    {
+      "id": "gourd_seed",
+      "name": "Gourd Seed",
+      "itemIdHex": "30110040",
+      "confidence": "Verified",
+      "evidence": [
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "No 30110040 inventory record is present in the active slot, matching the known unused Gourd Seed count of 0."
+        }
+      ]
+    },
+    {
+      "id": "healing_gourd",
+      "name": "Healing Gourd",
+      "itemIdHex": "B80B0040",
+      "confidence": "Verified",
+      "evidence": [
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Inventory record quantity is 8 in the active slot; this is used to derive 7 collected Gourd Seeds before exact event flag reconciliation."
+        }
+      ]
+    }
+  ],
+  "prayerNecklaceItemIdsHex": [
+    "04100040",
+    "05100040",
+    "06100040",
+    "07100040",
+    "08100040",
+    "09100040",
+    "0A100040",
+    "0B100040",
+    "0C100040",
+    "0D100040"
+  ]
+}

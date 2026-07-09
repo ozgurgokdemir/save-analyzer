@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "game": "sekiro",
+  "itemIdHex": "30110040",
+  "total": 9,
+  "sources": {
+    "itemPickupFlags": "https://github.com/FrankvdStam/SoulSplitter/wiki/Sekiro-item-pickup-flags",
+    "shopParamDefinition": "https://github.com/soulsmods/Paramdex/blob/master/SDT/Defs/ShopLineupParam.xml",
+    "locationGuide": "https://sekiroshadowsdietwice.wiki.fextralife.com/Gourd+Seed"
+  },
+  "locations": [
+    {
+      "id": "general_naomori_kawarada",
+      "name": "General Naomori Kawarada",
+      "area": "Ashina Outskirts",
+      "location": "Outskirts Wall - Gate Path",
+      "sourceType": "boss_drop",
+      "itemLotParamRowId": 10200001,
+      "shopLineupParamRowId": null,
+      "eventFlag": 6723,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 10200001 maps to event flag 6723."
+        }
+      ]
+    },
+    {
+      "id": "after_chained_ogre",
+      "name": "Building after Chained Ogre",
+      "area": "Ashina Outskirts",
+      "location": "Building immediately after Chained Ogre / Outskirts Wall - Stairway",
+      "sourceType": "treasure",
+      "itemLotParamRowId": 1100200,
+      "shopLineupParamRowId": null,
+      "eventFlag": 6725,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 1100200 maps to event flag 6725."
+        }
+      ]
+    },
+    {
+      "id": "battlefield_memorial_mob",
+      "name": "Battlefield Memorial Mob purchase",
+      "area": "Ashina Outskirts",
+      "location": "Vendor near Gyoubu arena / Ashina Castle Gate Fortress",
+      "sourceType": "shop",
+      "itemLotParamRowId": null,
+      "shopLineupParamRowId": 1100101,
+      "eventFlag": 71101210,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-guide",
+          "source": "Fextralife Gourd Seed location guide",
+          "details": "Human-readable location exists in community location guides."
+        },
+        {
+          "type": "community-param-data",
+          "source": "sekiro-online/params ShopLineupParam.csv",
+          "details": "Row 1100101 sells equipId 4400 for 1000 sen with EventFlag 71101210 and sellQuantity 1. EquipId 4400 maps to goods item ID 0x40001130, little-endian 30110040, matching the verified Gourd Seed item ID."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Using event flag bit index eventFlag % 1000000 at base 0xE8000, flag 71101210 reads ON at offset 0xEB16B bit 2."
+        }
+      ]
+    },
+    {
+      "id": "ashina_castle_antechamber",
+      "name": "Upper Tower Antechamber chest",
+      "area": "Ashina Castle",
+      "location": "Chest near Upper Tower - Antechamber Sculptor Idol",
+      "sourceType": "treasure",
+      "itemLotParamRowId": 1110020,
+      "shopLineupParamRowId": null,
+      "eventFlag": 6726,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 1110020 maps to event flag 6726."
+        }
+      ]
+    },
+    {
+      "id": "fujioka_info_broker",
+      "name": "Fujioka the Info Broker purchase",
+      "area": "Dilapidated Temple",
+      "location": "Fujioka shop after rescuing him in Ashina Castle",
+      "sourceType": "shop",
+      "itemLotParamRowId": null,
+      "shopLineupParamRowId": 1100400,
+      "eventFlag": 71102000,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-guide",
+          "source": "Fextralife Gourd Seed location guide",
+          "details": "Human-readable location exists in community location guides."
+        },
+        {
+          "type": "community-param-data",
+          "source": "sekiro-online/params ShopLineupParam.csv",
+          "details": "Row 1100400 sells equipId 4400 for 2000 sen with EventFlag 71102000 and sellQuantity 1. EquipId 4400 maps to goods item ID 0x40001130, little-endian 30110040, matching the verified Gourd Seed item ID."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Using event flag bit index eventFlag % 1000000 at base 0xE8000, flag 71102000 reads OFF at offset 0xEB1CE bit 0."
+        }
+      ]
+    },
+    {
+      "id": "senpou_temple",
+      "name": "Senpou Temple treasure",
+      "area": "Senpou Temple",
+      "location": "First temple with immortal monks / rafters area",
+      "sourceType": "treasure",
+      "itemLotParamRowId": 2000730,
+      "shopLineupParamRowId": null,
+      "eventFlag": 6727,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 2000730 maps to event flag 6727."
+        }
+      ]
+    },
+    {
+      "id": "sunken_valley",
+      "name": "Sunken Valley treasure",
+      "area": "Sunken Valley",
+      "location": "Under-Shrine Valley / Gun Fort route climbing section, near small hut",
+      "sourceType": "treasure",
+      "itemLotParamRowId": 1700820,
+      "shopLineupParamRowId": null,
+      "eventFlag": 6724,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 1700820 maps to event flag 6724."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6724 is OFF at low event flag base 0xE8000 in the manually analyzed save."
+        }
+      ]
+    },
+    {
+      "id": "mibu_village",
+      "name": "Mibu Village glowing tree",
+      "area": "Ashina Depths",
+      "location": "Mibu Village, by the large glowing tree",
+      "sourceType": "treasure",
+      "itemLotParamRowId": 1500010,
+      "shopLineupParamRowId": null,
+      "eventFlag": 6728,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 1500010 maps to event flag 6728."
+        }
+      ]
+    },
+    {
+      "id": "fountainhead_palace",
+      "name": "Palace Grounds chest",
+      "area": "Fountainhead Palace",
+      "location": "Chest near Palace Grounds Sculptor Idol",
+      "sourceType": "treasure",
+      "itemLotParamRowId": 2500000,
+      "shopLineupParamRowId": null,
+      "eventFlag": 6729,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 2500000 maps to event flag 6729."
+        }
+      ]
+    }
+  ]
+}

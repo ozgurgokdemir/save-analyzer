@@ -1,0 +1,574 @@
+{
+  "schemaVersion": 1,
+  "game": "sekiro",
+  "coverage": "deferred-memory-comparison-plus-speedrun-split-candidates",
+  "statusPolicy": {
+    "defeatedRequires": "verified boss defeat/progression flag with current-cycle completion semantics",
+    "memoryEvidenceSufficientForDefeated": false,
+    "memoryAwardItemLotFlagSufficientForDefeated": false,
+    "speedrunSplitFlagsSufficientForDefeated": false,
+    "details": "Bosses are deferred. Memory inventory, Memory award ItemLot flags, and SoulSplitter 930x boss split flags are retained as comparison/candidate evidence only. They do not produce defeated/not_defeated status without a verified persistent save/progression flag."
+  },
+  "bosses": [
+    {
+      "id": "gyoubu_oniwa",
+      "category": "boss",
+      "name": "Gyoubu Oniwa",
+      "itemLotParamRowId": 2001,
+      "memoryGoodsId": 5200,
+      "memoryItemIdHex": "50140040",
+      "evidence": [
+        {
+          "id": "memory_award_flag",
+          "type": "event_flag",
+          "flag": 50002001,
+          "source": "ItemLotParam row 2001 awards Memory: Gyoubu Oniwa goods ID 5200."
+        },
+        {
+          "id": "memory_inventory_item",
+          "type": "inventory_item",
+          "itemIdHex": "50140040",
+          "confidence": "probable",
+          "source": "Inventory scan for Memory: Gyoubu Oniwa goods item."
+        },
+        {
+          "id": "speedrunSplitFlagCandidate",
+          "type": "event_flag",
+          "flag": 9301,
+          "confidence": "unknown",
+          "mappingConfidence": "Probable",
+          "statusContribution": "candidate_only",
+          "source": "SoulSplitter src/SoulMemory/Sekiro/Boss.cs maps this boss to a boss split enum value, and src/SoulSplitter/Splits/Sekiro/Split.cs plus SekiroSplitter.cs read Boss split values as event flags.",
+          "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
+        }
+      ],
+      "statusRules": []
+    },
+    {
+      "id": "lady_butterfly",
+      "category": "boss",
+      "name": "Lady Butterfly",
+      "itemLotParamRowId": 2031,
+      "memoryGoodsId": 5201,
+      "memoryItemIdHex": "51140040",
+      "evidence": [
+        {
+          "id": "memory_award_flag",
+          "type": "event_flag",
+          "flag": 50002031,
+          "source": "ItemLotParam row 2031 awards Memory: Lady Butterfly goods ID 5201."
+        },
+        {
+          "id": "memory_inventory_item",
+          "type": "inventory_item",
+          "itemIdHex": "51140040",
+          "confidence": "probable",
+          "source": "Inventory scan for Memory: Lady Butterfly goods item."
+        },
+        {
+          "id": "speedrunSplitFlagCandidate",
+          "type": "event_flag",
+          "flag": 9302,
+          "confidence": "unknown",
+          "mappingConfidence": "Probable",
+          "statusContribution": "candidate_only",
+          "source": "SoulSplitter src/SoulMemory/Sekiro/Boss.cs maps this boss to a boss split enum value, and src/SoulSplitter/Splits/Sekiro/Split.cs plus SekiroSplitter.cs read Boss split values as event flags.",
+          "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
+        }
+      ],
+      "statusRules": []
+    },
+    {
+      "id": "genichiro",
+      "category": "boss",
+      "name": "Genichiro",
+      "itemLotParamRowId": 2081,
+      "memoryGoodsId": 5202,
+      "memoryItemIdHex": "52140040",
+      "evidence": [
+        {
+          "id": "memory_award_flag",
+          "type": "event_flag",
+          "flag": 50002081,
+          "source": "ItemLotParam row 2081 awards Memory: Genichiro goods ID 5202."
+        },
+        {
+          "id": "memory_inventory_item",
+          "type": "inventory_item",
+          "itemIdHex": "52140040",
+          "confidence": "probable",
+          "source": "Inventory scan for Memory: Genichiro goods item."
+        },
+        {
+          "id": "speedrunSplitFlagCandidate",
+          "type": "event_flag",
+          "flag": 9303,
+          "confidence": "unknown",
+          "mappingConfidence": "Probable",
+          "statusContribution": "candidate_only",
+          "source": "SoulSplitter src/SoulMemory/Sekiro/Boss.cs maps this boss to a boss split enum value, and src/SoulSplitter/Splits/Sekiro/Split.cs plus SekiroSplitter.cs read Boss split values as event flags.",
+          "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
+        }
+      ],
+      "statusRules": []
+    },
+    {
+      "id": "screen_monkeys",
+      "category": "boss",
+      "name": "Folding Screen Monkeys",
+      "itemLotParamRowId": 2021,
+      "memoryGoodsId": 5203,
+      "memoryItemIdHex": "53140040",
+      "evidence": [
+        {
+          "id": "memory_award_flag",
+          "type": "event_flag",
+          "flag": 50002021,
+          "source": "ItemLotParam row 2021 awards Memory: Screen Monkeys goods ID 5203."
+        },
+        {
+          "id": "memory_inventory_item",
+          "type": "inventory_item",
+          "itemIdHex": "53140040",
+          "confidence": "probable",
+          "source": "Inventory scan for Memory: Screen Monkeys goods item."
+        },
+        {
+          "id": "speedrunSplitFlagCandidate",
+          "type": "event_flag",
+          "flag": 9305,
+          "confidence": "unknown",
+          "mappingConfidence": "Probable",
+          "statusContribution": "candidate_only",
+          "source": "SoulSplitter src/SoulMemory/Sekiro/Boss.cs maps this boss to a boss split enum value, and src/SoulSplitter/Splits/Sekiro/Split.cs plus SekiroSplitter.cs read Boss split values as event flags.",
+          "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
+        }
+      ],
+      "statusRules": []
+    },
+    {
+      "id": "guardian_ape",
+      "category": "boss",
+      "name": "Guardian Ape",
+      "itemLotParamRowId": 2011,
+      "memoryGoodsId": 5204,
+      "memoryItemIdHex": "54140040",
+      "evidence": [
+        {
+          "id": "memory_award_flag",
+          "type": "event_flag",
+          "flag": 50002011,
+          "source": "ItemLotParam row 2011 awards Memory: Guardian Ape goods ID 5204."
+        },
+        {
+          "id": "memory_inventory_item",
+          "type": "inventory_item",
+          "itemIdHex": "54140040",
+          "confidence": "probable",
+          "source": "Inventory scan for Memory: Guardian Ape goods item."
+        },
+        {
+          "id": "speedrunSplitFlagCandidate",
+          "type": "event_flag",
+          "flag": 9304,
+          "confidence": "unknown",
+          "mappingConfidence": "Probable",
+          "statusContribution": "candidate_only",
+          "source": "SoulSplitter src/SoulMemory/Sekiro/Boss.cs maps this boss to a boss split enum value, and src/SoulSplitter/Splits/Sekiro/Split.cs plus SekiroSplitter.cs read Boss split values as event flags.",
+          "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
+        }
+      ],
+      "statusRules": []
+    },
+    {
+      "id": "corrupted_monk",
+      "category": "boss",
+      "name": "Corrupted Monk",
+      "itemLotParamRowId": 2051,
+      "memoryGoodsId": 5205,
+      "memoryItemIdHex": "55140040",
+      "evidence": [
+        {
+          "id": "memory_award_flag",
+          "type": "event_flag",
+          "flag": 50002051,
+          "source": "ItemLotParam row 2051 awards Memory: Corrupted Monk goods ID 5205."
+        },
+        {
+          "id": "memory_inventory_item",
+          "type": "inventory_item",
+          "itemIdHex": "55140040",
+          "confidence": "probable",
+          "source": "Inventory scan for Memory: Corrupted Monk goods item."
+        },
+        {
+          "id": "speedrunSplitFlagCandidate",
+          "type": "event_flag",
+          "flag": 9306,
+          "confidence": "unknown",
+          "mappingConfidence": "Probable",
+          "statusContribution": "candidate_only",
+          "source": "SoulSplitter src/SoulMemory/Sekiro/Boss.cs maps this boss to a boss split enum value, and src/SoulSplitter/Splits/Sekiro/Split.cs plus SekiroSplitter.cs read Boss split values as event flags.",
+          "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
+        }
+      ],
+      "statusRules": []
+    },
+    {
+      "id": "great_shinobi_owl",
+      "category": "boss",
+      "name": "Great Shinobi Owl",
+      "itemLotParamRowId": 2091,
+      "memoryGoodsId": 5206,
+      "memoryItemIdHex": "56140040",
+      "evidence": [
+        {
+          "id": "memory_award_flag",
+          "type": "event_flag",
+          "flag": 50002091,
+          "source": "ItemLotParam row 2091 awards Memory: Great Shinobi goods ID 5206."
+        },
+        {
+          "id": "memory_inventory_item",
+          "type": "inventory_item",
+          "itemIdHex": "56140040",
+          "confidence": "probable",
+          "source": "Inventory scan for Memory: Great Shinobi goods item."
+        },
+        {
+          "id": "speedrunSplitFlagCandidate",
+          "type": "event_flag",
+          "flag": 9308,
+          "confidence": "unknown",
+          "mappingConfidence": "Probable",
+          "statusContribution": "candidate_only",
+          "source": "SoulSplitter src/SoulMemory/Sekiro/Boss.cs maps this boss to a boss split enum value, and src/SoulSplitter/Splits/Sekiro/Split.cs plus SekiroSplitter.cs read Boss split values as event flags.",
+          "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
+        }
+      ],
+      "statusRules": []
+    },
+    {
+      "id": "foster_father",
+      "category": "boss",
+      "name": "Owl (Father)",
+      "itemLotParamRowId": 2101,
+      "memoryGoodsId": 5207,
+      "memoryItemIdHex": "57140040",
+      "evidence": [
+        {
+          "id": "memory_award_flag",
+          "type": "event_flag",
+          "flag": 50002101,
+          "source": "ItemLotParam row 2101 awards Memory: Foster Father goods ID 5207."
+        },
+        {
+          "id": "memory_inventory_item",
+          "type": "inventory_item",
+          "itemIdHex": "57140040",
+          "confidence": "probable",
+          "source": "Inventory scan for Memory: Foster Father goods item."
+        },
+        {
+          "id": "speedrunSplitFlagCandidate",
+          "type": "event_flag",
+          "flag": 9317,
+          "confidence": "unknown",
+          "mappingConfidence": "Probable",
+          "statusContribution": "candidate_only",
+          "source": "SoulSplitter src/SoulMemory/Sekiro/Boss.cs maps this boss to a boss split enum value, and src/SoulSplitter/Splits/Sekiro/Split.cs plus SekiroSplitter.cs read Boss split values as event flags.",
+          "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
+        }
+      ],
+      "statusRules": []
+    },
+    {
+      "id": "true_monk",
+      "category": "boss",
+      "name": "True Monk",
+      "itemLotParamRowId": 2061,
+      "memoryGoodsId": 5208,
+      "memoryItemIdHex": "58140040",
+      "evidence": [
+        {
+          "id": "memory_award_flag",
+          "type": "event_flag",
+          "flag": 50002061,
+          "source": "ItemLotParam row 2061 awards Memory: True Monk goods ID 5208."
+        },
+        {
+          "id": "memory_inventory_item",
+          "type": "inventory_item",
+          "itemIdHex": "58140040",
+          "confidence": "probable",
+          "source": "Inventory scan for Memory: True Monk goods item."
+        },
+        {
+          "id": "speedrunSplitFlagCandidate",
+          "type": "event_flag",
+          "flag": 9309,
+          "confidence": "unknown",
+          "mappingConfidence": "Probable",
+          "statusContribution": "candidate_only",
+          "source": "SoulSplitter src/SoulMemory/Sekiro/Boss.cs maps this boss to a boss split enum value, and src/SoulSplitter/Splits/Sekiro/Split.cs plus SekiroSplitter.cs read Boss split values as event flags.",
+          "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
+        }
+      ],
+      "statusRules": []
+    },
+    {
+      "id": "divine_dragon",
+      "category": "boss",
+      "name": "Divine Dragon",
+      "itemLotParamRowId": 2071,
+      "memoryGoodsId": 5209,
+      "memoryItemIdHex": "59140040",
+      "evidence": [
+        {
+          "id": "memory_award_flag",
+          "type": "event_flag",
+          "flag": 50002071,
+          "source": "ItemLotParam row 2071 awards Memory: Divine Dragon goods ID 5209."
+        },
+        {
+          "id": "memory_inventory_item",
+          "type": "inventory_item",
+          "itemIdHex": "59140040",
+          "confidence": "probable",
+          "source": "Inventory scan for Memory: Divine Dragon goods item."
+        },
+        {
+          "id": "speedrunSplitFlagCandidate",
+          "type": "event_flag",
+          "flag": 9310,
+          "confidence": "unknown",
+          "mappingConfidence": "Probable",
+          "statusContribution": "candidate_only",
+          "source": "SoulSplitter src/SoulMemory/Sekiro/Boss.cs maps this boss to a boss split enum value, and src/SoulSplitter/Splits/Sekiro/Split.cs plus SekiroSplitter.cs read Boss split values as event flags.",
+          "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
+        }
+      ],
+      "statusRules": []
+    },
+    {
+      "id": "demon_of_hatred",
+      "category": "boss",
+      "name": "Demon of Hatred",
+      "itemLotParamRowId": 2041,
+      "memoryGoodsId": 5210,
+      "memoryItemIdHex": "5A140040",
+      "evidence": [
+        {
+          "id": "memory_award_flag",
+          "type": "event_flag",
+          "flag": 50002041,
+          "source": "ItemLotParam row 2041 awards Memory: Hatred Demon goods ID 5210."
+        },
+        {
+          "id": "memory_inventory_item",
+          "type": "inventory_item",
+          "itemIdHex": "5A140040",
+          "confidence": "probable",
+          "source": "Inventory scan for Memory: Hatred Demon goods item."
+        },
+        {
+          "id": "speedrunSplitFlagCandidate",
+          "type": "event_flag",
+          "flag": 9313,
+          "confidence": "unknown",
+          "mappingConfidence": "Probable",
+          "statusContribution": "candidate_only",
+          "source": "SoulSplitter src/SoulMemory/Sekiro/Boss.cs maps this boss to a boss split enum value, and src/SoulSplitter/Splits/Sekiro/Split.cs plus SekiroSplitter.cs read Boss split values as event flags.",
+          "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
+        }
+      ],
+      "statusRules": []
+    },
+    {
+      "id": "sword_saint_isshin",
+      "category": "boss",
+      "name": "Sword Saint Isshin",
+      "itemLotParamRowId": 2131,
+      "memoryGoodsId": 5211,
+      "memoryItemIdHex": "5B140040",
+      "evidence": [
+        {
+          "id": "memory_award_flag",
+          "type": "event_flag",
+          "flag": 50002131,
+          "source": "ItemLotParam row 2131 awards Memory: Saint Isshin goods ID 5211."
+        },
+        {
+          "id": "memory_inventory_item",
+          "type": "inventory_item",
+          "itemIdHex": "5B140040",
+          "confidence": "probable",
+          "source": "Inventory scan for Memory: Saint Isshin goods item."
+        },
+        {
+          "id": "speedrunSplitFlagCandidate",
+          "type": "event_flag",
+          "flag": 9312,
+          "confidence": "unknown",
+          "mappingConfidence": "Probable",
+          "statusContribution": "candidate_only",
+          "source": "SoulSplitter src/SoulMemory/Sekiro/Boss.cs maps this boss to a boss split enum value, and src/SoulSplitter/Splits/Sekiro/Split.cs plus SekiroSplitter.cs read Boss split values as event flags.",
+          "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
+        }
+      ],
+      "statusRules": []
+    },
+    {
+      "id": "isshin_ashina",
+      "category": "boss",
+      "name": "Isshin Ashina",
+      "itemLotParamRowId": 2121,
+      "memoryGoodsId": 5212,
+      "memoryItemIdHex": "5C140040",
+      "evidence": [
+        {
+          "id": "memory_award_flag",
+          "type": "event_flag",
+          "flag": 50002121,
+          "source": "ItemLotParam row 2121 awards Memory: Isshin Ashina goods ID 5212."
+        },
+        {
+          "id": "memory_inventory_item",
+          "type": "inventory_item",
+          "itemIdHex": "5C140040",
+          "confidence": "probable",
+          "source": "Inventory scan for Memory: Isshin Ashina goods item."
+        },
+        {
+          "id": "speedrunSplitFlagCandidate",
+          "type": "event_flag",
+          "flag": 9316,
+          "confidence": "unknown",
+          "mappingConfidence": "Probable",
+          "statusContribution": "candidate_only",
+          "source": "SoulSplitter src/SoulMemory/Sekiro/Boss.cs maps this boss to a boss split enum value, and src/SoulSplitter/Splits/Sekiro/Split.cs plus SekiroSplitter.cs read Boss split values as event flags.",
+          "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
+        }
+      ],
+      "statusRules": []
+    },
+    {
+      "id": "headless_ape",
+      "category": "boss",
+      "name": "Headless Ape",
+      "itemLotParamRowId": 2017,
+      "memoryGoodsId": 5213,
+      "memoryItemIdHex": "5D140040",
+      "evidence": [
+        {
+          "id": "memory_award_flag",
+          "type": "event_flag",
+          "flag": 50002017,
+          "source": "ItemLotParam row 2017 awards Memory: Headless Ape goods ID 5213."
+        },
+        {
+          "id": "memory_inventory_item",
+          "type": "inventory_item",
+          "itemIdHex": "5D140040",
+          "confidence": "probable",
+          "source": "Inventory scan for Memory: Headless Ape goods item."
+        },
+        {
+          "id": "speedrunSplitFlagCandidate",
+          "type": "event_flag",
+          "flag": 9307,
+          "confidence": "unknown",
+          "mappingConfidence": "Probable",
+          "statusContribution": "candidate_only",
+          "source": "SoulSplitter src/SoulMemory/Sekiro/Boss.cs maps this boss to a boss split enum value, and src/SoulSplitter/Splits/Sekiro/Split.cs plus SekiroSplitter.cs read Boss split values as event flags.",
+          "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
+        }
+      ],
+      "statusRules": []
+    }
+  ],
+  "memoryItemIds": [
+    {
+      "id": "gyoubu_oniwa",
+      "name": "Gyoubu Oniwa",
+      "itemIdHex": "50140040"
+    },
+    {
+      "id": "lady_butterfly",
+      "name": "Lady Butterfly",
+      "itemIdHex": "51140040"
+    },
+    {
+      "id": "genichiro",
+      "name": "Genichiro",
+      "itemIdHex": "52140040"
+    },
+    {
+      "id": "screen_monkeys",
+      "name": "Folding Screen Monkeys",
+      "itemIdHex": "53140040"
+    },
+    {
+      "id": "guardian_ape",
+      "name": "Guardian Ape",
+      "itemIdHex": "54140040"
+    },
+    {
+      "id": "corrupted_monk",
+      "name": "Corrupted Monk",
+      "itemIdHex": "55140040"
+    },
+    {
+      "id": "great_shinobi_owl",
+      "name": "Great Shinobi Owl",
+      "itemIdHex": "56140040"
+    },
+    {
+      "id": "foster_father",
+      "name": "Owl (Father)",
+      "itemIdHex": "57140040"
+    },
+    {
+      "id": "true_monk",
+      "name": "True Monk",
+      "itemIdHex": "58140040"
+    },
+    {
+      "id": "divine_dragon",
+      "name": "Divine Dragon",
+      "itemIdHex": "59140040"
+    },
+    {
+      "id": "demon_of_hatred",
+      "name": "Demon of Hatred",
+      "itemIdHex": "5A140040"
+    },
+    {
+      "id": "sword_saint_isshin",
+      "name": "Sword Saint Isshin",
+      "itemIdHex": "5B140040"
+    },
+    {
+      "id": "isshin_ashina",
+      "name": "Isshin Ashina",
+      "itemIdHex": "5C140040"
+    },
+    {
+      "id": "headless_ape",
+      "name": "Headless Ape",
+      "itemIdHex": "5D140040"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "boss_research_deferred",
+      "confidence": "Unknown",
+      "details": "Bosses are deferred until a verified persistent save/progression boss-completion flag source is found."
+    },
+    {
+      "id": "soulsplitter_930x_boss_split_flags",
+      "confidence": "Unknown",
+      "details": "SoulSplitter maps boss split enum values 9301-9317 and reads them as event flags for live splitting, but they are not reliable persistent boss-completion evidence for this save. Genichiro was user-verified defeated while candidate flag 9303 reads OFF; Isshin Ashina was user-verified not defeated and candidate flag 9316 also reads OFF; Headless Ape is uncertain and candidate flag 9307 reads ON."
+    }
+  ]
+}

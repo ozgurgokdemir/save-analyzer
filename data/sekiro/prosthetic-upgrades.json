@@ -1,0 +1,1825 @@
+{
+  "schemaVersion": 1,
+  "game": "sekiro",
+  "coverage": "prosthetic-upgrade-weapon-inventory-evidence",
+  "statusPolicy": {
+    "unlockedRequires": "verified Prosthetic Tool upgrade weapon inventory record",
+    "missingRequires": "verified absence of the specific Prosthetic Tool upgrade weapon inventory record in USER_DATA000",
+    "details": "Prosthetic Tool upgrades are analyzed separately from base Prosthetic Tools. Base tool ownership and prerequisite availability do not infer upgrade ownership."
+  },
+  "upgradeSourcePolicy": {
+    "area": "Dilapidated Temple",
+    "source": "Sculptor Prosthetic Tool upgrade menu",
+    "confidence": "Probable",
+    "details": "Community guide pages describe Prosthetic Tools as upgraded by the Sculptor after the base item is acquired. Exact material/prerequisite tree rows are not yet mapped from verified param data."
+  },
+  "upgrades": [
+    {
+      "id": "spinning_shuriken",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "loaded_shuriken",
+      "baseToolName": "Loaded Shuriken",
+      "name": "Spinning Shuriken",
+      "equipParamWeaponRowId": 70100,
+      "itemIdHex": "D4110100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Spinning Shuriken from the Loaded Shuriken upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "D4110100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 70100: Spinning Shuriken.",
+          "details": "A weapon inventory record with item ID 70100 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gouging_top",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "loaded_shuriken",
+      "baseToolName": "Loaded Shuriken",
+      "name": "Gouging Top",
+      "equipParamWeaponRowId": 70200,
+      "itemIdHex": "38120100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Gouging Top from the Loaded Shuriken upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "38120100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 70200: Gouging Top.",
+          "details": "A weapon inventory record with item ID 70200 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phantom_kunai",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "loaded_shuriken",
+      "baseToolName": "Loaded Shuriken",
+      "name": "Phantom Kunai",
+      "equipParamWeaponRowId": 70300,
+      "itemIdHex": "9C120100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Phantom Kunai from the Loaded Shuriken upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "9C120100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 70300: Phantom Kunai.",
+          "details": "A weapon inventory record with item ID 70300 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sen_throw",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "loaded_shuriken",
+      "baseToolName": "Loaded Shuriken",
+      "name": "Sen Throw",
+      "equipParamWeaponRowId": 70400,
+      "itemIdHex": "00130100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Sen Throw from the Loaded Shuriken upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "00130100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 70400: Sen Throw.",
+          "details": "A weapon inventory record with item ID 70400 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lazulite_shuriken",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "loaded_shuriken",
+      "baseToolName": "Loaded Shuriken",
+      "name": "Lazulite Shuriken",
+      "equipParamWeaponRowId": 70500,
+      "itemIdHex": "64130100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Lazulite Shuriken from the Loaded Shuriken upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "64130100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 70500: Lazulite Shuriken.",
+          "details": "A weapon inventory record with item ID 70500 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spring_load_firecracker",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "shinobi_firecracker",
+      "baseToolName": "Shinobi Firecracker",
+      "name": "Spring-load Firecracker",
+      "equipParamWeaponRowId": 71100,
+      "itemIdHex": "BC150100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Spring-load Firecracker from the Shinobi Firecracker upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "BC150100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 71100: Spring-load Firecracker.",
+          "details": "A weapon inventory record with item ID 71100 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "long_spark",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "shinobi_firecracker",
+      "baseToolName": "Shinobi Firecracker",
+      "name": "Long Spark",
+      "equipParamWeaponRowId": 71200,
+      "itemIdHex": "20160100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Long Spark from the Shinobi Firecracker upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "20160100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 71200: Long Spark.",
+          "details": "A weapon inventory record with item ID 71200 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "purple_fume_spark",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "shinobi_firecracker",
+      "baseToolName": "Shinobi Firecracker",
+      "name": "Purple Fume Spark",
+      "equipParamWeaponRowId": 71300,
+      "itemIdHex": "84160100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Purple Fume Spark from the Shinobi Firecracker upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "84160100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 71300: Purple Fume Spark.",
+          "details": "A weapon inventory record with item ID 71300 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spring_load_flame_vent",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "flame_vent",
+      "baseToolName": "Flame Vent",
+      "name": "Spring-load Flame Vent",
+      "equipParamWeaponRowId": 72100,
+      "itemIdHex": "A4190100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Spring-load Flame Vent from the Flame Vent upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "A4190100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 72100: Spring-load Flame Vent.",
+          "details": "A weapon inventory record with item ID 72100 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "okinagas_flame_vent",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "flame_vent",
+      "baseToolName": "Flame Vent",
+      "name": "Okinaga's Flame Vent",
+      "equipParamWeaponRowId": 72200,
+      "itemIdHex": "081A0100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Okinaga's Flame Vent from the Flame Vent upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "081A0100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 72200: Okinaga's Flame Vent.",
+          "details": "A weapon inventory record with item ID 72200 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lazulite_sacred_flame",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "flame_vent",
+      "baseToolName": "Flame Vent",
+      "name": "Lazulite Sacred Flame",
+      "equipParamWeaponRowId": 72300,
+      "itemIdHex": "6C1A0100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Lazulite Sacred Flame from the Flame Vent upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "6C1A0100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 72300: Lazulite Sacred Flame.",
+          "details": "A weapon inventory record with item ID 72300 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spring_load_axe",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "loaded_axe",
+      "baseToolName": "Loaded Axe",
+      "name": "Spring-load Axe",
+      "equipParamWeaponRowId": 73100,
+      "itemIdHex": "8C1D0100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Spring-load Axe from the Loaded Axe upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "8C1D0100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 73100: Spring-load Axe.",
+          "details": "A weapon inventory record with item ID 73100 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sparking_axe",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "loaded_axe",
+      "baseToolName": "Loaded Axe",
+      "name": "Sparking Axe",
+      "equipParamWeaponRowId": 73200,
+      "itemIdHex": "F01D0100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Sparking Axe from the Loaded Axe upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "F01D0100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 73200: Sparking Axe.",
+          "details": "A weapon inventory record with item ID 73200 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lazulite_axe",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "loaded_axe",
+      "baseToolName": "Loaded Axe",
+      "name": "Lazulite Axe",
+      "equipParamWeaponRowId": 73300,
+      "itemIdHex": "541E0100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Lazulite Axe from the Loaded Axe upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "541E0100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 73300: Lazulite Axe.",
+          "details": "A weapon inventory record with item ID 73300 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aged_feather_mist_raven",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "mist_raven",
+      "baseToolName": "Mist Raven",
+      "name": "Aged Feather Mist Raven",
+      "equipParamWeaponRowId": 74100,
+      "itemIdHex": "74210100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Aged Feather Mist Raven from the Mist Raven upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "74210100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 74100: Aged Feather Mist Raven.",
+          "details": "A weapon inventory record with item ID 74100 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "great_feather_mist_raven",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "mist_raven",
+      "baseToolName": "Mist Raven",
+      "name": "Great Feather Mist Raven",
+      "equipParamWeaponRowId": 74200,
+      "itemIdHex": "D8210100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Great Feather Mist Raven from the Mist Raven upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "D8210100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 74200: Great Feather Mist Raven.",
+          "details": "A weapon inventory record with item ID 74200 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "improved_sabimaru",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "sabimaru",
+      "baseToolName": "Sabimaru",
+      "name": "Improved Sabimaru",
+      "equipParamWeaponRowId": 75100,
+      "itemIdHex": "5C250100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Improved Sabimaru from the Sabimaru upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "5C250100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 75100: Improved Sabimaru.",
+          "details": "A weapon inventory record with item ID 75100 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "piercing_sabimaru",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "sabimaru",
+      "baseToolName": "Sabimaru",
+      "name": "Piercing Sabimaru",
+      "equipParamWeaponRowId": 75200,
+      "itemIdHex": "C0250100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Piercing Sabimaru from the Sabimaru upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "C0250100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 75200: Piercing Sabimaru.",
+          "details": "A weapon inventory record with item ID 75200 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lazulite_sabimaru",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "sabimaru",
+      "baseToolName": "Sabimaru",
+      "name": "Lazulite Sabimaru",
+      "equipParamWeaponRowId": 75300,
+      "itemIdHex": "24260100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Lazulite Sabimaru from the Sabimaru upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "24260100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 75300: Lazulite Sabimaru.",
+          "details": "A weapon inventory record with item ID 75300 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loaded_umbrella_magnet",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "loaded_umbrella",
+      "baseToolName": "Loaded Umbrella",
+      "name": "Loaded Umbrella - Magnet",
+      "equipParamWeaponRowId": 76100,
+      "itemIdHex": "44290100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Loaded Umbrella - Magnet from the Loaded Umbrella upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "44290100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 76100: Loaded Umbrella - Magnet.",
+          "details": "A weapon inventory record with item ID 76100 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "suzakus_lotus_umbrella",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "loaded_umbrella",
+      "baseToolName": "Loaded Umbrella",
+      "name": "Suzaku's Lotus Umbrella",
+      "equipParamWeaponRowId": 76200,
+      "itemIdHex": "A8290100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Suzaku's Lotus Umbrella from the Loaded Umbrella upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "A8290100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 76200: Suzaku's Lotus Umbrella.",
+          "details": "A weapon inventory record with item ID 76200 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phoenixs_lilac_umbrella",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "loaded_umbrella",
+      "baseToolName": "Loaded Umbrella",
+      "name": "Phoenix's Lilac Umbrella",
+      "equipParamWeaponRowId": 76300,
+      "itemIdHex": "0C2A0100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Phoenix's Lilac Umbrella from the Loaded Umbrella upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "0C2A0100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 76300: Phoenix's Lilac Umbrella.",
+          "details": "A weapon inventory record with item ID 76300 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "double_divine_abduction",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "divine_abduction",
+      "baseToolName": "Divine Abduction",
+      "name": "Double Divine Abduction",
+      "equipParamWeaponRowId": 77100,
+      "itemIdHex": "2C2D0100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Double Divine Abduction from the Divine Abduction upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "2C2D0100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 77100: Double Divine Abduction.",
+          "details": "A weapon inventory record with item ID 77100 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "golden_vortex",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "divine_abduction",
+      "baseToolName": "Divine Abduction",
+      "name": "Golden Vortex",
+      "equipParamWeaponRowId": 77200,
+      "itemIdHex": "902D0100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Golden Vortex from the Divine Abduction upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "902D0100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 77200: Golden Vortex.",
+          "details": "A weapon inventory record with item ID 77200 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loaded_spear_thrust_type",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "loaded_spear",
+      "baseToolName": "Loaded Spear",
+      "name": "Loaded Spear Thrust type",
+      "equipParamWeaponRowId": 78100,
+      "itemIdHex": "14310100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Loaded Spear Thrust type from the Loaded Spear upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "14310100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 78100: Loaded Spear Thrust type.",
+          "details": "A weapon inventory record with item ID 78100 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loaded_spear_cleave_type",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "loaded_spear",
+      "baseToolName": "Loaded Spear",
+      "name": "Loaded Spear Cleave type",
+      "equipParamWeaponRowId": 78200,
+      "itemIdHex": "78310100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Loaded Spear Cleave type from the Loaded Spear upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "78310100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 78200: Loaded Spear Cleave type.",
+          "details": "A weapon inventory record with item ID 78200 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spiral_spear",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "loaded_spear",
+      "baseToolName": "Loaded Spear",
+      "name": "Spiral Spear",
+      "equipParamWeaponRowId": 78300,
+      "itemIdHex": "DC310100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Spiral Spear from the Loaded Spear upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "DC310100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 78300: Spiral Spear.",
+          "details": "A weapon inventory record with item ID 78300 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "leaping_flame",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "loaded_spear",
+      "baseToolName": "Loaded Spear",
+      "name": "Leaping Flame",
+      "equipParamWeaponRowId": 78400,
+      "itemIdHex": "40320100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Leaping Flame from the Loaded Spear upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "40320100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 78400: Leaping Flame.",
+          "details": "A weapon inventory record with item ID 78400 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mountain_echo",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "finger_whistle",
+      "baseToolName": "Finger Whistle",
+      "name": "Mountain Echo",
+      "equipParamWeaponRowId": 79100,
+      "itemIdHex": "FC340100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Mountain Echo from the Finger Whistle upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "FC340100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 79100: Mountain Echo.",
+          "details": "A weapon inventory record with item ID 79100 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "malcontent",
+      "category": "prosthetic_upgrade",
+      "baseToolId": "finger_whistle",
+      "baseToolName": "Finger Whistle",
+      "name": "Malcontent",
+      "equipParamWeaponRowId": 79200,
+      "itemIdHex": "60350100",
+      "sourceLocation": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "location": "Sculptor Prosthetic Tool upgrade menu",
+        "acquisition": "Unlock Malcontent from the Finger Whistle upgrade branch at the Sculptor.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      },
+      "prerequisites": {
+        "confidence": "Unknown",
+        "materials": [],
+        "details": "Exact material and tree prerequisite rows have not been mapped from verified data."
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "60350100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 79200: Malcontent.",
+          "details": "A weapon inventory record with item ID 79200 and quantity 1 means this Prosthetic Tool upgrade is unlocked."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "unlocked",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "upgrade_materials_and_tree_prerequisites",
+      "confidence": "Unknown",
+      "details": "EquipParamWeapon verifies upgrade row IDs and names, but material/tree prerequisites have not yet been mapped from verified param or EMEVD data."
+    }
+  ]
+}

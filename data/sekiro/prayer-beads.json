@@ -1,0 +1,1568 @@
+{
+  "schemaVersion": 1,
+  "game": "sekiro",
+  "itemIdHex": "A00F0040",
+  "total": 40,
+  "coverage": "current_save_evidence_complete",
+  "sources": {
+    "itemPickupFlags": "https://github.com/FrankvdStam/SoulSplitter/wiki/Sekiro-item-pickup-flags",
+    "shopLineupParam": "https://github.com/sekiro-online/params/blob/master/src/ShopLineupParam.csv",
+    "locationGuide": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prayer+Bead",
+    "powerPyxLocationGuide": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-prayer-bead-locations/"
+  },
+  "locations": [
+    {
+      "id": "general_naomori_kawarada_bead",
+      "name": "General Naomori Kawarada Prayer Bead",
+      "area": "Ashina Outskirts",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 10200000,
+      "eventFlag": 6760,
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 10200005,
+          "eventFlag": 51100905,
+          "awardedItemId": 3704,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 10200005 is in the same General Naomori Kawarada source group, awards non-Prayer-Bead item ID 3704, has getItemFlagId 51100905, and flag 51100905 reads ON in S0000.sl2.",
+          "evidence": [
+            {
+              "type": "community-docs",
+              "source": "SoulSplitter Sekiro item pickup flags",
+              "details": "Row 10200005 maps to event flag 51100905 in the same source group as primary row 10200000."
+            },
+            {
+              "type": "community-param-data",
+              "source": "sekiro-online/params ItemLotParam.csv",
+              "details": "Row 10200005 awards item ID 3704 and stores getItemFlagId 51100905."
+            },
+            {
+              "type": "save-analysis",
+              "source": "S0000.sl2 USER_DATA000",
+              "details": "Flag 6760 reads OFF while secondary flag 51100905 reads ON."
+            }
+          ]
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 10200000 maps to event flag 6760."
+        }
+      ]
+    },
+    {
+      "id": "general_tenzen_yamauchi",
+      "name": "General Tenzen Yamauchi Prayer Bead",
+      "area": "Ashina Outskirts",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 10200100,
+      "eventFlag": 6762,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 10200100 maps to event flag 6762."
+        }
+      ]
+    },
+    {
+      "id": "chained_ogre_outskirts",
+      "name": "Chained Ogre Prayer Bead",
+      "area": "Ashina Outskirts",
+      "location": "Outskirts Wall - Stairway",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 50201000,
+      "eventFlag": 6761,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 50201000 is Castle Caucasian Slave Event 1A and maps to event flag 6761."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Outskirts Wall - Stairway Prayer Bead is dropped by the Chained Ogre miniboss."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6761 reads ON at event flag base 0xE8000, offset 0xE834D bit 1."
+        }
+      ]
+    },
+    {
+      "id": "shinobi_hunter_enshin",
+      "name": "Shinobi Hunter Enshin of Misen Prayer Bead",
+      "area": "Hirata Estate",
+      "location": "Estate Path garden area after the bridge",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 10500000,
+      "eventFlag": 6763,
+      "primaryFlagSemantics": {
+        "kind": "item_lot_reward_state",
+        "awardedItemId": 4000,
+        "missingEvidenceRule": "primary_and_secondary_item_lot_flags_off",
+        "confidence": "Verified",
+        "details": "Primary row 10500000 awards Prayer Bead item ID 4000 with getItemFlagId 6763. Paired secondary row 10500005 awards non-Prayer-Bead item ID 3704 with getItemFlagId 51000925."
+      },
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 10500005,
+          "eventFlag": 51000925,
+          "awardedItemId": 3704,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 10500005 is paired with Shinobi Hunter Enshin of Misen, awards non-Prayer-Bead item ID 3704, has getItemFlagId 51000925, and flag 51000925 reads OFF in S0000.sl2."
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 10500000 is Samurai Residence Spear Monk Event A and maps to event flag 6763."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Hirata Estate Estate Path Prayer Bead is dropped by Shinobi Hunter Enshin of Misen."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6763 reads OFF at event flag base 0xE8000, offset 0xE834D bit 3."
+        }
+      ]
+    },
+    {
+      "id": "juzou_the_drunkard_hirata",
+      "name": "Juzou the Drunkard Prayer Bead",
+      "area": "Hirata Estate",
+      "location": "Hirata Estate - Main Hall, first memory",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 10700000,
+      "eventFlag": 6764,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 10700000 is Samurai House Shura Samurai Event A and maps to event flag 6764."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Hirata Estate - Main Hall Prayer Bead is dropped by Juzou the Drunkard in the first Hirata memory."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6764 reads ON at event flag base 0xE8000, offset 0xE834D bit 4."
+        }
+      ]
+    },
+    {
+      "id": "general_kuranosuke_matsumoto",
+      "name": "General Kuranosuke Matsumoto Prayer Bead",
+      "area": "Ashina Castle",
+      "location": "Ashina Castle main stairway, in front of the castle tower",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 10202000,
+      "eventFlag": 6766,
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 10202005,
+          "eventFlag": 51110970,
+          "awardedItemId": 3704,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 10202005 is in the same General Kuranosuke Matsumoto source group, awards non-Prayer-Bead item ID 3704, has getItemFlagId 51110970, and flag 51110970 reads ON in S0000.sl2.",
+          "evidence": [
+            {
+              "type": "community-docs",
+              "source": "SoulSplitter Sekiro item pickup flags",
+              "details": "Row 10202005 maps to event flag 51110970 in the same source group as primary row 10202000."
+            },
+            {
+              "type": "community-param-data",
+              "source": "sekiro-online/params ItemLotParam.csv",
+              "details": "Row 10202005 awards item ID 3704 and stores getItemFlagId 51110970."
+            },
+            {
+              "type": "save-analysis",
+              "source": "S0000.sl2 USER_DATA000",
+              "details": "Flag 6766 reads OFF while secondary flag 51110970 reads ON."
+            }
+          ]
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 10202000 is Honjo Samurai General Jinhaori Event In Front of the Castle Tower and maps to event flag 6766."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Ashina Castle Prayer Bead on the main stairway is dropped by General Kuranosuke Matsumoto."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6766 reads OFF at event flag base 0xE8000, offset 0xE834D bit 6."
+        }
+      ]
+    },
+    {
+      "id": "ashina_elite_jinsuke_saze",
+      "name": "Ashina Elite - Jinsuke Saze Prayer Bead",
+      "area": "Ashina Castle",
+      "location": "Upper Tower - Ashina Dojo",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 14000000,
+      "eventFlag": 6767,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 14000000 is Honjo Kenjutsu master event and maps to event flag 6767."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Upper Tower - Ashina Dojo Prayer Bead is dropped by Ashina Elite - Jinsuke Saze."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6767 reads ON at event flag base 0xE8000, offset 0xE834D bit 7."
+        }
+      ]
+    },
+    {
+      "id": "seven_ashina_spears_shikibu",
+      "name": "Seven Ashina Spears - Shikibu Toshikatsu Yamauchi Prayer Bead",
+      "area": "Ashina Reservoir",
+      "location": "Moon-view tower area reached from Ashina Reservoir idol",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 10212000,
+      "eventFlag": 6769,
+      "primaryFlagSemantics": {
+        "kind": "item_lot_reward_state",
+        "awardedItemId": 4000,
+        "missingEvidenceRule": "primary_and_secondary_item_lot_flags_off",
+        "confidence": "Verified",
+        "details": "Primary row 10212000 awards Prayer Bead item ID 4000 with getItemFlagId 6769. Paired secondary row 10212005 awards non-Prayer-Bead item ID 3704 with getItemFlagId 51112900."
+      },
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 10212005,
+          "eventFlag": 51112900,
+          "awardedItemId": 3704,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 10212005 is paired with Seven Ashina Spears - Shikibu Toshikatsu Yamauchi, awards non-Prayer-Bead item ID 3704, has getItemFlagId 51112900, and flag 51112900 reads OFF in S0000.sl2."
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 10212000 is Hidden Prison Samurai General Four Tenno Events Normal and maps to event flag 6769."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Ashina Reservoir Prayer Bead reached from the reservoir idol is dropped by Seven Ashina Spears - Shikibu Toshikatsu Yamauchi."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6769 reads OFF at event flag base 0xE8000, offset 0xE834E bit 1."
+        }
+      ]
+    },
+    {
+      "id": "lone_shadow_longswordsman",
+      "name": "Lone Shadow Longswordsman Prayer Bead",
+      "area": "Ashina Reservoir",
+      "location": "Well below the friendly samurai near Ashina Reservoir",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 14702000,
+      "eventFlag": 6770,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 14702000 is Hidden Prison Secret Life of the Shadows Event 1 and maps to event flag 6770."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Ashina Reservoir well Prayer Bead is dropped by Lone Shadow Longswordman."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6770 reads ON at event flag base 0xE8000, offset 0xE834E bit 2."
+        }
+      ]
+    },
+    {
+      "id": "armored_warrior",
+      "name": "Armored Warrior Prayer Bead",
+      "area": "Senpou Temple",
+      "location": "Senpou Temple - Shugendo bridge",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 11300000,
+      "eventFlag": 6771,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 11300000 is Temple Nanban Armor Event 1 and maps to event flag 6771."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Senpou Temple - Shugendo Prayer Bead is dropped by Armored Warrior."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6771 reads ON at event flag base 0xE8000, offset 0xE834E bit 3."
+        }
+      ]
+    },
+    {
+      "id": "ashina_castle_hidden_chest",
+      "name": "Ashina Castle hidden wall chest Prayer Bead",
+      "area": "Ashina Castle",
+      "sourceType": "chest",
+      "itemLotParamRowId": 1110170,
+      "eventFlag": 6790,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 1110170 maps to event flag 6790."
+        }
+      ]
+    },
+    {
+      "id": "long_arm_centipede_senun",
+      "name": "Long-arm Centipede Sen'un Prayer Bead",
+      "area": "Senpou Temple",
+      "location": "Temple Grounds lower temple dark chamber",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 10400000,
+      "eventFlag": 6772,
+      "primaryFlagSemantics": {
+        "kind": "item_lot_reward_state",
+        "awardedItemId": 4000,
+        "missingEvidenceRule": "primary_and_secondary_item_lot_flags_off",
+        "confidence": "Verified",
+        "details": "Primary row 10400000 awards Prayer Bead item ID 4000 with getItemFlagId 6772. Paired secondary row 10400005 awards non-Prayer-Bead item ID 3704 with getItemFlagId 52000945."
+      },
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 10400005,
+          "eventFlag": 52000945,
+          "awardedItemId": 3704,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 10400005 is paired with Long-arm Centipede Sen'un, awards non-Prayer-Bead item ID 3704, has getItemFlagId 52000945, and flag 52000945 reads OFF in S0000.sl2."
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 10400000 is Temple Centipede Large Event 1 and maps to event flag 6772."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Senpou Temple Temple Grounds Prayer Bead is dropped by Long-arm Centipede Sen'un."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6772 reads OFF at event flag base 0xE8000, offset 0xE834E bit 4."
+        }
+      ]
+    },
+    {
+      "id": "mibu_underwater_chest",
+      "name": "Mibu Village underwater chest Prayer Bead",
+      "area": "Ashina Depths",
+      "sourceType": "chest",
+      "itemLotParamRowId": 1500320,
+      "eventFlag": 6796,
+      "primaryFlagSemantics": {
+        "kind": "item_lot_pickup_state",
+        "awardedItemId": 4000,
+        "missingEvidenceRule": "primary_and_secondary_item_lot_flags_off",
+        "confidence": "Verified",
+        "details": "Primary row 1500320 awards Prayer Bead item ID 4000 with getItemFlagId 6796. Paired secondary row 1500325 awards non-Prayer-Bead item ID 3720 with getItemFlagId 51500325."
+      },
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_pickup",
+          "rowId": 1500325,
+          "eventFlag": 51500325,
+          "awardedItemId": 3720,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 1500325 is paired with the Mibu Village underwater chest, awards non-Prayer-Bead item ID 3720, has getItemFlagId 51500325, and flag 51500325 reads OFF in S0000.sl2."
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 1500320 maps to event flag 6796."
+        }
+      ]
+    },
+    {
+      "id": "snake_eyes_shirahagi",
+      "name": "Snake Eyes Shirahagi Prayer Bead",
+      "area": "Ashina Depths",
+      "location": "Poison Pool",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 11901100,
+      "eventFlag": 6775,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 11901100 is Valley Lower Valley Enemy Female Sniper Wide Valley Lower Event and maps to event flag 6775."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Ashina Depths / Poison Pool Prayer Bead is dropped by Snake Eyes Shirahagi."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6775 reads ON at event flag base 0xE8000, offset 0xE834E bit 7."
+        }
+      ]
+    },
+    {
+      "id": "chained_ogre_ashina_castle",
+      "name": "Chained Ogre Ashina Castle Prayer Bead",
+      "area": "Ashina Castle",
+      "location": "Upper Tower - Antechamber, bottom of tower after castle invasion",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 50200000,
+      "eventFlag": 6778,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 50200000 is Honjo White Slave Event 1 and maps to event flag 6778."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Ashina Castle - Upper Tower Antechamber Prayer Bead after castle invasion is dropped by Chained Ogre."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6778 reads ON at event flag base 0xE8000, offset 0xE834F bit 2."
+        }
+      ]
+    },
+    {
+      "id": "lone_shadow_vilehand",
+      "name": "Lone Shadow Vilehand Prayer Bead",
+      "area": "Ashina Castle",
+      "location": "Upper Tower - Ashina Dojo during castle invasion",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 14700000,
+      "eventFlag": 6779,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 14700000 is Honjo Ninja Army Kokageshu Event Attic 1 and maps to event flag 6779."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Ashina Castle - Upper Tower Dojo Prayer Bead during castle invasion is dropped by Lone Shadow Vilehand."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6779 reads ON at event flag base 0xE8000, offset 0xE834F bit 3."
+        }
+      ]
+    },
+    {
+      "id": "lone_shadow_masanaga_serpent_shrine",
+      "name": "Lone Shadow Masanaga the Spear-Bearer Prayer Bead",
+      "area": "Ashina Castle",
+      "location": "Great Serpent Shrine during castle invasion",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 14701000,
+      "eventFlag": 6780,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 14701000 is Honjo Ninja Army Kokageshu Event White Snake Shrine 1 and maps to event flag 6780."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Great Serpent Shrine Prayer Bead during castle invasion is dropped by Lone Shadow Masanaga the Spear-Bearer."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6780 reads ON at event flag base 0xE8000, offset 0xE834F bit 4."
+        }
+      ]
+    },
+    {
+      "id": "lone_shadow_masanaga_hirata_revisit",
+      "name": "Lone Shadow Masanaga the Spear-Bearer Hirata Revisit Prayer Bead",
+      "area": "Hirata Estate",
+      "location": "Bamboo Thicket Slope, second Hirata memory",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 14703100,
+      "eventFlag": 6781,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 14703100 is Samurai Residence Truth Lonely People Dog Master 1A and maps to event flag 6781."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Purification-route Hirata Estate Bamboo Thicket Slope Prayer Bead is dropped by Lone Shadow Masanaga the Spear-Bearer."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6781 reads ON at event flag base 0xE8000, offset 0xE834F bit 5."
+        }
+      ]
+    },
+    {
+      "id": "sakura_bull",
+      "name": "Sakura Bull of the Palace Prayer Bead",
+      "area": "Fountainhead Palace",
+      "location": "Mibu Manor courtyard rooftops",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 13800000,
+      "eventFlag": 6783,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 13800000 is Submerged City Fire Cow Event and maps to event flag 6783."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Fountainhead Palace / Mibu Manor Prayer Bead is dropped by Sakura Bull."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6783 reads ON at event flag base 0xE8000, offset 0xE834F bit 7."
+        }
+      ]
+    },
+    {
+      "id": "fountainhead_underwater_chest",
+      "name": "Fountainhead Palace lake chest Prayer Bead",
+      "area": "Fountainhead Palace",
+      "sourceType": "chest",
+      "itemLotParamRowId": 2500020,
+      "eventFlag": 6797,
+      "primaryFlagSemantics": {
+        "kind": "item_lot_pickup_state",
+        "awardedItemId": 4000,
+        "missingEvidenceRule": "primary_and_secondary_item_lot_flags_off",
+        "confidence": "Verified",
+        "details": "Primary row 2500020 awards Prayer Bead item ID 4000 with getItemFlagId 6797. Paired secondary row 2500025 awards non-Prayer-Bead item ID 3720 with getItemFlagId 52500025."
+      },
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_pickup",
+          "rowId": 2500025,
+          "eventFlag": 52500025,
+          "awardedItemId": 3720,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 2500025 is paired with the Fountainhead Palace lake chest, awards non-Prayer-Bead item ID 3720, has getItemFlagId 52500025, and flag 52500025 reads OFF in S0000.sl2."
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 2500020 maps to event flag 6797."
+        }
+      ]
+    },
+    {
+      "id": "sunken_valley_treasure_1",
+      "name": "Sunken Valley treasure Prayer Bead 1",
+      "area": "Sunken Valley",
+      "sourceType": "treasure",
+      "itemLotParamRowId": 1700020,
+      "eventFlag": 6792,
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 1700025,
+          "eventFlag": 51700025,
+          "awardedItemId": 3720,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 1700025 is paired with Sunken Valley treasure row 1700020, awards non-Prayer-Bead item ID 3720, has getItemFlagId 51700025, and flag 51700025 reads ON in S0000.sl2.",
+          "evidence": [
+            {
+              "type": "community-docs",
+              "source": "SoulSplitter Sekiro item pickup flags",
+              "details": "Row 1700025 maps to event flag 51700025 immediately after primary row 1700020."
+            },
+            {
+              "type": "community-param-data",
+              "source": "sekiro-online/params ItemLotParam.csv",
+              "details": "Row 1700025 awards item ID 3720 and stores getItemFlagId 51700025."
+            },
+            {
+              "type": "save-analysis",
+              "source": "S0000.sl2 USER_DATA000",
+              "details": "Flag 6792 reads OFF while secondary flag 51700025 reads ON."
+            }
+          ]
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 1700020 maps to event flag 6792."
+        }
+      ]
+    },
+    {
+      "id": "long_arm_centipede_giraffe",
+      "name": "Long-arm Centipede Giraffe Prayer Bead",
+      "area": "Sunken Valley",
+      "location": "Gun Fort room after the Gun Fort idol",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 10401100,
+      "eventFlag": 6774,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 10401100 is Valley Centipede Large Event 1 and maps to event flag 6774."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Sunken Valley Gun Fort Prayer Bead is dropped by Long-arm Centipede Giraffe."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6774 reads ON at event flag base 0xE8000, offset 0xE834E bit 6."
+        }
+      ]
+    },
+    {
+      "id": "sunken_valley_treasure_2",
+      "name": "Sunken Valley treasure Prayer Bead 2",
+      "area": "Sunken Valley",
+      "sourceType": "treasure",
+      "itemLotParamRowId": 1700030,
+      "eventFlag": 6793,
+      "primaryFlagSemantics": {
+        "kind": "item_lot_pickup_state",
+        "awardedItemId": 4000,
+        "missingEvidenceRule": "primary_and_secondary_item_lot_flags_off",
+        "confidence": "Verified",
+        "details": "Primary row 1700030 awards Prayer Bead item ID 4000 with getItemFlagId 6793. Paired secondary row 1700035 awards non-Prayer-Bead item ID 3720 with getItemFlagId 51700035."
+      },
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_pickup",
+          "rowId": 1700035,
+          "eventFlag": 51700035,
+          "awardedItemId": 3720,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 1700035 is paired with Sunken Valley treasure row 1700030, awards non-Prayer-Bead item ID 3720, has getItemFlagId 51700035, and flag 51700035 reads OFF in S0000.sl2."
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 1700030 maps to event flag 6793."
+        }
+      ]
+    },
+    {
+      "id": "sunken_valley_treasure_3",
+      "name": "Sunken Valley treasure Prayer Bead 3",
+      "area": "Sunken Valley",
+      "sourceType": "treasure",
+      "itemLotParamRowId": 1700040,
+      "eventFlag": 6794,
+      "primaryFlagSemantics": {
+        "kind": "item_lot_pickup_state",
+        "awardedItemId": 4000,
+        "missingEvidenceRule": "primary_and_secondary_item_lot_flags_off",
+        "confidence": "Verified",
+        "details": "Primary row 1700040 awards Prayer Bead item ID 4000 with getItemFlagId 6794. Paired secondary row 1700045 awards non-Prayer-Bead item ID 3720 with getItemFlagId 51700045."
+      },
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_pickup",
+          "rowId": 1700045,
+          "eventFlag": 51700045,
+          "awardedItemId": 3720,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 1700045 is paired with Sunken Valley treasure row 1700040, awards non-Prayer-Bead item ID 3720, has getItemFlagId 51700045, and flag 51700045 reads OFF in S0000.sl2."
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 1700040 maps to event flag 6794."
+        }
+      ]
+    },
+    {
+      "id": "ashina_castle_gate_attic_chest",
+      "name": "Ashina Castle Gate attic Prayer Bead",
+      "area": "Ashina Outskirts",
+      "location": "Ashina Outskirts - Ashina Castle Gate, attic chest after Gyoubu Oniwa",
+      "sourceType": "chest",
+      "itemLotParamRowId": 1100310,
+      "eventFlag": 6788,
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 1100310 is Castle_031A and maps to event flag 6788."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Ashina Outskirts - Ashina Castle Gate Prayer Bead is collected from the attic chest after Gyoubu Oniwa."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6788 reads ON at event flag base 0xE8000, offset 0xE8350 bit 4."
+        }
+      ]
+    },
+    {
+      "id": "blazing_bull",
+      "name": "Blazing Bull Prayer Bead",
+      "area": "Ashina Castle",
+      "location": "Ashina Castle gate route after Gyoubu Oniwa",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 13700000,
+      "eventFlag": 6765,
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 13700005,
+          "eventFlag": 51110976,
+          "awardedItemId": 3704,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 13700005 is in the same Blazing Bull source group, awards non-Prayer-Bead item ID 3704, has getItemFlagId 51110976, and flag 51110976 reads ON in S0000.sl2.",
+          "evidence": [
+            {
+              "type": "community-docs",
+              "source": "SoulSplitter Sekiro item pickup flags",
+              "details": "Row 13700005 maps to event flag 51110976 in the same source group as primary row 13700000."
+            },
+            {
+              "type": "community-param-data",
+              "source": "sekiro-online/params ItemLotParam.csv",
+              "details": "Row 13700005 awards item ID 3704 and stores getItemFlagId 51110976."
+            },
+            {
+              "type": "save-analysis",
+              "source": "S0000.sl2 USER_DATA000",
+              "details": "Flag 6765 reads OFF while secondary flag 51110976 reads ON."
+            }
+          ]
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 13700000 is Honjo Fire Cow Event 1 and maps to event flag 6765."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Ashina Outskirts / Ashina Castle Gate Prayer Bead is dropped by Blazing Bull."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6765 reads OFF at event flag base 0xE8000, offset 0xE834D bit 5."
+        }
+      ]
+    },
+    {
+      "id": "hirata_audience_chamber_hidden_chest",
+      "name": "Hirata Audience Chamber hidden wall Prayer Bead",
+      "area": "Hirata Estate",
+      "location": "Hirata Audience Chamber hidden wall chest behind Juzou the Drunkard",
+      "sourceType": "chest",
+      "itemLotParamRowId": 1000500,
+      "eventFlag": 6789,
+      "primaryFlagSemantics": {
+        "kind": "item_lot_pickup_state",
+        "awardedItemId": 4000,
+        "missingEvidenceRule": "primary_and_secondary_item_lot_flags_off",
+        "confidence": "Verified",
+        "details": "Primary row 1000500 awards Prayer Bead item ID 4000 with getItemFlagId 6789. Paired secondary row 1000505 awards non-Prayer-Bead item ID 3720 with getItemFlagId 51000505."
+      },
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_pickup",
+          "rowId": 1000505,
+          "eventFlag": 51000505,
+          "awardedItemId": 3720,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 1000505 is paired with the Hirata Audience Chamber hidden wall chest, awards non-Prayer-Bead item ID 3720, has getItemFlagId 51000505, and flag 51000505 reads OFF in S0000.sl2."
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 1000500 is Samurai residence_080A and maps to event flag 6789."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Hirata Audience Chamber Prayer Bead is in the hidden wall chest behind the first Juzou encounter."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6789 reads OFF at event flag base 0xE8000, offset 0xE8350 bit 5."
+        }
+      ]
+    },
+    {
+      "id": "abandoned_dungeon_memorial_mob",
+      "name": "Abandoned Dungeon Memorial Mob Prayer Bead",
+      "area": "Ashina Castle",
+      "location": "Abandoned Dungeon Entrance merchant tent",
+      "sourceType": "shop",
+      "shopLineupParamRowId": 1110000,
+      "eventFlag": 71111000,
+      "primaryFlagSemantics": {
+        "kind": "shop_purchase_state",
+        "soldEquipId": 4000,
+        "missingEvidenceRule": "shop_purchase_flag_off",
+        "confidence": "Verified",
+        "details": "ShopLineupParam row 1110000 sells Prayer Bead equip ID 4000 with EventFlag 71111000. The purchase flag reads OFF in S0000.sl2."
+      },
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-param-data",
+          "source": "sekiro-online/params ShopLineupParam.csv",
+          "details": "Row 1110000 sells equipId 4000 for 1400 sen with EventFlag 71111000 and sellQuantity 1. EquipId 4000 maps to full goods item ID 0x40000FA0, little-endian A00F0040, matching the verified Prayer Bead item ID."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Abandoned Dungeon Entrance Prayer Bead is bought from the merchant for 1400 sen."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 71111000 reads OFF at event flag base 0xE8000, offset 0xEB633 bit 0."
+        }
+      ]
+    },
+    {
+      "id": "senpou_temple_underwater",
+      "name": "Senpou Temple underwater Prayer Bead",
+      "area": "Senpou Temple",
+      "location": "Temple Grounds pond, underwater after acquiring diving",
+      "sourceType": "treasure",
+      "itemLotParamRowId": 2000040,
+      "eventFlag": 6791,
+      "primaryFlagSemantics": {
+        "kind": "item_lot_pickup_state",
+        "awardedItemId": 4000,
+        "missingEvidenceRule": "primary_and_secondary_item_lot_flags_off",
+        "confidence": "Verified",
+        "details": "Primary row 2000040 awards Prayer Bead item ID 4000 with getItemFlagId 6791. Paired secondary row 2000045 awards non-Prayer-Bead item ID 3720 with getItemFlagId 52000045."
+      },
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_pickup",
+          "rowId": 2000045,
+          "eventFlag": 52000045,
+          "awardedItemId": 3720,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 2000045 is paired with the Senpou Temple underwater pickup, awards non-Prayer-Bead item ID 3720, has getItemFlagId 52000045, and flag 52000045 reads OFF in S0000.sl2."
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 2000040 is Temple_004 and maps to event flag 6791."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Senpou Temple - Temple Grounds Prayer Bead is underwater in the pond and requires the diving ability."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6791 reads OFF at event flag base 0xE8000, offset 0xE8350 bit 7."
+        }
+      ]
+    },
+    {
+      "id": "tokujiro_the_glutton",
+      "name": "Tokujiro the Glutton Prayer Bead",
+      "area": "Ashina Depths",
+      "location": "Hidden Forest",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 10702000,
+      "eventFlag": 6776,
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 10702005,
+          "eventFlag": 51500935,
+          "awardedItemId": 3704,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 10702005 is in the same Tokujiro the Glutton source group, awards non-Prayer-Bead item ID 3704, has getItemFlagId 51500935, and flag 51500935 reads ON in S0000.sl2.",
+          "evidence": [
+            {
+              "type": "community-docs",
+              "source": "SoulSplitter Sekiro item pickup flags",
+              "details": "Row 10702005 maps to event flag 51500935 in the same source group as primary row 10702000."
+            },
+            {
+              "type": "community-param-data",
+              "source": "sekiro-online/params ItemLotParam.csv",
+              "details": "Row 10702005 awards item ID 3704 and stores getItemFlagId 51500935."
+            },
+            {
+              "type": "save-analysis",
+              "source": "S0000.sl2 USER_DATA000",
+              "details": "Flag 6776 reads OFF while secondary flag 51500935 reads ON."
+            }
+          ]
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 10702000 is Sick Village Shura Samurai Event and maps to event flag 6776."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Ashina Depths - Hidden Forest Prayer Bead is dropped by Tokujiro the Glutton."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6776 reads OFF at event flag base 0xE8000, offset 0xE834F bit 0."
+        }
+      ]
+    },
+    {
+      "id": "orin_of_the_water",
+      "name": "O'Rin of the Water Prayer Bead",
+      "area": "Ashina Depths",
+      "location": "Watermill",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 70000000,
+      "eventFlag": 6777,
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 70000005,
+          "eventFlag": 51500925,
+          "awardedItemId": 3704,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 70000005 is in the same O'Rin of the Water source group, awards non-Prayer-Bead item ID 3704, has getItemFlagId 51500925, and flag 51500925 reads ON in S0000.sl2.",
+          "evidence": [
+            {
+              "type": "community-docs",
+              "source": "SoulSplitter Sekiro item pickup flags",
+              "details": "Row 70000005 maps to event flag 51500925 in the same source group as primary row 70000000."
+            },
+            {
+              "type": "community-param-data",
+              "source": "sekiro-online/params ItemLotParam.csv",
+              "details": "Row 70000005 awards item ID 3704 and stores getItemFlagId 51500925."
+            },
+            {
+              "type": "save-analysis",
+              "source": "S0000.sl2 USER_DATA000",
+              "details": "Flag 6777 reads OFF while secondary flag 51500925 reads ON."
+            }
+          ]
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 70000000 is Sick village female player and maps to event flag 6777."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Ashina Depths - Watermill Prayer Bead is dropped by O'Rin of the Water."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6777 reads OFF at event flag base 0xE8000, offset 0xE834F bit 1."
+        }
+      ]
+    },
+    {
+      "id": "mibu_watermill_attic",
+      "name": "Watermill attic Prayer Bead",
+      "area": "Ashina Depths",
+      "location": "Watermill house attic shrine before Corrupted Monk",
+      "sourceType": "treasure",
+      "itemLotParamRowId": 1500040,
+      "eventFlag": 6795,
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 1500045,
+          "eventFlag": 51500045,
+          "awardedItemId": 3720,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 1500045 is paired with Watermill attic row 1500040, awards non-Prayer-Bead item ID 3720, has getItemFlagId 51500045, and flag 51500045 reads ON in S0000.sl2.",
+          "evidence": [
+            {
+              "type": "community-docs",
+              "source": "SoulSplitter Sekiro item pickup flags",
+              "details": "Row 1500045 maps to event flag 51500045 immediately after primary row 1500040."
+            },
+            {
+              "type": "community-param-data",
+              "source": "sekiro-online/params ItemLotParam.csv",
+              "details": "Row 1500045 awards item ID 3720 and stores getItemFlagId 51500045."
+            },
+            {
+              "type": "save-analysis",
+              "source": "S0000.sl2 USER_DATA000",
+              "details": "Flag 6795 reads OFF while secondary flag 51500045 reads ON."
+            }
+          ]
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 1500040 is Sick village_004 and maps to event flag 6795."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Ashina Depths - Watermill Prayer Bead is in the attic shrine of the house before Corrupted Monk."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6795 reads OFF at event flag base 0xE8000, offset 0xE8351 bit 3."
+        }
+      ]
+    },
+    {
+      "id": "snake_eyes_shirafuji",
+      "name": "Snake Eyes Shirafuji Prayer Bead",
+      "area": "Sunken Valley",
+      "location": "Sunken Valley idol",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 11900000,
+      "eventFlag": 6773,
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 11900005,
+          "eventFlag": 51701015,
+          "awardedItemId": 3704,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 11900005 is in the same Snake Eyes Shirafuji source group, awards non-Prayer-Bead item ID 3704, has getItemFlagId 51701015, and flag 51701015 reads ON in S0000.sl2.",
+          "evidence": [
+            {
+              "type": "community-docs",
+              "source": "SoulSplitter Sekiro item pickup flags",
+              "details": "Row 11900005 maps to event flag 51701015 in the same source group as primary row 11900000."
+            },
+            {
+              "type": "community-param-data",
+              "source": "sekiro-online/params ItemLotParam.csv",
+              "details": "Row 11900005 awards item ID 3704 and stores getItemFlagId 51701015."
+            },
+            {
+              "type": "save-analysis",
+              "source": "S0000.sl2 USER_DATA000",
+              "details": "Flag 6773 reads OFF while secondary flag 51701015 reads ON."
+            }
+          ]
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 11900000 is Valley Valley Enemy Female Sniper Nakasu Event and maps to event flag 6773."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Sunken Valley idol Prayer Bead is dropped by Snake Eyes Shirafuji."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6773 reads OFF at event flag base 0xE8000, offset 0xE834E bit 5."
+        }
+      ]
+    },
+    {
+      "id": "headless_ape_bead_1",
+      "name": "Headless Ape Prayer Bead 1",
+      "area": "Ashina Depths",
+      "location": "Poison Pool, Headless Ape rematch",
+      "sourceType": "boss_drop",
+      "itemLotParamRowId": 2015,
+      "eventFlag": 6798,
+      "secondaryItemLotFlags": [
+        {
+          "role": "paired_replacement_reward",
+          "rowId": 2017,
+          "eventFlag": 50002017,
+          "awardedItemId": 5213,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 2017 is paired with the Headless Ape rematch reward group, awards non-Prayer-Bead item ID 5213, has getItemFlagId 50002017, and flag 50002017 reads ON in S0000.sl2.",
+          "evidence": [
+            {
+              "type": "community-docs",
+              "source": "SoulSplitter Sekiro item pickup flags",
+              "details": "Rows 2015, 2016, 2017, and 2018 share the Defeat Yasha Ape Neckless Lower Valley reward group; row 2017 maps to event flag 50002017."
+            },
+            {
+              "type": "community-param-data",
+              "source": "sekiro-online/params ItemLotParam.csv",
+              "details": "Primary rows 2015 and 2016 award Prayer Bead item ID 4000; row 2017 awards item ID 5213 and stores getItemFlagId 50002017."
+            },
+            {
+              "type": "save-analysis",
+              "source": "S0000.sl2 USER_DATA000",
+              "details": "Flag 6798 reads OFF while secondary flag 50002017 reads ON."
+            }
+          ]
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 2015 is Defeat Yasha Ape Neckless Lower Valley and maps to event flag 6798."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Ashina Depths - Poison Pool Headless Ape rematch drops two Prayer Beads."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6798 reads OFF at event flag base 0xE8000, offset 0xE8351 bit 6."
+        }
+      ]
+    },
+    {
+      "id": "headless_ape_bead_2",
+      "name": "Headless Ape Prayer Bead 2",
+      "area": "Ashina Depths",
+      "location": "Poison Pool, Headless Ape rematch",
+      "sourceType": "boss_drop",
+      "itemLotParamRowId": 2016,
+      "eventFlag": 6799,
+      "primaryFlagSemantics": {
+        "kind": "item_lot_reward_state",
+        "awardedItemId": 4000,
+        "missingEvidenceRule": "primary_and_secondary_item_lot_flags_off",
+        "confidence": "Verified",
+        "details": "Primary row 2016 awards Prayer Bead item ID 4000 with getItemFlagId 6799. Paired secondary row 2018 awards non-Prayer-Bead item ID 5400 with getItemFlagId 50002018."
+      },
+      "secondaryItemLotFlags": [
+        {
+          "role": "paired_replacement_reward",
+          "rowId": 2018,
+          "eventFlag": 50002018,
+          "awardedItemId": 5400,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 2018 is paired with the Headless Ape rematch reward group, awards non-Prayer-Bead item ID 5400, has getItemFlagId 50002018, and flag 50002018 reads OFF in S0000.sl2."
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 2016 is Defeat Yasha Ape Neckless Lower Valley and maps to event flag 6799."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Ashina Depths - Poison Pool Headless Ape rematch drops two Prayer Beads."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6799 reads OFF at event flag base 0xE8000, offset 0xE8351 bit 7."
+        }
+      ]
+    },
+    {
+      "id": "juzou_the_drunkard_hirata_revisit",
+      "name": "Juzou the Drunkard Hirata Revisit Prayer Bead",
+      "area": "Hirata Estate",
+      "location": "Hirata Estate - Main Hall, second memory",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 10700100,
+      "eventFlag": 6782,
+      "primaryFlagSemantics": {
+        "kind": "item_lot_reward_state",
+        "awardedItemId": 4000,
+        "missingEvidenceRule": "primary_and_secondary_item_lot_flags_off",
+        "confidence": "Verified",
+        "details": "Primary row 10700100 awards Prayer Bead item ID 4000 with getItemFlagId 6782. Paired secondary row 10700105 awards non-Prayer-Bead item ID 3704 with getItemFlagId 51000955."
+      },
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 10700105,
+          "eventFlag": 51000955,
+          "awardedItemId": 3704,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 10700105 is paired with Juzou the Drunkard Hirata Revisit, awards non-Prayer-Bead item ID 3704, has getItemFlagId 51000955, and flag 51000955 reads OFF in S0000.sl2."
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 10700100 is Samurai Residence Truth Shura Samurai Event A and maps to event flag 6782."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Purification-route Hirata Estate - Main Hall Prayer Bead is dropped by Juzou the Drunkard in the second memory."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6782 reads OFF at event flag base 0xE8000, offset 0xE834F bit 6."
+        }
+      ]
+    },
+    {
+      "id": "okami_leader_shizu",
+      "name": "Okami Leader Shizu Prayer Bead",
+      "area": "Fountainhead Palace",
+      "location": "Great Sakura",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 13100000,
+      "eventFlag": 6784,
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 13100005,
+          "eventFlag": 52500905,
+          "awardedItemId": 3704,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 13100005 is in the same Okami Leader Shizu source group, awards non-Prayer-Bead item ID 3704, has getItemFlagId 52500905, and flag 52500905 reads ON in S0000.sl2.",
+          "evidence": [
+            {
+              "type": "community-docs",
+              "source": "SoulSplitter Sekiro item pickup flags",
+              "details": "Row 13100005 maps to event flag 52500905 in the same source group as primary row 13100000."
+            },
+            {
+              "type": "community-param-data",
+              "source": "sekiro-online/params ItemLotParam.csv",
+              "details": "Row 13100005 awards item ID 3704 and stores getItemFlagId 52500905."
+            },
+            {
+              "type": "save-analysis",
+              "source": "S0000.sl2 USER_DATA000",
+              "details": "Flag 6784 reads OFF while secondary flag 52500905 reads ON."
+            }
+          ]
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 13100000 is Submerged City Genpei Samurai Kemari Thunder Event and maps to event flag 6784."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The Fountainhead Palace - Great Sakura Prayer Bead is dropped by Okami Leader Shizu."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6784 reads OFF at event flag base 0xE8000, offset 0xE8350 bit 0."
+        }
+      ]
+    },
+    {
+      "id": "seven_ashina_spears_shume",
+      "name": "Seven Ashina Spears - Shume Masaji Oniwa Prayer Bead",
+      "area": "Ashina Reservoir",
+      "location": "Ashina Reservoir after Divine Dragon",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 10212100,
+      "eventFlag": 6786,
+      "primaryFlagSemantics": {
+        "kind": "item_lot_reward_state",
+        "awardedItemId": 4000,
+        "missingEvidenceRule": "primary_and_secondary_item_lot_flags_off",
+        "confidence": "Verified",
+        "details": "Primary row 10212100 awards Prayer Bead item ID 4000 with getItemFlagId 6786. Paired secondary row 10212105 awards non-Prayer-Bead item ID 3704 with getItemFlagId 51112910."
+      },
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 10212105,
+          "eventFlag": 51112910,
+          "awardedItemId": 3704,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 10212105 is paired with Seven Ashina Spears - Shume Masaji Oniwa, awards non-Prayer-Bead item ID 3704, has getItemFlagId 51112910, and flag 51112910 reads OFF in S0000.sl2."
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 10212100 is Hidden Prison Samurai General Four Tenno Event Tokugawa and maps to event flag 6786."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The post-Divine Dragon Ashina Reservoir Prayer Bead is dropped by Seven Spears Ashina - Shume Masaji Oniwa."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6786 reads OFF at event flag base 0xE8000, offset 0xE8350 bit 2."
+        }
+      ]
+    },
+    {
+      "id": "ashina_elite_ujinari_mizou",
+      "name": "Ashina Elite - Ujinari Mizou Prayer Bead",
+      "area": "Ashina Castle",
+      "location": "Upper Tower - Ashina Dojo after Divine Dragon",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 14001000,
+      "eventFlag": 6785,
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 14001005,
+          "eventFlag": 51110978,
+          "awardedItemId": 3704,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 14001005 is in the same Ashina Elite - Ujinari Mizou source group, awards non-Prayer-Bead item ID 3704, has getItemFlagId 51110978, and flag 51110978 reads ON in S0000.sl2.",
+          "evidence": [
+            {
+              "type": "community-docs",
+              "source": "SoulSplitter Sekiro item pickup flags",
+              "details": "Row 14001005 maps to event flag 51110978 in the same source group as primary row 14001000."
+            },
+            {
+              "type": "community-param-data",
+              "source": "sekiro-online/params ItemLotParam.csv",
+              "details": "Row 14001005 awards item ID 3704 and stores getItemFlagId 51110978."
+            },
+            {
+              "type": "save-analysis",
+              "source": "S0000.sl2 USER_DATA000",
+              "details": "Flag 6785 reads OFF while secondary flag 51110978 reads ON."
+            }
+          ]
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 14001000 is Honjo Kenjutsu master Tokugawa invasion event and maps to event flag 6785."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The post-Divine Dragon Upper Tower - Ashina Dojo Prayer Bead is dropped by Ujinari Mizou."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6785 reads OFF at event flag base 0xE8000, offset 0xE8350 bit 1."
+        }
+      ]
+    },
+    {
+      "id": "shigekichi_red_guard",
+      "name": "Shigekichi of the Red Guard Prayer Bead",
+      "area": "Ashina Castle",
+      "location": "Old Grave after Divine Dragon",
+      "sourceType": "miniboss_drop",
+      "itemLotParamRowId": 10701000,
+      "eventFlag": 6787,
+      "primaryFlagSemantics": {
+        "kind": "item_lot_reward_state",
+        "awardedItemId": 4000,
+        "missingEvidenceRule": "primary_and_secondary_item_lot_flags_off",
+        "confidence": "Verified",
+        "details": "Primary row 10701000 awards Prayer Bead item ID 4000 with getItemFlagId 6787. Paired secondary row 10701005 awards non-Prayer-Bead item ID 3704 with getItemFlagId 51100965."
+      },
+      "secondaryItemLotFlags": [
+        {
+          "role": "replacement_reward",
+          "rowId": 10701005,
+          "eventFlag": 51100965,
+          "awardedItemId": 3704,
+          "mappingConfidence": "Verified",
+          "attributionConfidence": "Verified",
+          "details": "Secondary ItemLotParam row 10701005 is paired with Shigekichi of the Red Guard, awards non-Prayer-Bead item ID 3704, has getItemFlagId 51100965, and flag 51100965 reads OFF in S0000.sl2."
+        }
+      ],
+      "mappingConfidence": "Verified",
+      "evidence": [
+        {
+          "type": "community-docs",
+          "source": "SoulSplitter Sekiro item pickup flags",
+          "details": "Row 10701000 is Castle Tokugawa Shura Samurai Event and maps to event flag 6787."
+        },
+        {
+          "type": "community-guide",
+          "source": "PowerPyx Prayer Bead guide",
+          "details": "The post-Divine Dragon Ashina Castle - Old Grave Prayer Bead is dropped by Shigekichi of the Red Guard."
+        },
+        {
+          "type": "save-analysis",
+          "source": "S0000.sl2 USER_DATA000",
+          "details": "Flag 6787 reads OFF at event flag base 0xE8000, offset 0xE8350 bit 3."
+        }
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "offering_box_replacement_behavior",
+      "confidence": "Unknown",
+      "details": "The 40 primary Prayer Bead locations now have source-backed mappings, 11 secondary ItemLotParam reward/replacement flags reconcile collected locations in S0000.sl2, and 14 locations are missing by verified item-lot/shop evidence. Offering Box replacement behavior is still not mapped as a general-purpose mechanic for other saves."
+    },
+    {
+      "id": "valley_treasure_exact_ordering",
+      "confidence": "Unknown",
+      "details": "Rows 1700020, 1700030, and 1700040 are verified as the three Valley Prayer Bead pickup flags, but their exact row-to-location ordering among the Poison Pool statue-head pickup, Under-Shrine Valley pickup, and Gun Fort hidden pickup still needs EMEVD/coordinate verification."
+    }
+  ]
+}

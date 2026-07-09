@@ -1,0 +1,604 @@
+{
+  "schemaVersion": 1,
+  "game": "sekiro",
+  "coverage": "base-prosthetic-tools-inventory-evidence",
+  "statusPolicy": {
+    "collectedRequires": "verified base Prosthetic Tool weapon inventory record",
+    "missingRequires": "verified absence of base Prosthetic Tool weapon inventory record in USER_DATA000",
+    "details": "Base Prosthetic Tools are detected from EquipParamWeapon row IDs stored as weapon inventory records. Source items from EquipParamGoods are documented for mapping provenance, but source item presence is not required because prosthetic source materials can be consumed when fitted."
+  },
+  "prosthetics": [
+    {
+      "id": "loaded_shuriken",
+      "category": "prosthetic",
+      "name": "Loaded Shuriken",
+      "equipParamWeaponRowId": 70000,
+      "sourceGoodsParamRowId": 9700,
+      "sourceItemName": "Shuriken Wheel",
+      "sourceLocation": {
+        "area": "Ashina Outskirts",
+        "location": "Outskirts Wall - Gate Path Idol, corpse inside a building near the idol",
+        "acquisition": "Loot Shuriken Wheel from the corpse, then fit it with the Sculptor as Loaded Shuriken.",
+        "vendor": null,
+        "chest": null,
+        "enemy": null,
+        "requiredProgression": "Reach Ashina Outskirts and the Outskirts Wall - Gate Path Idol.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Shuriken Wheel",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Shuriken+Wheel",
+            "evidence": "Lists Shuriken Wheel at Outskirts Wall - Gate Path Idol, looted from a corpse in a nearby building."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "70110100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 70000: Loaded Shuriken.",
+          "details": "A weapon inventory record with item ID 70000 and quantity 1 means this base Prosthetic Tool is present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shinobi_firecracker",
+      "category": "prosthetic",
+      "name": "Shinobi Firecracker",
+      "equipParamWeaponRowId": 71000,
+      "sourceGoodsParamRowId": 9710,
+      "sourceItemName": "Robert's Firecrackers",
+      "sourceLocation": {
+        "area": "Ashina Outskirts",
+        "location": "Crow's Bed Memorial Mob, cliffs between Outskirts Wall - Gate Path and Outskirts Wall - Stairway",
+        "acquisition": "Purchase Robert's Firecrackers from Crow's Bed Memorial Mob, then fit them with the Sculptor as Shinobi Firecracker.",
+        "vendor": "Crow's Bed Memorial Mob",
+        "chest": null,
+        "enemy": null,
+        "requiredProgression": "Reach Ashina Outskirts and grapple to the Memorial Mob cliff. Battlefield Memorial Mob can also sell this item if missed.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Robert's Firecrackers",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Robert%27s+Firecrackers",
+            "evidence": "Lists Robert's Firecrackers as sold by Crow's Bed Memorial Mob between the Outskirts Wall idols, with a later Battlefield Memorial Mob backup."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "58150100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 71000: Shinobi Firecracker.",
+          "details": "A weapon inventory record with item ID 71000 and quantity 1 means this base Prosthetic Tool is present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flame_vent",
+      "category": "prosthetic",
+      "name": "Flame Vent",
+      "equipParamWeaponRowId": 72000,
+      "sourceGoodsParamRowId": 9720,
+      "sourceItemName": "Flame Barrel",
+      "sourceLocation": {
+        "area": "Hirata Estate",
+        "location": "Estate Path, campfire surrounded by enemies",
+        "acquisition": "Loot Flame Barrel from the campfire, then fit it with the Sculptor as Flame Vent.",
+        "vendor": null,
+        "chest": null,
+        "enemy": null,
+        "requiredProgression": "Access Hirata Estate with the Young Lord's Bell Charm and reach Estate Path.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Flame Barrel",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Flame+Barrel",
+            "evidence": "Lists Flame Barrel in Hirata Estate from the Estate Path Idol, inside a campfire surrounded by enemies."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "40190100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 72000: Flame Vent.",
+          "details": "A weapon inventory record with item ID 72000 and quantity 1 means this base Prosthetic Tool is present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loaded_axe",
+      "category": "prosthetic",
+      "name": "Loaded Axe",
+      "equipParamWeaponRowId": 73000,
+      "sourceGoodsParamRowId": 9730,
+      "sourceItemName": "Shinobi Axe of the Monkey",
+      "sourceLocation": {
+        "area": "Hirata Estate",
+        "location": "Estate Path courtyard, small garden house near two eavesdroppable guards",
+        "acquisition": "Loot Shinobi Axe of the Monkey from the small garden house, then fit it with the Sculptor as Loaded Axe.",
+        "vendor": null,
+        "chest": "Small garden house / shrine",
+        "enemy": null,
+        "requiredProgression": "Access Hirata Estate and proceed past the Estate Path area.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Shinobi Axe of the Monkey",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Shinobi+Axe+of+the+Monkey",
+            "evidence": "Lists Shinobi Axe of the Monkey in Hirata Estate, inside the small garden house by two guards discussing burning a temple."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "281D0100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 73000: Loaded Axe.",
+          "details": "A weapon inventory record with item ID 73000 and quantity 1 means this base Prosthetic Tool is present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mist_raven",
+      "category": "prosthetic",
+      "name": "Mist Raven",
+      "equipParamWeaponRowId": 74000,
+      "sourceGoodsParamRowId": 9740,
+      "sourceItemName": "Mist Raven's Feathers",
+      "sourceLocation": {
+        "area": "Hirata Estate",
+        "location": "Bamboo Thicket Slope hidden temple / pagoda path",
+        "acquisition": "Loot Mist Raven's Feathers from the hidden temple, then fit them with the Sculptor as Mist Raven.",
+        "vendor": null,
+        "chest": "Hidden temple",
+        "enemy": "Guarding Lone Shadow / purple ninja",
+        "requiredProgression": "Access Hirata Estate, reach Bamboo Thicket Slope, and follow the hidden water/bamboo path to the temple.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Mist Raven's Feathers",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Mist+Raven%27s+Feathers",
+            "evidence": "Lists Mist Raven's Feathers inside a hidden temple reached through the water and bamboo path, guarded by an enemy."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "10210100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 74000: Mist Raven.",
+          "details": "A weapon inventory record with item ID 74000 and quantity 1 means this base Prosthetic Tool is present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sabimaru",
+      "category": "prosthetic",
+      "name": "Sabimaru",
+      "equipParamWeaponRowId": 75000,
+      "sourceGoodsParamRowId": 9750,
+      "sourceItemName": "Sabimaru",
+      "sourceLocation": {
+        "area": "Ashina Castle",
+        "location": "Upper Tower - Antechamber, lower room chest after dropping through the floor opening",
+        "acquisition": "Loot Sabimaru from the chest, then fit it with the Sculptor as Sabimaru.",
+        "vendor": null,
+        "chest": "Chest in the lower Antechamber room",
+        "enemy": null,
+        "requiredProgression": "Reach Ashina Castle and the Upper Tower - Antechamber Idol.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Sabimaru",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Sabimaru",
+            "evidence": "Lists Sabimaru in Ashina Castle from Upper Tower - Antechamber, looted from a chest after dropping through the floor opening."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "F8240100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 75000: Sabimaru.",
+          "details": "A weapon inventory record with item ID 75000 and quantity 1 means this base Prosthetic Tool is present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loaded_umbrella",
+      "category": "prosthetic",
+      "name": "Loaded Umbrella",
+      "equipParamWeaponRowId": 76000,
+      "sourceGoodsParamRowId": 9760,
+      "sourceItemName": "Iron Fortress",
+      "sourceLocation": {
+        "area": "Ashina Castle",
+        "location": "Old Grave area, building below the Old Grave Idol",
+        "acquisition": "Purchase Iron Fortress from Blackhat Badger, then fit it with the Sculptor as Loaded Umbrella.",
+        "vendor": "Blackhat Badger",
+        "chest": null,
+        "enemy": null,
+        "requiredProgression": "Reach Ashina Castle and the Old Grave Idol area. If Blackhat Badger has moved late-game, the item may appear where he originally sold it.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Iron Fortress",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Iron+Fortress",
+            "evidence": "Lists Iron Fortress sold by Blackhat Badger for sen in a building near the Old Grave Idol in Ashina Castle."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "E0280100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 76000: Loaded Umbrella.",
+          "details": "A weapon inventory record with item ID 76000 and quantity 1 means this base Prosthetic Tool is present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "divine_abduction",
+      "category": "prosthetic",
+      "name": "Divine Abduction",
+      "equipParamWeaponRowId": 77000,
+      "sourceGoodsParamRowId": 9770,
+      "sourceItemName": "Large Fan",
+      "sourceLocation": {
+        "area": "Sunken Valley",
+        "location": "Gun Fort, Long-arm Centipede Giraffe room, Buddha statue",
+        "acquisition": "Defeat Long-arm Centipede Giraffe and loot Large Fan from the Buddha statue, then fit it with the Sculptor as Divine Abduction.",
+        "vendor": null,
+        "chest": null,
+        "enemy": "Long-arm Centipede Giraffe",
+        "requiredProgression": "Reach Sunken Valley Gun Fort and defeat Long-arm Centipede Giraffe.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Large Fan",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Large+Fan",
+            "evidence": "Lists Large Fan in Sunken Valley after defeating Long-arm Centipede Giraffe, at the Buddha statue in the room."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "C82C0100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 77000: Divine Abduction.",
+          "details": "A weapon inventory record with item ID 77000 and quantity 1 means this base Prosthetic Tool is present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loaded_spear",
+      "category": "prosthetic",
+      "name": "Loaded Spear",
+      "equipParamWeaponRowId": 78000,
+      "sourceGoodsParamRowId": 9780,
+      "sourceItemName": "Gyoubu's Broken Horn",
+      "sourceLocation": {
+        "area": "Ashina Reservoir",
+        "location": "Gatehouse near Moon-View Tower, chest inside the locked building",
+        "acquisition": "Use the Gatehouse Key to open the gatehouse and loot Gyoubu's Broken Horn from the chest, then fit it with the Sculptor as Loaded Spear.",
+        "vendor": null,
+        "chest": "Gatehouse chest",
+        "enemy": null,
+        "requiredProgression": "Reach Ashina Castle, obtain the Gatehouse Key from soldiers near the bridge, then return to the Ashina Reservoir gatehouse.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Gyoubu's Broken Horn",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Gyoubu%27s+Broken+Horn",
+            "evidence": "Lists Gyoubu's Broken Horn inside the locked Ashina Reservoir gatehouse chest, opened with the Gatehouse Key from the bridge near Ashina Castle."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "B0300100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 78000: Loaded Spear.",
+          "details": "A weapon inventory record with item ID 78000 and quantity 1 means this base Prosthetic Tool is present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "finger_whistle",
+      "category": "prosthetic",
+      "name": "Finger Whistle",
+      "equipParamWeaponRowId": 79000,
+      "sourceGoodsParamRowId": 9790,
+      "sourceItemName": "Slender Finger",
+      "sourceLocation": {
+        "area": "Sunken Valley",
+        "location": "Guardian Ape boss reward",
+        "acquisition": "Defeat Guardian Ape to obtain Slender Finger, then fit it with the Sculptor as Finger Whistle.",
+        "vendor": null,
+        "chest": null,
+        "enemy": "Guardian Ape",
+        "requiredProgression": "Reach Sunken Valley Passage and defeat Guardian Ape.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Slender Finger",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Slender+Finger",
+            "evidence": "Lists Slender Finger as dropped by the Guardian Ape boss upon defeat."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "weaponInventoryItem",
+          "type": "inventory_weapon",
+          "itemIdHex": "98340100",
+          "confidence": "verified",
+          "source": "EquipParamWeapon row 79000: Finger Whistle.",
+          "details": "A weapon inventory record with item ID 79000 and quantity 1 means this base Prosthetic Tool is present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "weaponInventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "prosthetic_upgrade_tree",
+      "confidence": "Unknown",
+      "details": "Only the ten base Prosthetic Tools are mapped. Prosthetic upgrades are present in EquipParamWeapon but are not yet modeled."
+    },
+    {
+      "id": "prosthetic_source_item_flags",
+      "confidence": "Unknown",
+      "details": "Source item pickup flags for raw prosthetic materials are not required for base tool ownership and have not been mapped yet."
+    }
+  ]
+}

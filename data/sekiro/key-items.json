@@ -1,0 +1,2321 @@
+{
+  "schemaVersion": 1,
+  "game": "sekiro",
+  "coverage": "progression-key-items-with-verified-inventory-evidence",
+  "statusPolicy": {
+    "collectedRequires": "verified key item inventory record in USER_DATA000",
+    "missingRequires": "verified absence of a mapped persistent key item whose absence semantics are understood",
+    "unknownRequires": "item ID is unmapped, inventory state cannot be read, or absence does not prove missing because the item may be consumed, transformed, or only used as quest context",
+    "details": "Ownership status is derived only from save inventory evidence. Acquisition metadata is user guidance and never drives ownership status."
+  },
+  "items": [
+    {
+      "id": "divine_dragons_tears",
+      "category": "key_item",
+      "itemType": "ending_required",
+      "name": "Divine Dragon's Tears",
+      "equipParamGoodsRowId": 9000,
+      "itemIdHex": "28230040",
+      "absenceSemantics": "persistent_absence_means_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9000",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "28230040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9000: Divine Dragon's Tears.",
+          "details": "A goods inventory record with item ID 9000 means this key item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Fountainhead Palace",
+        "source": "Divine Dragon",
+        "npc": null,
+        "boss": "Divine Dragon",
+        "chest": null,
+        "requirements": [
+          "Reach Fountainhead Palace",
+          "Defeat the Divine Dragon"
+        ],
+        "notes": [
+          "Required for Immortal Severance, Purification, and Return final choices."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "frozen_tears",
+      "category": "key_item",
+      "itemType": "ending_required",
+      "name": "Frozen Tears",
+      "equipParamGoodsRowId": 9091,
+      "itemIdHex": "83230040",
+      "absenceSemantics": "persistent_absence_means_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9091",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "83230040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9091: Frozen Tears.",
+          "details": "A goods inventory record with item ID 9091 means this key item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Inner Sanctum",
+        "source": "Divine Child of Rejuvenation quest",
+        "npc": "Divine Child of Rejuvenation",
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Progress the Divine Child rice quest",
+          "Provide the serpent viscera quest items",
+          "Continue the Return route until Frozen Tears are received"
+        ],
+        "notes": [
+          "Required with Divine Dragon's Tears for the Return ending."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fresh_serpent_viscera",
+      "category": "key_item",
+      "itemType": "ending_quest_required",
+      "name": "Fresh Serpent Viscera",
+      "equipParamGoodsRowId": 9192,
+      "itemIdHex": "E8230040",
+      "absenceSemantics": "persistent_absence_means_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9192",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "E8230040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9192: Fresh Serpent Viscera.",
+          "details": "A goods inventory record with item ID 9192 means this key item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Senpou Temple / Sunken Valley route",
+        "source": "Great Serpent route step",
+        "npc": null,
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Progress the Great Serpent route tied to the Return ending",
+          "Use Puppeteer Ninjutsu on the kite route where required"
+        ],
+        "notes": [
+          "Part of the Divine Child quest for Frozen Tears."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dried_serpent_viscera",
+      "category": "key_item",
+      "itemType": "ending_quest_required",
+      "name": "Dried Serpent Viscera",
+      "equipParamGoodsRowId": 9193,
+      "itemIdHex": "E9230040",
+      "absenceSemantics": "persistent_absence_means_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9193",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "E9230040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9193: Dried Serpent Viscera.",
+          "details": "A goods inventory record with item ID 9193 means this key item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Sunken Valley",
+        "source": "Great Serpent cave route",
+        "npc": null,
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Reach the Sunken Valley serpent cave route"
+        ],
+        "notes": [
+          "Part of the Divine Child quest for Frozen Tears."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fathers_bell_charm",
+      "category": "key_item",
+      "itemType": "ending_quest_required",
+      "name": "Father's Bell Charm",
+      "equipParamGoodsRowId": 9011,
+      "itemIdHex": "33230040",
+      "absenceSemantics": "persistent_absence_means_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9011",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "33230040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9011: Father's Bell Charm.",
+          "details": "A goods inventory record with item ID 9011 means this key item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Dilapidated Temple / Ashina Castle",
+        "source": "Emma and Kuro eavesdrop route",
+        "npc": "Emma",
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Stay loyal to Kuro",
+          "Progress the Purification eavesdrop route before Divine Dragon"
+        ],
+        "notes": [
+          "Used to access the second Hirata memory for the Purification route."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "aromatic_flower",
+      "category": "key_item",
+      "itemType": "ending_required",
+      "name": "Aromatic Flower",
+      "equipParamGoodsRowId": 2503,
+      "itemIdHex": "C7090040",
+      "absenceSemantics": "persistent_absence_means_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 2503",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "C7090040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 2503: Aromatic Flower.",
+          "details": "A goods inventory record with item ID 2503 means this key item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Hirata Estate - second memory",
+        "source": "Owl (Father)",
+        "npc": null,
+        "boss": "Owl (Father)",
+        "chest": null,
+        "requirements": [
+          "Obtain Father's Bell Charm",
+          "Enter the second Hirata memory",
+          "Defeat Owl (Father)"
+        ],
+        "notes": [
+          "Required with Divine Dragon's Tears for Purification."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "aromatic_branch",
+      "category": "key_item",
+      "itemType": "progression",
+      "name": "Aromatic Branch",
+      "equipParamGoodsRowId": 2502,
+      "itemIdHex": "C6090040",
+      "absenceSemantics": "persistent_absence_means_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 2502",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "C6090040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 2502: Aromatic Branch.",
+          "details": "A goods inventory record with item ID 2502 means this key item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Ashina Castle",
+        "source": "Great Shinobi Owl",
+        "npc": null,
+        "boss": "Great Shinobi Owl",
+        "chest": null,
+        "requirements": [
+          "Stay loyal to Kuro at the Owl choice",
+          "Defeat Great Shinobi Owl"
+        ],
+        "notes": [
+          "Used as probable non-Shura branch evidence, but not verified permanent block evidence by itself."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mortal_blade",
+      "category": "key_item",
+      "itemType": "progression",
+      "name": "Mortal Blade",
+      "equipParamGoodsRowId": 2400,
+      "itemIdHex": "60090040",
+      "absenceSemantics": "persistent_absence_means_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 2400",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "60090040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 2400: Mortal Blade.",
+          "details": "A goods inventory record with item ID 2400 means this key item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Senpou Temple - Inner Sanctum",
+        "source": "Divine Child of Rejuvenation",
+        "npc": "Divine Child of Rejuvenation",
+        "boss": "Folding Screen Monkeys",
+        "chest": null,
+        "requirements": [
+          "Defeat Folding Screen Monkeys",
+          "Speak with the Divine Child"
+        ],
+        "notes": [
+          "Story progression item used by non-Shura endings."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "shelter_stone",
+      "category": "key_item",
+      "itemType": "progression",
+      "name": "Shelter Stone",
+      "equipParamGoodsRowId": 2501,
+      "itemIdHex": "C5090040",
+      "absenceSemantics": "persistent_absence_means_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 2501",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "C5090040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 2501: Shelter Stone.",
+          "details": "A goods inventory record with item ID 2501 means this key item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Ashina Depths - Wedding Cave Door",
+        "source": "Wedding Cave",
+        "npc": null,
+        "boss": "Corrupted Monk",
+        "chest": null,
+        "requirements": [
+          "Defeat Corrupted Monk in Ashina Depths",
+          "Reach the Wedding Cave Door area"
+        ],
+        "notes": [
+          "Story progression item needed before the Owl route split."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lotus_of_the_palace",
+      "category": "key_item",
+      "itemType": "progression",
+      "name": "Lotus of the Palace",
+      "equipParamGoodsRowId": 2500,
+      "itemIdHex": "C4090040",
+      "absenceSemantics": "persistent_absence_means_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 2500",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "C4090040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 2500: Lotus of the Palace.",
+          "details": "A goods inventory record with item ID 2500 means this key item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Sunken Valley - Guardian Ape's Watering Hole",
+        "source": "Lotus after Guardian Ape",
+        "npc": null,
+        "boss": "Guardian Ape",
+        "chest": null,
+        "requirements": [
+          "Defeat Guardian Ape"
+        ],
+        "notes": [
+          "Story progression item needed before the Owl route split."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "shinobi_esoteric_text",
+      "category": "key_item",
+      "itemType": "esoteric_text",
+      "name": "Shinobi Esoteric Text",
+      "equipParamGoodsRowId": 2920,
+      "itemIdHex": "680B0040",
+      "absenceSemantics": "persistent_absence_means_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 2920",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "680B0040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 2920: Shinobi Esoteric Text.",
+          "details": "A goods inventory record with item ID 2920 means this Esoteric Text is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "npc": "Sculptor",
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Acquire at least 1 skill point"
+        ],
+        "notes": [
+          "Unlocks the Shinobi Arts tree."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Shinobi Esoteric Text",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Shinobi+Esoteric+Text"
+          }
+        ]
+      }
+    },
+    {
+      "id": "prosthetic_esoteric_text",
+      "category": "key_item",
+      "itemType": "esoteric_text",
+      "name": "Prosthetic Esoteric Text",
+      "equipParamGoodsRowId": 2921,
+      "itemIdHex": "690B0040",
+      "absenceSemantics": "persistent_absence_means_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 2921",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "690B0040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 2921: Prosthetic Esoteric Text.",
+          "details": "A goods inventory record with item ID 2921 means this Esoteric Text is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Dilapidated Temple",
+        "source": "Sculptor",
+        "npc": "Sculptor",
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Fit any three Prosthetic Tools"
+        ],
+        "notes": [
+          "Unlocks the Prosthetic Arts tree."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Esoteric Text",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Esoteric+Text"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ashina_esoteric_text",
+      "category": "key_item",
+      "itemType": "esoteric_text",
+      "name": "Ashina Esoteric Text",
+      "equipParamGoodsRowId": 2922,
+      "itemIdHex": "6A0B0040",
+      "absenceSemantics": "persistent_absence_means_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 2922",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "6A0B0040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 2922: Ashina Esoteric Text.",
+          "details": "A goods inventory record with item ID 2922 means this Esoteric Text is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Ashina Outskirts / Ashina Castle",
+        "source": "Tengu of Ashina rat quest; later fallback through Isshin/Emma",
+        "npc": "Tengu of Ashina",
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Complete Tengu's rat quest or later fallback route"
+        ],
+        "notes": [
+          "Unlocks the Ashina Arts tree."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Ashina Esoteric Text",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Ashina+Esoteric+Text"
+          }
+        ]
+      }
+    },
+    {
+      "id": "senpou_esoteric_text",
+      "category": "key_item",
+      "itemType": "esoteric_text",
+      "name": "Senpou Esoteric Text",
+      "equipParamGoodsRowId": 2923,
+      "itemIdHex": "6B0B0040",
+      "absenceSemantics": "persistent_absence_means_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 2923",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "6B0B0040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 2923: Senpou Esoteric Text.",
+          "details": "A goods inventory record with item ID 2923 means this Esoteric Text is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Senpou Temple, Mt. Kongo",
+        "source": "Small shrine near Main Hall Idol",
+        "npc": null,
+        "boss": null,
+        "chest": "Shrine pickup",
+        "requirements": [
+          "Reach Senpou Temple Main Hall area"
+        ],
+        "notes": [
+          "Unlocks the Temple Arts tree."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Senpou Esoteric Text",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Senpou+Esoteric+Text"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mushin_esoteric_text",
+      "category": "key_item",
+      "itemType": "esoteric_text",
+      "name": "Mushin Esoteric Text",
+      "equipParamGoodsRowId": 2924,
+      "itemIdHex": "6C0B0040",
+      "absenceSemantics": "persistent_absence_means_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 2924",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "6C0B0040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 2924: Mushin Esoteric Text.",
+          "details": "A goods inventory record with item ID 2924 means this Esoteric Text is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "missing",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Great Serpent Shrine / fallback through Emma",
+        "source": "Tengu of Ashina or Emma fallback",
+        "npc": "Tengu of Ashina",
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Learn a final skill in a skill tree",
+          "Speak to Tengu or later fallback NPC"
+        ],
+        "notes": [
+          "Unlocks the Mushin Arts tree."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Mushin Esoteric Text",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Mushin+Esoteric+Text"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holy_chapter_dragons_return",
+      "category": "key_item",
+      "itemType": "quest_context",
+      "name": "Holy Chapter: Dragon's Return",
+      "equipParamGoodsRowId": 9209,
+      "itemIdHex": "F9230040",
+      "absenceSemantics": "absence_not_promoted_to_missing_until_retention_is_verified",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9209",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "F9230040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9209: Holy Chapter: Dragon's Return.",
+          "details": "A goods inventory record with item ID 9209 means this quest-context item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Inner Sanctum",
+        "source": "Divine Child route",
+        "npc": "Divine Child of Rejuvenation",
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Progress the Return route"
+        ],
+        "notes": [
+          "Retention and consumption semantics are unresolved, so absence is Unknown."
+        ],
+        "confidence": "Unknown",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "immortal_severance_text",
+      "category": "key_item",
+      "itemType": "quest_context",
+      "name": "Immortal Severance Text",
+      "equipParamGoodsRowId": 9210,
+      "itemIdHex": "FA230040",
+      "absenceSemantics": "absence_not_promoted_to_missing_until_retention_is_verified",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9210",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "FA230040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9210: Immortal Severance Text.",
+          "details": "A goods inventory record with item ID 9210 means this quest-context item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Story progression",
+        "source": "Kuro route context",
+        "npc": "Kuro",
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Progress the non-Shura story route"
+        ],
+        "notes": [
+          "Quest-context item; not used as an ending availability requirement."
+        ],
+        "confidence": "Unknown",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "immortal_severance_scrap",
+      "category": "key_item",
+      "itemType": "quest_context",
+      "name": "Immortal Severance Scrap",
+      "equipParamGoodsRowId": 9211,
+      "itemIdHex": "FB230040",
+      "absenceSemantics": "absence_not_promoted_to_missing_until_retention_is_verified",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9211",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "FB230040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9211: Immortal Severance Scrap.",
+          "details": "A goods inventory record with item ID 9211 means this quest-context item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Story progression",
+        "source": "Kuro route context",
+        "npc": "Kuro",
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Progress the non-Shura story route"
+        ],
+        "notes": [
+          "Quest-context item; not used as an ending availability requirement."
+        ],
+        "confidence": "Unknown",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fragrant_flower_note",
+      "category": "key_item",
+      "itemType": "quest_context",
+      "name": "Fragrant Flower Note",
+      "equipParamGoodsRowId": 9212,
+      "itemIdHex": "FC230040",
+      "absenceSemantics": "absence_not_promoted_to_missing_until_retention_is_verified",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9212",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "FC230040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9212: Fragrant Flower Note.",
+          "details": "A goods inventory record with item ID 9212 means this quest-context item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Story progression",
+        "source": "Kuro route context",
+        "npc": "Kuro",
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Progress the non-Shura story route"
+        ],
+        "notes": [
+          "Quest-context item; present in the current save but not used alone to mark Purification available."
+        ],
+        "confidence": "Unknown",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holy_chapter_infested",
+      "category": "key_item",
+      "itemType": "quest_context",
+      "name": "Holy Chapter: Infested",
+      "equipParamGoodsRowId": 9215,
+      "itemIdHex": "FF230040",
+      "absenceSemantics": "absence_not_promoted_to_missing_until_retention_is_verified",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9215",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "FF230040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9215: Holy Chapter: Infested.",
+          "details": "A goods inventory record with item ID 9215 means this quest-context item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Senpou Temple / Inner Sanctum route",
+        "source": "Return route context",
+        "npc": "Divine Child of Rejuvenation",
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Progress the Return route"
+        ],
+        "notes": [
+          "Retention and consumption semantics are unresolved, so absence is Unknown."
+        ],
+        "confidence": "Unknown",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holy_chapter_infested_alt",
+      "category": "key_item",
+      "itemType": "quest_context",
+      "name": "Holy Chapter: Infested",
+      "equipParamGoodsRowId": 9228,
+      "itemIdHex": "0C240040",
+      "absenceSemantics": "absence_not_promoted_to_missing_until_retention_is_verified",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9228",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "0C240040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9228: Holy Chapter: Infested alternate row.",
+          "details": "A goods inventory record with item ID 9228 means this alternate quest-context item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Senpou Temple / Inner Sanctum route",
+        "source": "Return route context",
+        "npc": "Divine Child of Rejuvenation",
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Progress the Return route"
+        ],
+        "notes": [
+          "Alternate row semantics are unresolved, so absence is Unknown."
+        ],
+        "confidence": "Unknown",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Endings",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mechanical_barrel",
+      "category": "key_item",
+      "itemType": "prosthetic_upgrade_unlock_item",
+      "name": "Mechanical Barrel",
+      "equipParamGoodsRowId": 2910,
+      "itemIdHex": "5E0B0040",
+      "absenceSemantics": "absence_not_promoted_to_missing_until_retention_is_verified",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 2910",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "5E0B0040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 2910: Mechanical Barrel.",
+          "details": "A goods inventory record with item ID 2910 means this key item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Ashina Outskirts - Castle Gate",
+        "source": "Gyoubu Oniwa",
+        "npc": null,
+        "boss": "Gyoubu Oniwa",
+        "chest": null,
+        "requirements": [
+          "Defeat Gyoubu Oniwa"
+        ],
+        "notes": [
+          "Unlocks Prosthetic Tool upgrades, but retention semantics are unresolved; absence is Unknown."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Prosthetic Tools",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
+          }
+        ]
+      }
+    },
+    {
+      "id": "shuriken_wheel",
+      "category": "key_item",
+      "itemType": "prosthetic_source_item",
+      "name": "Shuriken Wheel",
+      "equipParamGoodsRowId": 9700,
+      "itemIdHex": "E4250040",
+      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9700",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "E4250040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9700: Shuriken Wheel.",
+          "details": "A goods inventory record with item ID 9700 means this raw Prosthetic Tool source item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Ashina Outskirts",
+        "source": "Corpse near Outskirts Wall - Gate Path Idol",
+        "npc": null,
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Reach Outskirts Wall - Gate Path"
+        ],
+        "notes": [
+          "Fitted by the Sculptor as Loaded Shuriken; absence does not prove missing after fitting."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Shuriken Wheel",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Shuriken+Wheel"
+          }
+        ]
+      }
+    },
+    {
+      "id": "roberts_firecrackers",
+      "category": "key_item",
+      "itemType": "prosthetic_source_item",
+      "name": "Robert's Firecrackers",
+      "equipParamGoodsRowId": 9710,
+      "itemIdHex": "EE250040",
+      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9710",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "EE250040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9710: Robert's Firecrackers.",
+          "details": "A goods inventory record with item ID 9710 means this raw Prosthetic Tool source item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Ashina Outskirts",
+        "source": "Crow's Bed Memorial Mob; later Battlefield Memorial Mob backup",
+        "npc": "Memorial Mob merchant",
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Reach a merchant selling Robert's Firecrackers"
+        ],
+        "notes": [
+          "Fitted by the Sculptor as Shinobi Firecracker; absence does not prove missing after fitting."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Robert's Firecrackers",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Robert%27s+Firecrackers"
+          }
+        ]
+      }
+    },
+    {
+      "id": "flame_barrel",
+      "category": "key_item",
+      "itemType": "prosthetic_source_item",
+      "name": "Flame Barrel",
+      "equipParamGoodsRowId": 9720,
+      "itemIdHex": "F8250040",
+      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9720",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "F8250040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9720: Flame Barrel.",
+          "details": "A goods inventory record with item ID 9720 means this raw Prosthetic Tool source item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Hirata Estate",
+        "source": "Estate Path campfire",
+        "npc": null,
+        "boss": null,
+        "chest": "Campfire pickup",
+        "requirements": [
+          "Reach Hirata Estate Estate Path"
+        ],
+        "notes": [
+          "Fitted by the Sculptor as Flame Vent; absence does not prove missing after fitting."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Flame Barrel",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Flame+Barrel"
+          }
+        ]
+      }
+    },
+    {
+      "id": "shinobi_axe_of_the_monkey",
+      "category": "key_item",
+      "itemType": "prosthetic_source_item",
+      "name": "Shinobi Axe of the Monkey",
+      "equipParamGoodsRowId": 9730,
+      "itemIdHex": "02260040",
+      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9730",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "02260040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9730: Shinobi Axe of the Monkey.",
+          "details": "A goods inventory record with item ID 9730 means this raw Prosthetic Tool source item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Hirata Estate",
+        "source": "Temple building near Estate Path",
+        "npc": null,
+        "boss": null,
+        "chest": "Temple building pickup",
+        "requirements": [
+          "Reach Hirata Estate Estate Path"
+        ],
+        "notes": [
+          "Fitted by the Sculptor as Loaded Axe; absence does not prove missing after fitting."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Shinobi Axe of the Monkey",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Shinobi+Axe+of+the+Monkey"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mist_ravens_feathers",
+      "category": "key_item",
+      "itemType": "prosthetic_source_item",
+      "name": "Mist Raven's Feathers",
+      "equipParamGoodsRowId": 9740,
+      "itemIdHex": "0C260040",
+      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9740",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "0C260040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9740: Mist Raven's Feathers.",
+          "details": "A goods inventory record with item ID 9740 means this raw Prosthetic Tool source item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Hirata Estate",
+        "source": "Three-story pagoda",
+        "npc": null,
+        "boss": "Lone Shadow guarding pagoda",
+        "chest": "Pagoda chest",
+        "requirements": [
+          "Reach Hirata Estate bamboo thicket route"
+        ],
+        "notes": [
+          "Fitted by the Sculptor as Mist Raven; absence does not prove missing after fitting."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Mist Raven's Feathers",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Mist+Raven%27s+Feathers"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sabimaru",
+      "category": "key_item",
+      "itemType": "prosthetic_source_item",
+      "name": "Sabimaru",
+      "equipParamGoodsRowId": 9750,
+      "itemIdHex": "16260040",
+      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9750",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "16260040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9750: Sabimaru.",
+          "details": "A goods inventory record with item ID 9750 means this raw Prosthetic Tool source item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Ashina Castle",
+        "source": "Chest below Upper Tower - Antechamber",
+        "npc": null,
+        "boss": null,
+        "chest": "Castle chest",
+        "requirements": [
+          "Reach Ashina Castle Upper Tower"
+        ],
+        "notes": [
+          "Fitted by the Sculptor as Sabimaru; absence does not prove missing after fitting."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Sabimaru",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Sabimaru"
+          }
+        ]
+      }
+    },
+    {
+      "id": "iron_fortress",
+      "category": "key_item",
+      "itemType": "prosthetic_source_item",
+      "name": "Iron Fortress",
+      "equipParamGoodsRowId": 9760,
+      "itemIdHex": "20260040",
+      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9760",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "20260040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9760: Iron Fortress.",
+          "details": "A goods inventory record with item ID 9760 means this raw Prosthetic Tool source item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Ashina Castle - Old Grave",
+        "source": "Blackhat Badger",
+        "npc": "Blackhat Badger",
+        "boss": null,
+        "chest": null,
+        "requirements": [
+          "Reach Old Grave and Blackhat Badger's shop"
+        ],
+        "notes": [
+          "Fitted by the Sculptor as Loaded Umbrella; absence does not prove source ownership because fitting consumes/transforms source items."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Iron Fortress",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Iron+Fortress"
+          }
+        ]
+      }
+    },
+    {
+      "id": "large_fan",
+      "category": "key_item",
+      "itemType": "prosthetic_source_item",
+      "name": "Large Fan",
+      "equipParamGoodsRowId": 9770,
+      "itemIdHex": "2A260040",
+      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9770",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "2A260040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9770: Large Fan.",
+          "details": "A goods inventory record with item ID 9770 means this raw Prosthetic Tool source item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Sunken Valley - Gun Fort",
+        "source": "Long-arm Centipede Giraffe room",
+        "npc": null,
+        "boss": "Long-arm Centipede Giraffe",
+        "chest": "Room pickup",
+        "requirements": [
+          "Reach Gun Fort",
+          "Defeat Long-arm Centipede Giraffe"
+        ],
+        "notes": [
+          "Fitted by the Sculptor as Divine Abduction; absence does not prove missing after fitting."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Large Fan",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Large+Fan"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gyoubus_broken_horn",
+      "category": "key_item",
+      "itemType": "prosthetic_source_item",
+      "name": "Gyoubu's Broken Horn",
+      "equipParamGoodsRowId": 9780,
+      "itemIdHex": "34260040",
+      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9780",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "34260040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9780: Gyoubu's Broken Horn.",
+          "details": "A goods inventory record with item ID 9780 means this raw Prosthetic Tool source item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Ashina Reservoir",
+        "source": "Gatehouse chest",
+        "npc": null,
+        "boss": null,
+        "chest": "Ashina Reservoir gatehouse chest",
+        "requirements": [
+          "Obtain the Gatehouse Key",
+          "Reach Ashina Reservoir gatehouse"
+        ],
+        "notes": [
+          "Fitted by the Sculptor as Loaded Spear; absence does not prove missing after fitting."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Gyoubu's Broken Horn",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Gyoubu%27s+Broken+Horn"
+          }
+        ]
+      }
+    },
+    {
+      "id": "slender_finger",
+      "category": "key_item",
+      "itemType": "prosthetic_source_item",
+      "name": "Slender Finger",
+      "equipParamGoodsRowId": 9790,
+      "itemIdHex": "3E260040",
+      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9790",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "3E260040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9790: Slender Finger.",
+          "details": "A goods inventory record with item ID 9790 means this raw Prosthetic Tool source item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Sunken Valley",
+        "source": "Guardian Ape",
+        "npc": null,
+        "boss": "Guardian Ape",
+        "chest": null,
+        "requirements": [
+          "Defeat Guardian Ape"
+        ],
+        "notes": [
+          "Fitted by the Sculptor as Finger Whistle; absence does not prove missing after fitting."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Slender Finger",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Slender+Finger"
+          }
+        ]
+      }
+    },
+    {
+      "id": "malcontents_ring",
+      "category": "key_item",
+      "itemType": "prosthetic_upgrade_source_item",
+      "name": "Malcontent's Ring",
+      "equipParamGoodsRowId": 9791,
+      "itemIdHex": "3F260040",
+      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "sourceReferences": [
+        {
+          "type": "param",
+          "label": "EquipParamGoods row 9791",
+          "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "inventoryItem",
+          "type": "inventory_item",
+          "itemIdHex": "3F260040",
+          "confidence": "verified",
+          "source": "EquipParamGoods row 9791: Malcontent's Ring.",
+          "details": "A goods inventory record with item ID 9791 means this Prosthetic Tool upgrade source item is currently present."
+        }
+      ],
+      "statusRules": [
+        {
+          "status": "collected",
+          "confidence": "verified",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": true
+            }
+          ]
+        },
+        {
+          "status": "unknown",
+          "confidence": "unknown",
+          "when": [
+            {
+              "evidenceId": "inventoryItem",
+              "state": false
+            }
+          ]
+        }
+      ],
+      "acquisitionMetadata": {
+        "area": "Ashina Depths",
+        "source": "Shichimen Warrior in Guardian Ape's Burrow",
+        "npc": null,
+        "boss": "Shichimen Warrior",
+        "chest": null,
+        "requirements": [
+          "Defeat Headless Ape encounter",
+          "Defeat the Shichimen Warrior in Guardian Ape's Burrow"
+        ],
+        "notes": [
+          "Used for Malcontent whistle upgrade; absence does not prove upgrade-source availability."
+        ],
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-wiki",
+            "label": "Fextralife Malcontent's Ring",
+            "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Malcontent%27s+Ring"
+          }
+        ]
+      }
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "prosthetic_source_item_consumption",
+      "confidence": "Unknown",
+      "details": "Raw Prosthetic Tool source goods are consumed or transformed when fitted, so absence of these goods is not promoted to missing."
+    },
+    {
+      "id": "quest_context_item_retention",
+      "confidence": "Unknown",
+      "details": "Some quest-context texts may be consumed, transformed, or superseded. Their absence is reported as unknown until retention semantics are verified."
+    },
+    {
+      "id": "key_item_acquisition_flags",
+      "confidence": "Unknown",
+      "details": "Acquisition event flags for these key items are not mapped yet; ownership status uses inventory evidence only."
+    }
+  ]
+}
