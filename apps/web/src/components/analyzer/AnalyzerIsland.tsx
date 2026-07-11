@@ -126,6 +126,7 @@ function normalized(value: unknown): string {
 
 function titleCase(value: unknown): string {
   return String(value ?? 'unknown')
+    .replace(/([a-z\d])([A-Z])/g, '$1 $2')
     .replaceAll('_', ' ')
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
@@ -255,12 +256,9 @@ function EntityDetails({ entity }: { entity: AnyRecord }) {
     <div className="space-y-5 border-t pt-4">
       {acquisition.length > 0 && (
         <section aria-label="Acquisition metadata">
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Acquisition
-          </h4>
-          <dl className="mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+          <dl className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
             {acquisition.map(([label, value]) => (
-              <div key={`${label}-${value}`} className="grid gap-0.5">
+              <div key={`${label}-${value}`} className="flex flex-col gap-0.5">
                 <dt className="text-xs text-muted-foreground">{label}</dt>
                 <dd className="leading-6 text-foreground">{value}</dd>
               </div>
@@ -320,7 +318,7 @@ function CategoryCard({
 
   return (
     <Card id={definition.key}>
-      <CardHeader className="border-b">
+      <CardHeader className="border-b has-data-[slot=card-description]:grid-rows-[auto] gap-y-4">
         <div className="flex items-start gap-3">
           <div className="grid size-10 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
             <Icon className="size-5" aria-hidden="true" />
@@ -330,12 +328,12 @@ function CategoryCard({
             <CardDescription>{definition.description}</CardDescription>
           </div>
         </div>
-        <CardAction>
+        <CardAction className="row-span-1">
           <span className="text-sm font-medium tabular-nums">
             {complete} / {total}
           </span>
         </CardAction>
-        <div className="col-span-full mt-2">
+        <div className="col-span-full">
           <Progress
             value={percentage}
             aria-label={`${definition.label}: ${percentage}% complete`}
@@ -375,6 +373,7 @@ function CategoryCard({
               <AccordionItem
                 key={String(entity.id ?? entity.name)}
                 value={String(entity.id ?? entity.name)}
+                className="data-open:bg-transparent"
               >
                 <AccordionTrigger>
                   <div className="min-w-0 flex-1">
@@ -497,7 +496,7 @@ export default function AnalyzerIsland() {
     return (
       <div className="space-y-6" aria-live="polite">
         <Card>
-          <CardHeader className="border-b">
+          <CardHeader className="border-b has-data-[slot=card-description]:grid-rows-[auto]">
             <div className="flex items-start gap-3">
               <div className="grid size-10 place-items-center rounded-xl bg-primary/10">
                 <FileCheck2
@@ -512,7 +511,7 @@ export default function AnalyzerIsland() {
                 </CardDescription>
               </div>
             </div>
-            <CardAction>
+            <CardAction className="row-span-1">
               <Badge>{issueCount} items to review</Badge>
             </CardAction>
           </CardHeader>
@@ -537,7 +536,7 @@ export default function AnalyzerIsland() {
           role="tablist"
           aria-label="Analysis categories"
         >
-          <div className="flex gap-2 overflow-x-auto pb-1">
+          <div className="flex gap-2 overflow-x-auto">
             {categories.map((definition, index) => {
               const selected = definition.key === activeCategory;
               return (
