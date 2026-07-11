@@ -1,0 +1,89 @@
+---
+import "../styles/global.css"
+import "../styles/site.css"
+
+interface Props {
+  title: string
+  description: string
+  canonicalPath?: string
+}
+
+const { title, description, canonicalPath = Astro.url.pathname } = Astro.props
+const siteName = "Save Analyzer"
+const fullTitle = title === siteName ? title : `${title} · ${siteName}`
+const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin)
+const ogImage = new URL("/og.png", Astro.site ?? Astro.url.origin)
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#9a4d14" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <title>{fullTitle}</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="Save Analyzer — private, in-browser Sekiro save analysis" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <script is:inline>
+      const storedTheme = localStorage.getItem("save-analyzer-theme")
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+      document.documentElement.classList.toggle("dark", storedTheme === "dark" || (!storedTheme && prefersDark))
+    </script>
+  </head>
+  <body class="min-h-screen antialiased">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="sticky top-0 z-50 border-b bg-background/88 backdrop-blur-xl">
+      <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <a href="/" class="group inline-flex items-center gap-2.5 font-semibold tracking-tight" aria-label="Save Analyzer home">
+          <span class="grid size-8 place-items-center rounded-lg bg-primary text-sm font-bold text-primary-foreground shadow-sm">SA</span>
+          <span>Save Analyzer</span>
+        </a>
+        <nav class="flex items-center gap-1" aria-label="Main navigation">
+          <a class="nav-link hidden sm:inline-flex" href="/games/sekiro/">Sekiro</a>
+          <a class="nav-link" href="/games/sekiro/#analyzer">Analyze</a>
+          <a class="nav-link hidden sm:inline-flex" href="/privacy/">Privacy</a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <span class="dark:hidden" aria-hidden="true">☾</span>
+            <span class="hidden dark:inline" aria-hidden="true">☀</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main id="main-content">
+      <slot />
+    </main>
+    <footer class="border-t bg-muted/30">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:grid-cols-2 sm:px-6 lg:px-8">
+        <div>
+          <p class="font-semibold">Save Analyzer</p>
+          <p class="mt-2 max-w-md text-sm leading-6 text-muted-foreground">Understand your Sekiro progress without sending your save file anywhere.</p>
+        </div>
+        <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm sm:justify-end" aria-label="Footer navigation">
+          <a class="text-muted-foreground transition-colors hover:text-foreground" href="/games/sekiro/#analyzer">Analyze a save</a>
+          <a class="text-muted-foreground transition-colors hover:text-foreground" href="/games/sekiro/">Sekiro guide</a>
+          <a class="text-muted-foreground transition-colors hover:text-foreground" href="/privacy/">Privacy</a>
+        </nav>
+      </div>
+      <div class="border-t px-4 py-5 text-center text-xs text-muted-foreground">Not affiliated with FromSoftware or Activision. Sekiro: Shadows Die Twice is a trademark of its respective owners.</div>
+    </footer>
+    <script is:inline>
+      document.querySelector("#theme-toggle")?.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.toggle("dark")
+        localStorage.setItem("save-analyzer-theme", isDark ? "dark" : "light")
+      })
+    </script>
+  </body>
+</html>

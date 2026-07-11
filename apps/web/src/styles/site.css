@@ -1,0 +1,38 @@
+@reference "./global.css";
+
+@layer base {
+  body { background-image: radial-gradient(circle at 10% 0%, color-mix(in oklch, var(--primary) 7%, transparent) 0, transparent 26rem); }
+  code { @apply rounded bg-muted px-1.5 py-0.5 font-mono text-[0.9em]; }
+  ::selection { background: color-mix(in oklch, var(--primary) 25%, transparent); }
+}
+
+@layer components {
+  .skip-link { @apply fixed start-4 top-4 z-[100] -translate-y-20 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-transform focus:translate-y-0; }
+  .nav-link { @apply inline-flex h-9 items-center justify-center rounded-full px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring; }
+  .theme-toggle { @apply ms-1 grid size-9 place-items-center rounded-full border bg-background text-lg transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring; }
+  .hero-grid { background-image: linear-gradient(to right, color-mix(in oklch, var(--border) 55%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in oklch, var(--border) 55%, transparent) 1px, transparent 1px); background-size: 56px 56px; background-position: center; }
+  .eyebrow { @apply inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em] text-primary; }
+  .eyebrow svg { @apply size-4; }
+  .button-link { @apply inline-flex h-11 items-center justify-center gap-2 rounded-full border px-5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background; }
+  .button-link svg { @apply size-4; }
+  .button-link-primary { @apply border-primary bg-primary text-primary-foreground shadow-sm hover:bg-primary/85; }
+  .button-link-secondary { @apply bg-background hover:bg-muted; }
+  .result-preview { @apply flex items-center justify-between rounded-lg border bg-background p-3 text-sm; }
+  .result-preview span { @apply text-muted-foreground; }
+  .result-preview-warn { @apply border-primary/25 bg-primary/5; }
+  .result-preview-warn strong { @apply text-primary; }
+  .privacy-strip { @apply grid overflow-hidden rounded-xl border bg-card shadow-sm sm:grid-cols-3; }
+  .privacy-point { @apply flex items-start gap-3 border-b p-4 last:border-b-0 sm:border-b-0 sm:border-e sm:last:border-e-0; }
+  .privacy-point svg { @apply mt-0.5 size-5 shrink-0 text-primary; }
+  .privacy-point span { @apply text-xs leading-5 text-muted-foreground; }
+  .privacy-point strong { @apply block text-sm font-medium text-foreground; }
+  .step-row { @apply grid grid-cols-[3rem_1fr] gap-4 border-t pt-6 first:border-t-0 first:pt-0; }
+  .step-row > span { @apply font-mono text-sm text-primary; }
+  .step-row h3 { @apply font-semibold; }
+  .step-row p { @apply mt-1 text-sm leading-6 text-muted-foreground; }
+  .prose-page { @apply mx-auto max-w-4xl space-y-16 px-4 py-16 sm:px-6 sm:py-20 lg:px-8; }
+  .prose-page h2 { @apply text-2xl font-semibold tracking-tight; }
+  .prose-page h3 { @apply font-semibold; }
+  .prose-page p, .prose-page li { @apply mt-3 leading-7 text-muted-foreground; }
+  .prose-page ul { @apply mt-4 list-disc space-y-1 ps-5; }
+}

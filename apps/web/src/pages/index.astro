@@ -1,0 +1,100 @@
+---
+import { ArrowRight, CheckCircle2, FileSearch, LockKeyhole, ScanSearch, Sparkles } from "lucide-react"
+import PrivacyStrip from "../components/PrivacyStrip.astro"
+import BaseLayout from "../layouts/BaseLayout.astro"
+---
+
+<BaseLayout
+  title="Save Analyzer"
+  description="Analyze your Sekiro save file privately in your browser. Find missing Gourd Seeds, Prayer Beads, skills, prosthetics, endings, and more."
+>
+  <section class="hero-grid overflow-hidden border-b">
+    <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 sm:py-28 lg:grid-cols-[1.1fr_.9fr] lg:px-8 lg:py-32">
+      <div>
+        <div class="eyebrow"><LockKeyhole aria-hidden="true" />Your save never leaves your device</div>
+        <h1 class="mt-6 max-w-4xl text-5xl font-semibold tracking-[-0.045em] text-balance sm:text-6xl lg:text-7xl">See what your Sekiro save is still missing.</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">Drop in a <code>.sl2</code> file for a private progress report—parsed and analyzed entirely inside your browser.</p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a class="button-link button-link-primary" href="/games/sekiro/#analyzer">Analyze my save <ArrowRight aria-hidden="true" /></a>
+          <a class="button-link button-link-secondary" href="/games/sekiro/">What can it detect?</a>
+        </div>
+        <p class="mt-4 text-sm text-muted-foreground">Free to use · No signup · Read-only analysis</p>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-xl" aria-label="Example analysis summary">
+        <div class="absolute -inset-12 -z-10 rounded-full bg-primary/10 blur-3xl"></div>
+        <div class="rounded-2xl border bg-card/95 p-5 shadow-2xl shadow-black/10 backdrop-blur sm:p-7">
+          <div class="flex items-center justify-between border-b pb-5">
+            <div>
+              <p class="text-sm font-medium">Sekiro progress</p>
+              <p class="mt-1 text-xs text-muted-foreground">S0000.sl2 · analyzed locally</p>
+            </div>
+            <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">Ready</span>
+          </div>
+          <div class="mt-5 grid gap-3 sm:grid-cols-2">
+            <div class="result-preview result-preview-warn"><span>Gourd Seeds</span><strong>2 missing</strong></div>
+            <div class="result-preview result-preview-warn"><span>Prayer Beads</span><strong>14 missing</strong></div>
+            <div class="result-preview"><span>Prosthetic Tools</span><strong>9 / 10</strong></div>
+            <div class="result-preview"><span>Skills</span><strong>29 / 57</strong></div>
+          </div>
+          <div class="mt-5 rounded-xl border bg-muted/40 p-4">
+            <div class="flex items-start gap-3">
+              <ScanSearch className="mt-0.5 size-5 text-primary" aria-hidden="true" />
+              <div><p class="text-sm font-medium">Actionable first</p><p class="mt-1 text-sm leading-6 text-muted-foreground">Missing, incomplete, and unknown results rise to the top.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <PrivacyStrip />
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <div class="max-w-2xl">
+      <div class="eyebrow"><Sparkles aria-hidden="true" />A completionist’s field guide</div>
+      <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">Eight progress categories, one clear report.</h2>
+      <p class="mt-4 text-lg leading-8 text-muted-foreground">The analyzer uses the frozen TypeScript ruleset to turn raw save evidence into a normalized, inspectable report.</p>
+    </div>
+    <div class="mt-10 grid gap-px overflow-hidden rounded-2xl border bg-border sm:grid-cols-2 lg:grid-cols-4">
+      {[
+        ["Gourd Seeds", "Exact pickup and shop status"],
+        ["Prayer Beads", "Locations and reconciliation"],
+        ["Prosthetic Tools", "Base tools and upgrades"],
+        ["Skills", "Combat arts and passives"],
+        ["Key Items", "Progression and route items"],
+        ["Endings", "Requirements and availability"],
+        ["Bosses", "Conservative detection"],
+        ["Guidance", "Acquisition details and practical notes"],
+      ].map(([name, copy]) => (
+        <article class="bg-card p-6">
+          <CheckCircle2 className="size-5 text-primary" aria-hidden="true" />
+          <h3 class="mt-5 font-semibold">{name}</h3>
+          <p class="mt-2 text-sm leading-6 text-muted-foreground">{copy}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="border-y bg-muted/35">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <div>
+        <div class="eyebrow"><FileSearch aria-hidden="true" />How it works</div>
+        <h2 class="mt-5 text-3xl font-semibold tracking-tight">From save file to useful next steps.</h2>
+      </div>
+      <ol class="space-y-6">
+        <li class="step-row"><span>01</span><div><h3>Choose your save</h3><p>Select or drop a Sekiro <code>.sl2</code> file into the analyzer.</p></div></li>
+        <li class="step-row"><span>02</span><div><h3>Analyze locally</h3><p>The browser reads the file, runs the parser, and executes the analyzer on-device.</p></div></li>
+        <li class="step-row"><span>03</span><div><h3>Review your results</h3><p>Open each category to inspect status, acquisition guidance, and practical notes.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Ready to check your progress?</h2>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">Your file stays on your device from start to finish.</p>
+    <a class="button-link button-link-primary mt-8" href="/games/sekiro/#analyzer">Open Save Analyzer <ArrowRight aria-hidden="true" /></a>
+  </section>
+</BaseLayout>

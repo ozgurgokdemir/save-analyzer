@@ -1,0 +1,55 @@
+---
+import { AlertTriangle, ArrowRight, BadgeCheck, MapPinned } from "lucide-react"
+import AnalyzerIsland from "../../components/analyzer/AnalyzerIsland"
+import PrivacyStrip from "../../components/PrivacyStrip.astro"
+import BaseLayout from "../../layouts/BaseLayout.astro"
+---
+
+<BaseLayout title="Sekiro Save File Analyzer" description="Learn what the Sekiro save analyzer detects: Gourd Seeds, Prayer Beads, prosthetics, skills, key items, endings, and conservative boss status.">
+  <article>
+    <header class="border-b bg-muted/20">
+      <div class="mx-auto max-w-4xl px-4 py-18 sm:px-6 sm:py-24 lg:px-8">
+        <div class="eyebrow"><MapPinned aria-hidden="true" />Sekiro: Shadows Die Twice</div>
+        <h1 class="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">A private Sekiro completion report from your save file.</h1>
+        <p class="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">The analyzer reads your PC <code>.sl2</code> save locally and organizes its verified signals into completion-focused categories.</p>
+        <a class="button-link button-link-primary mt-8" href="#analyzer">Analyze a Sekiro save <ArrowRight aria-hidden="true" /></a>
+      </div>
+    </header>
+    <section id="analyzer" class="scroll-mt-20 border-b" aria-labelledby="analyzer-heading">
+      <div class="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
+        <div class="mb-8 max-w-2xl">
+          <h2 id="analyzer-heading" class="text-3xl font-semibold tracking-tight">Analyze your Sekiro save</h2>
+          <p class="mt-3 text-base leading-7 text-muted-foreground">Choose your <code>.sl2</code> file. Parsing and analysis happen entirely in this browser tab.</p>
+        </div>
+        <PrivacyStrip />
+        <div class="mt-8"><AnalyzerIsland client:load /></div>
+      </div>
+    </section>
+    <div class="prose-page">
+      <section>
+        <h2>What the report includes</h2>
+        <p>Every result includes a normalized status. Expandable details point you toward the area, source, prerequisite, or route choice involved without exposing internal mapping data.</p>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2">
+          {[
+            ["Gourd Seeds", "All nine locations with exact pickup or shop status."],
+            ["Prayer Beads", "Forty sources reconciled against inventory-derived totals."],
+            ["Prosthetics", "Ten base tools and thirty mapped upgrades."],
+            ["Skills", "Mapped combat arts, latent skills, and martial arts."],
+            ["Key Items", "Progression, route, text, and ending-related inventory."],
+            ["Endings", "Completion, availability, missing requirements, and route blocks."],
+          ].map(([title, copy]) => (
+            <div class="rounded-xl border bg-card p-5"><BadgeCheck className="size-5 text-primary" aria-hidden="true" /><h3 class="mt-4">{title}</h3><p>{copy}</p></div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2>Why boss results are conservative</h2>
+        <div class="flex gap-4 rounded-xl border border-primary/20 bg-primary/5 p-5"><AlertTriangle className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" /><p class="m-0">Boss memory items and candidate event flags are useful evidence, but they are not treated as reliable, persistent proof of boss completion. Bosses may therefore remain <strong>unknown</strong> even when related signals are present.</p></div>
+      </section>
+      <section>
+        <h2>Supported save file</h2>
+        <p>The first release supports Sekiro PC save containers with the <code>.sl2</code> extension. The analyzer is read-only: it does not edit, repair, or replace your save. Back up important saves before using any game-modding tool, even though this analyzer never writes to the selected file.</p>
+      </section>
+    </div>
+  </article>
+</BaseLayout>
