@@ -7,9 +7,9 @@
 }
 
 @layer components {
+  .logo-wordmark { font-family: "Sora Variable", sans-serif; }
   .skip-link { @apply fixed start-4 top-4 z-[100] -translate-y-20 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-transform focus:translate-y-0; }
   .nav-link { @apply inline-flex h-9 items-center justify-center rounded-full px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring; }
-  .theme-toggle { @apply ms-1 grid size-9 place-items-center rounded-full border bg-background text-lg transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring; }
   .hero-grid { background-image: linear-gradient(to right, color-mix(in oklch, var(--border) 55%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in oklch, var(--border) 55%, transparent) 1px, transparent 1px); background-size: 56px 56px; background-position: center; }
   .eyebrow { @apply inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em] text-primary; }
   .eyebrow svg { @apply size-4; }

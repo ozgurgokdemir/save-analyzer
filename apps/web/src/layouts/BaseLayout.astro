@@ -1,19 +1,22 @@
 ---
-import "../styles/global.css"
-import "../styles/site.css"
-import Container from "../components/Container.astro"
+import '../styles/global.css';
+import '../styles/site.css';
+import Container from '../components/Container.astro';
+import { ThemeToggle } from '../components/ThemeToggle';
+import { buttonVariants } from '../components/ui/button';
+import { ChevronRight } from 'lucide-react';
 
 interface Props {
-  title: string
-  description: string
-  canonicalPath?: string
+  title: string;
+  description: string;
+  canonicalPath?: string;
 }
 
-const { title, description, canonicalPath = Astro.url.pathname } = Astro.props
-const siteName = "Save Analyzer"
-const fullTitle = title === siteName ? title : `${title} · ${siteName}`
-const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin)
-const ogImage = new URL("/og.png", Astro.site ?? Astro.url.origin)
+const { title, description, canonicalPath = Astro.url.pathname } = Astro.props;
+const siteName = 'Kindled';
+const fullTitle = title === siteName ? title : `${title} · ${siteName}`;
+const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
+const ogImage = new URL('/og.png', Astro.site ?? Astro.url.origin);
 ---
 
 <!doctype html>
@@ -33,33 +36,69 @@ const ogImage = new URL("/og.png", Astro.site ?? Astro.url.origin)
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:alt" content="Save Analyzer — private, in-browser Sekiro save analysis" />
+    <meta
+      property="og:image:alt"
+      content="Kindled — private, in-browser Sekiro save analysis"
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <script is:inline>
-      const storedTheme = localStorage.getItem("save-analyzer-theme")
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-      document.documentElement.classList.toggle("dark", storedTheme === "dark" || (!storedTheme && prefersDark))
+      const getThemePreference = () => {
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'dark' || storedTheme === 'theme-light')
+          return storedTheme;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'theme-light';
+      };
+      const theme = getThemePreference();
+      const isDark = theme === 'dark';
+      document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
     </script>
   </head>
   <body class="min-h-screen antialiased">
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="sticky top-0 z-50 border-b bg-background/88 backdrop-blur-xl">
-      <Container class="flex h-16 items-center justify-between">
-        <a href="/" class="group inline-flex items-center gap-2.5 font-semibold tracking-tight" aria-label="Save Analyzer home">
-          <span class="grid size-8 place-items-center rounded-lg bg-primary text-sm font-bold text-primary-foreground shadow-sm">SA</span>
-          <span>Save Analyzer</span>
+    <header
+      class="sticky top-0 z-50 border-b bg-background/88 backdrop-blur-xl"
+    >
+      <Container class="flex h-16 items-center">
+        <a
+          href="/"
+          class="group inline-flex items-center font-semibold tracking-tight text-lg"
+          aria-label="Kindled home"
+        >
+          <span class="logo-wordmark">Kindled</span>
         </a>
-        <nav class="flex items-center gap-1" aria-label="Main navigation">
-          <a class="nav-link hidden sm:inline-flex" href="/games/sekiro/">Sekiro</a>
-          <a class="nav-link" href="/games/sekiro/#analyzer">Analyze</a>
-          <a class="nav-link hidden sm:inline-flex" href="/privacy/">Privacy</a>
-          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
-            <span class="dark:hidden" aria-hidden="true">☾</span>
-            <span class="hidden dark:inline" aria-hidden="true">☀</span>
-          </button>
+        <nav
+          class="ms-6 flex flex-1 items-center gap-1"
+          aria-label="Main navigation"
+        >
+          <a
+            class={buttonVariants({
+              variant: 'ghost',
+              className: 'hidden sm:inline-flex',
+            })}
+            href="/games/sekiro/">Sekiro</a
+          >
+          <a
+            class={buttonVariants({
+              variant: 'ghost',
+              className: 'hidden sm:inline-flex',
+            })}
+            href="/privacy/">Privacy</a
+          >
+          <div class="ms-auto flex items-center gap-2">
+            <ThemeToggle client:load />
+            <a
+              class={buttonVariants({ variant: 'default' })}
+              href="/games/sekiro/#analyzer"
+            >
+              Analyze
+              <ChevronRight aria-hidden="true" />
+            </a>
+          </div>
         </nav>
       </Container>
     </header>
@@ -69,24 +108,36 @@ const ogImage = new URL("/og.png", Astro.site ?? Astro.url.origin)
     <footer class="border-t bg-muted/30">
       <Container class="grid gap-8 py-10 sm:grid-cols-2">
         <div>
-          <p class="font-semibold">Save Analyzer</p>
-          <p class="mt-2 max-w-md text-sm leading-6 text-muted-foreground">Understand your Sekiro progress without sending your save file anywhere.</p>
+          <p class="font-semibold">Kindled</p>
+          <p class="mt-2 max-w-md text-sm leading-6 text-muted-foreground">
+            Understand your Sekiro progress without sending your save file
+            anywhere.
+          </p>
         </div>
-        <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm sm:justify-end" aria-label="Footer navigation">
-          <a class="text-muted-foreground transition-colors hover:text-foreground" href="/games/sekiro/#analyzer">Analyze a save</a>
-          <a class="text-muted-foreground transition-colors hover:text-foreground" href="/games/sekiro/">Sekiro guide</a>
-          <a class="text-muted-foreground transition-colors hover:text-foreground" href="/privacy/">Privacy</a>
+        <nav
+          class="flex flex-wrap gap-x-6 gap-y-2 text-sm sm:justify-end"
+          aria-label="Footer navigation"
+        >
+          <a
+            class="text-muted-foreground transition-colors hover:text-foreground"
+            href="/games/sekiro/#analyzer">Analyze a save</a
+          >
+          <a
+            class="text-muted-foreground transition-colors hover:text-foreground"
+            href="/games/sekiro/">Sekiro guide</a
+          >
+          <a
+            class="text-muted-foreground transition-colors hover:text-foreground"
+            href="/privacy/">Privacy</a
+          >
         </nav>
       </Container>
       <div class="border-t">
-        <Container class="py-5 text-center text-xs text-muted-foreground">Not affiliated with FromSoftware or Activision. Sekiro: Shadows Die Twice is a trademark of its respective owners.</Container>
+        <Container class="py-5 text-center text-xs text-muted-foreground"
+          >Not affiliated with FromSoftware or Activision. Sekiro: Shadows Die
+          Twice is a trademark of its respective owners.</Container
+        >
       </div>
     </footer>
-    <script is:inline>
-      document.querySelector("#theme-toggle")?.addEventListener("click", () => {
-        const isDark = document.documentElement.classList.toggle("dark")
-        localStorage.setItem("save-analyzer-theme", isDark ? "dark" : "light")
-      })
-    </script>
   </body>
 </html>

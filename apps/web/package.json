@@ -19,6 +19,7 @@
     "@astrojs/sitemap": "^3.7.3",
     "@base-ui/react": "^1.6.0",
     "@fontsource-variable/geist": "^5.2.9",
+    "@fontsource-variable/sora": "5.2.8",
     "@save-analyzer/analyzer": "workspace:*",
     "@save-analyzer/parser": "workspace:*",
     "@save-analyzer/shared": "workspace:*",
