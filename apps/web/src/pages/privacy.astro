@@ -6,15 +6,12 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 
 <BaseLayout title="Privacy" description="How Save Analyzer protects your privacy: local browser analysis, no file uploads, no account, and no personal data collection.">
   <article>
-    <header class="border-b bg-muted/20">
-      <Container class="py-18 sm:py-24">
-        <div class="eyebrow"><FileLock2 aria-hidden="true" />Simple privacy, by architecture</div>
-        <h1 class="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">Your save stays yours.</h1>
-        <p class="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">Save Analyzer is built so that your game save never needs to leave your device.</p>
-      </Container>
-    </header>
-    <Container class="py-16 sm:py-20">
+    <Container class="py-14 sm:py-18">
       <div class="prose-page">
+      <header class="max-w-2xl">
+        <h1 class="text-3xl font-semibold tracking-tight">Privacy</h1>
+        <p>Your game save stays on your device. Save Analyzer processes it locally without accounts, uploads, or personal data collection.</p>
+      </header>
       <section class="grid gap-5 sm:grid-cols-3">
         <div class="rounded-xl border bg-card p-5"><FileLock2 className="size-5 text-primary" aria-hidden="true" /><h2 class="mt-4 text-lg">Local processing</h2><p>The selected file is read in your browser tab and passed directly to the parser and analyzer.</p></div>
         <div class="rounded-xl border bg-card p-5"><ServerOff className="size-5 text-primary" aria-hidden="true" /><h2 class="mt-4 text-lg">No upload endpoint</h2><p>The application has no API route or server-side save parsing pipeline.</p></div>
