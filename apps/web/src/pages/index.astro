@@ -1,5 +1,5 @@
 ---
-import { ArrowRight, CheckCircle2, FileSearch, LockKeyhole, ScanSearch, Sparkles } from "lucide-react"
+import { ArrowRight, CheckCircle2, FileCheck2, Gauge } from "lucide-react"
 import Container from "../components/Container.astro"
 import PrivacyStrip from "../components/PrivacyStrip.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
@@ -9,39 +9,76 @@ import BaseLayout from "../layouts/BaseLayout.astro"
   title="Kindled"
   description="Analyze your Sekiro save file privately in your browser. Find missing Gourd Seeds, Prayer Beads, skills, prosthetics, endings, and more."
 >
-  <section class="hero-grid overflow-hidden border-b">
-    <Container class="grid items-center gap-12 py-20 sm:py-28 lg:grid-cols-[1.1fr_.9fr] lg:py-32">
-      <div>
-        <div class="eyebrow"><LockKeyhole aria-hidden="true" />Your save never leaves your device</div>
-        <h1 class="mt-6 max-w-4xl text-5xl font-semibold tracking-[-0.045em] text-balance sm:text-6xl lg:text-7xl">See what your Sekiro save is still missing.</h1>
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">Drop in a <code>.sl2</code> file for a private progress report—parsed and analyzed entirely inside your browser.</p>
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+  <section class="overflow-hidden border-b">
+    <Container class="py-20 sm:py-28 lg:py-32">
+      <div class="mx-auto max-w-4xl text-center">
+        <h1 class="text-5xl font-semibold tracking-[-0.045em] text-balance sm:text-6xl lg:text-7xl">See what your save is still missing.</h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">Turn your save file into a private progress report—parsed and analyzed entirely inside your browser.</p>
+        <div class="mt-8">
           <a class="button-link button-link-primary" href="/games/sekiro/#analyzer">Analyze my save <ArrowRight aria-hidden="true" /></a>
-          <a class="button-link button-link-secondary" href="/games/sekiro/">What can it detect?</a>
         </div>
-        <p class="mt-4 text-sm text-muted-foreground">Free to use · No signup · Read-only analysis</p>
       </div>
 
-      <div class="relative mx-auto w-full max-w-xl" aria-label="Example analysis summary">
-        <div class="absolute -inset-12 -z-10 rounded-full bg-primary/10 blur-3xl"></div>
-        <div class="rounded-2xl border bg-card/95 p-5 shadow-2xl shadow-black/10 backdrop-blur sm:p-7">
-          <div class="flex items-center justify-between border-b pb-5">
-            <div>
-              <p class="text-sm font-medium">Sekiro progress</p>
-              <p class="mt-1 text-xs text-muted-foreground">S0000.sl2 · analyzed locally</p>
-            </div>
-            <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">Ready</span>
-          </div>
-          <div class="mt-5 grid gap-3 sm:grid-cols-2">
-            <div class="result-preview result-preview-warn"><span>Gourd Seeds</span><strong>2 missing</strong></div>
-            <div class="result-preview result-preview-warn"><span>Prayer Beads</span><strong>14 missing</strong></div>
-            <div class="result-preview"><span>Prosthetic Tools</span><strong>9 / 10</strong></div>
-            <div class="result-preview"><span>Skills</span><strong>29 / 57</strong></div>
-          </div>
-          <div class="mt-5 rounded-xl border bg-muted/40 p-4">
+      <div class="mx-auto mt-14 max-w-4xl sm:mt-16" aria-label="Example Sekiro analysis report">
+        <div class="overflow-hidden rounded-2xl border bg-card shadow-xl shadow-black/10">
+          <div class="flex flex-col gap-4 border-b p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
             <div class="flex items-start gap-3">
-              <ScanSearch className="mt-0.5 size-5 text-primary" aria-hidden="true" />
-              <div><p class="text-sm font-medium">Actionable first</p><p class="mt-1 text-sm leading-6 text-muted-foreground">Missing, incomplete, and unknown results rise to the top.</p></div>
+              <div class="grid size-10 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+                <FileCheck2 className="size-5" aria-hidden="true" />
+              </div>
+              <div>
+                <p class="font-medium">Analysis complete</p>
+                <p class="text-sm text-muted-foreground">S0000.sl2 · slot 1</p>
+              </div>
+            </div>
+            <span class="inline-flex h-5 w-fit shrink-0 items-center justify-center rounded-4xl border border-transparent bg-primary px-2 py-0.5 text-xs font-medium whitespace-nowrap text-primary-foreground">16 items to review</span>
+          </div>
+
+          <div class="flex gap-2 overflow-hidden border-b px-5 py-4 sm:px-6" aria-label="Example analysis categories">
+            <span class="inline-flex h-8 shrink-0 items-center justify-center rounded-4xl border border-transparent bg-primary px-3 text-sm font-medium whitespace-nowrap text-primary-foreground">Gourd Seeds</span>
+            <span class="inline-flex h-8 shrink-0 items-center justify-center rounded-4xl border border-border bg-input/30 px-3 text-sm font-medium whitespace-nowrap">Prayer Beads</span>
+            <span class="inline-flex h-8 shrink-0 items-center justify-center rounded-4xl border border-border bg-input/30 px-3 text-sm font-medium whitespace-nowrap">Prosthetic Tools</span>
+            <span class="hidden h-8 shrink-0 items-center justify-center rounded-4xl border border-border bg-input/30 px-3 text-sm font-medium whitespace-nowrap sm:inline-flex">Skills</span>
+            <span class="hidden h-8 shrink-0 items-center justify-center rounded-4xl border border-border bg-input/30 px-3 text-sm font-medium whitespace-nowrap md:inline-flex">Key Items</span>
+          </div>
+
+          <div class="p-5 sm:p-6">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex items-start gap-3">
+                <div class="grid size-10 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+                  <Gauge className="size-5" aria-hidden="true" />
+                </div>
+                <div>
+                  <p class="font-medium">Gourd Seeds</p>
+                  <p class="text-sm text-muted-foreground">Pickup and merchant locations</p>
+                </div>
+              </div>
+              <span class="text-sm font-medium tabular-nums">7 / 9</span>
+            </div>
+
+            <div class="mt-5 h-2 overflow-hidden rounded-full bg-muted" role="img" aria-label="Gourd Seeds: 78% complete">
+              <div class="h-full w-[78%] rounded-full bg-primary"></div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full border bg-muted/30 px-2.5 py-1 text-xs font-medium"><strong class="tabular-nums">7</strong> Collected</span>
+              <span class="inline-flex items-center gap-1.5 rounded-full border bg-primary/5 px-2.5 py-1 text-xs font-medium"><strong class="tabular-nums">2</strong> Missing</span>
+            </div>
+
+            <div class="mt-5 divide-y border-t">
+              <div class="flex items-start justify-between gap-4 py-4 last:pb-0">
+                <div class="min-w-0">
+                  <p class="text-sm font-medium">Battlefield Memorial Mob purchase</p>
+                  <p class="mt-1 truncate text-xs text-muted-foreground">Ashina Outskirts · Vendor near Gyoubu arena</p>
+                </div>
+                <span class="group/badge inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-4xl border border-transparent bg-red-50 px-2 py-0.5 text-xs font-medium whitespace-nowrap text-red-700 transition-all dark:bg-red-950/50 dark:text-red-300">Missing</span>
+              </div>
+              <div class="flex items-start justify-between gap-4 py-4 last:pb-0">
+                <div class="min-w-0">
+                  <p class="text-sm font-medium">Upper Tower Antechamber chest</p>
+                  <p class="mt-1 truncate text-xs text-muted-foreground">Ashina Castle · Upper Tower – Antechamber</p>
+                </div>
+                <span class="group/badge inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-4xl border border-transparent bg-emerald-50 px-2 py-0.5 text-xs font-medium whitespace-nowrap text-emerald-700 transition-all dark:bg-emerald-950/50 dark:text-emerald-300">Collected</span>
+              </div>
             </div>
           </div>
         </div>
@@ -58,8 +95,7 @@ import BaseLayout from "../layouts/BaseLayout.astro"
   <section>
     <Container class="py-20">
     <div class="max-w-2xl">
-      <div class="eyebrow"><Sparkles aria-hidden="true" />A completionist’s field guide</div>
-      <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">Eight progress categories, one clear report.</h2>
+      <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Eight progress categories, one clear report.</h2>
       <p class="mt-4 text-lg leading-8 text-muted-foreground">The analyzer uses the frozen TypeScript ruleset to turn raw save evidence into a normalized, inspectable report.</p>
     </div>
     <div class="mt-10 grid gap-px overflow-hidden rounded-2xl border bg-border sm:grid-cols-2 lg:grid-cols-4">
@@ -86,8 +122,7 @@ import BaseLayout from "../layouts/BaseLayout.astro"
   <section class="border-y bg-muted/35">
     <Container class="grid gap-10 py-20 lg:grid-cols-2">
       <div>
-        <div class="eyebrow"><FileSearch aria-hidden="true" />How it works</div>
-        <h2 class="mt-5 text-3xl font-semibold tracking-tight">From save file to useful next steps.</h2>
+        <h2 class="text-3xl font-semibold tracking-tight">From save file to useful next steps.</h2>
       </div>
       <ol class="space-y-6">
         <li class="step-row"><span>01</span><div><h3>Choose your save</h3><p>Select or drop a Sekiro <code>.sl2</code> file into the analyzer.</p></div></li>
