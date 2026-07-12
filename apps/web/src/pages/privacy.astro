@@ -1,18 +1,20 @@
 ---
 import { FileLock2, ServerOff, UserRoundX } from "lucide-react"
+import Container from "../components/Container.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
 ---
 
 <BaseLayout title="Privacy" description="How Save Analyzer protects your privacy: local browser analysis, no file uploads, no account, and no personal data collection.">
   <article>
     <header class="border-b bg-muted/20">
-      <div class="mx-auto max-w-4xl px-4 py-18 sm:px-6 sm:py-24 lg:px-8">
+      <Container class="py-18 sm:py-24">
         <div class="eyebrow"><FileLock2 aria-hidden="true" />Simple privacy, by architecture</div>
         <h1 class="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">Your save stays yours.</h1>
         <p class="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">Save Analyzer is built so that your game save never needs to leave your device.</p>
-      </div>
+      </Container>
     </header>
-    <div class="prose-page">
+    <Container class="py-16 sm:py-20">
+      <div class="prose-page">
       <section class="grid gap-5 sm:grid-cols-3">
         <div class="rounded-xl border bg-card p-5"><FileLock2 className="size-5 text-primary" aria-hidden="true" /><h2 class="mt-4 text-lg">Local processing</h2><p>The selected file is read in your browser tab and passed directly to the parser and analyzer.</p></div>
         <div class="rounded-xl border bg-card p-5"><ServerOff className="size-5 text-primary" aria-hidden="true" /><h2 class="mt-4 text-lg">No upload endpoint</h2><p>The application has no API route or server-side save parsing pipeline.</p></div>
@@ -20,6 +22,7 @@ import BaseLayout from "../layouts/BaseLayout.astro"
       </section>
       <section><h2>What happens when you select a file</h2><p>The browser obtains temporary access to the file you chose, reads it into memory as an <code>ArrayBuffer</code>, and runs the frozen TypeScript parser and analyzer. Results remain in the current page state. Refreshing or closing the page clears them.</p></section>
       <section><h2>What the app does not do</h2><ul><li>It does not upload, transmit, or store your save.</li><li>It does not require registration or authentication.</li><li>It does not edit the selected file.</li><li>It does not collect your report or save contents.</li></ul></section>
-    </div>
+      </div>
+    </Container>
   </article>
 </BaseLayout>

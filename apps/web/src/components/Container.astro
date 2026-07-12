@@ -1,0 +1,17 @@
+---
+type ContainerSize = "wide" | "default"
+
+interface Props {
+  size?: ContainerSize
+  class?: string
+}
+
+const { size = "default", class: className } = Astro.props
+const maxWidth = size === "wide" ? "max-w-[90rem]" : "max-w-[80rem]"
+---
+
+<div class="px-4">
+  <div class:list={["mx-auto w-full", maxWidth, className]}>
+    <slot />
+  </div>
+</div>

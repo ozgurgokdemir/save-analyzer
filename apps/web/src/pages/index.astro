@@ -1,5 +1,6 @@
 ---
 import { ArrowRight, CheckCircle2, FileSearch, LockKeyhole, ScanSearch, Sparkles } from "lucide-react"
+import Container from "../components/Container.astro"
 import PrivacyStrip from "../components/PrivacyStrip.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
 ---
@@ -9,7 +10,7 @@ import BaseLayout from "../layouts/BaseLayout.astro"
   description="Analyze your Sekiro save file privately in your browser. Find missing Gourd Seeds, Prayer Beads, skills, prosthetics, endings, and more."
 >
   <section class="hero-grid overflow-hidden border-b">
-    <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 sm:py-28 lg:grid-cols-[1.1fr_.9fr] lg:px-8 lg:py-32">
+    <Container class="grid items-center gap-12 py-20 sm:py-28 lg:grid-cols-[1.1fr_.9fr] lg:py-32">
       <div>
         <div class="eyebrow"><LockKeyhole aria-hidden="true" />Your save never leaves your device</div>
         <h1 class="mt-6 max-w-4xl text-5xl font-semibold tracking-[-0.045em] text-balance sm:text-6xl lg:text-7xl">See what your Sekiro save is still missing.</h1>
@@ -45,14 +46,17 @@ import BaseLayout from "../layouts/BaseLayout.astro"
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+  <section>
+    <Container class="py-10">
     <PrivacyStrip />
+    </Container>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+  <section>
+    <Container class="py-20">
     <div class="max-w-2xl">
       <div class="eyebrow"><Sparkles aria-hidden="true" />A completionist’s field guide</div>
       <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">Eight progress categories, one clear report.</h2>
@@ -76,10 +80,11 @@ import BaseLayout from "../layouts/BaseLayout.astro"
         </article>
       ))}
     </div>
+    </Container>
   </section>
 
   <section class="border-y bg-muted/35">
-    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <Container class="grid gap-10 py-20 lg:grid-cols-2">
       <div>
         <div class="eyebrow"><FileSearch aria-hidden="true" />How it works</div>
         <h2 class="mt-5 text-3xl font-semibold tracking-tight">From save file to useful next steps.</h2>
@@ -89,12 +94,14 @@ import BaseLayout from "../layouts/BaseLayout.astro"
         <li class="step-row"><span>02</span><div><h3>Analyze locally</h3><p>The browser reads the file, runs the parser, and executes the analyzer on-device.</p></div></li>
         <li class="step-row"><span>03</span><div><h3>Review your results</h3><p>Open each category to inspect status, acquisition guidance, and practical notes.</p></div></li>
       </ol>
-    </div>
+    </Container>
   </section>
 
-  <section class="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 lg:px-8">
+  <section>
+    <Container class="py-24 text-center">
     <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Ready to check your progress?</h2>
     <p class="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">Your file stays on your device from start to finish.</p>
     <a class="button-link button-link-primary mt-8" href="/games/sekiro/#analyzer">Open Save Analyzer <ArrowRight aria-hidden="true" /></a>
+    </Container>
   </section>
 </BaseLayout>

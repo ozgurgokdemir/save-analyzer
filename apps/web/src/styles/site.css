@@ -30,7 +30,7 @@
   .step-row > span { @apply font-mono text-sm text-primary; }
   .step-row h3 { @apply font-semibold; }
   .step-row p { @apply mt-1 text-sm leading-6 text-muted-foreground; }
-  .prose-page { @apply mx-auto max-w-4xl space-y-16 px-4 py-16 sm:px-6 sm:py-20 lg:px-8; }
+  .prose-page { @apply space-y-16; }
   .prose-page h2 { @apply text-2xl font-semibold tracking-tight; }
   .prose-page h3 { @apply font-semibold; }
   .prose-page p, .prose-page li { @apply mt-3 leading-7 text-muted-foreground; }
