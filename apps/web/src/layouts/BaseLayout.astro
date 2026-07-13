@@ -4,6 +4,7 @@ import '../styles/site.css';
 import Container from '../components/Container.astro';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { buttonVariants } from '../components/ui/button';
+import { cn } from '../lib/utils';
 import { ChevronRight } from 'lucide-react';
 
 interface Props {
@@ -76,23 +77,23 @@ const ogImage = new URL('/og.png', Astro.site ?? Astro.url.origin);
           aria-label="Main navigation"
         >
           <a
-            class={buttonVariants({
+            class={cn(buttonVariants({
               variant: 'ghost',
               className: 'hidden sm:inline-flex',
-            })}
+            }))}
             href="/games/sekiro/">Sekiro</a
           >
           <a
-            class={buttonVariants({
+            class={cn(buttonVariants({
               variant: 'ghost',
               className: 'hidden sm:inline-flex',
-            })}
+            }))}
             href="/privacy/">Privacy</a
           >
           <div class="ms-auto flex items-center gap-2">
             <ThemeToggle client:load />
             <a
-              class={buttonVariants({ variant: 'default' })}
+              class={cn(buttonVariants({ variant: 'default' }))}
               href="/games/sekiro/#analyzer"
             >
               Analyze
