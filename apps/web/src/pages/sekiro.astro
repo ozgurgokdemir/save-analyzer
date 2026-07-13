@@ -1,8 +1,9 @@
 ---
-import { AlertTriangle, BadgeCheck } from "lucide-react"
+import { AlertTriangle } from "lucide-react"
 import Container from "../components/Container.astro"
 import AnalyzerIsland from "../components/analyzer/AnalyzerIsland"
 import PrivacyStrip from "../components/PrivacyStrip.astro"
+import ReportCategories from "../components/ReportCategories.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
 ---
 
@@ -23,17 +24,8 @@ import BaseLayout from "../layouts/BaseLayout.astro"
       <section>
         <h2>What the report includes</h2>
         <p>Every result includes a normalized status. Expandable details point you toward the area, source, prerequisite, or route choice involved without exposing internal mapping data.</p>
-        <div class="mt-8 grid gap-4 sm:grid-cols-2">
-          {[
-            ["Gourd Seeds", "All nine locations with exact pickup or shop status."],
-            ["Prayer Beads", "Forty sources reconciled against inventory-derived totals."],
-            ["Prosthetics", "Ten base tools and thirty mapped upgrades."],
-            ["Skills", "Mapped combat arts, latent skills, and martial arts."],
-            ["Key Items", "Progression, route, text, and ending-related inventory."],
-            ["Endings", "Completion, availability, missing requirements, and route blocks."],
-          ].map(([title, copy]) => (
-            <div class="rounded-xl border bg-card p-5"><BadgeCheck className="size-5 text-primary" aria-hidden="true" /><h3 class="mt-4">{title}</h3><p>{copy}</p></div>
-          ))}
+        <div class="mt-8">
+          <ReportCategories />
         </div>
       </section>
       <section>

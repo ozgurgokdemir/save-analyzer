@@ -4,10 +4,7 @@ import {
   Anvil,
   Award,
   BookOpenCheck,
-  CheckCircle2,
-  CircleHelp,
   FileCheck2,
-  FileLock2,
   Gauge,
   KeyRound,
   LoaderCircle,
@@ -40,7 +37,6 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { Separator } from '@/components/ui/separator';
 import { sekiroStaticData } from '@/data/sekiro';
 import { cn } from '@/lib/utils';
 
@@ -598,14 +594,8 @@ export default function AnalyzerIsland() {
   }
 
   return (
-    <Card>
-      <CardHeader className="border-b">
-        <CardTitle>Select a save file</CardTitle>
-        <CardDescription>
-          Supported format: Sekiro PC <code>.sl2</code>
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="space-y-5">
+    <section>
+      <div className="space-y-5">
         <input
           ref={inputRef}
           id={inputId}
@@ -693,23 +683,7 @@ export default function AnalyzerIsland() {
             <AlertDescription>{error}</AlertDescription>
           </Alert>
         )}
-
-        <Separator />
-        <div className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-3">
-          <span className="flex items-center gap-2">
-            <FileLock2 className="size-4 text-primary" aria-hidden="true" />
-            Read only
-          </span>
-          <span className="flex items-center gap-2">
-            <CheckCircle2 className="size-4 text-primary" aria-hidden="true" />
-            No upload
-          </span>
-          <span className="flex items-center gap-2">
-            <CircleHelp className="size-4 text-primary" aria-hidden="true" />
-            Guidance included
-          </span>
-        </div>
-      </CardContent>
-    </Card>
+      </div>
+    </section>
   );
 }
