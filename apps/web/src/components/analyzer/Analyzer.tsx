@@ -17,7 +17,7 @@ import {
   XCircle,
   type LucideIcon,
 } from 'lucide-react';
-import { useId, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 
 import {
   Accordion,
@@ -41,6 +41,55 @@ import { sekiroStaticData } from '@/data/sekiro';
 import { cn } from '@/lib/utils';
 
 type AnalyzerState = 'idle' | 'analyzing' | 'complete' | 'error';
+
+interface StoredAnalysis {
+  version: 1;
+  fileName: string;
+  report: AnyRecord;
+}
+
+const gameId = 'sekiro';
+const analysisStorageKey = `analysis:${gameId}`;
+
+function getStoredAnalysis(): StoredAnalysis | null {
+  try {
+    const value = localStorage.getItem(analysisStorageKey);
+    if (!value) return null;
+
+    const stored = JSON.parse(value) as Partial<StoredAnalysis>;
+    if (
+      stored.version !== 1 ||
+      typeof stored.fileName !== 'string' ||
+      !stored.report ||
+      typeof stored.report !== 'object' ||
+      Array.isArray(stored.report)
+    ) {
+      localStorage.removeItem(analysisStorageKey);
+      return null;
+    }
+
+    return stored as StoredAnalysis;
+  } catch {
+    return null;
+  }
+}
+
+function storeAnalysis(analysis: StoredAnalysis) {
+  try {
+    localStorage.setItem(analysisStorageKey, JSON.stringify(analysis));
+  } catch {
+    // The analysis remains available for the current session if storage is
+    // unavailable or full.
+  }
+}
+
+function removeStoredAnalysis() {
+  try {
+    localStorage.removeItem(analysisStorageKey);
+  } catch {
+    // Reset the in-memory state even when storage is unavailable.
+  }
+}
 
 interface CategoryDefinition {
   key: string;
@@ -423,6 +472,15 @@ export default function Analyzer() {
   const [fileName, setFileName] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState(categories[0].key);
 
+  useEffect(() => {
+    const stored = getStoredAnalysis();
+    if (!stored) return;
+
+    setFileName(stored.fileName);
+    setReport(stored.report);
+    setState('complete');
+  }, []);
+
   async function analyzeFile(file: File) {
     setError(null);
     setReport(null);
@@ -451,6 +509,7 @@ export default function Analyzer() {
       const nextReport = await analyzeSekiroSave(buffer, sekiroStaticData, {
         fileName: file.name,
       });
+      storeAnalysis({ version: 1, fileName: file.name, report: nextReport });
       setReport(nextReport);
       setState('complete');
     } catch (nextError) {
@@ -462,6 +521,7 @@ export default function Analyzer() {
   }
 
   function reset() {
+    removeStoredAnalysis();
     setState('idle');
     setError(null);
     setReport(null);
