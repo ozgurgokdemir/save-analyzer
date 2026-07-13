@@ -550,7 +550,7 @@ export default function Analyzer() {
 
   if (state === 'complete' && report && shape) {
     return (
-      <div className="space-y-4" aria-live="polite">
+      <div className="space-y-8" aria-live="polite">
         <Card>
           <CardHeader className="border-b has-data-[slot=card-description]:grid-rows-[auto]">
             <div className="flex items-start gap-3">
@@ -587,12 +587,8 @@ export default function Analyzer() {
           </CardContent>
         </Card>
 
-        <div
-          className="sticky top-16 z-40 -mx-4 bg-background p-4"
-          role="tablist"
-          aria-label="Analysis categories"
-        >
-          <div className="flex gap-2 overflow-x-auto">
+        <div role="tablist" aria-label="Analysis categories">
+          <div className="flex gap-2">
             {categories.map((definition, index) => {
               const selected = definition.key === activeCategory;
               return (
