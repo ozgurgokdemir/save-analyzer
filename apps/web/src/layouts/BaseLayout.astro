@@ -61,9 +61,7 @@ const ogImage = new URL('/og.png', Astro.site ?? Astro.url.origin);
   </head>
   <body class="min-h-screen antialiased">
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <header
-      class="sticky top-0 z-50 border-b bg-background/88 backdrop-blur-xl"
-    >
+    <header class="sticky top-0 z-50 border-b bg-background">
       <Container class="flex h-16 items-center">
         <a
           href="/"
@@ -77,17 +75,21 @@ const ogImage = new URL('/og.png', Astro.site ?? Astro.url.origin);
           aria-label="Main navigation"
         >
           <a
-            class={cn(buttonVariants({
-              variant: 'ghost',
-              className: 'hidden sm:inline-flex',
-            }))}
+            class={cn(
+              buttonVariants({
+                variant: 'ghost',
+                className: 'hidden sm:inline-flex',
+              }),
+            )}
             href="/sekiro/">Sekiro</a
           >
           <a
-            class={cn(buttonVariants({
-              variant: 'ghost',
-              className: 'hidden sm:inline-flex',
-            }))}
+            class={cn(
+              buttonVariants({
+                variant: 'ghost',
+                className: 'hidden sm:inline-flex',
+              }),
+            )}
             href="/privacy/">Privacy</a
           >
           <div class="ms-auto flex items-center gap-2">

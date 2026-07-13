@@ -490,7 +490,7 @@ export default function AnalyzerIsland() {
 
   if (state === 'complete' && report && shape) {
     return (
-      <div className="space-y-6" aria-live="polite">
+      <div className="space-y-4" aria-live="polite">
         <Card>
           <CardHeader className="border-b has-data-[slot=card-description]:grid-rows-[auto]">
             <div className="flex items-start gap-3">
@@ -528,7 +528,7 @@ export default function AnalyzerIsland() {
         </Card>
 
         <div
-          className="sticky top-16 z-40 -mx-4 bg-background/55 px-4 py-3 backdrop-blur-sm"
+          className="sticky top-16 z-40 -mx-4 bg-background p-4"
           role="tablist"
           aria-label="Analysis categories"
         >
