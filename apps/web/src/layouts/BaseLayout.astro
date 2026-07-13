@@ -109,23 +109,25 @@ const ogImage = new URL('/og.png', Astro.site ?? Astro.url.origin);
     <footer class="border-t bg-muted/30">
       <Container class="grid gap-8 py-10 sm:grid-cols-2">
         <div>
-          <p class="font-semibold">Kindled</p>
+          <a
+            href="/"
+            class="group inline-flex items-center font-semibold tracking-tight text-lg"
+            aria-label="Kindled home"
+          >
+            <span class="logo-wordmark">Kindled</span>
+          </a>
           <p class="mt-2 max-w-md text-sm leading-6 text-muted-foreground">
-            Understand your Sekiro progress without sending your save file
-            anywhere.
+            Explore your progress, uncover what you’ve missed, and plan what
+            comes next. Your save files never leave your device.
           </p>
         </div>
         <nav
-          class="flex flex-wrap gap-x-6 gap-y-2 text-sm sm:justify-end"
+          class="flex flex-wrap self-start gap-x-6 gap-y-2 text-sm sm:justify-end"
           aria-label="Footer navigation"
         >
           <a
             class="text-muted-foreground transition-colors hover:text-foreground"
-            href="/sekiro/">Analyze a save</a
-          >
-          <a
-            class="text-muted-foreground transition-colors hover:text-foreground"
-            href="/sekiro/">Sekiro guide</a
+            href="/sekiro/">Sekiro</a
           >
           <a
             class="text-muted-foreground transition-colors hover:text-foreground"
@@ -133,12 +135,6 @@ const ogImage = new URL('/og.png', Astro.site ?? Astro.url.origin);
           >
         </nav>
       </Container>
-      <div class="border-t">
-        <Container class="py-5 text-center text-xs text-muted-foreground"
-          >Not affiliated with FromSoftware or Activision. Sekiro: Shadows Die
-          Twice is a trademark of its respective owners.</Container
-        >
-      </div>
     </footer>
   </body>
 </html>
