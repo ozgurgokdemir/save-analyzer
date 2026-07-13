@@ -1,7 +1,7 @@
 ---
 import { AlertTriangle } from "lucide-react"
 import Container from "../components/Container.astro"
-import AnalyzerIsland from "../components/analyzer/AnalyzerIsland"
+import Analyzer from "../components/analyzer/Analyzer"
 import PrivacyStrip from "../components/PrivacyStrip.astro"
 import ReportCategories from "../components/ReportCategories.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
@@ -16,7 +16,7 @@ import BaseLayout from "../layouts/BaseLayout.astro"
           <p class="mt-3 text-base leading-7 text-muted-foreground">Choose your <code>.sl2</code> file. Parsing and analysis happen entirely in this browser tab.</p>
         </div>
         <PrivacyStrip />
-        <div class="mt-8"><AnalyzerIsland client:load /></div>
+        <div class="mt-8"><Analyzer client:load /></div>
       </Container>
     </section>
     <Container class="py-16 sm:py-20">

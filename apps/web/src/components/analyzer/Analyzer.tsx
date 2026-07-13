@@ -413,7 +413,7 @@ function getFriendlyError(error: unknown): string {
   return `The save could not be analyzed: ${message}`;
 }
 
-export default function AnalyzerIsland() {
+export default function Analyzer() {
   const inputId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
   const [state, setState] = useState<AnalyzerState>('idle');
