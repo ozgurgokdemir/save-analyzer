@@ -21,7 +21,6 @@
     "@fontsource-variable/geist": "^5.2.9",
     "@fontsource-variable/sora": "5.2.8",
     "@save-analyzer/analyzer": "workspace:*",
-    "@save-analyzer/parser": "workspace:*",
     "@save-analyzer/shared": "workspace:*",
     "@tailwindcss/vite": "^4.3.2",
     "@types/react": "^19.2.17",

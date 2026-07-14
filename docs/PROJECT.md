@@ -1,10 +1,10 @@
 # Save Analyzer Project
 
-Last updated: 2026-07-09
+Last updated: 2026-07-14
 
 ## Project Overview
 
-Save Analyzer is a local, evidence-driven save parser for FromSoftware save files. The current project focuses on Sekiro: Shadows Die Twice and uses a Python reference implementation to verify parser behavior before porting the analyzer to TypeScript and building a browser-based web app.
+Kindled is a local, evidence-driven game save analyzer. The browser app, shared report model, and package layout are designed to support multiple games; Sekiro: Shadows Die Twice is the currently implemented game.
 
 The analyzer reads a `.sl2` save file, extracts the active `USER_DATA000` slot from the BND4 container, reads inventory records and event flags, and produces a normalized report for gameplay progress categories such as Gourd Seeds, Prayer Beads, Prosthetic Tools, Skills, Key Items, and Endings.
 
@@ -12,9 +12,9 @@ The project is intentionally conservative. A location, item, skill, or route is 
 
 ## Vision
 
-The long-term goal is a privacy-preserving save analyzer that runs locally in the user's browser. Users should be able to select a save file and receive a clear, source-backed checklist of what they have collected, what is missing, and what remains uncertain.
+Kindled is a privacy-preserving save analyzer that runs locally in the user's browser. Users can select a supported save file and receive a clear, source-backed checklist of what they have collected, what is missing, and what remains uncertain.
 
-The reference implementation exists to protect correctness while the project moves toward production. Future implementations, including TypeScript and possibly Rust, should be compared against the shared fixture and golden report in `research/`.
+Reference implementations protect correctness as game support evolves. Production analyzers and any future implementations should be compared against shared fixtures and golden reports in `research/`.
 
 ## Supported Games
 
@@ -22,16 +22,7 @@ Currently supported:
 
 - Sekiro: Shadows Die Twice
 
-Not yet supported:
-
-- Dark Souls
-- Dark Souls II
-- Dark Souls III
-- Bloodborne
-- Elden Ring
-- Other FromSoftware titles
-
-The repository structure is intended to support future games, but Sekiro is the only game with verified mappings today.
+Additional games can be integrated through game-specific parsers, analyzers, mappings, fixtures, and report categories while reusing the shared browser interface and normalized report model.
 
 ## Goals
 
@@ -39,13 +30,12 @@ The repository structure is intended to support future games, but Sekiro is the 
 - Keep all durable mappings in structured JSON under `data/sekiro/`.
 - Keep every research finding documented under `docs/research/`.
 - Use source-backed evidence only; do not guess.
-- Keep parser output normalized enough for a future web UI.
+- Keep parser output normalized for the shared web UI and future game integrations.
 - Maintain a language-neutral reference layout for comparing future implementations.
 - Parse saves locally without uploading or modifying user files.
 
 Non-goals for the current phase:
 
-- Building UI before the parser is reliable.
 - Treating boss Memory inventory as boss defeat proof.
 - Inferring ownership from prerequisites, route guidance, or community text alone.
 
@@ -102,7 +92,7 @@ Key roles:
 
 ## Analyzer Architecture
 
-The current analyzer is the Python reference implementation in `research/reference/analyzer.py`.
+The production implementation is the TypeScript parser and analyzer in `packages/parser` and `packages/analyzer`. The Python implementation in `research/reference/analyzer.py` remains the behavioral reference, and the TypeScript golden-parity tests protect the port against the frozen fixture and report.
 
 High-level flow:
 
@@ -358,41 +348,34 @@ Conclusion:
 - Boss completion flags are unresolved.
 - Ninjutsu ownership storage is unresolved.
 - Some acquisition metadata is probable community guidance, not verified save evidence.
-- The parser is not yet ported to TypeScript.
-- No production web UI exists yet.
-- Sekiro is the only supported game.
+- Browser-level regression coverage is not yet automated.
+- Only one game implementation is currently available.
 
-## Next Phase: TypeScript and Web App
+## Browser Web App
 
-The next phase is to port the analyzer to TypeScript while preserving behavior against the reference implementation.
+The Astro and React web app is implemented in `apps/web`. It imports the shared parser and analyzer packages plus each game's structured mappings and performs analysis in the browser without an upload endpoint.
 
-Porting expectations:
+Release checks:
 
-- Treat `research/reference/analyzer.py` as the reference implementation.
-- Treat `research/fixtures/S0000.sl2` as the shared fixture.
-- Treat `research/reports/exact_location_report.json` as the golden output.
-- Reuse `data/sekiro/*.json` directly.
-- Match the normalized entity model and category summaries.
-- Add TypeScript tests that compare output against the golden report.
-- Only after parity is reached, build the web app UI.
+```powershell
+pnpm test
+pnpm typecheck
+pnpm build
+```
 
-Web app expectations:
+Web app behavior:
 
-- Parse saves locally in the browser.
-- Never upload or mutate user saves.
-- Present verified statuses clearly.
-- Show unknowns honestly.
-- Link UI rows back to evidence and acquisition metadata.
-
+- Parses supported saves locally in the browser.
+- Never uploads or mutates user saves.
+- Stores the generated report and selected file name in browser storage for return visits.
+- Presents verified statuses and unknowns separately.
+- Exposes acquisition guidance while hiding internal mapping identifiers.
 ## Roadmap
 
-1. Keep the Python reference implementation stable.
-2. Create the TypeScript parser and analyzer.
-3. Build parity tests against `research/reports/exact_location_report.json`.
-4. Validate TypeScript output against the reference fixture.
-5. Add a browser file picker and local parsing pipeline.
-6. Build checklist views for verified categories.
-7. Add evidence detail views for advanced users.
-8. Continue boss flag research when reliable sources or additional test saves are available.
-9. Add more save fixtures to cover alternate routes, NG+, Offering Box states, and Ninjutsu states.
-10. Consider future support for other FromSoftware games once Sekiro is stable.
+1. Add independently sourced save fixtures covering alternate routes and progression states.
+2. Add NG+, Offering Box, Ninjutsu, and multi-slot regression cases.
+3. Add browser-level tests for file selection, analysis, category navigation, persistence, reset, and error handling.
+4. Add a defensive file-size limit and evaluate moving parsing off the main browser thread.
+5. Add and verify production security headers.
+6. Continue boss flag research when reliable persistent evidence becomes available.
+7. Add more games after the shared parser, analyzer, and report contracts are stable enough to support them cleanly.

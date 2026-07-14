@@ -1,43 +1,38 @@
-# Astro Starter Kit: Minimal
+# Kindled Web App
 
-```sh
-pnpm create astro@latest -- --template minimal
+This package contains Kindled's Astro and React browser interface. It loads game-specific parser and analyzer packages from the workspace and performs save analysis locally in the browser.
+
+The app has no upload endpoint and does not send save contents or generated reports to a server.
+
+## Development
+
+From the repository root:
+
+```powershell
+pnpm install
+pnpm --filter @save-analyzer/web dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The local site is available at `http://localhost:4321` by default.
 
-## 🚀 Project Structure
+## Verification
 
-Inside of your Astro project, you'll see the following folders and files:
+```powershell
+pnpm test
+pnpm typecheck
+pnpm build
+```
+
+These root commands run package tests, TypeScript and Astro diagnostics, and the production web build.
+
+## Structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/components/      Shared Astro and React UI
+src/components/analyzer/  Interactive save-analysis interface
+src/data/            Browser-facing game data imports
+src/layouts/         Shared page layouts and metadata
+src/pages/           Static routes
+src/styles/          Global and site-specific styles
+public/              Static public assets
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

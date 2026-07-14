@@ -38,9 +38,6 @@ importers:
       '@save-analyzer/analyzer':
         specifier: workspace:*
         version: link:../../packages/analyzer
-      '@save-analyzer/parser':
-        specifier: workspace:*
-        version: link:../../packages/parser
       '@save-analyzer/shared':
         specifier: workspace:*
         version: link:../../packages/shared

@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc -b",
-    "typecheck": "tsc -b",
+    "build": "tsc -b && pnpm --filter @save-analyzer/web build",
+    "typecheck": "tsc -b && pnpm --filter @save-analyzer/web check",
     "test": "node --experimental-strip-types --test \"packages/**/*.test.ts\""
   },
   "devDependencies": {
