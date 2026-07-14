@@ -4,6 +4,7 @@ import '../styles/site.css';
 import Container from '../components/Container.astro';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { buttonVariants } from '../components/ui/button';
+import { Separator } from '../components/ui/separator';
 import { cn } from '../lib/utils';
 import { ChevronRight } from 'lucide-react';
 
@@ -71,7 +72,7 @@ const ogImage = new URL('/og.png', Astro.site ?? Astro.url.origin);
           <span class="logo-wordmark">Kindled</span>
         </a>
         <nav
-          class="ms-6 flex flex-1 items-center gap-1"
+          class="ms-4 flex flex-1 items-center gap-1"
           aria-label="Main navigation"
         >
           <a
@@ -94,6 +95,10 @@ const ogImage = new URL('/og.png', Astro.site ?? Astro.url.origin);
           >
           <div class="ms-auto flex items-center gap-2">
             <ThemeToggle client:load />
+            <Separator
+              orientation="vertical"
+              className="h-4 data-vertical:self-center"
+            />
             <a
               class={cn(buttonVariants({ variant: 'default' }))}
               href="/sekiro/"
