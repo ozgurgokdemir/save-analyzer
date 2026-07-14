@@ -6,6 +6,7 @@ import ReportCategories from '../components/ReportCategories.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { buttonVariants } from '../components/ui/button';
 import { cn } from '../lib/utils';
+import { badgeVariants } from '@/components/ui/badge';
 ---
 
 <BaseLayout
@@ -29,8 +30,7 @@ import { cn } from '../lib/utils';
         <div class="mt-8">
           <a
             class={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
-            href="/sekiro/"
-            >Analyze my save <ArrowRight aria-hidden="true" /></a
+            href="/sekiro/">Analyze my save <ArrowRight aria-hidden="true" /></a
           >
         </div>
       </div>
@@ -56,25 +56,30 @@ import { cn } from '../lib/utils';
                 <p class="text-sm text-muted-foreground">S0000.sl2 · slot 1</p>
               </div>
             </div>
-            <span
-              class="inline-flex h-5 w-fit shrink-0 items-center justify-center rounded-4xl border border-transparent bg-primary px-2 py-0.5 text-xs font-medium whitespace-nowrap text-primary-foreground"
-              >16 items to review</span
-            >
+            <span class={cn(badgeVariants({ variant: 'outline' }))}>
+              16 items to review
+            </span>
           </div>
 
           <div
             class="flex gap-2 overflow-hidden border-b px-5 py-4 sm:px-6"
             aria-label="Example analysis categories"
           >
-            <span class={cn(buttonVariants({ variant: 'default', size: 'sm' }))}
-              >Gourd Seeds</span
+            <span
+              class={cn(buttonVariants({ variant: 'default', size: 'sm' }))}
             >
-            <span class={cn(buttonVariants({ variant: 'outline', size: 'sm' }))}
-              >Prayer Beads</span
+              Gourd Seeds
+            </span>
+            <span
+              class={cn(buttonVariants({ variant: 'outline', size: 'sm' }))}
             >
-            <span class={cn(buttonVariants({ variant: 'outline', size: 'sm' }))}
-              >Prosthetic Tools</span
+              Prayer Beads
+            </span>
+            <span
+              class={cn(buttonVariants({ variant: 'outline', size: 'sm' }))}
             >
+              Prosthetic Tools
+            </span>
             <span
               class={cn(
                 buttonVariants({
@@ -82,8 +87,10 @@ import { cn } from '../lib/utils';
                   size: 'sm',
                   className: 'hidden sm:inline-flex',
                 }),
-              )}>Skills</span
+              )}
             >
+              Skills
+            </span>
             <span
               class={cn(
                 buttonVariants({
@@ -91,8 +98,10 @@ import { cn } from '../lib/utils';
                   size: 'sm',
                   className: 'hidden md:inline-flex',
                 }),
-              )}>Key Items</span
+              )}
             >
+              Key Items
+            </span>
           </div>
 
           <div class="p-5 sm:p-6">
@@ -241,8 +250,7 @@ import { cn } from '../lib/utils';
         class={cn(
           buttonVariants({ variant: 'default', size: 'lg', className: 'mt-6' }),
         )}
-        href="/sekiro/"
-        >Open Save Analyzer <ArrowRight aria-hidden="true" /></a
+        href="/sekiro/">Open Save Analyzer <ArrowRight aria-hidden="true" /></a
       >
     </Container>
   </section>

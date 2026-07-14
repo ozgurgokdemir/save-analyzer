@@ -568,7 +568,7 @@ export default function Analyzer() {
               </div>
             </div>
             <CardAction className="row-span-1">
-              <Badge>{issueCount} items to review</Badge>
+              <Badge variant="outline">{issueCount} items to review</Badge>
             </CardAction>
           </CardHeader>
           <CardContent className="grid gap-4 sm:grid-cols-[1fr_auto] sm:items-end">
