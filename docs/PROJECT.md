@@ -219,7 +219,7 @@ Expected discipline:
 The current golden report SHA-256 is:
 
 ```text
-978E04A505A9EF2998E2B211700C33D796CBCA99D28E6E89217C59FE35B5867D
+0388322C3906A6D6B6B02EB580EE99BFC7DA51ADDE82F6318B59DE023B56B071
 ```
 
 ## Research Methodology
@@ -247,7 +247,7 @@ Confidence rules:
 
 ## Current Progress
 
-The current fixture is `research/fixtures/S0000.sl2`. It is a valid Sekiro BND4 save, and `USER_DATA000` is the active analyzed slot.
+The current fixture is `research/fixtures/S0000.sl2`. It preserves the valid Sekiro BND4 container structure, and `USER_DATA000` is the active analyzed slot. Steam account identifier bytes are neutralized; this changes only the fixture hash, not the analyzer evidence or expected category results.
 
 Verified categories:
 

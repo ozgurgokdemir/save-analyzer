@@ -67,7 +67,7 @@ Evidence/source:
 - sekiro-online `EquipParamGoods.csv`: https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv
 - Fextralife Endings page, used only for acquisition and route guidance: https://sekiroshadowsdietwice.wiki.fextralife.com/Endings
 - Fextralife Esoteric Text and Prosthetic source item pages, used only for acquisition guidance.
-- `S0000.sl2` SHA-256 `90f24808ee063c7b320298c739ac4bd0ce430831970f63a009d39ee2e3b615fc`
+- `S0000.sl2` SHA-256 `478bab165139cb4e5a5972ba6f52aeeba024aa10ca0226751f85a8a6e1905c7a`
 
 Confidence: Verified for mapped EquipParamGoods row IDs, current save inventory presence, and current save inventory absence. Probable for acquisition metadata from community guide pages. Unknown for quest-context retention semantics, Prosthetic Tool source item consumption state, and acquisition event flags.
 

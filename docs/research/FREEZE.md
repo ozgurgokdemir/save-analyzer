@@ -27,16 +27,16 @@ This document is intended to be the long-term reference for contributors impleme
 | Structured mappings | `data/sekiro/*.json` |
 | Research notes | `docs/research/*.md` |
 
-The provided fixture is `S0000.sl2`, the active analyzed slot is `USER_DATA000`, and the fixture SHA-256 is:
+The provided fixture is a privacy-sanitized `S0000.sl2`, the active analyzed slot is `USER_DATA000`, and the fixture SHA-256 is:
 
 ```text
-90f24808ee063c7b320298c739ac4bd0ce430831970f63a009d39ee2e3b615fc
+478bab165139cb4e5a5972ba6f52aeeba024aa10ca0226751f85a8a6e1905c7a
 ```
 
 The current golden report SHA-256 is:
 
 ```text
-978E04A505A9EF2998E2B211700C33D796CBCA99D28E6E89217C59FE35B5867D
+0388322C3906A6D6B6B02EB580EE99BFC7DA51ADDE82F6318B59DE023B56B071
 ```
 
 ## Required Commands

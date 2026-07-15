@@ -49,6 +49,8 @@ pnpm build
 
 The TypeScript Sekiro implementation matches the frozen golden report for the verified fixture. Its supported categories use evidence-backed status rules. Boss completion and Ninjutsu ownership remain intentionally unresolved where reliable save evidence is not yet available.
 
-The primary validation limitation is fixture breadth: the repository currently contains one verified real save. Additional saves covering alternate routes, NG+, Offering Box states, and Ninjutsu states remain part of the roadmap.
+The primary validation limitation is fixture breadth: the repository currently contains one verified fixture derived from a real save. Its Steam account identifier bytes are neutralized while the parser and analyzer evidence remains unchanged. Additional sanitized fixtures covering alternate routes, NG+, Offering Box states, and Ninjutsu states remain part of the roadmap.
 
 For the full architecture, methodology, status model, limitations, and roadmap, see [docs/PROJECT.md](docs/PROJECT.md).
+
+Kindled is an independent community project and is not affiliated with or endorsed by FromSoftware, Activision, or Valve. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for research-source and trademark notices.

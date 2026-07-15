@@ -5,7 +5,7 @@ Last updated: 2026-07-07
 ## BND4 container
 
 What was discovered:
-- `S0000.sl2` is a valid BND4 container.
+- The privacy-sanitized `S0000.sl2` preserves a valid BND4 container structure.
 - It contains 12 entries named `USER_DATA000` through `USER_DATA011`.
 - `USER_DATA000` is the populated active slot for the provided save.
 
@@ -15,7 +15,8 @@ How it was verified:
 
 Evidence/source:
 - Save fixture: `research/fixtures/S0000.sl2`
-- SHA-256: `90f24808ee063c7b320298c739ac4bd0ce430831970f63a009d39ee2e3b615fc`
+- SHA-256: `478bab165139cb4e5a5972ba6f52aeeba024aa10ca0226751f85a8a6e1905c7a`
+- Privacy treatment: SteamID64-range account identifier values are replaced with neutral bytes; parser and analyzer evidence is unchanged.
 - Generated report: `research/reports/exact_location_report.json`
 
 Confidence: Verified

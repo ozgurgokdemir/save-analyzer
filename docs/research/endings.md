@@ -53,7 +53,7 @@ Evidence/source:
 - `research/reference/tests/test_analyzer.py`
 - sekiro-online EquipParamGoods row data: https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv
 - Fextralife Endings page, used for community route requirements and final choice guidance: https://sekiroshadowsdietwice.wiki.fextralife.com/Endings
-- `S0000.sl2` SHA-256 `90f24808ee063c7b320298c739ac4bd0ce430831970f63a009d39ee2e3b615fc`
+- `S0000.sl2` SHA-256 `478bab165139cb4e5a5972ba6f52aeeba024aa10ca0226751f85a8a6e1905c7a`
 
 Confidence: Verified for EquipParamGoods row names/IDs and current save inventory presence/absence. Probable for route guidance and the Shura potential blocker derived from `Aromatic Branch`. Unknown for ending completion flags, detailed NPC quest-step flags, and verified permanent Shura route lockout evidence.
 

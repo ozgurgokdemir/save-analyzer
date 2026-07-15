@@ -43,7 +43,7 @@ How it was verified:
 
 Evidence/source:
 - `data/sekiro/skills.json`
-- `S0000.sl2` SHA-256 `90f24808ee063c7b320298c739ac4bd0ce430831970f63a009d39ee2e3b615fc`
+- `S0000.sl2` SHA-256 `478bab165139cb4e5a5972ba6f52aeeba024aa10ca0226751f85a8a6e1905c7a`
 - sekiro-online `SkillParam.csv`: https://github.com/sekiro-online/params/blob/master/src/SkillParam.csv
 - sekiro-online `EquipParamWeapon.csv`: https://github.com/sekiro-online/params/blob/master/src/EquipParamWeapon.csv
 - Fextralife Skills and Skill Trees page, used for community skill tree/name/cost/prerequisite context: https://sekiroshadowsdietwice.wiki.fextralife.com/Skills+and+Skill+Trees
@@ -106,7 +106,7 @@ How it was verified:
 
 Evidence/source:
 - `data/sekiro/skills.json`
-- `S0000.sl2` SHA-256 `90f24808ee063c7b320298c739ac4bd0ce430831970f63a009d39ee2e3b615fc`
+- `S0000.sl2` SHA-256 `478bab165139cb4e5a5972ba6f52aeeba024aa10ca0226751f85a8a6e1905c7a`
 - sekiro-online `SkillParam.csv`: https://github.com/sekiro-online/params/blob/master/src/SkillParam.csv
 - sekiro-online `EquipParamWeapon.csv`: https://github.com/sekiro-online/params/blob/master/src/EquipParamWeapon.csv
 - `research/reports/exact_location_report.json`

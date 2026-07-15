@@ -15,7 +15,7 @@
       "evidence": [
         {
           "type": "save-analysis",
-          "source": "S0000.sl2 sha256 90f24808ee063c7b320298c739ac4bd0ce430831970f63a009d39ee2e3b615fc",
+          "source": "S0000.sl2 sha256 478bab165139cb4e5a5972ba6f52aeeba024aa10ca0226751f85a8a6e1905c7a",
           "details": "At base 0xE8000, the six collected non-shop Gourd Seed flags are set, Sunken Valley flag 6724 is clear, Battlefield Memorial Mob shop flag 71101210 is set, Fujioka shop flag 71102000 is clear, and Abandoned Dungeon Memorial Mob Prayer Bead shop flag 71111000 is clear. Gourd Seed states exactly match the save's 7/9 Gourd Seed derived count. Prayer Bead primary event states are readable; 11 ON secondary Prayer Bead ItemLotParam flags reconcile the carried inventory-derived Prayer Bead count, and 13 OFF secondary ItemLotParam flags support the remaining missing-by-evidence locations. Boss Memory award flags from ItemLotParam rows 2001-2131 are also readable."
         },
         {

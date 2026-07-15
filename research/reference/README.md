@@ -8,7 +8,7 @@ The implementation is currently written in Python, but this directory is organiz
 
 - `analyzer.py` parses the BND4 `.sl2` container, extracts `USER_DATA000`, loads mappings from `../../data/sekiro`, and writes the normalized exact-location report.
 - `tests/` contains the reference behavior tests.
-- `../fixtures/S0000.sl2` is the shared read-only Sekiro save fixture.
+- `../fixtures/S0000.sl2` is the shared read-only, privacy-sanitized Sekiro save fixture. Steam account identifier bytes are neutralized without changing analyzer evidence.
 - `../reports/exact_location_report.json` is the shared golden report for implementation comparisons.
 
 ## Commands
