@@ -116,8 +116,8 @@ Confidence: Verified for this save
 What was discovered:
 - Boss Memory award flags are readable through the same `0xE8000` event flag layout.
 - Memory award flags are comparison evidence only; they are not treated as verified `defeated` boss evidence.
-- User verification confirms this first-playthrough save has `isshin_ashina` not defeated despite its Memory award flag reading ON.
-- User verification confirms `genichiro` was defeated, but candidate SoulSplitter flag `9303` reads OFF.
+- Manual fixture-playthrough verification establishes that `isshin_ashina` was not defeated in this first-playthrough save despite its Memory award flag reading ON.
+- Manual fixture-playthrough verification establishes that `genichiro` was defeated, but candidate SoulSplitter flag `9303` reads OFF.
 - `headless_ape` is uncertain; candidate SoulSplitter flag `9307` reads ON.
 - All boss statuses are therefore `unknown` until a verified boss defeat/progression flag is mapped.
 
@@ -158,8 +158,8 @@ What was discovered:
 - SoulSplitter's Sekiro split model stores Boss split values as `Flag`, and `SekiroSplitter` reads them via `ReadEventFlag`.
 - The current parser records these as `speedrunSplitFlagCandidate` evidence only.
 - These are not verified current-cycle boss defeated flags, and they do not change boss status.
-- User verification confirms `genichiro` was defeated; candidate flag `9303` reads OFF in `S0000.sl2`.
-- User verification confirms `isshin_ashina` has not been defeated; candidate flag `9316` reads OFF in `S0000.sl2`.
+- Manual fixture-playthrough verification establishes that `genichiro` was defeated; candidate flag `9303` reads OFF in `S0000.sl2`.
+- Manual fixture-playthrough verification establishes that `isshin_ashina` has not been defeated; candidate flag `9316` reads OFF in `S0000.sl2`.
 - The earlier `headless_ape` negative is no longer treated as verified; candidate flag `9307` reads ON.
 - Therefore SoulSplitter `930x` candidate split flags are not treated as reliable persistent boss-completion evidence, whether ON or OFF.
 

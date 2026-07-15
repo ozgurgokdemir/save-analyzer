@@ -36,7 +36,7 @@ The provided fixture is a privacy-sanitized `S0000.sl2`, the active analyzed slo
 The current golden report SHA-256 is:
 
 ```text
-0388322C3906A6D6B6B02EB580EE99BFC7DA51ADDE82F6318B59DE023B56B071
+93F28702200A29BC6E22783F9ACFE41C15B482B2AC83215ADB5A218FA915DE27
 ```
 
 ## Required Commands

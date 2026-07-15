@@ -40,7 +40,7 @@
         }
       ],
       "limitations": [
-        "SoulSplitter boss split flags 9301-9317 are readable from this save with the documented layout, but user verification shows they are not reliable persistent boss-completion evidence: Genichiro was defeated with 9303 OFF, Isshin Ashina was not defeated with 9316 OFF, and Headless Ape is uncertain with 9307 ON."
+        "SoulSplitter boss split flags 9301-9317 are readable from this save with the documented layout, but manual fixture-playthrough verification shows they are not reliable persistent boss-completion evidence: Genichiro was defeated with 9303 OFF, Isshin Ashina was not defeated with 9316 OFF, and Headless Ape is uncertain with 9307 ON."
       ]
     }
   ],

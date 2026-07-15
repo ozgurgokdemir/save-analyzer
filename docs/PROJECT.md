@@ -219,7 +219,7 @@ Expected discipline:
 The current golden report SHA-256 is:
 
 ```text
-0388322C3906A6D6B6B02EB580EE99BFC7DA51ADDE82F6318B59DE023B56B071
+93F28702200A29BC6E22783F9ACFE41C15B482B2AC83215ADB5A218FA915DE27
 ```
 
 ## Research Methodology
@@ -328,7 +328,7 @@ Bosses:
 
 Boss analysis is deferred because the investigated candidates are not reliable current-playthrough completion signals.
 
-Known facts from user verification and save research:
+Known facts from manual fixture-playthrough verification and save research:
 
 - Genichiro was defeated, but candidate speedrun split flag `9303` reads OFF.
 - Isshin Ashina was not defeated, and candidate flag `9316` reads OFF.

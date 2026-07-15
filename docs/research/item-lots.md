@@ -186,7 +186,7 @@ What was discovered:
 - Public EquipParamGoods rows verify goods IDs `5200` through `5213` as boss Memories.
 - Public ItemLotParam rows verify the Memory award row, goods ID, and `getItemFlagId` for each boss.
 - In `S0000.sl2`, 12 Memory award flags are ON and 2 are OFF.
-- User verification shows Memory award flags do not reliably represent current boss defeat state in this first-playthrough save, so these rows are comparison evidence only.
+- Manual fixture-playthrough verification shows that Memory award flags do not reliably represent current boss defeat state in this first-playthrough save, so these rows are comparison evidence only.
 
 | Boss | Goods ID | ItemLot row | Event flag | State in S0000 | Confidence |
 |---|---:|---:|---:|---|---|

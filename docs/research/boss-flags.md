@@ -9,10 +9,10 @@ What was discovered:
 - Public ItemLotParam row data maps 14 boss Memory award rows to event flags.
 - Public EquipParamGoods row data confirms goods IDs `5200` through `5213` are boss Memories.
 - In `S0000.sl2`, 12 boss Memory award flags are ON and 2 are OFF.
-- User verification confirms this save is a first playthrough.
-- User verification confirms `genichiro` was defeated, but candidate flag `9303` reads OFF.
-- User verification confirms `isshin_ashina` was not defeated, and candidate flag `9316` reads OFF.
-- User verification no longer treats `headless_ape` as a hard negative; it may have been defeated, and candidate flag `9307` reads ON.
+- Manual fixture-playthrough verification establishes that this save is a first playthrough.
+- Manual fixture-playthrough verification establishes that `genichiro` was defeated, but candidate flag `9303` reads OFF.
+- Manual fixture-playthrough verification establishes that `isshin_ashina` was not defeated, and candidate flag `9316` reads OFF.
+- Manual fixture-playthrough verification leaves `headless_ape` uncertain; it may have been defeated, and candidate flag `9307` reads ON.
 - Therefore Memory inventory and Memory award ItemLot flags are comparison evidence only.
 - SoulSplitter source maps Sekiro boss split enum values `9301` through `9317`, and its splitter reads Boss split values as event flags.
 - These SoulSplitter flags are now recorded as `speedrunSplitFlagCandidate` evidence only.
@@ -40,10 +40,10 @@ How it was verified:
 - Queried public `EquipParamGoods.csv` rows `5200` through `5213` to confirm the Memory names.
 - Queried public `ItemLotParam.csv` rows that award goods IDs `5200` through `5213`; each row has a `getItemFlagId`.
 - Read those event flags from `USER_DATA000` using the documented `0xE8000` event flag layout.
-- Applied the user-verified first-playthrough facts that Genichiro was defeated while candidate flag `9303` is OFF, Isshin Ashina was not defeated while candidate flag `9316` is OFF, and Headless Ape is uncertain while candidate flag `9307` is ON.
+- Applied the manually verified fixture-playthrough facts that Genichiro was defeated while candidate flag `9303` is OFF, Isshin Ashina was not defeated while candidate flag `9316` is OFF, and Headless Ape is uncertain while candidate flag `9307` is ON.
 - Read SoulSplitter `src/SoulMemory/Sekiro/Boss.cs`, `src/SoulSplitter/Splits/Sekiro/Split.cs`, and `src/SoulSplitter/Splitters/SekiroSplitter.cs`; Boss enum values are used as event flags for live boss splits.
 - Read the candidate split flags from `USER_DATA000` with the documented save flag layout.
-- Consistency concern: Genichiro candidate flag `9303` reads OFF despite the user-verified defeated fact, so the `930x` split flags are not reliable persistent save boss-completion flags.
+- Consistency concern: Genichiro candidate flag `9303` reads OFF despite the manually verified defeated state, so the `930x` split flags are not reliable persistent save boss-completion flags.
 - Consistency note: Isshin Ashina candidate flag `9316` is OFF and Headless Ape candidate flag `9307` is ON, but neither state is used to infer boss completion.
 - Added automated tests for all 14 boss Memory award flags, inventory-memory comparison signals, candidate SoulSplitter split flags, summary counts, and the regression that candidate/memory evidence cannot produce defeated status.
 
