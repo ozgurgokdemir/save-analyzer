@@ -1,96 +1,62 @@
 # Key Items Research
 
-Last updated: 2026-07-08
+Last updated: 2026-07-16
 
-## Inventory Evidence
+## Status evidence
 
-What was discovered:
-- Key Items are now analyzed as their own category with statuses `collected`, `missing`, and `unknown`.
-- Ownership detection uses only verified goods inventory records in `USER_DATA000`.
-- The mapped item IDs come from `EquipParamGoods.csv` rows for progression items, ending items, Esoteric Texts, and raw Prosthetic Tool source items.
-- The current save resolves 33 mapped Key Items as 12 collected, 6 missing, and 15 unknown.
-- Acquisition metadata is stored separately from ownership evidence. It is user guidance and does not drive item status.
-- The report keeps `ownershipEvidence` for readability and also exposes the same records through the normalized entity `evidence` field.
-- Quest-context items with unresolved retention/consumption semantics are `unknown` when absent.
-- Raw Prosthetic Tool source items are `unknown` when absent because they can be consumed or transformed when fitted by the Sculptor.
-- No Key Item acquisition event flags are mapped yet.
+Key Items use two verified evidence paths:
 
-| Key item | EquipParamGoods row | Item ID hex | State in S0000 | Status | Confidence |
-|---|---:|---|---|---|---|
-| Divine Dragon's Tears | 9000 | `28230040` | absent | missing | Verified |
-| Frozen Tears | 9091 | `83230040` | absent | missing | Verified |
-| Fresh Serpent Viscera | 9192 | `E8230040` | absent | missing | Verified |
-| Dried Serpent Viscera | 9193 | `E9230040` | present at `0x96980` | collected | Verified |
-| Father's Bell Charm | 9011 | `33230040` | absent | missing | Verified |
-| Aromatic Flower | 2503 | `C7090040` | absent | missing | Verified |
-| Aromatic Branch | 2502 | `C6090040` | present at `0x96960` | collected | Verified |
-| Mortal Blade | 2400 | `60090040` | present at `0x96920` | collected | Verified |
-| Shelter Stone | 2501 | `C5090040` | present at `0x96930` | collected | Verified |
-| Lotus of the Palace | 2500 | `C4090040` | present at `0x969a0` | collected | Verified |
-| Shinobi Esoteric Text | 2920 | `680B0040` | present at `0x967a0` | collected | Verified |
-| Prosthetic Esoteric Text | 2921 | `690B0040` | present at `0x967c0` | collected | Verified |
-| Ashina Esoteric Text | 2922 | `6A0B0040` | present at `0x96880` | collected | Verified |
-| Senpou Esoteric Text | 2923 | `6B0B0040` | present at `0x96900` | collected | Verified |
-| Mushin Esoteric Text | 2924 | `6C0B0040` | absent | missing | Verified |
-| Holy Chapter: Dragon's Return | 9209 | `F9230040` | absent | unknown | Unknown |
-| Immortal Severance Text | 9210 | `FA230040` | present at `0x96870` | collected | Verified |
-| Immortal Severance Scrap | 9211 | `FB230040` | present at `0x969b0` | collected | Verified |
-| Fragrant Flower Note | 9212 | `FC230040` | present at `0x96830` | collected | Verified |
-| Holy Chapter: Infested | 9215 | `FF230040` | absent | unknown | Unknown |
-| Holy Chapter: Infested alternate row | 9228 | `0C240040` | absent | unknown | Unknown |
-| Mechanical Barrel | 2910 | `5E0B0040` | absent | unknown | Unknown |
-| Shuriken Wheel | 9700 | `E4250040` | absent | unknown | Unknown |
-| Robert's Firecrackers | 9710 | `EE250040` | absent | unknown | Unknown |
-| Flame Barrel | 9720 | `F8250040` | absent | unknown | Unknown |
-| Shinobi Axe of the Monkey | 9730 | `02260040` | absent | unknown | Unknown |
-| Mist Raven's Feathers | 9740 | `0C260040` | absent | unknown | Unknown |
-| Sabimaru | 9750 | `16260040` | absent | unknown | Unknown |
-| Iron Fortress | 9760 | `20260040` | absent | unknown | Unknown |
-| Large Fan | 9770 | `2A260040` | absent | unknown | Unknown |
-| Gyoubu's Broken Horn | 9780 | `34260040` | absent | unknown | Unknown |
-| Slender Finger | 9790 | `3E260040` | absent | unknown | Unknown |
-| Malcontent's Ring | 9791 | `3F260040` | absent | unknown | Unknown |
+- retained items use goods inventory records in `USER_DATA000`;
+- consumed, transformed, or superseded items use persistent ItemLot/Shop acquisition flags.
 
-How it was verified:
-- Read `EquipParamGoods.csv` row IDs and names from the public `sekiro-online/params` dump.
-- Scanned `USER_DATA000` in `S0000.sl2` for each little-endian goods row ID plus `0x40` item category byte.
-- Required present records to match the same goods inventory shape already used by the parser, including the observed mirror-prefix pattern and quantity `1` for the current save records.
-- Added automated tests requiring every mapped Key Item to resolve to the exact current save status above.
-- Added tests requiring absent Prosthetic Tool source items and quest-context texts to remain `unknown` where retention semantics are unresolved.
-- Added schema consistency tests requiring Key Items to expose shared entity fields and status-keyed summary counts.
+A mapped item is `collected` when retained inventory is present or any mapped acquisition flag is ON. It is `missing` when retained inventory is absent and every mapped acquisition flag is OFF. It remains `unknown` only when the required evidence cannot be decoded. Community acquisition guidance never drives status.
+
+The reference fixture resolves all 33 mapped Key Items as 22 collected, 11 missing, and 0 unknown.
+
+## Acquisition-backed items
+
+| Key item | Persistent flag evidence | Reference status |
+|---|---|---|
+| Holy Chapter: Dragon's Return | ItemLot `52000010` | missing |
+| Holy Chapter: Infested | ItemLot `50006320` | missing |
+| Holy Chapter: Infested alternate row | ItemLot `50006320` | missing |
+| Mechanical Barrel | ItemLot `6740` | collected |
+| Shuriken Wheel | ItemLot `6500` | collected |
+| Robert's Firecrackers | Shop `71101000` or `71102300` | collected |
+| Flame Barrel | ItemLot `6502` | collected |
+| Shinobi Axe of the Monkey | ItemLot `6503` | collected |
+| Mist Raven's Feathers | ItemLot `6504` | collected |
+| Sabimaru | ItemLot `6505` | collected |
+| Iron Fortress | Shop `71111500` | missing |
+| Large Fan | ItemLot `6507` | collected |
+| Gyoubu's Broken Horn | ItemLot `6508` | collected |
+| Slender Finger | ItemLot `6509` | collected |
+| Malcontent's Ring | ItemLot `6743` | missing |
+
+The two Holy Chapter: Infested mappings represent alternate goods rows for the same logical item and intentionally share flag `50006320`. They therefore cannot be distinguished as separate pickups in a save.
+
+## Verification
+
+- `EquipParamGoods.csv` supplies mapped goods row identities.
+- `ItemLotParam.csv` and `ShopLineupParam.csv` supply persistent acquisition flags.
+- The verified event-flag decoder reads those flags from all three sanitized fixtures.
+- Regression tests assert zero unknown Key Items, exact summary counts, and the acquisition-backed missing set.
+- The privacy test covers every committed fixture.
 
 Evidence/source:
+
 - `data/sekiro/key-items.json`
-- `research/reference/analyzer.py`
-- `research/reports/exact_location_report.json`
-- `research/reference/tests/test_analyzer.py`
-- sekiro-online `EquipParamGoods.csv`: https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv
-- Fextralife Endings page, used only for acquisition and route guidance: https://sekiroshadowsdietwice.wiki.fextralife.com/Endings
-- Fextralife Esoteric Text and Prosthetic source item pages, used only for acquisition guidance.
-- `S0000.sl2` SHA-256 `478bab165139cb4e5a5972ba6f52aeeba024aa10ca0226751f85a8a6e1905c7a`
+- `packages/analyzer/src/sekiro/index.ts`
+- `packages/analyzer/test/sekiro-golden.test.ts`
+- `research/fixtures/README.md`
+- EquipParamGoods: https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv
+- ItemLotParam: https://github.com/sekiro-online/params/blob/master/src/ItemLotParam.csv
+- ShopLineupParam: https://github.com/sekiro-online/params/blob/master/src/ShopLineupParam.csv
 
-Confidence: Verified for mapped EquipParamGoods row IDs, current save inventory presence, and current save inventory absence. Probable for acquisition metadata from community guide pages. Unknown for quest-context retention semantics, Prosthetic Tool source item consumption state, and acquisition event flags.
+Confidence: Verified for mapped inventory and persistent acquisition evidence. Acquisition descriptions sourced only from community guides remain guidance-level metadata.
 
-## Endings Integration
+## Endings integration
 
-What was discovered:
-- Ending availability evidence now references Key Item analyzer entities with `type = key_item` and `keyItemId`.
-- Endings no longer duplicate their own Key Item table or perform separate status-driving inventory scans for route items.
-- Persistent missing Key Items can make a route `incomplete`.
-- Unknown Key Items stay unknown and do not become missing route requirements unless the ending mapping marks them as required and their retention semantics are verified.
-- `Holy Chapter` quest-context items remain advisory evidence for Return and are not used as blockers.
-- Ending evidence embeds compact Key Item references so route analysis and Key Item ownership stay synchronized.
+Ending availability references Key Item analyzer entities rather than duplicating inventory scans. Persistent missing route items can make an ending `incomplete`; `blocked` still requires verified permanent lockout evidence. Holy Chapter items are reported accurately in the Key Items category but remain advisory for Return route logic until the relevant quest-step and ending flags are mapped.
 
-How it was verified:
-- Updated `data/sekiro/endings.json` to reference `data/sekiro/key-items.json` IDs for all route item evidence.
-- Added automated tests requiring ending route evidence to include the compact referenced Key Item entity and its `ownershipEvidence`.
-- Confirmed the current ending summary remains: Shura `unknown`, Immortal Severance `incomplete`, Purification `incomplete`, Return `incomplete`.
-
-Evidence/source:
-- `data/sekiro/endings.json`
-- `data/sekiro/key-items.json`
-- `docs/research/endings.md`
-- `research/reference/tests/test_analyzer.py`
-- `research/reports/exact_location_report.json`
-
-Confidence: Verified for parser integration and current save output. Unknown for ending completion flags and hidden NPC quest-step flags.
+The reference ending summary remains Shura `unknown`, with Immortal Severance, Purification, and Return `incomplete`.

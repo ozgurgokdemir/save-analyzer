@@ -3,7 +3,6 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { describe, it } from "node:test";
 import {
-  eventFlagBitIndex,
   getUserSlot,
   parseBnd4,
   readEventFlag,
@@ -13,7 +12,7 @@ import {
 const root = path.resolve(import.meta.dirname, "../../..");
 
 async function readFixture(): Promise<ArrayBuffer> {
-  const buffer = await readFile(path.join(root, "research/fixtures/S0000.sl2"));
+  const buffer = await readFile(path.join(root, "research/fixtures/sekiro/001/S0000.sl2"));
   return buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength);
 }
 
@@ -48,15 +47,15 @@ describe("event flag and inventory readers", () => {
     const layoutData = await readJson("data/sekiro/event-flag-layout.json");
     const layout = layoutData.layouts[0];
 
-    assert.equal(layout.baseOffset, 0xe8000);
-    assert.equal(layout.bitIndexModulo, 1_000_000);
-    assert.equal(eventFlagBitIndex(6724, layout), 6724);
-    assert.equal(eventFlagBitIndex(71101210, layout), 101210);
-    assert.equal(eventFlagBitIndex(71102000, layout), 102000);
+    assert.equal(layout.recordId, 1000);
+    assert.equal(layout.recordVersion, 101);
+    assert.equal(layout.recordDataOffset, 0x34);
+    assert.equal(layout.pageSize, 0x80);
     assert.equal(readEventFlag(slot, 6723, layout), true);
-    assert.equal(readEventFlag(slot, 6724, layout), false);
+    assert.equal(readEventFlag(slot, 6724, layout), true);
+    assert.equal(readEventFlag(slot, 6728, layout), false);
     assert.equal(readEventFlag(slot, 71101210, layout), true);
-    assert.equal(readEventFlag(slot, 71102000, layout), false);
+    assert.equal(readEventFlag(slot, 71102000, layout), true);
   });
 
   it("reads inventory quantities used by derived counts", async () => {

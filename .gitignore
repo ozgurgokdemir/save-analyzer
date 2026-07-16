@@ -4,4 +4,4 @@ dist/
 __pycache__/
 *.py[cod]
 *.sl2
-!research/fixtures/S0000.sl2
+!research/fixtures/sekiro/*/S0000.sl2

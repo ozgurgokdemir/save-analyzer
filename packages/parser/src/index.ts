@@ -12,8 +12,17 @@ export interface ParsedSave {
 }
 
 export interface EventFlagLayout {
-  baseOffset: number;
-  bitIndexModulo?: number | null;
+  recordId: number;
+  recordVersion: number;
+  recordDataOffset: number;
+  pageSize: number;
+  pagesPerCategory: number;
+  serializedBankCategoryBases: Record<string, number>;
+  worldBlockCategories: Array<{
+    area: number;
+    block: number;
+    category: number;
+  }>;
 }
 
 export interface ItemRecord {
@@ -126,11 +135,34 @@ export function parseSave(buffer: ArrayBuffer): ParsedSave {
   };
 }
 
-export function eventFlagBitIndex(
+function findEventFlagRecord(slot: Uint8Array, layout: EventFlagLayout): number {
+  for (let offset = 0; offset + 16 <= slot.length; offset += 4) {
+    if (
+      readUint32Le(slot, offset + 4) === layout.recordId &&
+      readUint32Le(slot, offset + 8) === layout.recordVersion
+    ) {
+      return offset;
+    }
+  }
+  return -1;
+}
+
+function eventFlagCategory(
   eventFlag: number,
   layout: EventFlagLayout,
-): number {
-  return layout.bitIndexModulo ? eventFlag % layout.bitIndexModulo : eventFlag;
+): number | null {
+  const area = Math.floor(eventFlag / 100_000) % 100;
+  const block = Math.floor(eventFlag / 10_000) % 10;
+
+  if (area >= 90 || area + block === 0) {
+    return 0;
+  }
+
+  return (
+    layout.worldBlockCategories.find(
+      (candidate) => candidate.area === area && candidate.block === block,
+    )?.category ?? null
+  );
 }
 
 export function readEventFlag(
@@ -142,13 +174,29 @@ export function readEventFlag(
     return null;
   }
 
-  const bitIndex = eventFlagBitIndex(eventFlag, layout);
-  const byteOffset = layout.baseOffset + Math.floor(bitIndex / 8);
-  if (byteOffset >= slot.length) {
+  const recordOffset = findEventFlagRecord(slot, layout);
+  const bank = Math.floor(eventFlag / 10_000_000) % 10;
+  const serializedBankBase = layout.serializedBankCategoryBases[String(bank)];
+  const category = eventFlagCategory(eventFlag, layout);
+  if (recordOffset < 0 || serializedBankBase === undefined || category === null) {
     return null;
   }
 
-  return Boolean((slot[byteOffset] >> bitIndex % 8) & 1);
+  const thousand = Math.floor(eventFlag / 1_000) % 10;
+  const pageBit = eventFlag % 1_000;
+  const categorySize = layout.pageSize * layout.pagesPerCategory;
+  const pageOffset =
+    recordOffset +
+    layout.recordDataOffset +
+    (serializedBankBase + category) * categorySize +
+    thousand * layout.pageSize;
+  const wordOffset = pageOffset + Math.floor(pageBit / 32) * 4;
+  if (wordOffset + 4 > slot.length) {
+    return null;
+  }
+
+  const mask = 1 << (31 - (pageBit & 31));
+  return Boolean(readUint32Le(slot, wordOffset) & mask);
 }
 
 export function bytesFromHex(hex: string): Uint8Array {

@@ -50,7 +50,7 @@ Evidence/source:
 - `data/sekiro/endings.json`
 - `data/sekiro/key-items.json`
 - `research/reports/exact_location_report.json`
-- `research/reference/tests/test_analyzer.py`
+- `packages/analyzer/test/sekiro-golden.test.ts`
 - sekiro-online EquipParamGoods row data: https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv
 - Fextralife Endings page, used for community route requirements and final choice guidance: https://sekiroshadowsdietwice.wiki.fextralife.com/Endings
 - `S0000.sl2` SHA-256 `478bab165139cb4e5a5972ba6f52aeeba024aa10ca0226751f85a8a6e1905c7a`

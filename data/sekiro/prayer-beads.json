@@ -37,11 +37,6 @@
               "type": "community-param-data",
               "source": "sekiro-online/params ItemLotParam.csv",
               "details": "Row 10200005 awards item ID 3704 and stores getItemFlagId 51100905."
-            },
-            {
-              "type": "save-analysis",
-              "source": "S0000.sl2 USER_DATA000",
-              "details": "Flag 6760 reads OFF while secondary flag 51100905 reads ON."
             }
           ]
         }
@@ -90,11 +85,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Outskirts Wall - Stairway Prayer Bead is dropped by the Chained Ogre miniboss."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6761 reads ON at event flag base 0xE8000, offset 0xE834D bit 1."
         }
       ]
     },
@@ -135,11 +125,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Hirata Estate Estate Path Prayer Bead is dropped by Shinobi Hunter Enshin of Misen."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6763 reads OFF at event flag base 0xE8000, offset 0xE834D bit 3."
         }
       ]
     },
@@ -162,11 +147,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Hirata Estate - Main Hall Prayer Bead is dropped by Juzou the Drunkard in the first Hirata memory."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6764 reads ON at event flag base 0xE8000, offset 0xE834D bit 4."
         }
       ]
     },
@@ -197,11 +177,6 @@
               "type": "community-param-data",
               "source": "sekiro-online/params ItemLotParam.csv",
               "details": "Row 10202005 awards item ID 3704 and stores getItemFlagId 51110970."
-            },
-            {
-              "type": "save-analysis",
-              "source": "S0000.sl2 USER_DATA000",
-              "details": "Flag 6766 reads OFF while secondary flag 51110970 reads ON."
             }
           ]
         }
@@ -217,11 +192,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Castle Prayer Bead on the main stairway is dropped by General Kuranosuke Matsumoto."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6766 reads OFF at event flag base 0xE8000, offset 0xE834D bit 6."
         }
       ]
     },
@@ -244,11 +214,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Upper Tower - Ashina Dojo Prayer Bead is dropped by Ashina Elite - Jinsuke Saze."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6767 reads ON at event flag base 0xE8000, offset 0xE834D bit 7."
         }
       ]
     },
@@ -289,11 +254,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Reservoir Prayer Bead reached from the reservoir idol is dropped by Seven Ashina Spears - Shikibu Toshikatsu Yamauchi."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6769 reads OFF at event flag base 0xE8000, offset 0xE834E bit 1."
         }
       ]
     },
@@ -316,11 +276,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Reservoir well Prayer Bead is dropped by Lone Shadow Longswordman."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6770 reads ON at event flag base 0xE8000, offset 0xE834E bit 2."
         }
       ]
     },
@@ -343,11 +298,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Senpou Temple - Shugendo Prayer Bead is dropped by Armored Warrior."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6771 reads ON at event flag base 0xE8000, offset 0xE834E bit 3."
         }
       ]
     },
@@ -404,11 +354,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Senpou Temple Temple Grounds Prayer Bead is dropped by Long-arm Centipede Sen'un."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6772 reads OFF at event flag base 0xE8000, offset 0xE834E bit 4."
         }
       ]
     },
@@ -465,11 +410,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Depths / Poison Pool Prayer Bead is dropped by Snake Eyes Shirahagi."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6775 reads ON at event flag base 0xE8000, offset 0xE834E bit 7."
         }
       ]
     },
@@ -492,11 +432,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Castle - Upper Tower Antechamber Prayer Bead after castle invasion is dropped by Chained Ogre."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6778 reads ON at event flag base 0xE8000, offset 0xE834F bit 2."
         }
       ]
     },
@@ -519,11 +454,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Castle - Upper Tower Dojo Prayer Bead during castle invasion is dropped by Lone Shadow Vilehand."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6779 reads ON at event flag base 0xE8000, offset 0xE834F bit 3."
         }
       ]
     },
@@ -546,11 +476,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Great Serpent Shrine Prayer Bead during castle invasion is dropped by Lone Shadow Masanaga the Spear-Bearer."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6780 reads ON at event flag base 0xE8000, offset 0xE834F bit 4."
         }
       ]
     },
@@ -573,11 +498,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Purification-route Hirata Estate Bamboo Thicket Slope Prayer Bead is dropped by Lone Shadow Masanaga the Spear-Bearer."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6781 reads ON at event flag base 0xE8000, offset 0xE834F bit 5."
         }
       ]
     },
@@ -600,11 +520,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Fountainhead Palace / Mibu Manor Prayer Bead is dropped by Sakura Bull."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6783 reads ON at event flag base 0xE8000, offset 0xE834F bit 7."
         }
       ]
     },
@@ -668,11 +583,6 @@
               "type": "community-param-data",
               "source": "sekiro-online/params ItemLotParam.csv",
               "details": "Row 1700025 awards item ID 3720 and stores getItemFlagId 51700025."
-            },
-            {
-              "type": "save-analysis",
-              "source": "S0000.sl2 USER_DATA000",
-              "details": "Flag 6792 reads OFF while secondary flag 51700025 reads ON."
             }
           ]
         }
@@ -705,11 +615,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Sunken Valley Gun Fort Prayer Bead is dropped by Long-arm Centipede Giraffe."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6774 reads ON at event flag base 0xE8000, offset 0xE834E bit 6."
         }
       ]
     },
@@ -800,11 +705,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Outskirts - Ashina Castle Gate Prayer Bead is collected from the attic chest after Gyoubu Oniwa."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6788 reads ON at event flag base 0xE8000, offset 0xE8350 bit 4."
         }
       ]
     },
@@ -835,11 +735,6 @@
               "type": "community-param-data",
               "source": "sekiro-online/params ItemLotParam.csv",
               "details": "Row 13700005 awards item ID 3704 and stores getItemFlagId 51110976."
-            },
-            {
-              "type": "save-analysis",
-              "source": "S0000.sl2 USER_DATA000",
-              "details": "Flag 6765 reads OFF while secondary flag 51110976 reads ON."
             }
           ]
         }
@@ -855,11 +750,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Outskirts / Ashina Castle Gate Prayer Bead is dropped by Blazing Bull."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6765 reads OFF at event flag base 0xE8000, offset 0xE834D bit 5."
         }
       ]
     },
@@ -900,11 +790,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Hirata Audience Chamber Prayer Bead is in the hidden wall chest behind the first Juzou encounter."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6789 reads OFF at event flag base 0xE8000, offset 0xE8350 bit 5."
         }
       ]
     },
@@ -934,11 +819,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Abandoned Dungeon Entrance Prayer Bead is bought from the merchant for 1400 sen."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 71111000 reads OFF at event flag base 0xE8000, offset 0xEB633 bit 0."
         }
       ]
     },
@@ -979,11 +859,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Senpou Temple - Temple Grounds Prayer Bead is underwater in the pond and requires the diving ability."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6791 reads OFF at event flag base 0xE8000, offset 0xE8350 bit 7."
         }
       ]
     },
@@ -1014,11 +889,6 @@
               "type": "community-param-data",
               "source": "sekiro-online/params ItemLotParam.csv",
               "details": "Row 10702005 awards item ID 3704 and stores getItemFlagId 51500935."
-            },
-            {
-              "type": "save-analysis",
-              "source": "S0000.sl2 USER_DATA000",
-              "details": "Flag 6776 reads OFF while secondary flag 51500935 reads ON."
             }
           ]
         }
@@ -1034,11 +904,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Depths - Hidden Forest Prayer Bead is dropped by Tokujiro the Glutton."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6776 reads OFF at event flag base 0xE8000, offset 0xE834F bit 0."
         }
       ]
     },
@@ -1069,11 +934,6 @@
               "type": "community-param-data",
               "source": "sekiro-online/params ItemLotParam.csv",
               "details": "Row 70000005 awards item ID 3704 and stores getItemFlagId 51500925."
-            },
-            {
-              "type": "save-analysis",
-              "source": "S0000.sl2 USER_DATA000",
-              "details": "Flag 6777 reads OFF while secondary flag 51500925 reads ON."
             }
           ]
         }
@@ -1089,11 +949,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Depths - Watermill Prayer Bead is dropped by O'Rin of the Water."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6777 reads OFF at event flag base 0xE8000, offset 0xE834F bit 1."
         }
       ]
     },
@@ -1124,11 +979,6 @@
               "type": "community-param-data",
               "source": "sekiro-online/params ItemLotParam.csv",
               "details": "Row 1500045 awards item ID 3720 and stores getItemFlagId 51500045."
-            },
-            {
-              "type": "save-analysis",
-              "source": "S0000.sl2 USER_DATA000",
-              "details": "Flag 6795 reads OFF while secondary flag 51500045 reads ON."
             }
           ]
         }
@@ -1144,11 +994,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Depths - Watermill Prayer Bead is in the attic shrine of the house before Corrupted Monk."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6795 reads OFF at event flag base 0xE8000, offset 0xE8351 bit 3."
         }
       ]
     },
@@ -1179,11 +1024,6 @@
               "type": "community-param-data",
               "source": "sekiro-online/params ItemLotParam.csv",
               "details": "Row 11900005 awards item ID 3704 and stores getItemFlagId 51701015."
-            },
-            {
-              "type": "save-analysis",
-              "source": "S0000.sl2 USER_DATA000",
-              "details": "Flag 6773 reads OFF while secondary flag 51701015 reads ON."
             }
           ]
         }
@@ -1199,11 +1039,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Sunken Valley idol Prayer Bead is dropped by Snake Eyes Shirafuji."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6773 reads OFF at event flag base 0xE8000, offset 0xE834E bit 5."
         }
       ]
     },
@@ -1234,11 +1069,6 @@
               "type": "community-param-data",
               "source": "sekiro-online/params ItemLotParam.csv",
               "details": "Primary rows 2015 and 2016 award Prayer Bead item ID 4000; row 2017 awards item ID 5213 and stores getItemFlagId 50002017."
-            },
-            {
-              "type": "save-analysis",
-              "source": "S0000.sl2 USER_DATA000",
-              "details": "Flag 6798 reads OFF while secondary flag 50002017 reads ON."
             }
           ]
         }
@@ -1254,11 +1084,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Depths - Poison Pool Headless Ape rematch drops two Prayer Beads."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6798 reads OFF at event flag base 0xE8000, offset 0xE8351 bit 6."
         }
       ]
     },
@@ -1299,11 +1124,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Depths - Poison Pool Headless Ape rematch drops two Prayer Beads."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6799 reads OFF at event flag base 0xE8000, offset 0xE8351 bit 7."
         }
       ]
     },
@@ -1344,11 +1164,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Purification-route Hirata Estate - Main Hall Prayer Bead is dropped by Juzou the Drunkard in the second memory."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6782 reads OFF at event flag base 0xE8000, offset 0xE834F bit 6."
         }
       ]
     },
@@ -1379,11 +1194,6 @@
               "type": "community-param-data",
               "source": "sekiro-online/params ItemLotParam.csv",
               "details": "Row 13100005 awards item ID 3704 and stores getItemFlagId 52500905."
-            },
-            {
-              "type": "save-analysis",
-              "source": "S0000.sl2 USER_DATA000",
-              "details": "Flag 6784 reads OFF while secondary flag 52500905 reads ON."
             }
           ]
         }
@@ -1399,11 +1209,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Fountainhead Palace - Great Sakura Prayer Bead is dropped by Okami Leader Shizu."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6784 reads OFF at event flag base 0xE8000, offset 0xE8350 bit 0."
         }
       ]
     },
@@ -1444,11 +1249,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The post-Divine Dragon Ashina Reservoir Prayer Bead is dropped by Seven Spears Ashina - Shume Masaji Oniwa."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6786 reads OFF at event flag base 0xE8000, offset 0xE8350 bit 2."
         }
       ]
     },
@@ -1479,11 +1279,6 @@
               "type": "community-param-data",
               "source": "sekiro-online/params ItemLotParam.csv",
               "details": "Row 14001005 awards item ID 3704 and stores getItemFlagId 51110978."
-            },
-            {
-              "type": "save-analysis",
-              "source": "S0000.sl2 USER_DATA000",
-              "details": "Flag 6785 reads OFF while secondary flag 51110978 reads ON."
             }
           ]
         }
@@ -1499,11 +1294,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The post-Divine Dragon Upper Tower - Ashina Dojo Prayer Bead is dropped by Ujinari Mizou."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6785 reads OFF at event flag base 0xE8000, offset 0xE8350 bit 1."
         }
       ]
     },
@@ -1544,11 +1334,6 @@
           "type": "community-guide",
           "source": "PowerPyx Prayer Bead guide",
           "details": "The post-Divine Dragon Ashina Castle - Old Grave Prayer Bead is dropped by Shigekichi of the Red Guard."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6787 reads OFF at event flag base 0xE8000, offset 0xE8350 bit 3."
         }
       ]
     }
@@ -1557,7 +1342,7 @@
     {
       "id": "offering_box_replacement_behavior",
       "confidence": "Unknown",
-      "details": "The 40 primary Prayer Bead locations now have source-backed mappings, 11 secondary ItemLotParam reward/replacement flags reconcile collected locations in S0000.sl2, and 14 locations are missing by verified item-lot/shop evidence. Offering Box replacement behavior is still not mapped as a general-purpose mechanic for other saves."
+      "details": "All 40 primary Prayer Bead pickup/shop flags decode exactly across the current fixtures and reconcile with inventory-derived totals. Offering Box replacement behavior remains unmapped for saves where a missed bead is later acquired from the box."
     },
     {
       "id": "valley_treasure_exact_ordering",

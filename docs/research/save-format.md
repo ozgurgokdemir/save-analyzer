@@ -11,10 +11,10 @@ What was discovered:
 
 How it was verified:
 - Parsed the BND4 entry table from the provided `S0000.sl2`.
-- Re-ran `research/reference/analyzer.py` after moving mappings to JSON data files.
+- Re-ran `packages/analyzer/src/sekiro/index.ts` after moving mappings to JSON data files.
 
 Evidence/source:
-- Save fixture: `research/fixtures/S0000.sl2`
+- Save fixture: `research/fixtures/sekiro/001/S0000.sl2`
 - SHA-256: `478bab165139cb4e5a5972ba6f52aeeba024aa10ca0226751f85a8a6e1905c7a`
 - Privacy treatment: SteamID64-range account identifier values are replaced with neutral bytes; parser and analyzer evidence is unchanged.
 - Generated report: `research/reports/exact_location_report.json`
@@ -56,7 +56,7 @@ How it was verified:
 - The parser now prefers records with this mirror prefix when reading quantities.
 
 Evidence/source:
-- `research/reference/analyzer.py`
+- `packages/analyzer/src/sekiro/index.ts`
 - Save analysis of `S0000.sl2` `USER_DATA000`
 
 Confidence: Probable globally, Verified for the sampled records in this save

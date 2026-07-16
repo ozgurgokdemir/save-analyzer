@@ -1,5 +1,4 @@
 ---
-import { AlertTriangle } from "lucide-react"
 import Container from "../components/Container.astro"
 import Analyzer from "../components/analyzer/Analyzer"
 import PrivacyStrip from "../components/PrivacyStrip.astro"
@@ -7,7 +6,7 @@ import ReportCategories from "../components/ReportCategories.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
 ---
 
-<BaseLayout title="Sekiro Save File Analyzer" description="Learn what the Sekiro save analyzer detects: Gourd Seeds, Prayer Beads, prosthetics, skills, key items, endings, and conservative boss status.">
+<BaseLayout title="Sekiro Save File Analyzer" description="Learn what the Sekiro save analyzer detects: Gourd Seeds, Prayer Beads, prosthetics, skills, key items, endings, and major boss progression.">
   <article>
     <section id="analyzer" class="scroll-mt-20 border-b" aria-labelledby="analyzer-heading">
       <Container class="py-14 sm:py-18">
@@ -27,10 +26,6 @@ import BaseLayout from "../layouts/BaseLayout.astro"
         <div class="mt-8">
           <ReportCategories />
         </div>
-      </section>
-      <section>
-        <h2>Why boss results are conservative</h2>
-        <div class="mt-4 flex gap-4 rounded-xl border border-primary/20 bg-primary/5 p-5"><AlertTriangle className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" /><p class="m-0">Boss memory items and candidate event flags are useful evidence, but they are not treated as reliable, persistent proof of boss completion. Bosses may therefore remain <strong>unknown</strong> even when related signals are present.</p></div>
       </section>
       <section>
         <h2>Supported save file</h2>

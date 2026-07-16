@@ -96,7 +96,6 @@ interface CategoryDefinition {
   label: string;
   description: string;
   icon: LucideIcon;
-  conservative?: boolean;
 }
 
 const categories: CategoryDefinition[] = [
@@ -145,9 +144,8 @@ const categories: CategoryDefinition[] = [
   {
     key: 'bosses',
     label: 'Bosses',
-    description: 'Conservative boss-state evidence',
+    description: 'Major boss progression',
     icon: Sword,
-    conservative: true,
   },
 ];
 
@@ -344,6 +342,9 @@ function CategoryCard({
   const Icon = definition.icon;
   const summary = (category.summary ?? {}) as AnyRecord;
   const statuses = (summary.byStatus ?? {}) as AnyRecord;
+  const locationAttribution = category.locationAttribution as
+    | AnyRecord
+    | undefined;
   const entities = useMemo(
     () =>
       [...(Array.isArray(category.entities) ? category.entities : [])].sort(
@@ -402,13 +403,13 @@ function CategoryCard({
         </div>
       </CardHeader>
       <CardContent>
-        {definition.conservative && (
+        {locationAttribution && locationAttribution.reconciled === false && (
           <Alert className="mb-4 border-amber-500/25 bg-amber-500/5">
             <ShieldAlert className="text-amber-700 dark:text-amber-300" />
-            <AlertTitle>Conservative detection</AlertTitle>
+            <AlertTitle>Exact location unresolved</AlertTitle>
             <AlertDescription>
-              Boss evidence is not promoted to a definite result unless it has
-              reliable persistent semantics. Unknown is expected.
+              {String(locationAttribution.details)} Locations that cannot be
+              attributed safely are shown as Unknown rather than Missing.
             </AlertDescription>
           </Alert>
         )}

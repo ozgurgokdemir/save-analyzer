@@ -1,6 +1,6 @@
 # Skills Research
 
-Last updated: 2026-07-08
+Last updated: 2026-07-16
 
 ## Combat Art Skill Evidence
 
@@ -49,7 +49,7 @@ Evidence/source:
 - Fextralife Skills and Skill Trees page, used for community skill tree/name/cost/prerequisite context: https://sekiroshadowsdietwice.wiki.fextralife.com/Skills+and+Skill+Trees
 - `research/reports/exact_location_report.json`
 
-Confidence: Verified for the mapped Combat Art param row links, named weapon rows, weapon IDs, and current save unlocked/missing states. Probable for acquisition metadata sourced from community skill/tree pages. Unknown for Ninjutsu state, in-save skill-tree text state, exact param-level cost/prerequisite semantics, and Sakura Dance row `670` / weapon row `7700`.
+Confidence: Verified for the mapped Combat Art param row links, named weapon rows, weapon IDs, and current save unlocked/missing states. Probable for acquisition metadata sourced from community skill/tree pages. Verified for Ninjutsu acquisition state. Unknown for in-save skill-tree text state, exact param-level cost/prerequisite semantics, and Sakura Dance row `670` / weapon row `7700`.
 
 ## Non-Combat-Art Skill Evidence
 
@@ -116,23 +116,24 @@ Confidence: Verified for row identity, weapon ID hex values, and current save un
 ## Ninjutsu State
 
 What was discovered:
-- `EquipParamGoods.csv` identifies Ninjutsu goods rows: `2100` Bloodsmoke Ninjutsu, `2110` Puppeteer Ninjutsu, and `2120` Bestowal Ninjutsu.
-- These rows do not use the verified weapon inventory record shape.
-- In `S0000.sl2`, Bloodsmoke's goods ID appears once as a loose byte occurrence, but it does not have the verified `80 80` weapon prefix or a clean quantity-1 ownership shape. It is therefore not used as ownership evidence.
-- All three Ninjutsu entities are included in the normalized Skills model with `status = unknown` and `confidence = unknown`.
+- `EquipParamGoods.csv` identifies goods rows `2100` Bloodsmoke, `2110` Puppeteer, and `2120` Bestowal Ninjutsu.
+- `ItemLotParam.csv` maps those rewards to persistent acquisition flags `6745`, `6746`, and `6747`.
+- Ninjutsu status is `unlocked` when its acquisition flag is ON, `missing` when OFF, and `unknown` only when the flag cannot be decoded.
+- The reference and After Divine Dragon fixtures have Bloodsmoke and Puppeteer unlocked with Bestowal missing. The Before Isshin fixture has all three unlocked.
 
 How it was verified:
-- Read `EquipParamGoods.csv` for Ninjutsu goods IDs and names.
-- Scanned `USER_DATA000` for little-endian goods IDs `34080000`, `3E080000`, and `48080000`.
-- Confirmed that the analyzer intentionally uses `unverified_inventory_item_candidate` evidence for Ninjutsu, which does not drive status.
+- Cross-checked the three ItemLot rows, goods IDs, and `getItemFlagId` values.
+- Read the flags through the verified serialized event-flag decoder in all three sanitized fixtures.
+- Added regression assertions for the exact Ninjutsu state in each fixture.
 
 Evidence/source:
 - sekiro-online `EquipParamGoods.csv`: https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv
+- sekiro-online `ItemLotParam.csv`: https://github.com/sekiro-online/params/blob/master/src/ItemLotParam.csv
 - `data/sekiro/skills.json`
-- `S0000.sl2` local inspection.
+- `packages/analyzer/test/sekiro-golden.test.ts`
+- `research/fixtures/README.md`
 
-Confidence: Unknown for Ninjutsu ownership state and Ninjutsu acquisition guidance in this batch.
-
+Confidence: Verified for Ninjutsu acquisition state across all three fixtures.
 ## Acquisition Metadata
 
 What was discovered:
@@ -182,24 +183,19 @@ Evidence/source:
 - Floating Passage: https://sekiroshadowsdietwice.wiki.fextralife.com/Floating+Passage
 - One Mind: https://sekiroshadowsdietwice.wiki.fextralife.com/One+Mind
 
-Confidence: Probable for acquisition metadata because it is community-guide backed and not independently verified from save data. Verified ownership status remains limited to Skills with direct `inventory_weapon` evidence in `S0000.sl2`.
+Confidence: Probable for acquisition metadata because it is community-guide backed and not independently verified from save data. Verified status uses direct `inventory_weapon` evidence for mapped weapon-backed Skills and persistent ItemLot acquisition flags for Ninjutsu.
 
 ## Unresolved Skill Coverage
 
-What was discovered:
-- Passive, latent, martial-art, and special Skill rows with named `EquipParamWeapon` row identities now have verified ownership evidence in `S0000.sl2`.
-- Ninjutsu rows still need a separate save-state signal before they can be reported as unlocked or missing.
-- `SkillParam` row `670` appears to link to weapon row `7700`; the inspected public `EquipParamWeapon` row name is blank, so Sakura Dance was not promoted into the verified mapping.
-- Exact param-level semantics for skill point costs, prerequisite fields, and skill tree text state remain unresolved even though community acquisition guidance is now populated.
+What remains unresolved:
+- `SkillParam` row `670` appears to link to weapon row `7700`; the inspected public `EquipParamWeapon` row name is blank, so Sakura Dance has not been promoted into the verified mapping.
+- Exact param-level semantics for skill point costs, prerequisite fields, and skill-tree text state remain unresolved. Those fields remain acquisition guidance and never drive ownership.
 
-How it was verified:
-- Compared the non-upgrade `SkillParam` rows against named `EquipParamWeapon` rows and promoted only rows with a verified weapon-record ownership signal.
-- Left rows without a verified ownership record out of status logic or marked them `unknown` in `data/sekiro/skills.json`.
+Ninjutsu ownership is no longer part of unresolved coverage; its persistent acquisition flags are verified and regression-tested.
 
 Evidence/source:
 - sekiro-online `SkillParam.csv`: https://github.com/sekiro-online/params/blob/master/src/SkillParam.csv
 - sekiro-online `EquipParamWeapon.csv`: https://github.com/sekiro-online/params/blob/master/src/EquipParamWeapon.csv
-- sekiro-online `EquipParamGoods.csv`: https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv
-- Sakura Dance community page, used only to identify why row `670` needs more careful handling: https://sekiroshadowsdietwice.wiki.fextralife.com/Sakura+Dance
+- `data/sekiro/skills.json`
 
-Confidence: Unknown for Ninjutsu ownership state, Sakura Dance row `670`, and exact param/save semantics behind acquisition requirements.
+Confidence: Verified for the current mapped Skills and Ninjutsu statuses. Unknown for Sakura Dance row `670` and exact param semantics behind guidance metadata.

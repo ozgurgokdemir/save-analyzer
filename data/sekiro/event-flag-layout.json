@@ -1,54 +1,71 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "game": "sekiro",
   "layouts": [
     {
-      "id": "user_data_event_flags_last_six_digits",
+      "id": "user_data_record_1000_event_flag_pages",
       "containerEntry": "USER_DATA###",
-      "baseOffset": 950272,
-      "baseOffsetHex": "0xE8000",
-      "bitIndexModulo": 1000000,
-      "addressFormula": "slot[baseOffset + floor((eventFlag % 1000000) / 8)] bit ((eventFlag % 1000000) % 8)",
-      "bitOrder": "LSB-first",
+      "recordId": 1000,
+      "recordVersion": 101,
+      "recordDataOffset": 52,
+      "recordDataOffsetHex": "0x34",
+      "pageSize": 128,
+      "pageSizeHex": "0x80",
+      "pagesPerCategory": 10,
+      "serializedBankCategoryBases": {
+        "0": 0,
+        "1": 1,
+        "2": 34,
+        "5": 67,
+        "6": 100,
+        "7": 133
+      },
+      "worldBlockCategories": [
+        { "area": 10, "block": 0, "category": 1 },
+        { "area": 11, "block": 0, "category": 2 },
+        { "area": 11, "block": 1, "category": 3 },
+        { "area": 11, "block": 2, "category": 4 },
+        { "area": 12, "block": 0, "category": 5 },
+        { "area": 12, "block": 1, "category": 6 },
+        { "area": 13, "block": 0, "category": 7 },
+        { "area": 15, "block": 0, "category": 8 },
+        { "area": 15, "block": 1, "category": 9 },
+        { "area": 17, "block": 0, "category": 10 },
+        { "area": 20, "block": 0, "category": 12 },
+        { "area": 25, "block": 0, "category": 13 },
+        { "area": 25, "block": 1, "category": 14 },
+        { "area": 70, "block": 0, "category": 15 },
+        { "area": 71, "block": 1, "category": 16 },
+        { "area": 73, "block": 0, "category": 17 },
+        { "area": 80, "block": 0, "category": 18 },
+        { "area": 85, "block": 0, "category": 19 },
+        { "area": 89, "block": 0, "category": 20 }
+      ],
+      "addressFormula": "record1000 + 0x34 + (serializedBankBase + worldCategory) * 0x500 + thousandsDigit * 0x80 + floor((eventFlag % 1000) / 32) * 4",
+      "bitOrder": "MSB-first within each little-endian uint32 word",
       "confidence": "Verified",
-      "scope": "Verified against USER_DATA000 in S0000.sl2 for low item flags 6723-6729, the 40 primary Prayer Bead pickup/shop flags, the 24 secondary Prayer Bead ItemLotParam flags, the 14 boss Memory award flags, merchant ShopLineupParam flags 71101210/71102000/71111000, and readable candidate SoulSplitter boss split flags 9301-9317. Candidate boss split flags are not reliable persistent boss status semantics.",
+      "scope": "Verified by matching the serialized 128-byte flag pages in USER_DATA000 record 1000 to the corresponding read-only event-flag pages in a running Sekiro 1.06 process. The mapped Gourd Seed and Prayer Bead flags reconcile exactly with inventory-derived totals in the reference, After Divine Dragon, and Before Isshin fixtures.",
       "evidence": [
         {
-          "type": "save-analysis",
-          "source": "S0000.sl2 sha256 478bab165139cb4e5a5972ba6f52aeeba024aa10ca0226751f85a8a6e1905c7a",
-          "details": "At base 0xE8000, the six collected non-shop Gourd Seed flags are set, Sunken Valley flag 6724 is clear, Battlefield Memorial Mob shop flag 71101210 is set, Fujioka shop flag 71102000 is clear, and Abandoned Dungeon Memorial Mob Prayer Bead shop flag 71111000 is clear. Gourd Seed states exactly match the save's 7/9 Gourd Seed derived count. Prayer Bead primary event states are readable; 11 ON secondary Prayer Bead ItemLotParam flags reconcile the carried inventory-derived Prayer Bead count, and 13 OFF secondary ItemLotParam flags support the remaining missing-by-evidence locations. Boss Memory award flags from ItemLotParam rows 2001-2131 are also readable."
+          "type": "runtime-read-only-analysis",
+          "source": "Sekiro 1.06 EventFlagMan and FieldArea structures",
+          "details": "The process was opened with PROCESS_QUERY_INFORMATION | PROCESS_VM_READ only. No writes, injection, suspension, or game/save modifications were performed. Non-zero 0x80-byte runtime flag pages matched USER_DATA000 at record-relative page offsets beginning at 0x34."
         },
         {
-          "type": "community-docs",
-          "source": "https://github.com/FrankvdStam/SoulSplitter/wiki/Sekiro-item-pickup-flags",
-          "details": "SoulSplitter lists the item pickup event flags extracted via Yapped."
+          "type": "community-source-code",
+          "source": "https://github.com/FrankvdStam/SoulSplitter/blob/main/src/SoulMemory/Sekiro/Sekiro.cs",
+          "details": "SoulSplitter documents the EventFlagMan bank selection, FieldArea world-block category lookup, last-three-digit word selection, and MSB-first uint32 bit mask used by Sekiro 1.06."
         },
         {
-          "type": "community-param-data",
-          "source": "https://github.com/sekiro-online/params/blob/master/src/ShopLineupParam.csv",
-          "details": "ShopLineupParam rows 1100101 and 1100400 sell equipId 4400 with event flags 71101210 and 71102000. Row 1110000 sells equipId 4000 with event flag 71111000."
-        },
-        {
-          "type": "community-param-data",
-          "source": "https://github.com/sekiro-online/params/blob/master/src/ItemLotParam.csv",
-          "details": "Secondary Prayer Bead item-lot rows 10200005, 10202005, 11900005, 10702005, 70000005, 13100005, 14001005, 13700005, 2017, 1500045, and 1700025 provide independent getItemFlagId values that read ON in S0000.sl2. Rows 10500005, 10212005, 10400005, 1500325, 2500025, 1700035, 1700045, 1000505, 2000045, 2018, 10700105, 10212105, and 10701005 read OFF."
-        },
-        {
-          "type": "community-param-data",
-          "source": "https://github.com/sekiro-online/params/blob/master/src/ItemLotParam.csv",
-          "details": "Boss Memory award rows 2001, 2011, 2017, 2021, 2031, 2041, 2051, 2061, 2071, 2081, 2091, 2101, 2121, and 2131 provide Memory goods IDs 5200-5213 and getItemFlagId values read from S0000.sl2."
+          "type": "fixture-reconciliation",
+          "source": "research/fixtures",
+          "details": "Primary location flags produce 7/9 and 26/40 for the reference fixture, 8/9 and 28/40 after Divine Dragon, and 8/9 and 33/40 before Isshin, exactly matching the independent inventory-derived counts."
         }
       ],
       "limitations": [
-        "SoulSplitter boss split flags 9301-9317 are readable from this save with the documented layout, but manual fixture-playthrough verification shows they are not reliable persistent boss-completion evidence: Genichiro was defeated with 9303 OFF, Isshin Ashina was not defeated with 9316 OFF, and Headless Ape is uncertain with 9307 ON."
+        "The bank and world-category table covers Sekiro 1.06's serialized flag layout. Event IDs in unallocated banks or unmapped world blocks return unknown instead of reading unrelated bytes."
       ]
     }
   ],
-  "unresolved": [
-    {
-      "id": "broader_high_event_flag_coverage",
-      "confidence": "Unknown",
-      "details": "The last-six-digit save index is verified for the currently mapped Gourd Seed flags, 40 primary Prayer Bead pickup/shop flags, 24 secondary Prayer Bead ItemLotParam flags, 14 boss Memory award flags, and merchant ShopLineupParam flags in S0000.sl2. Broader high event flag coverage still needs additional targeted test saves before being treated as complete."
-    }
-  ]
+  "unresolved": []
 }

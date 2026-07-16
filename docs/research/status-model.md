@@ -1,6 +1,6 @@
 # Analyzer Status Model
 
-Last updated: 2026-07-09
+Last updated: 2026-07-16
 
 ## Finalized category statuses
 
@@ -26,17 +26,17 @@ How it was verified:
 - Gourd Seeds, Prayer Beads, Prosthetic Tools, Prosthetic Upgrades, Skills, Key Items, and Bosses already use category-specific status sets in current save output.
 - Prayer Beads no longer expose `unresolved` as a location status; unresolved evidence paths collapse to `unknown`.
 - Endings were refined so missing required items produce `incomplete`; `blocked` requires verified permanent block evidence.
-- Key Items were added with ownership status driven only by verified inventory evidence; acquisition metadata remains guidance-only.
+- Key Items use verified retained inventory evidence plus persistent ItemLot/Shop acquisition flags for consumed or transformed items; acquisition guidance remains non-driving.
 
 Evidence/source:
-- `research/reference/analyzer.py`
-- `research/reference/tests/test_analyzer.py`
+- `packages/analyzer/src/sekiro/index.ts`
+- `packages/analyzer/test/sekiro-golden.test.ts`
 - `data/sekiro/endings.json`
 - `data/sekiro/key-items.json`
 - `docs/research/endings.md`
 - `docs/research/key-items.md`
 
-Confidence: Verified for implemented parser status outputs in `S0000.sl2`. Unknown for future categories until their evidence semantics are mapped and tested.
+Confidence: Verified for implemented parser status outputs across the three sanitized fixtures. Unknown remains the defensive result for undecodable evidence and unresolved ending state.
 
 ## Normalized report schema
 
@@ -47,7 +47,7 @@ What was discovered:
 - Every entity in the normalized arrays carries these common fields: `id`, `name`, `category`, `status`, `confidence`, `evidence`, `acquisitionMetadata`, and `notes`.
 - Every category summary now includes `total`, one count for each allowed status, and `byStatus` using the exact domain status keys.
 - Boss summaries keep the legacy `notDefeated` alias, but the normalized status-keyed summary uses `not_defeated`.
-- Key Items keep `ownershipEvidence` for readability, and also expose the same records through generic `evidence`.
+- Key Items keep `ownershipEvidence` and `acquisitionEvidence` for readability, and also expose those records through generic `evidence`.
 - Endings keep `completionEvidence`, `availabilityEvidence`, `missingRequirements`, and `blockEvidence`, and also expose a combined generic `evidence` list.
 - Generic evidence entries always carry `id`, `state`, `status`, and `confidence`. Most evidence entries also carry a `type`; ending `blockEvidence` entries intentionally preserve their rule shape (`when`, `conditionEvidence`, `statusDriving`, and `blockType`) and are included in the combined `evidence` list without inventing a new analyzer semantic.
 - The top-level legacy report aliases `gourd_seed_locations`, `gourd_seed_summary`, `prayer_bead_sample_flags`, `boss_memory_items_found`, `derived_counts`, `event_flag_reader`, `sources_used`, and `limitations` are intentionally preserved around `parseSekiroSaveShape` for research continuity.
@@ -65,12 +65,12 @@ How it was verified:
 - Added tests that prevent community-only acquisition guidance from being marked `Verified`.
 
 Evidence/source:
-- `research/reference/analyzer.py`
-- `research/reference/tests/test_analyzer.py`
+- `packages/analyzer/src/sekiro/index.ts`
+- `packages/analyzer/test/sekiro-golden.test.ts`
 - `research/reports/exact_location_report.json`
 - `data/sekiro/*.json`
 
-Confidence: Verified for current parser output and mapping-file validation. Unknown for future categories until they are added to the same tests.
+Confidence: Verified for current parser output, mapping-file validation, and cross-fixture regression coverage.
 
 ## Endings status definitions
 

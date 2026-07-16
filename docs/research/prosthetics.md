@@ -120,7 +120,7 @@ How it was verified:
 Evidence/source:
 - `data/sekiro/prosthetic-upgrades.json`
 - `research/reports/exact_location_report.json`
-- `research/reference/tests/test_analyzer.py`
+- `packages/analyzer/test/sekiro-golden.test.ts`
 - EquipParamWeapon row data: https://github.com/sekiro-online/params/blob/master/src/EquipParamWeapon.csv
 - EquipMtrlSetParam row data: https://github.com/sekiro-online/params/blob/master/src/EquipMtrlSetParam.csv
 - ReinforceParamWeapon row data: https://github.com/sekiro-online/params/blob/master/src/ReinforceParamWeapon.csv
@@ -140,7 +140,7 @@ How it was verified:
 Evidence/source:
 - `data/sekiro/prosthetics.json`
 - `research/reports/exact_location_report.json`
-- `research/reference/tests/test_analyzer.py`
+- `packages/analyzer/test/sekiro-golden.test.ts`
 - EquipParamWeapon row data: https://github.com/sekiro-online/params/blob/master/src/EquipParamWeapon.csv
 - EquipParamGoods row data: https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv
 - Local save scan performed on `S0000.sl2`

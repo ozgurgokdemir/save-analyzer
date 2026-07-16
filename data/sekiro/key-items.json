@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "game": "sekiro",
-  "coverage": "progression-key-items-with-verified-inventory-evidence",
+  "coverage": "progression-key-items-with-verified-inventory-and-acquisition-flag-evidence",
   "statusPolicy": {
-    "collectedRequires": "verified key item inventory record in USER_DATA000",
-    "missingRequires": "verified absence of a mapped persistent key item whose absence semantics are understood",
-    "unknownRequires": "item ID is unmapped, inventory state cannot be read, or absence does not prove missing because the item may be consumed, transformed, or only used as quest context",
-    "details": "Ownership status is derived only from save inventory evidence. Acquisition metadata is user guidance and never drives ownership status."
+    "collectedRequires": "verified retained inventory evidence or an ON persistent ItemLot/Shop acquisition flag",
+    "missingRequires": "verified absence plus all mapped persistent acquisition flags OFF",
+    "unknownRequires": "inventory and mapped persistent acquisition evidence cannot be decoded",
+    "details": "Retained key items use inventory evidence. Consumed, transformed, or superseded items use their dedicated ItemLotParam or ShopLineupParam acquisition flags, with current inventory retained as corroboration. Acquisition guidance never drives status."
   },
   "items": [
     {
@@ -1062,7 +1062,10 @@
       "name": "Holy Chapter: Dragon's Return",
       "equipParamGoodsRowId": 9209,
       "itemIdHex": "F9230040",
-      "absenceSemantics": "absence_not_promoted_to_missing_until_retention_is_verified",
+      "acquisitionEventFlags": [
+        { "id": "itemLotAcquisitionFlag", "flag": 52000010, "source": "ItemLotParam row 2000010 awards Holy Chapter: Dragon's Return.", "details": "Persistent get-item flag for the quest-context item." }
+      ],
+      "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
         {
           "type": "param",
@@ -1080,28 +1083,6 @@
           "details": "A goods inventory record with item ID 9209 means this quest-context item is currently present."
         }
       ],
-      "statusRules": [
-        {
-          "status": "collected",
-          "confidence": "verified",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": true
-            }
-          ]
-        },
-        {
-          "status": "unknown",
-          "confidence": "unknown",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": false
-            }
-          ]
-        }
-      ],
       "acquisitionMetadata": {
         "area": "Inner Sanctum",
         "source": "Divine Child route",
@@ -1112,7 +1093,7 @@
           "Progress the Return route"
         ],
         "notes": [
-          "Retention and consumption semantics are unresolved, so absence is Unknown."
+          "The persistent acquisition flag preserves collection state even when the item is no longer retained."
         ],
         "confidence": "Unknown",
         "sourceReferences": [
@@ -1338,7 +1319,10 @@
       "name": "Holy Chapter: Infested",
       "equipParamGoodsRowId": 9215,
       "itemIdHex": "FF230040",
-      "absenceSemantics": "absence_not_promoted_to_missing_until_retention_is_verified",
+      "acquisitionEventFlags": [
+        { "id": "itemLotAcquisitionFlag", "flag": 50006320, "source": "ItemLotParam row 63200 awards Holy Chapter: Infested.", "details": "Persistent get-item flag shared by the normal and alternate acquisition rows." }
+      ],
+      "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
         {
           "type": "param",
@@ -1356,28 +1340,6 @@
           "details": "A goods inventory record with item ID 9215 means this quest-context item is currently present."
         }
       ],
-      "statusRules": [
-        {
-          "status": "collected",
-          "confidence": "verified",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": true
-            }
-          ]
-        },
-        {
-          "status": "unknown",
-          "confidence": "unknown",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": false
-            }
-          ]
-        }
-      ],
       "acquisitionMetadata": {
         "area": "Senpou Temple / Inner Sanctum route",
         "source": "Return route context",
@@ -1388,7 +1350,7 @@
           "Progress the Return route"
         ],
         "notes": [
-          "Retention and consumption semantics are unresolved, so absence is Unknown."
+          "The persistent acquisition flag preserves collection state even when the item is no longer retained."
         ],
         "confidence": "Unknown",
         "sourceReferences": [
@@ -1407,7 +1369,10 @@
       "name": "Holy Chapter: Infested",
       "equipParamGoodsRowId": 9228,
       "itemIdHex": "0C240040",
-      "absenceSemantics": "absence_not_promoted_to_missing_until_retention_is_verified",
+      "acquisitionEventFlags": [
+        { "id": "itemLotAcquisitionFlag", "flag": 50006320, "source": "ItemLotParam row 2000820 awards the alternate Holy Chapter: Infested row.", "details": "Persistent get-item flag shared by the normal and alternate acquisition rows." }
+      ],
+      "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
         {
           "type": "param",
@@ -1425,28 +1390,6 @@
           "details": "A goods inventory record with item ID 9228 means this alternate quest-context item is currently present."
         }
       ],
-      "statusRules": [
-        {
-          "status": "collected",
-          "confidence": "verified",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": true
-            }
-          ]
-        },
-        {
-          "status": "unknown",
-          "confidence": "unknown",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": false
-            }
-          ]
-        }
-      ],
       "acquisitionMetadata": {
         "area": "Senpou Temple / Inner Sanctum route",
         "source": "Return route context",
@@ -1457,7 +1400,7 @@
           "Progress the Return route"
         ],
         "notes": [
-          "Alternate row semantics are unresolved, so absence is Unknown."
+          "Shares the persistent acquisition flag with the standard Holy Chapter: Infested row."
         ],
         "confidence": "Unknown",
         "sourceReferences": [
@@ -1476,7 +1419,10 @@
       "name": "Mechanical Barrel",
       "equipParamGoodsRowId": 2910,
       "itemIdHex": "5E0B0040",
-      "absenceSemantics": "absence_not_promoted_to_missing_until_retention_is_verified",
+      "acquisitionEventFlags": [
+        { "id": "itemLotAcquisitionFlag", "flag": 6740, "source": "ItemLotParam row 2000 awards the Mechanical Barrel.", "details": "Persistent get-item flag remains valid after the barrel unlocks Prosthetic upgrades." }
+      ],
+      "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
         {
           "type": "param",
@@ -1494,28 +1440,6 @@
           "details": "A goods inventory record with item ID 2910 means this key item is currently present."
         }
       ],
-      "statusRules": [
-        {
-          "status": "collected",
-          "confidence": "verified",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": true
-            }
-          ]
-        },
-        {
-          "status": "unknown",
-          "confidence": "unknown",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": false
-            }
-          ]
-        }
-      ],
       "acquisitionMetadata": {
         "area": "Ashina Outskirts - Castle Gate",
         "source": "Gyoubu Oniwa",
@@ -1526,7 +1450,7 @@
           "Defeat Gyoubu Oniwa"
         ],
         "notes": [
-          "Unlocks Prosthetic Tool upgrades, but retention semantics are unresolved; absence is Unknown."
+          "The persistent acquisition flag preserves collection state even when the item is no longer retained."
         ],
         "confidence": "Probable",
         "sourceReferences": [
@@ -1545,7 +1469,10 @@
       "name": "Shuriken Wheel",
       "equipParamGoodsRowId": 9700,
       "itemIdHex": "E4250040",
-      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "acquisitionEventFlags": [
+        { "id": "itemLotAcquisitionFlag", "flag": 6500, "source": "ItemLotParam row 1100000 awards the Shuriken Wheel.", "details": "Persistent get-item flag remains valid after fitting Loaded Shuriken." }
+      ],
+      "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
         {
           "type": "param",
@@ -1563,28 +1490,6 @@
           "details": "A goods inventory record with item ID 9700 means this raw Prosthetic Tool source item is currently present."
         }
       ],
-      "statusRules": [
-        {
-          "status": "collected",
-          "confidence": "verified",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": true
-            }
-          ]
-        },
-        {
-          "status": "unknown",
-          "confidence": "unknown",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": false
-            }
-          ]
-        }
-      ],
       "acquisitionMetadata": {
         "area": "Ashina Outskirts",
         "source": "Corpse near Outskirts Wall - Gate Path Idol",
@@ -1595,7 +1500,7 @@
           "Reach Outskirts Wall - Gate Path"
         ],
         "notes": [
-          "Fitted by the Sculptor as Loaded Shuriken; absence does not prove missing after fitting."
+          "The persistent acquisition flag preserves pickup state after fitting as Loaded Shuriken."
         ],
         "confidence": "Probable",
         "sourceReferences": [
@@ -1614,7 +1519,11 @@
       "name": "Robert's Firecrackers",
       "equipParamGoodsRowId": 9710,
       "itemIdHex": "EE250040",
-      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "acquisitionEventFlags": [
+        { "id": "primaryShopPurchaseFlag", "flag": 71101000, "source": "ShopLineupParam primary Memorial Mob rows sell Robert's Firecrackers.", "details": "Shared persistent purchase flag for the primary shop entries." },
+        { "id": "backupShopPurchaseFlag", "flag": 71102300, "source": "ShopLineupParam row 1100510 sells the late backup Robert's Firecrackers.", "details": "Persistent purchase flag for the backup shop entry." }
+      ],
+      "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
         {
           "type": "param",
@@ -1632,28 +1541,6 @@
           "details": "A goods inventory record with item ID 9710 means this raw Prosthetic Tool source item is currently present."
         }
       ],
-      "statusRules": [
-        {
-          "status": "collected",
-          "confidence": "verified",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": true
-            }
-          ]
-        },
-        {
-          "status": "unknown",
-          "confidence": "unknown",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": false
-            }
-          ]
-        }
-      ],
       "acquisitionMetadata": {
         "area": "Ashina Outskirts",
         "source": "Crow's Bed Memorial Mob; later Battlefield Memorial Mob backup",
@@ -1664,7 +1551,7 @@
           "Reach a merchant selling Robert's Firecrackers"
         ],
         "notes": [
-          "Fitted by the Sculptor as Shinobi Firecracker; absence does not prove missing after fitting."
+          "Persistent shop acquisition flags preserve purchase state after fitting as Shinobi Firecracker."
         ],
         "confidence": "Probable",
         "sourceReferences": [
@@ -1683,7 +1570,10 @@
       "name": "Flame Barrel",
       "equipParamGoodsRowId": 9720,
       "itemIdHex": "F8250040",
-      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "acquisitionEventFlags": [
+        { "id": "itemLotAcquisitionFlag", "flag": 6502, "source": "ItemLotParam row 1000000 awards the Flame Barrel.", "details": "Persistent get-item flag remains valid after fitting Flame Vent." }
+      ],
+      "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
         {
           "type": "param",
@@ -1701,28 +1591,6 @@
           "details": "A goods inventory record with item ID 9720 means this raw Prosthetic Tool source item is currently present."
         }
       ],
-      "statusRules": [
-        {
-          "status": "collected",
-          "confidence": "verified",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": true
-            }
-          ]
-        },
-        {
-          "status": "unknown",
-          "confidence": "unknown",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": false
-            }
-          ]
-        }
-      ],
       "acquisitionMetadata": {
         "area": "Hirata Estate",
         "source": "Estate Path campfire",
@@ -1733,7 +1601,7 @@
           "Reach Hirata Estate Estate Path"
         ],
         "notes": [
-          "Fitted by the Sculptor as Flame Vent; absence does not prove missing after fitting."
+          "The persistent acquisition flag preserves pickup state after fitting as Flame Vent."
         ],
         "confidence": "Probable",
         "sourceReferences": [
@@ -1752,7 +1620,10 @@
       "name": "Shinobi Axe of the Monkey",
       "equipParamGoodsRowId": 9730,
       "itemIdHex": "02260040",
-      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "acquisitionEventFlags": [
+        { "id": "itemLotAcquisitionFlag", "flag": 6503, "source": "ItemLotParam row 1000010 awards the Shinobi Axe of the Monkey.", "details": "Persistent get-item flag remains valid after fitting Loaded Axe." }
+      ],
+      "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
         {
           "type": "param",
@@ -1770,28 +1641,6 @@
           "details": "A goods inventory record with item ID 9730 means this raw Prosthetic Tool source item is currently present."
         }
       ],
-      "statusRules": [
-        {
-          "status": "collected",
-          "confidence": "verified",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": true
-            }
-          ]
-        },
-        {
-          "status": "unknown",
-          "confidence": "unknown",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": false
-            }
-          ]
-        }
-      ],
       "acquisitionMetadata": {
         "area": "Hirata Estate",
         "source": "Temple building near Estate Path",
@@ -1802,7 +1651,7 @@
           "Reach Hirata Estate Estate Path"
         ],
         "notes": [
-          "Fitted by the Sculptor as Loaded Axe; absence does not prove missing after fitting."
+          "The persistent acquisition flag preserves pickup state after fitting as Loaded Axe."
         ],
         "confidence": "Probable",
         "sourceReferences": [
@@ -1821,7 +1670,10 @@
       "name": "Mist Raven's Feathers",
       "equipParamGoodsRowId": 9740,
       "itemIdHex": "0C260040",
-      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "acquisitionEventFlags": [
+        { "id": "itemLotAcquisitionFlag", "flag": 6504, "source": "ItemLotParam row 1000020 awards Mist Raven's Feathers.", "details": "Persistent get-item flag remains valid after fitting Mist Raven." }
+      ],
+      "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
         {
           "type": "param",
@@ -1839,28 +1691,6 @@
           "details": "A goods inventory record with item ID 9740 means this raw Prosthetic Tool source item is currently present."
         }
       ],
-      "statusRules": [
-        {
-          "status": "collected",
-          "confidence": "verified",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": true
-            }
-          ]
-        },
-        {
-          "status": "unknown",
-          "confidence": "unknown",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": false
-            }
-          ]
-        }
-      ],
       "acquisitionMetadata": {
         "area": "Hirata Estate",
         "source": "Three-story pagoda",
@@ -1871,7 +1701,7 @@
           "Reach Hirata Estate bamboo thicket route"
         ],
         "notes": [
-          "Fitted by the Sculptor as Mist Raven; absence does not prove missing after fitting."
+          "The persistent acquisition flag preserves pickup state after fitting as Mist Raven."
         ],
         "confidence": "Probable",
         "sourceReferences": [
@@ -1890,7 +1720,10 @@
       "name": "Sabimaru",
       "equipParamGoodsRowId": 9750,
       "itemIdHex": "16260040",
-      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "acquisitionEventFlags": [
+        { "id": "itemLotAcquisitionFlag", "flag": 6505, "source": "ItemLotParam row 1110010 awards Sabimaru.", "details": "Persistent get-item flag remains valid after fitting Sabimaru." }
+      ],
+      "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
         {
           "type": "param",
@@ -1908,28 +1741,6 @@
           "details": "A goods inventory record with item ID 9750 means this raw Prosthetic Tool source item is currently present."
         }
       ],
-      "statusRules": [
-        {
-          "status": "collected",
-          "confidence": "verified",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": true
-            }
-          ]
-        },
-        {
-          "status": "unknown",
-          "confidence": "unknown",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": false
-            }
-          ]
-        }
-      ],
       "acquisitionMetadata": {
         "area": "Ashina Castle",
         "source": "Chest below Upper Tower - Antechamber",
@@ -1940,7 +1751,7 @@
           "Reach Ashina Castle Upper Tower"
         ],
         "notes": [
-          "Fitted by the Sculptor as Sabimaru; absence does not prove missing after fitting."
+          "The persistent acquisition flag preserves pickup state after fitting as Sabimaru."
         ],
         "confidence": "Probable",
         "sourceReferences": [
@@ -1959,7 +1770,10 @@
       "name": "Iron Fortress",
       "equipParamGoodsRowId": 9760,
       "itemIdHex": "20260040",
-      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "acquisitionEventFlags": [
+        { "id": "itemLotAcquisitionFlag", "flag": 71111500, "source": "ItemLotParam row 61400 awards the Iron Fortress shop item.", "details": "Persistent acquisition flag remains valid after fitting Loaded Umbrella." }
+      ],
+      "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
         {
           "type": "param",
@@ -1977,28 +1791,6 @@
           "details": "A goods inventory record with item ID 9760 means this raw Prosthetic Tool source item is currently present."
         }
       ],
-      "statusRules": [
-        {
-          "status": "collected",
-          "confidence": "verified",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": true
-            }
-          ]
-        },
-        {
-          "status": "unknown",
-          "confidence": "unknown",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": false
-            }
-          ]
-        }
-      ],
       "acquisitionMetadata": {
         "area": "Ashina Castle - Old Grave",
         "source": "Blackhat Badger",
@@ -2009,7 +1801,7 @@
           "Reach Old Grave and Blackhat Badger's shop"
         ],
         "notes": [
-          "Fitted by the Sculptor as Loaded Umbrella; absence does not prove source ownership because fitting consumes/transforms source items."
+          "The persistent acquisition flag preserves purchase state after fitting as Loaded Umbrella."
         ],
         "confidence": "Probable",
         "sourceReferences": [
@@ -2028,7 +1820,10 @@
       "name": "Large Fan",
       "equipParamGoodsRowId": 9770,
       "itemIdHex": "2A260040",
-      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "acquisitionEventFlags": [
+        { "id": "itemLotAcquisitionFlag", "flag": 6507, "source": "ItemLotParam row 1700010 awards the Large Fan.", "details": "Persistent get-item flag remains valid after fitting Divine Abduction." }
+      ],
+      "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
         {
           "type": "param",
@@ -2046,28 +1841,6 @@
           "details": "A goods inventory record with item ID 9770 means this raw Prosthetic Tool source item is currently present."
         }
       ],
-      "statusRules": [
-        {
-          "status": "collected",
-          "confidence": "verified",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": true
-            }
-          ]
-        },
-        {
-          "status": "unknown",
-          "confidence": "unknown",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": false
-            }
-          ]
-        }
-      ],
       "acquisitionMetadata": {
         "area": "Sunken Valley - Gun Fort",
         "source": "Long-arm Centipede Giraffe room",
@@ -2079,7 +1852,7 @@
           "Defeat Long-arm Centipede Giraffe"
         ],
         "notes": [
-          "Fitted by the Sculptor as Divine Abduction; absence does not prove missing after fitting."
+          "The persistent acquisition flag preserves pickup state after fitting as Divine Abduction."
         ],
         "confidence": "Probable",
         "sourceReferences": [
@@ -2098,7 +1871,10 @@
       "name": "Gyoubu's Broken Horn",
       "equipParamGoodsRowId": 9780,
       "itemIdHex": "34260040",
-      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "acquisitionEventFlags": [
+        { "id": "itemLotAcquisitionFlag", "flag": 6508, "source": "ItemLotParam row 1120010 awards Gyoubu's Broken Horn.", "details": "Persistent get-item flag remains valid after fitting Loaded Spear." }
+      ],
+      "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
         {
           "type": "param",
@@ -2116,28 +1892,6 @@
           "details": "A goods inventory record with item ID 9780 means this raw Prosthetic Tool source item is currently present."
         }
       ],
-      "statusRules": [
-        {
-          "status": "collected",
-          "confidence": "verified",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": true
-            }
-          ]
-        },
-        {
-          "status": "unknown",
-          "confidence": "unknown",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": false
-            }
-          ]
-        }
-      ],
       "acquisitionMetadata": {
         "area": "Ashina Reservoir",
         "source": "Gatehouse chest",
@@ -2149,7 +1903,7 @@
           "Reach Ashina Reservoir gatehouse"
         ],
         "notes": [
-          "Fitted by the Sculptor as Loaded Spear; absence does not prove missing after fitting."
+          "The persistent acquisition flag preserves pickup state after fitting as Loaded Spear."
         ],
         "confidence": "Probable",
         "sourceReferences": [
@@ -2168,7 +1922,10 @@
       "name": "Slender Finger",
       "equipParamGoodsRowId": 9790,
       "itemIdHex": "3E260040",
-      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "acquisitionEventFlags": [
+        { "id": "itemLotAcquisitionFlag", "flag": 6509, "source": "ItemLotParam row 2010 awards the Slender Finger.", "details": "Persistent get-item flag remains valid after fitting Finger Whistle." }
+      ],
+      "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
         {
           "type": "param",
@@ -2186,28 +1943,6 @@
           "details": "A goods inventory record with item ID 9790 means this raw Prosthetic Tool source item is currently present."
         }
       ],
-      "statusRules": [
-        {
-          "status": "collected",
-          "confidence": "verified",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": true
-            }
-          ]
-        },
-        {
-          "status": "unknown",
-          "confidence": "unknown",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": false
-            }
-          ]
-        }
-      ],
       "acquisitionMetadata": {
         "area": "Sunken Valley",
         "source": "Guardian Ape",
@@ -2218,7 +1953,7 @@
           "Defeat Guardian Ape"
         ],
         "notes": [
-          "Fitted by the Sculptor as Finger Whistle; absence does not prove missing after fitting."
+          "The persistent acquisition flag preserves pickup state after fitting as Finger Whistle."
         ],
         "confidence": "Probable",
         "sourceReferences": [
@@ -2237,7 +1972,10 @@
       "name": "Malcontent's Ring",
       "equipParamGoodsRowId": 9791,
       "itemIdHex": "3F260040",
-      "absenceSemantics": "prosthetic_source_absence_not_missing",
+      "acquisitionEventFlags": [
+        { "id": "itemLotAcquisitionFlag", "flag": 6743, "source": "ItemLotParam row 10802000 awards Malcontent's Ring.", "details": "Persistent get-item flag remains valid if the ring is consumed for the Malcontent upgrade." }
+      ],
+      "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
         {
           "type": "param",
@@ -2255,28 +1993,6 @@
           "details": "A goods inventory record with item ID 9791 means this Prosthetic Tool upgrade source item is currently present."
         }
       ],
-      "statusRules": [
-        {
-          "status": "collected",
-          "confidence": "verified",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": true
-            }
-          ]
-        },
-        {
-          "status": "unknown",
-          "confidence": "unknown",
-          "when": [
-            {
-              "evidenceId": "inventoryItem",
-              "state": false
-            }
-          ]
-        }
-      ],
       "acquisitionMetadata": {
         "area": "Ashina Depths",
         "source": "Shichimen Warrior in Guardian Ape's Burrow",
@@ -2288,7 +2004,7 @@
           "Defeat the Shichimen Warrior in Guardian Ape's Burrow"
         ],
         "notes": [
-          "Used for Malcontent whistle upgrade; absence does not prove upgrade-source availability."
+          "The persistent acquisition flag preserves collection state after use for the Malcontent upgrade."
         ],
         "confidence": "Probable",
         "sourceReferences": [
@@ -2303,19 +2019,9 @@
   ],
   "unresolved": [
     {
-      "id": "prosthetic_source_item_consumption",
-      "confidence": "Unknown",
-      "details": "Raw Prosthetic Tool source goods are consumed or transformed when fitted, so absence of these goods is not promoted to missing."
-    },
-    {
-      "id": "quest_context_item_retention",
-      "confidence": "Unknown",
-      "details": "Some quest-context texts may be consumed, transformed, or superseded. Their absence is reported as unknown until retention semantics are verified."
-    },
-    {
-      "id": "key_item_acquisition_flags",
-      "confidence": "Unknown",
-      "details": "Acquisition event flags for these key items are not mapped yet; ownership status uses inventory evidence only."
+      "id": "logical_holy_chapter_deduplication",
+      "confidence": "Probable",
+      "details": "EquipParamGoods exposes two Holy Chapter: Infested rows that share acquisition flag 50006320. They remain separate mapped rows for provenance, although they represent the same logical quest text in the UI."
     }
   ]
 }

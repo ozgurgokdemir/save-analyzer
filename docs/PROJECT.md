@@ -72,12 +72,11 @@ docs/
 
 research/
 ├── fixtures/
-│   └── S0000.sl2
-├── reference/
-│   ├── analyzer.py
 │   ├── README.md
-│   └── tests/
-│       └── test_analyzer.py
+│   └── sekiro/
+│       ├── 001/S0000.sl2
+│       ├── 002/S0000.sl2
+│       └── 003/S0000.sl2
 └── reports/
     └── exact_location_report.json
 ```
@@ -86,20 +85,19 @@ Key roles:
 
 - `data/sekiro/*.json` contains source-backed mappings and metadata.
 - `docs/research/*.md` contains research notes, evidence, confidence levels, and unresolved behavior.
-- `research/reference/analyzer.py` is the reference implementation.
-- `research/fixtures/S0000.sl2` is the shared verified Sekiro save fixture.
+- `research/fixtures/README.md` documents the three sanitized Sekiro regression fixtures.
 - `research/reports/exact_location_report.json` is the golden report for comparison tests and future ports.
 
 ## Analyzer Architecture
 
-The production implementation is the TypeScript parser and analyzer in `packages/parser` and `packages/analyzer`. The Python implementation in `research/reference/analyzer.py` remains the behavioral reference, and the TypeScript golden-parity tests protect the port against the frozen fixture and report.
+The production implementation is the TypeScript parser and analyzer in `packages/parser` and `packages/analyzer`. TypeScript golden-parity and cross-fixture tests protect the behavior contract.
 
 High-level flow:
 
 1. Read the BND4 `.sl2` save container.
 2. Extract `USER_DATA000`.
 3. Load structured mappings from `data/sekiro/*.json`.
-4. Read event flags using the documented `0xE8000` layout.
+4. Read event flags using the verified record-1000 serialized page layout.
 5. Read inventory and weapon records from the slot.
 6. Evaluate evidence rules for each mapped entity.
 7. Emit normalized category entities and summaries.
@@ -193,34 +191,28 @@ Missing required items usually produce `incomplete`, not `blocked`.
 
 ## Development Workflow
 
-Reference commands:
+Release checks:
 
 ```powershell
-python research\reference\analyzer.py > $null
-python -m unittest discover -s research\reference\tests -p "test_*.py"
+pnpm test
+pnpm typecheck
+pnpm build
 ```
 
-JSON validation:
+After an intentional behavior or mapping change, regenerate the golden report with:
 
 ```powershell
-python -m json.tool research\reports\exact_location_report.json > $null
-Get-ChildItem data\sekiro -Filter *.json | ForEach-Object { python -m json.tool $_.FullName > $null }
+pnpm golden:sekiro
 ```
 
 Expected discipline:
 
-- Add mappings to `data/sekiro/*.json`, not hardcoded parser branches.
-- Update the matching `docs/research/*.md` file for every verified discovery.
-- Add tests for every newly verified mapping or status rule.
-- Regenerate the golden report after behavior-affecting mapping changes.
-- Prefer `unknown` when evidence is incomplete.
-- Do not change parser semantics during documentation or layout-only work.
-
-The current golden report SHA-256 is:
-
-```text
-93F28702200A29BC6E22783F9ACFE41C15B482B2AC83215ADB5A218FA915DE27
-```
+- Add durable mappings to `data/sekiro/*.json` rather than hardcoded UI branches.
+- Update the matching `docs/research/*.md` page for every verified discovery.
+- Add cross-fixture assertions for every newly verified status rule.
+- Update `research/fixtures/README.md` when fixtures change.
+- Keep `unknown` for undecodable or genuinely unresolved evidence.
+- Never commit unsanitized player saves.
 
 ## Research Methodology
 
@@ -233,7 +225,7 @@ Every verified finding should include:
 
 Trusted source types currently used:
 
-- Direct reads from `S0000.sl2`.
+- Direct read-only analysis of the sanitized fixtures documented in `research/fixtures/README.md`.
 - SoulSplitter event flag and item pickup references.
 - Paramdex field definitions.
 - sekiro-online param CSVs such as `SkillParam`, `EquipParamGoods`, `EquipParamWeapon`, `ItemLotParam`, and `ShopLineupParam`.
@@ -247,109 +239,57 @@ Confidence rules:
 
 ## Current Progress
 
-The current fixture is `research/fixtures/S0000.sl2`. It preserves the valid Sekiro BND4 container structure, and `USER_DATA000` is the active analyzed slot. Steam account identifier bytes are neutralized; this changes only the fixture hash, not the analyzer evidence or expected category results.
+Three sanitized Sekiro fixtures cover the original reference stage, After Divine Dragon, and Before Sword Saint Isshin. Together they verify container parsing, the serialized event-flag decoder, and progression changes across the report.
 
 Verified categories:
 
-- Gourd Seeds are fully mapped for the current save.
-- Prayer Beads are fully reconciled for the current save.
-- Base Prosthetic Tools are verified from inventory weapon records.
-- Prosthetic Tool Upgrades are verified from inventory weapon records.
-- Combat Arts, passive/latent skills, martial arts, and special skills are verified where direct skill weapon records exist.
-- Ninjutsu identities are mapped, but ownership is unknown.
-- Key Items are implemented from verified inventory evidence where retention semantics are known.
-- Endings consume Key Item analyzer results and distinguish incomplete from blocked.
-- Bosses are intentionally deferred because current candidate flags are not reliable persistent boss-completion evidence.
+- Gourd Seeds and Prayer Beads reconcile aggregate totals with exact persistent location evidence.
+- Prosthetic Tools and upgrades use verified weapon inventory records.
+- Weapon-backed Skills use inventory evidence; Ninjutsu uses verified ItemLot acquisition flags.
+- Key Items combine retained inventory with persistent ItemLot/Shop acquisition flags.
+- Endings consume Key Item evidence and distinguish incomplete from blocked or unknown.
+- Bosses report progression for all 14 Memory-awarding major bosses using persistent Memory reward flags.
 
-Current fixture summary:
+Reference fixture summary:
 
 - Gourd Seeds: `7 / 9`
 - Prayer Beads: `26 / 40`
 - Base Prosthetic Tools: `9 / 10`
 - Prosthetic Upgrades: `12 / 30`
-- Skills: `57 total`, `29 unlocked`, `25 missing`, `3 unknown`
+- Skills: `31 / 57`, `0 unknown`
+- Key Items: `22 / 33`, `0 unknown`
+- Bosses: `8 / 14`, `0 unknown`
 - Endings: Immortal Severance incomplete, Purification incomplete, Return incomplete, Shura unknown
-- Bosses: deferred; statuses remain unknown unless a verified persistent progression flag is found
 
 ## Supported Analyzer Categories
 
-Inventory:
+Inventory and event flags are support sections used by the normalized categories below.
 
-- Reads known goods quantities and progression-derived totals.
+- **Gourd Seeds:** inventory-derived totals plus pickup and shop flags.
+- **Prayer Beads:** inventory/progression totals plus pickup, reward, replacement, and shop flags.
+- **Prosthetic Tools:** base `EquipParamWeapon` inventory records.
+- **Prosthetic Upgrades:** upgrade `EquipParamWeapon` inventory records.
+- **Skills:** verified weapon records and Ninjutsu ItemLot acquisition flags. Prerequisites and community guidance do not infer ownership.
+- **Key Items:** retained goods inventory plus persistent ItemLot/Shop acquisition flags for consumed or transformed items.
+- **Endings:** separate completion, availability, missing requirement, and permanent block evidence.
+- **Bosses:** persistent Memory reward flags for 14 Memory-awarding major bosses; inventory and speedrun split flags remain corroborating evidence.
 
-Event Flags:
+## Boss Coverage Boundaries
 
-- Uses the documented `0xE8000` layout.
-- Supports low item flags, shop flags, Prayer Bead secondary flags, and known candidate split flags as research-only where appropriate.
+Boss status represents persistent character progression for the 14 bosses with unique Memory rewards. It does not cover minibosses or encounters without a Memory, and it does not yet attribute an ON reward flag to the active NG cycle rather than an earlier cycle.
 
-Gourd Seeds:
-
-- Uses inventory totals plus item pickup and shop purchase flags.
-- Current verified missing locations are Sunken Valley and Fujioka the Info Broker.
-- Battlefield Memorial Mob is verified collected.
-
-Prayer Beads:
-
-- Uses inventory/progression total, primary pickup/shop flags, secondary ItemLotParam reward flags, and shop evidence.
-- Current fixture has `26 collected`, `14 missing`, `0 unknown`.
-
-Prosthetic Tools:
-
-- Uses base `EquipParamWeapon` inventory records.
-- Current fixture is missing Loaded Umbrella.
-
-Prosthetic Upgrades:
-
-- Uses upgrade `EquipParamWeapon` inventory records.
-- Upgrades are treated separately from base tools.
-
-Skills:
-
-- Uses direct `inventory_weapon` evidence for verified SkillParam and EquipParamWeapon rows.
-- Does not infer ownership from prerequisites, Esoteric Texts, bosses, or acquisition guidance.
-- Ninjutsu goods rows are identified but ownership storage is unresolved.
-
-Key Items:
-
-- Uses verified inventory evidence where item retention semantics are reliable.
-- Supports ending route analysis.
-
-Endings:
-
-- Uses completion, availability, missing requirement, and block evidence separately.
-- Does not infer endings from boss Memories.
-
-Bosses:
-
-- Category exists but remains deferred.
-- Boss Memory items and Memory award ItemLot flags are comparison evidence only, not defeat proof.
-
-## Deferred Work: Bosses
-
-Boss analysis is deferred because the investigated candidates are not reliable current-playthrough completion signals.
-
-Known facts from manual fixture-playthrough verification and save research:
-
-- Genichiro was defeated, but candidate speedrun split flag `9303` reads OFF.
-- Isshin Ashina was not defeated, and candidate flag `9316` reads OFF.
-- Headless Ape was uncertain, and candidate flag `9307` reads ON.
-
-Conclusion:
-
-- `930x` SoulSplitter-style boss split flags must not drive `defeated` or `not_defeated`.
-- Memory inventory and Memory award ItemLot flags must not drive boss defeat status.
-- Boss statuses should remain `unknown` until verified persistent boss/progression flags are found.
+SoulSplitter `930x` candidate flags and Memory inventory records remain useful corroborating evidence but do not override the persistent Memory reward flag.
 
 ## Current Limitations
 
-- The project currently has one verified save fixture.
-- NG+ behavior is not fully generalized.
-- Offering Box replacement behavior is not fully mapped as a general mechanic.
-- Boss completion flags are unresolved.
-- Ninjutsu ownership storage is unresolved.
-- Some acquisition metadata is probable community guidance, not verified save evidence.
-- Browser-level regression coverage is not yet automated.
-- Only one game implementation is currently available.
+- Sekiro is the only supported game.
+- NG+ cycle attribution is not fully generalized.
+- Offering Box replacement behavior is not generalized.
+- Boss coverage excludes minibosses and non-Memory encounters.
+- Ending completion, route-choice, and detailed NPC quest-step flags remain unresolved.
+- Sakura Dance row identity and some param-level guidance semantics remain unresolved.
+- Some acquisition metadata is community guidance rather than direct status evidence.
+- Browser-level interaction regression coverage is not yet automated.
 
 ## Browser Web App
 
@@ -370,12 +310,12 @@ Web app behavior:
 - Stores the generated report and selected file name in browser storage for return visits.
 - Presents verified statuses and unknowns separately.
 - Exposes acquisition guidance while hiding internal mapping identifiers.
+
 ## Roadmap
 
-1. Add independently sourced save fixtures covering alternate routes and progression states.
-2. Add NG+, Offering Box, Ninjutsu, and multi-slot regression cases.
-3. Add browser-level tests for file selection, analysis, category navigation, persistence, reset, and error handling.
-4. Add a defensive file-size limit and evaluate moving parsing off the main browser thread.
-5. Add and verify production security headers.
-6. Continue boss flag research when reliable persistent evidence becomes available.
-7. Add more games after the shared parser, analyzer, and report contracts are stable enough to support them cleanly.
+1. Add independently sourced fixtures for alternate routes, ending outcomes, NG+, Offering Box states, and multiple active slots.
+2. Add browser-level tests for file selection, analysis, category navigation, persistence, reset, and error handling.
+3. Add a defensive file-size limit and evaluate moving parsing off the main browser thread.
+4. Add and verify production security headers.
+5. Extend boss coverage to non-Memory encounters when reliable persistent evidence is available.
+6. Add more games after the shared parser, analyzer, and report contracts are stable enough to support them cleanly.

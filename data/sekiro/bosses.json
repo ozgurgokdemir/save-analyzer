@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "game": "sekiro",
-  "coverage": "deferred-memory-comparison-plus-speedrun-split-candidates",
+  "coverage": "complete-for-14-memory-awarding-major-bosses",
   "statusPolicy": {
-    "defeatedRequires": "verified boss defeat/progression flag with current-cycle completion semantics",
+    "defeatedRequires": "verified persistent ItemLotParam Memory award flag ON",
     "memoryEvidenceSufficientForDefeated": false,
-    "memoryAwardItemLotFlagSufficientForDefeated": false,
+    "memoryAwardItemLotFlagSufficientForDefeated": true,
     "speedrunSplitFlagsSufficientForDefeated": false,
-    "details": "Bosses are deferred. Memory inventory, Memory award ItemLot flags, and SoulSplitter 930x boss split flags are retained as comparison/candidate evidence only. They do not produce defeated/not_defeated status without a verified persistent save/progression flag."
+    "details": "The Memory award ItemLot flag is the authoritative persistent progression signal for each mapped major boss. Inventory and SoulSplitter 930x flags are retained as corroborating evidence. Status proves whether that boss's Memory reward has been awarded in this character save; it is not guaranteed to distinguish the current NG cycle from an earlier cycle."
   },
   "bosses": [
     {
@@ -561,14 +561,14 @@
   ],
   "unresolved": [
     {
-      "id": "boss_research_deferred",
+      "id": "non_memory_bosses_and_minibosses",
       "confidence": "Unknown",
-      "details": "Bosses are deferred until a verified persistent save/progression boss-completion flag source is found."
+      "details": "This category covers the 14 major bosses that award Memories. Minibosses and encounters without a unique Memory reward require separate progression flags."
     },
     {
-      "id": "soulsplitter_930x_boss_split_flags",
+      "id": "new_game_plus_cycle_attribution",
       "confidence": "Unknown",
-      "details": "SoulSplitter maps boss split enum values 9301-9317 and reads them as event flags for live splitting, but they are not reliable persistent boss-completion evidence for this save. Genichiro was manually verified as defeated in the fixture playthrough while candidate flag 9303 reads OFF; Isshin Ashina was manually verified as not defeated while candidate flag 9316 also reads OFF; Headless Ape is uncertain and candidate flag 9307 reads ON."
+      "details": "Memory reward flags prove that a boss reward was awarded in the character save. Additional controlled NG+ fixtures are required before claiming that every ON flag belongs to the active playthrough cycle rather than an earlier cycle."
     }
   ]
 }

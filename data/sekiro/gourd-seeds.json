@@ -65,11 +65,6 @@
           "type": "community-param-data",
           "source": "sekiro-online/params ShopLineupParam.csv",
           "details": "Row 1100101 sells equipId 4400 for 1000 sen with EventFlag 71101210 and sellQuantity 1. EquipId 4400 maps to goods item ID 0x40001130, little-endian 30110040, matching the verified Gourd Seed item ID."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Using event flag bit index eventFlag % 1000000 at base 0xE8000, flag 71101210 reads ON at offset 0xEB16B bit 2."
         }
       ]
     },
@@ -111,11 +106,6 @@
           "type": "community-param-data",
           "source": "sekiro-online/params ShopLineupParam.csv",
           "details": "Row 1100400 sells equipId 4400 for 2000 sen with EventFlag 71102000 and sellQuantity 1. EquipId 4400 maps to goods item ID 0x40001130, little-endian 30110040, matching the verified Gourd Seed item ID."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Using event flag bit index eventFlag % 1000000 at base 0xE8000, flag 71102000 reads OFF at offset 0xEB1CE bit 0."
         }
       ]
     },
@@ -152,11 +142,6 @@
           "type": "community-docs",
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 1700820 maps to event flag 6724."
-        },
-        {
-          "type": "save-analysis",
-          "source": "S0000.sl2 USER_DATA000",
-          "details": "Flag 6724 is OFF at low event flag base 0xE8000 in the manually analyzed save."
         }
       ]
     },

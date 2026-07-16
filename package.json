@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc -b && pnpm --filter @save-analyzer/web build",
+    "golden:sekiro": "node --experimental-strip-types scripts/generate-sekiro-golden.ts",
     "sanitize:fixture": "node scripts/sanitize-sekiro-fixture.mjs",
     "typecheck": "tsc -b && pnpm --filter @save-analyzer/web check",
     "test": "node --experimental-strip-types --test \"packages/**/*.test.ts\""

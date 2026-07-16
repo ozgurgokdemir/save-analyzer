@@ -251,10 +251,89 @@ function analyzeGenericEntities(context: SekiroContext, entities: AnyRecord[]): 
   return entities.map((entity) => analyzeGenericEntity(context, entity));
 }
 
+function analyzeBossEntities(context: SekiroContext, entities: AnyRecord[]): AnyRecord[] {
+  return analyzeGenericEntities(context, entities).map((entity) => {
+    const evidence = pyGet<AnyRecord[]>(entity, "evidence", []);
+    const memoryAwardFlag = evidence.find((item) => item.id === "memory_award_flag");
+    const speedrunSplitFlag = evidence.find(
+      (item) => item.id === "speedrunSplitFlagCandidate",
+    );
+    const state = memoryAwardFlag?.state;
+    const status =
+      state === true ? "defeated" : state === false ? "not_defeated" : "unknown";
+    const confidence =
+      typeof state === "boolean"
+        ? SOURCE_CONFIDENCE_VERIFIED
+        : SOURCE_CONFIDENCE_UNKNOWN;
+    const details =
+      state === true
+        ? "The persistent ItemLotParam Memory award flag is ON in this character save."
+        : state === false
+          ? "The persistent ItemLotParam Memory award flag is OFF in this character save."
+          : "The Memory award flag could not be decoded for this boss.";
+
+    return ensureCommonEntityFields(
+      {
+        ...entity,
+        status,
+        confidence,
+        progressionEvidence: {
+          primary: memoryAwardFlag ?? null,
+          corroboratingSplitFlag: speedrunSplitFlag ?? null,
+          corroborated:
+            typeof state === "boolean" && speedrunSplitFlag?.state === state,
+          details,
+        },
+      },
+      { evidence, notes: [details] },
+    );
+  });
+}
+
 function analyzeKeyItemEntities(context: SekiroContext, entities: AnyRecord[]): AnyRecord[] {
-  const analyzed = analyzeGenericEntities(context, entities);
+  const withAcquisitionFlags = entities.map((entity) => ({
+    ...entity,
+    evidence: [
+      ...pyGet<AnyRecord[]>(entity, "evidence", []),
+      ...pyGet<AnyRecord[]>(entity, "acquisitionEventFlags", []).map(
+        (mapping, index) => ({
+          id: pyGet(mapping, "id", `acquisitionEventFlag${index + 1}`),
+          type: "event_flag",
+          flag: mapping.flag,
+          confidence: pyGet(mapping, "confidence", SOURCE_CONFIDENCE_VERIFIED),
+          source: mapping.source,
+          details: mapping.details,
+          role: "persistent_acquisition",
+        }),
+      ),
+    ],
+  }));
+  const analyzed = analyzeGenericEntities(context, withAcquisitionFlags);
   for (const entity of analyzed) {
     const ownershipEvidence = pyGet<AnyRecord[]>(entity, "evidence", []);
+    const inventoryEvidence = ownershipEvidence.find(
+      (evidence) => evidence.id === "inventoryItem",
+    );
+    const acquisitionEvidence = ownershipEvidence.filter(
+      (evidence) => evidence.role === "persistent_acquisition",
+    );
+    if (acquisitionEvidence.length > 0) {
+      const acquired = acquisitionEvidence.some((evidence) => evidence.state === true);
+      const allAcquisitionFlagsOff = acquisitionEvidence.every(
+        (evidence) => evidence.state === false,
+      );
+      if (inventoryEvidence?.state === true || acquired) {
+        entity.status = "collected";
+        entity.confidence = SOURCE_CONFIDENCE_VERIFIED;
+      } else if (allAcquisitionFlagsOff) {
+        entity.status = "missing";
+        entity.confidence = SOURCE_CONFIDENCE_VERIFIED;
+      } else {
+        entity.status = "unknown";
+        entity.confidence = SOURCE_CONFIDENCE_UNKNOWN;
+      }
+      entity.acquisitionEvidence = acquisitionEvidence;
+    }
     entity.ownershipEvidence = ownershipEvidence;
     Object.assign(
       entity,
@@ -293,6 +372,83 @@ function genericStatusSummary(entities: AnyRecord[], statusKeys: string[]): AnyR
     total: entities.length,
     ...byStatus,
     byStatus,
+  };
+}
+
+function aggregateCollectionSummary(total: number, collected: number): AnyRecord {
+  const safeCollected = Math.max(0, Math.min(total, collected));
+  const byStatus = {
+    collected: safeCollected,
+    missing: total - safeCollected,
+    unknown: 0,
+  };
+  return {
+    total,
+    ...byStatus,
+    byStatus,
+  };
+}
+
+function reconcileLocationAttribution(
+  locations: AnyRecord[],
+  aggregateCollected: number,
+): { locations: AnyRecord[]; attribution: AnyRecord | null } {
+  const safeCollected = Math.max(0, Math.min(locations.length, aggregateCollected));
+  const aggregateMissing = locations.length - safeCollected;
+  const knownCollected = locations.filter(
+    (location) => location.status === "collected",
+  ).length;
+  const markedMissing = locations.filter(
+    (location) => location.status === "missing",
+  ).length;
+  const alreadyUnknown = locations.filter(
+    (location) => location.status === "unknown",
+  ).length;
+  const reconciled =
+    knownCollected === safeCollected &&
+    markedMissing === aggregateMissing &&
+    alreadyUnknown === 0;
+
+  if (reconciled) {
+    return { locations, attribution: null };
+  }
+
+  const unresolvedLocations = markedMissing + alreadyUnknown;
+  const details =
+    `Inventory progression proves ${safeCollected} of ${locations.length} collected, ` +
+    `but location evidence identifies ${knownCollected} collected and leaves ` +
+    `${unresolvedLocations} unresolved. The ${aggregateMissing} missing ` +
+    `${aggregateMissing === 1 ? "item is" : "items are"} among those unresolved locations.`;
+  const reconciledLocations = locations.map((location) => {
+    if (location.status !== "missing") {
+      return location;
+    }
+    const confidence = pyGet<AnyRecord | string | null>(location, "confidence", null);
+    return {
+      ...location,
+      status: "unknown",
+      statusDetails: details,
+      confidence:
+        confidence !== null && typeof confidence === "object"
+          ? {
+              ...confidence,
+              collectionStatus: SOURCE_CONFIDENCE_UNKNOWN,
+              details,
+            }
+          : confidence,
+    };
+  });
+
+  return {
+    locations: reconciledLocations,
+    attribution: {
+      reconciled: false,
+      aggregateCollected: safeCollected,
+      aggregateMissing,
+      knownCollectedLocations: knownCollected,
+      unresolvedLocations,
+      details,
+    },
   };
 }
 
@@ -593,6 +749,9 @@ function prayerLocationStatus(
 ): string {
   if (flagState === true) {
     return "collected";
+  }
+  if (flagState === false && offPrimaryFlagsAreDefiniteMissing) {
+    return "missing";
   }
   if (hasVerifiedSecondaryItemLot) {
     return "collected";
@@ -1040,14 +1199,14 @@ const SOURCES_USED = [
   "sekiro-online/params: SkillParam row data for combat-art skill links.",
   "sekiro-online/params: EquipParamWeapon row data for combat-art skill weapon IDs and names.",
   "sekiro-online/params: SkillParam and EquipParamWeapon row data for verified passive, latent, martial-art, and special skill ownership rows.",
-  "sekiro-online/params: EquipParamGoods row data for Ninjutsu candidate goods IDs.",
+  "sekiro-online/params: EquipParamGoods and ItemLotParam rows for Ninjutsu identities and acquisition flags.",
   "Fextralife Skills and Skill Trees page: community skill tree/name/cost/prerequisite context.",
   "Fextralife skill and Esoteric Text pages: community acquisition metadata for mapped Combat Arts.",
   "Fextralife Endings page: community ending-route requirements and final choice items.",
   "sekiro-online/params: EquipParamGoods row data for key item, Esoteric Text, and Prosthetic Tool source item names and IDs.",
-  "sekiro-online/params: ItemLotParam row data for secondary Prayer Bead reward/replacement entries.",
-  "sekiro-online/params: ShopLineupParam row data for merchant entries.",
-  "S0000.sl2, read-only local inspection.",
+  "sekiro-online/params: ItemLotParam row data for Prayer Bead rewards, boss Memories, Ninjutsu, and Key Item acquisition.",
+  "sekiro-online/params: ShopLineupParam row data for merchant and Key Item acquisition.",
+  "Uploaded .sl2 save, read-only local inspection.",
 ];
 
 export async function parseSekiroSaveShape(
@@ -1104,17 +1263,27 @@ export async function parseSekiroSaveShape(
       "but does not identify any exact location.",
   };
 
-  const offPrimaryFlagsAreDefiniteMissing = false;
-  const gourdLocations = analyzeLocations(
+  const offPrimaryFlagsAreDefiniteMissing = true;
+  const analyzedGourdLocations = analyzeLocations(
     context,
     pyGet<AnyRecord[]>(data.gourdSeeds, "locations", []),
   );
-  const prayerLocations = analyzePrayerLocations(
+  const analyzedPrayerLocations = analyzePrayerLocations(
     context,
     pyGet<AnyRecord[]>(data.prayerBeads, "locations", []),
     prayerInventoryEvidence,
     { offPrimaryFlagsAreDefiniteMissing },
   );
+  const gourdAttribution = reconcileLocationAttribution(
+    analyzedGourdLocations,
+    gourdSeedsFound,
+  );
+  const prayerAttribution = reconcileLocationAttribution(
+    analyzedPrayerLocations,
+    prayerBeadsFound,
+  );
+  const gourdLocations = gourdAttribution.locations;
+  const prayerLocations = prayerAttribution.locations;
   const prayerFlagsOn = prayerLocations.filter(
     (location) => location.eventFlagState === true,
   ).length;
@@ -1138,11 +1307,13 @@ export async function parseSekiroSaveShape(
       location.eventFlagState !== true &&
       hasVerifiedSecondaryItemLotCollection(pyGet(location.itemLotFlag, "secondary", [])),
   ).length;
-  const prayerSummary = genericStatusSummary(prayerLocations, [
-    "collected",
-    "missing",
-    "unknown",
-  ]);
+  // Location flags answer "which ones?", while inventory/progression answers
+  // "how many?". The latter remains valid when a save's serialized event-flag
+  // layout cannot attribute every collected location.
+  const prayerSummary = aggregateCollectionSummary(
+    data.prayerBeads.total,
+    prayerBeadsFound,
+  );
 
   const knownGourdMissing = gourdLocations.filter(
     (location) => location.status === "missing",
@@ -1153,11 +1324,10 @@ export async function parseSekiroSaveShape(
   );
   const shopGourdMissing = shopGourd.filter((location) => location.status === "missing");
   const shopGourdUnknown = shopGourd.filter((location) => location.status === "unknown");
-  const gourdSummary = genericStatusSummary(gourdLocations, [
-    "collected",
-    "missing",
-    "unknown",
-  ]);
+  const gourdSummary = aggregateCollectionSummary(
+    data.gourdSeeds.total,
+    gourdSeedsFound,
+  );
   const shopSeedInference = {
     shopSeedsTotal: shopGourd.length,
     shopSeedsFoundByEventFlags: shopGourdCollected.length,
@@ -1182,7 +1352,7 @@ export async function parseSekiroSaveShape(
     flagStates[String(flag)] = readEventFlag(context, flag);
   }
 
-  const bossEntities = analyzeGenericEntities(
+  const bossEntities = analyzeBossEntities(
     context,
     pyGet<AnyRecord[]>(data.bosses, "bosses", []),
   );
@@ -1273,6 +1443,12 @@ export async function parseSekiroSaveShape(
     0,
     prayerBeadsFound - prayerStatusCollected,
   );
+  const prayerEvidenceDetails =
+    prayerFlagsUnknown === 0 && primaryFlagCountMatchesInventory
+      ? `All ${prayerLocations.length} primary Prayer Bead pickup/shop flags decode, and their ${prayerFlagsOn} ON / ${prayerFlagsOff} OFF split matches the inventory-derived total. ON means collected and OFF means missing for these verified persistent flags.`
+      : evidenceCountMatchesInventory
+        ? `Primary flags identify ${prayerFlagsOn} collected locations, and verified secondary evidence accounts for the remaining ${prayerSecondaryItemLotAttributed} collected locations needed to match the inventory-derived total.`
+        : "Primary and secondary location evidence does not reconcile with the inventory-derived Prayer Bead total for this save.";
   const prayerReconciliation = {
     reconciled: evidenceCountMatchesInventory,
     offPrimaryFlagsAreDefiniteMissing,
@@ -1291,19 +1467,12 @@ export async function parseSekiroSaveShape(
     matchesInventoryDerivedCountAfterSecondaryEvidence: evidenceCountMatchesInventory,
     prayerNecklacesIncludedInDerivedTotal: true,
     openEvidenceSignals: [
-      "bossDefeatFlag",
-      "itemLotFlag",
-      "shopFlag",
+      "primaryPickupOrShopFlag",
+      "secondaryItemLotFlag",
       "offeringBoxFlag",
       "inventoryEvidence",
     ],
-    details:
-      "The save carries more Prayer Beads by inventory/progression evidence than " +
-      "the mapped primary pickup/shop flags show as ON. Verified secondary " +
-      "ItemLotParam reward/replacement flags currently attribute the 11-bead " +
-      "primary-flag gap for this save. The remaining 14 locations have verified " +
-      "reward/pickup or shop-purchase evidence flags OFF, so they are missing " +
-      "by evidence in this save.",
+    details: prayerEvidenceDetails,
   };
   const prayerFlagSummary = {
     mappedLocations: prayerLocations.length,
@@ -1319,17 +1488,20 @@ export async function parseSekiroSaveShape(
     matchesInventoryDerivedCount: primaryFlagCountMatchesInventory,
     matchesInventoryDerivedCountAfterSecondaryEvidence: evidenceCountMatchesInventory,
     offPrimaryFlagsAreDefiniteMissing,
-    details:
-      "Primary pickup/shop flags are readable current save event states. OFF primary " +
-      "flags are not promoted to definitive missing locations. Verified secondary " +
-      "ItemLotParam flags can independently attribute collection for locations where " +
-      "the primary flag is OFF; verified missing-evidence rules mark the remaining " +
-      "OFF reward/pickup or shop-purchase states as missing.",
+    details: prayerEvidenceDetails,
   };
 
   if (!prayerFlagSummary.matchesInventoryDerivedCountAfterSecondaryEvidence) {
     warnings.push(
-      "Prayer Bead evidence signals do not reconcile with the inventory-derived Prayer Bead count in this save; OFF primary flags are reported as unknown, not as definite missing locations.",
+      "Prayer Bead evidence signals do not reconcile with the inventory-derived Prayer Bead count in this save; exact location statuses remain unknown where attribution is unresolved.",
+    );
+  }
+  if (
+    gourdLocations.filter((location) => location.status === "collected").length !==
+    gourdSeedsFound
+  ) {
+    warnings.push(
+      "Gourd Seed location evidence does not reconcile with the inventory-derived Gourd Seed count in this save; the category total uses inventory progression while exact location attribution remains incomplete.",
     );
   }
 
@@ -1367,6 +1539,9 @@ export async function parseSekiroSaveShape(
       summary: prayerSummary,
       flagStateSummary: prayerFlagSummary,
       reconciliation: prayerReconciliation,
+      ...(prayerAttribution.attribution === null
+        ? {}
+        : { locationAttribution: prayerAttribution.attribution }),
       unresolved: data.prayerBeads.unresolved,
     },
     gourdSeeds: {
@@ -1381,6 +1556,9 @@ export async function parseSekiroSaveShape(
         compactLocation(location),
       ),
       shopSeedInference,
+      ...(gourdAttribution.attribution === null
+        ? {}
+        : { locationAttribution: gourdAttribution.attribution }),
     },
     prosthetics: {
       coverage: data.prosthetics.coverage,
@@ -1433,8 +1611,10 @@ export function legacyReport(result: AnyRecord): AnyRecord {
     active_slot: result.container.activeSlot,
     sources_used: result.sourcesUsed,
     event_flag_reader: {
-      event_flag_base_hex: result.eventFlags.layout.baseOffsetHex,
-      bit_index_modulo: result.eventFlags.layout.bitIndexModulo,
+      record_id: result.eventFlags.layout.recordId,
+      record_version: result.eventFlags.layout.recordVersion,
+      record_data_offset_hex: result.eventFlags.layout.recordDataOffsetHex,
+      page_size_hex: result.eventFlags.layout.pageSizeHex,
       bit_order: result.eventFlags.layout.bitOrder,
       status: result.eventFlags.layout.scope,
     },
@@ -1445,7 +1625,11 @@ export function legacyReport(result: AnyRecord): AnyRecord {
       shop_seed_inference: gourd.shopSeedInference,
       unresolved_shop_candidates: gourd.unresolvedShopCandidates,
       plain_english:
-        "Confirmed missing: Sunken Valley treasure and Fujioka the Info Broker purchase. Battlefield Memorial Mob purchase is collected.",
+        gourd.confirmedMissingLocations.length === 0
+          ? "All Gourd Seeds are collected."
+          : `Confirmed missing: ${gourd.confirmedMissingLocations
+              .map((location: AnyRecord) => location.name)
+              .join(" and ")}.`,
     },
     prayer_bead_sample_flags: result.prayerBeads.locations,
     boss_memory_items_found: bosses

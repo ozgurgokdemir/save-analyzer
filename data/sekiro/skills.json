@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "game": "sekiro",
-  "coverage": "combat-art-passive-latent-and-ninjutsu-skills-with-verified-or-unknown-save-evidence",
+  "coverage": "combat-art-passive-latent-and-ninjutsu-skills-with-verified-save-evidence",
   "statusPolicy": {
-    "unlockedRequires": "verified inventory_weapon evidence for a mapped SkillParam/EquipParamWeapon skill ownership row",
-    "missingRequires": "verified absence of that mapped inventory_weapon ownership row in USER_DATA000",
-    "unknownRequires": "mapped skill identity exists but save ownership semantics are not verified, as with current Ninjutsu goods candidates",
-    "details": "Combat Arts and verified non-Combat-Art skills use direct weapon inventory records. Ninjutsu EquipParamGoods rows are included as unknown until their save record shape is verified. Prerequisites, Esoteric Texts, bosses, and acquisition guidance never drive ownership status."
+    "unlockedRequires": "verified inventory_weapon evidence or a verified Ninjutsu ItemLot get-item flag",
+    "missingRequires": "verified absence of the mapped inventory_weapon ownership row or an OFF Ninjutsu ItemLot get-item flag",
+    "unknownRequires": "mapped skill identity exists but its save ownership evidence cannot be decoded",
+    "details": "Combat Arts and other mapped skills use direct weapon inventory records. Bloodsmoke, Puppeteer, and Bestowal Ninjutsu use their dedicated ItemLotParam get-item flags 6745, 6746, and 6747. Prerequisites and acquisition guidance never drive ownership status."
   },
   "skills": [
     {
@@ -5120,31 +5120,34 @@
       "requiredSkillPointsConfidence": "Unknown",
       "prerequisites": {
         "skills": [],
-        "confidence": "Unknown",
-        "details": "Ninjutsu ownership storage is unresolved; do not infer ownership from boss or route progression."
+        "confidence": "Verified",
+        "details": "Awarded from ItemLotParam row 2080 after defeating Genichiro."
       },
       "sourceReferences": [
         {
           "type": "community-param-data",
           "label": "EquipParamGoods row 2100: Bloodsmoke Ninjutsu",
           "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv",
-          "evidence": "EquipParamGoods identifies the Ninjutsu goods row, but the save ownership record shape is not yet verified."
+          "evidence": "EquipParamGoods identifies the Ninjutsu goods row; ItemLotParam row 2080 awards it with get-item flag 6745."
         }
       ],
       "evidence": [
         {
-          "id": "ninjutsuGoodsOwnershipCandidate",
-          "type": "unverified_inventory_item_candidate",
-          "itemIdHex": "34080000",
-          "confidence": "unknown",
-          "source": "EquipParamGoods row 2100: Bloodsmoke Ninjutsu.",
-          "details": "The goods row is identified, but this analyzer does not yet have verified save-record semantics for Ninjutsu ownership. This evidence intentionally does not drive status."
+          "id": "ninjutsuItemLotFlag",
+          "type": "event_flag",
+          "flag": 6745,
+          "confidence": "verified",
+          "source": "ItemLotParam row 2080 awards Bloodsmoke Ninjutsu (EquipParamGoods 2100).",
+          "details": "The dedicated get-item flag is persistent save ownership evidence for Bloodsmoke Ninjutsu."
         }
       ],
-      "statusRules": [],
+      "statusRules": [
+        { "status": "unlocked", "confidence": "verified", "when": [{ "evidenceId": "ninjutsuItemLotFlag", "state": true }] },
+        { "status": "missing", "confidence": "verified", "when": [{ "evidenceId": "ninjutsuItemLotFlag", "state": false }] }
+      ],
       "acquisitionMetadata": {
         "skillTree": "Ninjutsu",
-        "acquisitionMethod": "Unknown; Ninjutsu acquisition guidance has not been promoted from source material in this batch.",
+        "acquisitionMethod": "Awarded by a major-boss ItemLot; ownership uses the dedicated persistent get-item flag.",
         "requiredPrerequisiteSkills": [],
         "skillPointCost": null,
         "skillPointCostType": "unknown",
@@ -5158,11 +5161,11 @@
         "currency": null,
         "requiredItemOrText": null,
         "notes": [
-          "Acquisition guidance is not ownership evidence. Ninjutsu status remains unknown until its save storage semantics are verified."
+          "The dedicated ItemLotParam get-item flag is authoritative Ninjutsu ownership evidence."
         ],
         "sourceReferences": [],
-        "acquisitionMetadataConfidence": "Unknown",
-        "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+        "acquisitionMetadataConfidence": "Verified",
+        "ownershipInferencePolicy": "Status is driven by the dedicated persistent ItemLotParam get-item flag."
       }
     },
     {
@@ -5177,31 +5180,34 @@
       "requiredSkillPointsConfidence": "Unknown",
       "prerequisites": {
         "skills": [],
-        "confidence": "Unknown",
-        "details": "Ninjutsu ownership storage is unresolved; do not infer ownership from boss or route progression."
+        "confidence": "Verified",
+        "details": "Awarded from ItemLotParam row 2020 after defeating the Folding Screen Monkeys."
       },
       "sourceReferences": [
         {
           "type": "community-param-data",
           "label": "EquipParamGoods row 2110: Puppeteer Ninjutsu",
           "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv",
-          "evidence": "EquipParamGoods identifies the Ninjutsu goods row, but the save ownership record shape is not yet verified."
+          "evidence": "EquipParamGoods identifies the Ninjutsu goods row; ItemLotParam row 2020 awards it with get-item flag 6746."
         }
       ],
       "evidence": [
         {
-          "id": "ninjutsuGoodsOwnershipCandidate",
-          "type": "unverified_inventory_item_candidate",
-          "itemIdHex": "3E080000",
-          "confidence": "unknown",
-          "source": "EquipParamGoods row 2110: Puppeteer Ninjutsu.",
-          "details": "The goods row is identified, but this analyzer does not yet have verified save-record semantics for Ninjutsu ownership. This evidence intentionally does not drive status."
+          "id": "ninjutsuItemLotFlag",
+          "type": "event_flag",
+          "flag": 6746,
+          "confidence": "verified",
+          "source": "ItemLotParam row 2020 awards Puppeteer Ninjutsu (EquipParamGoods 2110).",
+          "details": "The dedicated get-item flag is persistent save ownership evidence for Puppeteer Ninjutsu."
         }
       ],
-      "statusRules": [],
+      "statusRules": [
+        { "status": "unlocked", "confidence": "verified", "when": [{ "evidenceId": "ninjutsuItemLotFlag", "state": true }] },
+        { "status": "missing", "confidence": "verified", "when": [{ "evidenceId": "ninjutsuItemLotFlag", "state": false }] }
+      ],
       "acquisitionMetadata": {
         "skillTree": "Ninjutsu",
-        "acquisitionMethod": "Unknown; Ninjutsu acquisition guidance has not been promoted from source material in this batch.",
+        "acquisitionMethod": "Awarded by a major-boss ItemLot; ownership uses the dedicated persistent get-item flag.",
         "requiredPrerequisiteSkills": [],
         "skillPointCost": null,
         "skillPointCostType": "unknown",
@@ -5215,11 +5221,11 @@
         "currency": null,
         "requiredItemOrText": null,
         "notes": [
-          "Acquisition guidance is not ownership evidence. Ninjutsu status remains unknown until its save storage semantics are verified."
+          "The dedicated ItemLotParam get-item flag is authoritative Ninjutsu ownership evidence."
         ],
         "sourceReferences": [],
-        "acquisitionMetadataConfidence": "Unknown",
-        "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+        "acquisitionMetadataConfidence": "Verified",
+        "ownershipInferencePolicy": "Status is driven by the dedicated persistent ItemLotParam get-item flag."
       }
     },
     {
@@ -5234,31 +5240,34 @@
       "requiredSkillPointsConfidence": "Unknown",
       "prerequisites": {
         "skills": [],
-        "confidence": "Unknown",
-        "details": "Ninjutsu ownership storage is unresolved; do not infer ownership from boss or route progression."
+        "confidence": "Verified",
+        "details": "Awarded from ItemLotParam row 2200 after defeating the Headless Ape encounter."
       },
       "sourceReferences": [
         {
           "type": "community-param-data",
           "label": "EquipParamGoods row 2120: Bestowal Ninjutsu",
           "url": "https://github.com/sekiro-online/params/blob/master/src/EquipParamGoods.csv",
-          "evidence": "EquipParamGoods identifies the Ninjutsu goods row, but the save ownership record shape is not yet verified."
+          "evidence": "EquipParamGoods identifies the Ninjutsu goods row; ItemLotParam row 2200 awards it with get-item flag 6747."
         }
       ],
       "evidence": [
         {
-          "id": "ninjutsuGoodsOwnershipCandidate",
-          "type": "unverified_inventory_item_candidate",
-          "itemIdHex": "48080000",
-          "confidence": "unknown",
-          "source": "EquipParamGoods row 2120: Bestowal Ninjutsu.",
-          "details": "The goods row is identified, but this analyzer does not yet have verified save-record semantics for Ninjutsu ownership. This evidence intentionally does not drive status."
+          "id": "ninjutsuItemLotFlag",
+          "type": "event_flag",
+          "flag": 6747,
+          "confidence": "verified",
+          "source": "ItemLotParam row 2200 awards Bestowal Ninjutsu (EquipParamGoods 2120).",
+          "details": "The dedicated get-item flag is persistent save ownership evidence for Bestowal Ninjutsu."
         }
       ],
-      "statusRules": [],
+      "statusRules": [
+        { "status": "unlocked", "confidence": "verified", "when": [{ "evidenceId": "ninjutsuItemLotFlag", "state": true }] },
+        { "status": "missing", "confidence": "verified", "when": [{ "evidenceId": "ninjutsuItemLotFlag", "state": false }] }
+      ],
       "acquisitionMetadata": {
         "skillTree": "Ninjutsu",
-        "acquisitionMethod": "Unknown; Ninjutsu acquisition guidance has not been promoted from source material in this batch.",
+        "acquisitionMethod": "Awarded by a major-boss ItemLot; ownership uses the dedicated persistent get-item flag.",
         "requiredPrerequisiteSkills": [],
         "skillPointCost": null,
         "skillPointCostType": "unknown",
@@ -5272,20 +5281,15 @@
         "currency": null,
         "requiredItemOrText": null,
         "notes": [
-          "Acquisition guidance is not ownership evidence. Ninjutsu status remains unknown until its save storage semantics are verified."
+          "The dedicated ItemLotParam get-item flag is authoritative Ninjutsu ownership evidence."
         ],
         "sourceReferences": [],
-        "acquisitionMetadataConfidence": "Unknown",
-        "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+        "acquisitionMetadataConfidence": "Verified",
+        "ownershipInferencePolicy": "Status is driven by the dedicated persistent ItemLotParam get-item flag."
       }
     }
   ],
   "unresolved": [
-    {
-      "id": "ninjutsu_goods_ownership_record_shape",
-      "confidence": "Unknown",
-      "details": "EquipParamGoods rows 2100, 2110, and 2120 identify Bloodsmoke, Puppeteer, and Bestowal Ninjutsu, but USER_DATA000 ownership semantics are not verified. Bloodsmoke has a loose goods-ID occurrence in the save, but it does not match the verified weapon-record pattern and is not used for status."
-    },
     {
       "id": "sakura_dance_skillparam_670_weapon_7700",
       "confidence": "Unknown",
