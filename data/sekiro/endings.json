@@ -98,7 +98,10 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "acquisition": "Shura requires choosing to obey Owl and follow the Iron Code at the Ashina Castle rooftop choice.",
+        "area": "Ashina Castle",
+        "location": "Ashina Castle - Upper Tower rooftop"
       },
       "sourceReferences": [
         {
@@ -184,7 +187,10 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "acquisition": "Immortal Severance is the baseline non-Shura ending: stay loyal to Kuro, defeat the Divine Dragon, then give only Divine Dragon's Tears to Kuro.",
+        "area": "Ashina Reservoir",
+        "location": "Ashina Reservoir finale and Kuro's final choice"
       },
       "sourceReferences": [
         {
@@ -288,7 +294,10 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "acquisition": "Purification requires staying loyal to Kuro, completing the Emma/eavesdrop route before Divine Dragon, using Father's Bell Charm to enter the second Hirata memory, defeating Owl (Father), and giving Aromatic Flower plus Divine Dragon's Tears to Kuro.",
+        "area": "Ashina Reservoir",
+        "location": "Ashina Reservoir finale and Kuro's final choice"
       },
       "sourceReferences": [
         {
@@ -426,7 +435,10 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "acquisition": "Return requires completing the Divine Child quest, obtaining Frozen Tears, then giving Frozen Tears and Divine Dragon's Tears to Kuro.",
+        "area": "Ashina Reservoir",
+        "location": "Ashina Reservoir finale and Kuro's final choice"
       },
       "sourceReferences": [
         {

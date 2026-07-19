@@ -76,7 +76,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Fountainhead Palace",
+        "acquisition": "Obtain from Divine Dragon. Reach Fountainhead Palace Defeat the Divine Dragon"
       }
     },
     {
@@ -127,7 +129,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Inner Sanctum",
+        "area": "Senpou Temple",
         "source": "Divine Child of Rejuvenation quest",
         "npc": "Divine Child of Rejuvenation",
         "boss": null,
@@ -147,7 +149,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Inner Sanctum",
+        "acquisition": "Obtain from Divine Child of Rejuvenation quest. Progress the Divine Child rice quest Provide the serpent viscera quest items Continue the Return route until Frozen Tears are received"
       }
     },
     {
@@ -198,7 +202,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Senpou Temple / Sunken Valley route",
+        "area": "Senpou Temple",
         "source": "Great Serpent route step",
         "npc": null,
         "boss": null,
@@ -217,7 +221,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Senpou Temple / Sunken Valley route",
+        "acquisition": "Obtain from Great Serpent route step. Progress the Great Serpent route tied to the Return ending Use Puppeteer Ninjutsu on the kite route where required"
       }
     },
     {
@@ -286,7 +292,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Sunken Valley",
+        "acquisition": "Obtain from Great Serpent cave route. Reach the Sunken Valley serpent cave route"
       }
     },
     {
@@ -337,7 +345,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Dilapidated Temple / Ashina Castle",
+        "area": "Dilapidated Temple",
         "source": "Emma and Kuro eavesdrop route",
         "npc": "Emma",
         "boss": null,
@@ -356,7 +364,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Dilapidated Temple / Ashina Castle",
+        "acquisition": "Obtain from Emma and Kuro eavesdrop route. Stay loyal to Kuro Progress the Purification eavesdrop route before Divine Dragon"
       }
     },
     {
@@ -407,7 +417,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Hirata Estate - second memory",
+        "area": "Hirata Estate",
         "source": "Owl (Father)",
         "npc": null,
         "boss": "Owl (Father)",
@@ -427,7 +437,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Hirata Estate - second memory",
+        "acquisition": "Obtain from Owl (Father). Obtain Father's Bell Charm Enter the second Hirata memory Defeat Owl (Father)"
       }
     },
     {
@@ -497,7 +509,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Ashina Castle",
+        "acquisition": "Obtain from Great Shinobi Owl. Stay loyal to Kuro at the Owl choice Defeat Great Shinobi Owl"
       }
     },
     {
@@ -548,7 +562,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Senpou Temple - Inner Sanctum",
+        "area": "Senpou Temple",
         "source": "Divine Child of Rejuvenation",
         "npc": "Divine Child of Rejuvenation",
         "boss": "Folding Screen Monkeys",
@@ -567,7 +581,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Senpou Temple - Inner Sanctum",
+        "acquisition": "Obtain from Divine Child of Rejuvenation. Defeat Folding Screen Monkeys Speak with the Divine Child"
       }
     },
     {
@@ -618,7 +634,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Ashina Depths - Wedding Cave Door",
+        "area": "Ashina Depths",
         "source": "Wedding Cave",
         "npc": null,
         "boss": "Corrupted Monk",
@@ -637,7 +653,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Ashina Depths - Wedding Cave Door",
+        "acquisition": "Obtain from Wedding Cave. Defeat Corrupted Monk in Ashina Depths Reach the Wedding Cave Door area"
       }
     },
     {
@@ -688,7 +706,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Sunken Valley - Guardian Ape's Watering Hole",
+        "area": "Sunken Valley",
         "source": "Lotus after Guardian Ape",
         "npc": null,
         "boss": "Guardian Ape",
@@ -706,7 +724,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Sunken Valley - Guardian Ape's Watering Hole",
+        "acquisition": "Obtain from Lotus after Guardian Ape. Defeat Guardian Ape"
       }
     },
     {
@@ -775,7 +795,9 @@
             "label": "Fextralife Shinobi Esoteric Text",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Shinobi+Esoteric+Text"
           }
-        ]
+        ],
+        "location": "Dilapidated Temple",
+        "acquisition": "Obtain from Sculptor. Acquire at least 1 skill point"
       }
     },
     {
@@ -844,7 +866,9 @@
             "label": "Fextralife Prosthetic Esoteric Text",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Esoteric+Text"
           }
-        ]
+        ],
+        "location": "Dilapidated Temple",
+        "acquisition": "Obtain from Sculptor. Fit any three Prosthetic Tools"
       }
     },
     {
@@ -895,7 +919,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Ashina Outskirts / Ashina Castle",
+        "area": "Ashina Outskirts",
         "source": "Tengu of Ashina rat quest; later fallback through Isshin/Emma",
         "npc": "Tengu of Ashina",
         "boss": null,
@@ -913,7 +937,9 @@
             "label": "Fextralife Ashina Esoteric Text",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Ashina+Esoteric+Text"
           }
-        ]
+        ],
+        "location": "Ashina Outskirts / Ashina Castle",
+        "acquisition": "Obtain from Tengu of Ashina rat quest; later fallback through Isshin/Emma. Complete Tengu's rat quest or later fallback route"
       }
     },
     {
@@ -964,7 +990,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Senpou Temple, Mt. Kongo",
+        "area": "Senpou Temple",
         "source": "Small shrine near Main Hall Idol",
         "npc": null,
         "boss": null,
@@ -982,7 +1008,9 @@
             "label": "Fextralife Senpou Esoteric Text",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Senpou+Esoteric+Text"
           }
-        ]
+        ],
+        "location": "Senpou Temple, Mt. Kongo",
+        "acquisition": "Obtain from Small shrine near Main Hall Idol. Reach Senpou Temple Main Hall area"
       }
     },
     {
@@ -1033,7 +1061,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Great Serpent Shrine / fallback through Emma",
+        "area": "Ashina Castle",
         "source": "Tengu of Ashina or Emma fallback",
         "npc": "Tengu of Ashina",
         "boss": null,
@@ -1052,7 +1080,9 @@
             "label": "Fextralife Mushin Esoteric Text",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Mushin+Esoteric+Text"
           }
-        ]
+        ],
+        "location": "Great Serpent Shrine / fallback through Emma",
+        "acquisition": "Obtain from Tengu of Ashina or Emma fallback. Learn a final skill in a skill tree Speak to Tengu or later fallback NPC"
       }
     },
     {
@@ -1063,7 +1093,12 @@
       "equipParamGoodsRowId": 9209,
       "itemIdHex": "F9230040",
       "acquisitionEventFlags": [
-        { "id": "itemLotAcquisitionFlag", "flag": 52000010, "source": "ItemLotParam row 2000010 awards Holy Chapter: Dragon's Return.", "details": "Persistent get-item flag for the quest-context item." }
+        {
+          "id": "itemLotAcquisitionFlag",
+          "flag": 52000010,
+          "source": "ItemLotParam row 2000010 awards Holy Chapter: Dragon's Return.",
+          "details": "Persistent get-item flag for the quest-context item."
+        }
       ],
       "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
@@ -1084,7 +1119,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Inner Sanctum",
+        "area": "Senpou Temple",
         "source": "Divine Child route",
         "npc": "Divine Child of Rejuvenation",
         "boss": null,
@@ -1102,7 +1137,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Inner Sanctum",
+        "acquisition": "Obtain from Divine Child route. Progress the Return route"
       }
     },
     {
@@ -1153,7 +1190,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Story progression",
+        "area": "Ashina Castle",
         "source": "Kuro route context",
         "npc": "Kuro",
         "boss": null,
@@ -1171,7 +1208,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Story progression",
+        "acquisition": "Obtain from Kuro route context. Progress the non-Shura story route"
       }
     },
     {
@@ -1222,7 +1261,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Story progression",
+        "area": "Ashina Castle",
         "source": "Kuro route context",
         "npc": "Kuro",
         "boss": null,
@@ -1240,7 +1279,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Story progression",
+        "acquisition": "Obtain from Kuro route context. Progress the non-Shura story route"
       }
     },
     {
@@ -1291,7 +1332,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Story progression",
+        "area": "Ashina Castle",
         "source": "Kuro route context",
         "npc": "Kuro",
         "boss": null,
@@ -1309,7 +1350,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Story progression",
+        "acquisition": "Obtain from Kuro route context. Progress the non-Shura story route"
       }
     },
     {
@@ -1320,7 +1363,12 @@
       "equipParamGoodsRowId": 9215,
       "itemIdHex": "FF230040",
       "acquisitionEventFlags": [
-        { "id": "itemLotAcquisitionFlag", "flag": 50006320, "source": "ItemLotParam row 63200 awards Holy Chapter: Infested.", "details": "Persistent get-item flag shared by the normal and alternate acquisition rows." }
+        {
+          "id": "itemLotAcquisitionFlag",
+          "flag": 50006320,
+          "source": "ItemLotParam row 63200 awards Holy Chapter: Infested.",
+          "details": "Persistent get-item flag shared by the normal and alternate acquisition rows."
+        }
       ],
       "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
@@ -1341,7 +1389,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Senpou Temple / Inner Sanctum route",
+        "area": "Senpou Temple",
         "source": "Return route context",
         "npc": "Divine Child of Rejuvenation",
         "boss": null,
@@ -1359,7 +1407,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Senpou Temple / Inner Sanctum route",
+        "acquisition": "Obtain from Return route context. Progress the Return route"
       }
     },
     {
@@ -1370,7 +1420,12 @@
       "equipParamGoodsRowId": 9228,
       "itemIdHex": "0C240040",
       "acquisitionEventFlags": [
-        { "id": "itemLotAcquisitionFlag", "flag": 50006320, "source": "ItemLotParam row 2000820 awards the alternate Holy Chapter: Infested row.", "details": "Persistent get-item flag shared by the normal and alternate acquisition rows." }
+        {
+          "id": "itemLotAcquisitionFlag",
+          "flag": 50006320,
+          "source": "ItemLotParam row 2000820 awards the alternate Holy Chapter: Infested row.",
+          "details": "Persistent get-item flag shared by the normal and alternate acquisition rows."
+        }
       ],
       "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
@@ -1391,7 +1446,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Senpou Temple / Inner Sanctum route",
+        "area": "Senpou Temple",
         "source": "Return route context",
         "npc": "Divine Child of Rejuvenation",
         "boss": null,
@@ -1409,7 +1464,9 @@
             "label": "Fextralife Endings",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
           }
-        ]
+        ],
+        "location": "Senpou Temple / Inner Sanctum route",
+        "acquisition": "Obtain from Return route context. Progress the Return route"
       }
     },
     {
@@ -1420,7 +1477,12 @@
       "equipParamGoodsRowId": 2910,
       "itemIdHex": "5E0B0040",
       "acquisitionEventFlags": [
-        { "id": "itemLotAcquisitionFlag", "flag": 6740, "source": "ItemLotParam row 2000 awards the Mechanical Barrel.", "details": "Persistent get-item flag remains valid after the barrel unlocks Prosthetic upgrades." }
+        {
+          "id": "itemLotAcquisitionFlag",
+          "flag": 6740,
+          "source": "ItemLotParam row 2000 awards the Mechanical Barrel.",
+          "details": "Persistent get-item flag remains valid after the barrel unlocks Prosthetic upgrades."
+        }
       ],
       "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
@@ -1441,7 +1503,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Ashina Outskirts - Castle Gate",
+        "area": "Ashina Outskirts",
         "source": "Gyoubu Oniwa",
         "npc": null,
         "boss": "Gyoubu Oniwa",
@@ -1459,7 +1521,9 @@
             "label": "Fextralife Prosthetic Tools",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
           }
-        ]
+        ],
+        "location": "Ashina Outskirts - Castle Gate",
+        "acquisition": "Obtain from Gyoubu Oniwa. Defeat Gyoubu Oniwa"
       }
     },
     {
@@ -1470,7 +1534,12 @@
       "equipParamGoodsRowId": 9700,
       "itemIdHex": "E4250040",
       "acquisitionEventFlags": [
-        { "id": "itemLotAcquisitionFlag", "flag": 6500, "source": "ItemLotParam row 1100000 awards the Shuriken Wheel.", "details": "Persistent get-item flag remains valid after fitting Loaded Shuriken." }
+        {
+          "id": "itemLotAcquisitionFlag",
+          "flag": 6500,
+          "source": "ItemLotParam row 1100000 awards the Shuriken Wheel.",
+          "details": "Persistent get-item flag remains valid after fitting Loaded Shuriken."
+        }
       ],
       "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
@@ -1509,7 +1578,9 @@
             "label": "Fextralife Shuriken Wheel",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Shuriken+Wheel"
           }
-        ]
+        ],
+        "location": "Ashina Outskirts",
+        "acquisition": "Obtain from Corpse near Outskirts Wall - Gate Path Idol. Reach Outskirts Wall - Gate Path"
       }
     },
     {
@@ -1520,8 +1591,18 @@
       "equipParamGoodsRowId": 9710,
       "itemIdHex": "EE250040",
       "acquisitionEventFlags": [
-        { "id": "primaryShopPurchaseFlag", "flag": 71101000, "source": "ShopLineupParam primary Memorial Mob rows sell Robert's Firecrackers.", "details": "Shared persistent purchase flag for the primary shop entries." },
-        { "id": "backupShopPurchaseFlag", "flag": 71102300, "source": "ShopLineupParam row 1100510 sells the late backup Robert's Firecrackers.", "details": "Persistent purchase flag for the backup shop entry." }
+        {
+          "id": "primaryShopPurchaseFlag",
+          "flag": 71101000,
+          "source": "ShopLineupParam primary Memorial Mob rows sell Robert's Firecrackers.",
+          "details": "Shared persistent purchase flag for the primary shop entries."
+        },
+        {
+          "id": "backupShopPurchaseFlag",
+          "flag": 71102300,
+          "source": "ShopLineupParam row 1100510 sells the late backup Robert's Firecrackers.",
+          "details": "Persistent purchase flag for the backup shop entry."
+        }
       ],
       "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
@@ -1560,7 +1641,9 @@
             "label": "Fextralife Robert's Firecrackers",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Robert%27s+Firecrackers"
           }
-        ]
+        ],
+        "location": "Ashina Outskirts",
+        "acquisition": "Obtain from Crow's Bed Memorial Mob; later Battlefield Memorial Mob backup. Reach a merchant selling Robert's Firecrackers"
       }
     },
     {
@@ -1571,7 +1654,12 @@
       "equipParamGoodsRowId": 9720,
       "itemIdHex": "F8250040",
       "acquisitionEventFlags": [
-        { "id": "itemLotAcquisitionFlag", "flag": 6502, "source": "ItemLotParam row 1000000 awards the Flame Barrel.", "details": "Persistent get-item flag remains valid after fitting Flame Vent." }
+        {
+          "id": "itemLotAcquisitionFlag",
+          "flag": 6502,
+          "source": "ItemLotParam row 1000000 awards the Flame Barrel.",
+          "details": "Persistent get-item flag remains valid after fitting Flame Vent."
+        }
       ],
       "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
@@ -1610,7 +1698,9 @@
             "label": "Fextralife Flame Barrel",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Flame+Barrel"
           }
-        ]
+        ],
+        "location": "Hirata Estate",
+        "acquisition": "Obtain from Estate Path campfire. Reach Hirata Estate Estate Path"
       }
     },
     {
@@ -1621,7 +1711,12 @@
       "equipParamGoodsRowId": 9730,
       "itemIdHex": "02260040",
       "acquisitionEventFlags": [
-        { "id": "itemLotAcquisitionFlag", "flag": 6503, "source": "ItemLotParam row 1000010 awards the Shinobi Axe of the Monkey.", "details": "Persistent get-item flag remains valid after fitting Loaded Axe." }
+        {
+          "id": "itemLotAcquisitionFlag",
+          "flag": 6503,
+          "source": "ItemLotParam row 1000010 awards the Shinobi Axe of the Monkey.",
+          "details": "Persistent get-item flag remains valid after fitting Loaded Axe."
+        }
       ],
       "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
@@ -1660,7 +1755,9 @@
             "label": "Fextralife Shinobi Axe of the Monkey",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Shinobi+Axe+of+the+Monkey"
           }
-        ]
+        ],
+        "location": "Hirata Estate",
+        "acquisition": "Obtain from Temple building near Estate Path. Reach Hirata Estate Estate Path"
       }
     },
     {
@@ -1671,7 +1768,12 @@
       "equipParamGoodsRowId": 9740,
       "itemIdHex": "0C260040",
       "acquisitionEventFlags": [
-        { "id": "itemLotAcquisitionFlag", "flag": 6504, "source": "ItemLotParam row 1000020 awards Mist Raven's Feathers.", "details": "Persistent get-item flag remains valid after fitting Mist Raven." }
+        {
+          "id": "itemLotAcquisitionFlag",
+          "flag": 6504,
+          "source": "ItemLotParam row 1000020 awards Mist Raven's Feathers.",
+          "details": "Persistent get-item flag remains valid after fitting Mist Raven."
+        }
       ],
       "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
@@ -1710,7 +1812,9 @@
             "label": "Fextralife Mist Raven's Feathers",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Mist+Raven%27s+Feathers"
           }
-        ]
+        ],
+        "location": "Hirata Estate",
+        "acquisition": "Obtain from Three-story pagoda. Reach Hirata Estate bamboo thicket route"
       }
     },
     {
@@ -1721,7 +1825,12 @@
       "equipParamGoodsRowId": 9750,
       "itemIdHex": "16260040",
       "acquisitionEventFlags": [
-        { "id": "itemLotAcquisitionFlag", "flag": 6505, "source": "ItemLotParam row 1110010 awards Sabimaru.", "details": "Persistent get-item flag remains valid after fitting Sabimaru." }
+        {
+          "id": "itemLotAcquisitionFlag",
+          "flag": 6505,
+          "source": "ItemLotParam row 1110010 awards Sabimaru.",
+          "details": "Persistent get-item flag remains valid after fitting Sabimaru."
+        }
       ],
       "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
@@ -1760,7 +1869,9 @@
             "label": "Fextralife Sabimaru",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Sabimaru"
           }
-        ]
+        ],
+        "location": "Ashina Castle",
+        "acquisition": "Obtain from Chest below Upper Tower - Antechamber. Reach Ashina Castle Upper Tower"
       }
     },
     {
@@ -1771,7 +1882,12 @@
       "equipParamGoodsRowId": 9760,
       "itemIdHex": "20260040",
       "acquisitionEventFlags": [
-        { "id": "itemLotAcquisitionFlag", "flag": 71111500, "source": "ItemLotParam row 61400 awards the Iron Fortress shop item.", "details": "Persistent acquisition flag remains valid after fitting Loaded Umbrella." }
+        {
+          "id": "itemLotAcquisitionFlag",
+          "flag": 71111500,
+          "source": "ItemLotParam row 61400 awards the Iron Fortress shop item.",
+          "details": "Persistent acquisition flag remains valid after fitting Loaded Umbrella."
+        }
       ],
       "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
@@ -1792,7 +1908,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Ashina Castle - Old Grave",
+        "area": "Ashina Castle",
         "source": "Blackhat Badger",
         "npc": "Blackhat Badger",
         "boss": null,
@@ -1810,7 +1926,9 @@
             "label": "Fextralife Iron Fortress",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Iron+Fortress"
           }
-        ]
+        ],
+        "location": "Ashina Castle - Old Grave",
+        "acquisition": "Obtain from Blackhat Badger. Reach Old Grave and Blackhat Badger's shop"
       }
     },
     {
@@ -1821,7 +1939,12 @@
       "equipParamGoodsRowId": 9770,
       "itemIdHex": "2A260040",
       "acquisitionEventFlags": [
-        { "id": "itemLotAcquisitionFlag", "flag": 6507, "source": "ItemLotParam row 1700010 awards the Large Fan.", "details": "Persistent get-item flag remains valid after fitting Divine Abduction." }
+        {
+          "id": "itemLotAcquisitionFlag",
+          "flag": 6507,
+          "source": "ItemLotParam row 1700010 awards the Large Fan.",
+          "details": "Persistent get-item flag remains valid after fitting Divine Abduction."
+        }
       ],
       "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
@@ -1842,7 +1965,7 @@
         }
       ],
       "acquisitionMetadata": {
-        "area": "Sunken Valley - Gun Fort",
+        "area": "Sunken Valley",
         "source": "Long-arm Centipede Giraffe room",
         "npc": null,
         "boss": "Long-arm Centipede Giraffe",
@@ -1861,7 +1984,9 @@
             "label": "Fextralife Large Fan",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Large+Fan"
           }
-        ]
+        ],
+        "location": "Sunken Valley - Gun Fort",
+        "acquisition": "Obtain from Long-arm Centipede Giraffe room. Reach Gun Fort Defeat Long-arm Centipede Giraffe"
       }
     },
     {
@@ -1872,7 +1997,12 @@
       "equipParamGoodsRowId": 9780,
       "itemIdHex": "34260040",
       "acquisitionEventFlags": [
-        { "id": "itemLotAcquisitionFlag", "flag": 6508, "source": "ItemLotParam row 1120010 awards Gyoubu's Broken Horn.", "details": "Persistent get-item flag remains valid after fitting Loaded Spear." }
+        {
+          "id": "itemLotAcquisitionFlag",
+          "flag": 6508,
+          "source": "ItemLotParam row 1120010 awards Gyoubu's Broken Horn.",
+          "details": "Persistent get-item flag remains valid after fitting Loaded Spear."
+        }
       ],
       "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
@@ -1912,7 +2042,9 @@
             "label": "Fextralife Gyoubu's Broken Horn",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Gyoubu%27s+Broken+Horn"
           }
-        ]
+        ],
+        "location": "Ashina Reservoir",
+        "acquisition": "Obtain from Gatehouse chest. Obtain the Gatehouse Key Reach Ashina Reservoir gatehouse"
       }
     },
     {
@@ -1923,7 +2055,12 @@
       "equipParamGoodsRowId": 9790,
       "itemIdHex": "3E260040",
       "acquisitionEventFlags": [
-        { "id": "itemLotAcquisitionFlag", "flag": 6509, "source": "ItemLotParam row 2010 awards the Slender Finger.", "details": "Persistent get-item flag remains valid after fitting Finger Whistle." }
+        {
+          "id": "itemLotAcquisitionFlag",
+          "flag": 6509,
+          "source": "ItemLotParam row 2010 awards the Slender Finger.",
+          "details": "Persistent get-item flag remains valid after fitting Finger Whistle."
+        }
       ],
       "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
@@ -1962,7 +2099,9 @@
             "label": "Fextralife Slender Finger",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Slender+Finger"
           }
-        ]
+        ],
+        "location": "Sunken Valley",
+        "acquisition": "Obtain from Guardian Ape. Defeat Guardian Ape"
       }
     },
     {
@@ -1973,7 +2112,12 @@
       "equipParamGoodsRowId": 9791,
       "itemIdHex": "3F260040",
       "acquisitionEventFlags": [
-        { "id": "itemLotAcquisitionFlag", "flag": 6743, "source": "ItemLotParam row 10802000 awards Malcontent's Ring.", "details": "Persistent get-item flag remains valid if the ring is consumed for the Malcontent upgrade." }
+        {
+          "id": "itemLotAcquisitionFlag",
+          "flag": 6743,
+          "source": "ItemLotParam row 10802000 awards Malcontent's Ring.",
+          "details": "Persistent get-item flag remains valid if the ring is consumed for the Malcontent upgrade."
+        }
       ],
       "absenceSemantics": "persistent_acquisition_flag_off_means_missing",
       "sourceReferences": [
@@ -2013,7 +2157,9 @@
             "label": "Fextralife Malcontent's Ring",
             "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Malcontent%27s+Ring"
           }
-        ]
+        ],
+        "location": "Ashina Depths",
+        "acquisition": "Obtain from Shichimen Warrior in Guardian Ape's Burrow. Defeat Headless Ape encounter Defeat the Shichimen Warrior in Guardian Ape's Burrow"
       }
     }
   ],

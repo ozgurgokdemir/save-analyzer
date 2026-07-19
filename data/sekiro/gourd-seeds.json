@@ -25,7 +25,8 @@
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 10200001 maps to event flag 6723."
         }
-      ]
+      ],
+      "acquisition": "Defeat General Naomori Kawarada and collect the Gourd Seed reward."
     },
     {
       "id": "after_chained_ogre",
@@ -43,7 +44,8 @@
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 1100200 maps to event flag 6725."
         }
-      ]
+      ],
+      "acquisition": "Collect the Gourd Seed at Building immediately after Chained Ogre / Outskirts Wall - Stairway."
     },
     {
       "id": "battlefield_memorial_mob",
@@ -66,7 +68,8 @@
           "source": "sekiro-online/params ShopLineupParam.csv",
           "details": "Row 1100101 sells equipId 4400 for 1000 sen with EventFlag 71101210 and sellQuantity 1. EquipId 4400 maps to goods item ID 0x40001130, little-endian 30110040, matching the verified Gourd Seed item ID."
         }
-      ]
+      ],
+      "acquisition": "Purchase the Gourd Seed at Vendor near Gyoubu arena / Ashina Castle Gate Fortress."
     },
     {
       "id": "ashina_castle_antechamber",
@@ -84,7 +87,8 @@
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 1110020 maps to event flag 6726."
         }
-      ]
+      ],
+      "acquisition": "Collect the Gourd Seed at Chest near Upper Tower - Antechamber Sculptor Idol."
     },
     {
       "id": "fujioka_info_broker",
@@ -107,7 +111,8 @@
           "source": "sekiro-online/params ShopLineupParam.csv",
           "details": "Row 1100400 sells equipId 4400 for 2000 sen with EventFlag 71102000 and sellQuantity 1. EquipId 4400 maps to goods item ID 0x40001130, little-endian 30110040, matching the verified Gourd Seed item ID."
         }
-      ]
+      ],
+      "acquisition": "Purchase the Gourd Seed at Fujioka shop after rescuing him in Ashina Castle."
     },
     {
       "id": "senpou_temple",
@@ -125,7 +130,8 @@
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 2000730 maps to event flag 6727."
         }
-      ]
+      ],
+      "acquisition": "Collect the Gourd Seed at First temple with immortal monks / rafters area."
     },
     {
       "id": "sunken_valley",
@@ -143,7 +149,8 @@
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 1700820 maps to event flag 6724."
         }
-      ]
+      ],
+      "acquisition": "Collect the Gourd Seed at Under-Shrine Valley / Gun Fort route climbing section, near small hut."
     },
     {
       "id": "mibu_village",
@@ -161,7 +168,8 @@
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 1500010 maps to event flag 6728."
         }
-      ]
+      ],
+      "acquisition": "Collect the Gourd Seed at Mibu Village, by the large glowing tree."
     },
     {
       "id": "fountainhead_palace",
@@ -179,7 +187,8 @@
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 2500000 maps to event flag 6729."
         }
-      ]
+      ],
+      "acquisition": "Collect the Gourd Seed at Chest near Palace Grounds Sculptor Idol."
     }
   ]
 }

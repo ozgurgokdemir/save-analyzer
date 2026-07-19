@@ -217,73 +217,71 @@ function statusBadge(statusValue: unknown) {
   );
 }
 
-function primitiveText(value: unknown): string | null {
+type MetadataValue = string | string[];
+
+function metadataValue(value: unknown): MetadataValue | null {
   if (typeof value === 'string' && value.trim()) return value;
   if (typeof value === 'number' || typeof value === 'boolean')
     return String(value);
   if (Array.isArray(value)) {
-    const values = value.filter((item) =>
-      ['string', 'number', 'boolean'].includes(typeof item),
-    );
-    return values.length ? values.join(', ') : null;
+    const values = value
+      .filter((item) =>
+        ['string', 'number', 'boolean'].includes(typeof item),
+      )
+      .map(String);
+    return values.length ? values : null;
   }
   return null;
 }
 
-function metadataRows(metadata: unknown): Array<[string, string]> {
+const metadataFieldOrder: Record<string, string[]> = {
+  gourd_seed: ['location', 'acquisition'],
+  prayer_bead: ['location', 'acquisition'],
+  prosthetic: ['location', 'acquisition', 'requiredProgression'],
+  prosthetic_upgrade: ['location', 'acquisition'],
+  skill: ['skillTree', 'location', 'acquisitionMethod'],
+  key_item: ['location', 'acquisition', 'requirements'],
+  ending: ['location', 'acquisition', 'whatStillNeeded', 'criticalChoice'],
+  boss: ['location', 'acquisition'],
+};
+
+const metadataFieldLabels: Record<string, string> = {
+  acquisitionMethod: 'Acquisition',
+};
+
+function metadataRows(entity: AnyRecord): Array<[string, MetadataValue]> {
+  const metadata = entity.acquisitionMetadata;
   if (!metadata || typeof metadata !== 'object' || Array.isArray(metadata))
     return [];
-  const ignored = new Set([
-    'sourceReferences',
-    'notes',
-    'ownershipInferencePolicy',
-    'confidence',
-    'sourceType',
-    'shopLineupParamRowId',
-    'itemLotParamRowId',
-  ]);
-  return Object.entries(metadata as AnyRecord)
-    .filter(
-      ([key]) =>
-        !ignored.has(key) &&
-        !/(?:param|confidence|rowId|itemId|eventFlag)/i.test(key),
+  const fields = metadataFieldOrder[String(entity.category)] ?? [];
+  return fields
+    .map(
+      (key) =>
+        [
+          metadataFieldLabels[key] ?? titleCase(key),
+          metadataValue((metadata as AnyRecord)[key]),
+        ] as const,
     )
-    .map(([key, value]) => [titleCase(key), primitiveText(value)] as const)
-    .filter((row): row is [string, string] => row[1] !== null)
-    .slice(0, 10);
-}
-
-function noteEntries(entity: AnyRecord): string[] {
-  const isPublicNote = (note: unknown): note is string =>
-    typeof note === 'string' &&
-    note.trim().length > 0 &&
-    !/(?:\bflag\b|itemlotparam|shoplineupparam|equipparam|skillparam|inventory_weapon|inventory-derived|mapping row|row id|sha-256)/i.test(
-      note,
-    );
-  const notes = Array.isArray(entity.notes)
-    ? entity.notes.filter(isPublicNote)
-    : [];
-  if (
-    isPublicNote(entity.statusDetails) &&
-    !notes.includes(entity.statusDetails)
-  ) {
-    return [entity.statusDetails, ...notes];
-  }
-  return notes;
+    .filter((row): row is [string, MetadataValue] => row[1] !== null);
 }
 
 function entitySubtitle(entity: AnyRecord): string {
   const acquisition = (entity.acquisitionMetadata ??
     entity.sourceLocation ??
     {}) as AnyRecord;
+  const fieldsByCategory: Record<string, unknown[]> = {
+    gourd_seed: [entity.area ?? acquisition.area],
+    prayer_bead: [entity.area ?? acquisition.area],
+    prosthetic: [entity.area ?? acquisition.area],
+    prosthetic_upgrade: [entity.baseToolName],
+    skill: [entity.skillTree ?? acquisition.skillTree],
+    key_item: [entity.area ?? acquisition.area],
+    ending: [acquisition.criticalChoice],
+    boss: [acquisition.area],
+  };
   return [
     ...new Set(
-      [
-        entity.area ?? acquisition.area,
-        entity.location ?? acquisition.location,
-        entity.skillTree ?? acquisition.skillTree,
-        entity.baseToolName,
-      ].filter(
+      (fieldsByCategory[String(entity.category)] ?? []).filter(
         (value): value is string =>
           typeof value === 'string' && value.trim().length > 0,
       ),
@@ -292,42 +290,34 @@ function entitySubtitle(entity: AnyRecord): string {
 }
 
 function EntityDetails({ entity }: { entity: AnyRecord }) {
-  const acquisition = metadataRows(entity.acquisitionMetadata);
-  const notes = noteEntries(entity);
+  const acquisition = metadataRows(entity);
+  if (acquisition.length === 0) return null;
 
   return (
     <div className="space-y-5 border-t pt-4">
-      {acquisition.length > 0 && (
-        <section aria-label="Acquisition metadata">
-          <dl className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
-            {acquisition.map(([label, value]) => (
-              <div key={`${label}-${value}`} className="flex flex-col gap-0.5">
-                <dt className="text-xs text-muted-foreground">{label}</dt>
-                <dd className="leading-6 text-foreground">{value}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
-      )}
-
-      {notes.length > 0 && (
-        <section aria-label="Notes">
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Notes
-          </h4>
-          <ul className="mt-3 list-disc space-y-1 ps-5 text-muted-foreground">
-            {notes.map((note) => (
-              <li key={note}>{note}</li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {acquisition.length === 0 && notes.length === 0 && (
-        <p className="text-muted-foreground">
-          No additional acquisition details are available for this entry.
-        </p>
-      )}
+      <section aria-label="Acquisition metadata">
+        <dl className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
+          {acquisition.map(([label, value]) => (
+            <div
+              key={`${label}-${Array.isArray(value) ? value.join('-') : value}`}
+              className="flex flex-col gap-0.5"
+            >
+              <dt className="text-xs text-muted-foreground">{label}</dt>
+              <dd className="leading-6 text-foreground">
+                {Array.isArray(value) ? (
+                  <ul className="list-disc space-y-1 ps-5">
+                    {value.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  value
+                )}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </section>
     </div>
   );
 }

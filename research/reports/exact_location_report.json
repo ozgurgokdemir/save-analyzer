@@ -5,6 +5,9 @@
   "sources_used": [
     "SoulSplitter wiki: Sekiro item pickup flags extracted via Yapped; right-most column is event flag.",
     "PowerPyx Prayer Bead guide: exact human-readable Prayer Bead location/source enemy names.",
+    "PowerPyx boss guide: human-readable major boss locations and route requirements.",
+    "PowerPyx skills and combat styles guide: individual skill reward and merchant locations.",
+    "GameWith skill guide: skill-tree acquisition and Sculptor's Idol guidance.",
     "SoulsMods Paramdex: ItemLotParam and ShopLineupParam field definitions.",
     "sekiro-online/params: EquipParamGoods row data for boss Memory goods names.",
     "sekiro-online/params: ItemLotParam row data for boss Memory award entries.",
@@ -206,6 +209,7 @@
       "id": "general_naomori_kawarada_bead",
       "name": "General Naomori Kawarada Prayer Bead",
       "area": "Ashina Outskirts",
+      "location": "Outskirts Wall - Gate Path, courtyard immediately beyond the Idol",
       "sourceType": "miniboss_drop",
       "itemLotParamRowId": 10200000,
       "eventFlag": 6760,
@@ -306,6 +310,7 @@
       "id": "general_tenzen_yamauchi",
       "name": "General Tenzen Yamauchi Prayer Bead",
       "area": "Ashina Outskirts",
+      "location": "Outskirts Wall - Stairway, courtyard immediately after the Chained Ogre",
       "sourceType": "miniboss_drop",
       "itemLotParamRowId": 10200100,
       "eventFlag": 6762,
@@ -1098,6 +1103,7 @@
       "id": "ashina_castle_hidden_chest",
       "name": "Ashina Castle hidden wall chest Prayer Bead",
       "area": "Ashina Castle",
+      "location": "Upper Tower - Antechamber, chest behind the shinobi wall near the samurai armor displays",
       "sourceType": "chest",
       "itemLotParamRowId": 1110170,
       "eventFlag": 6790,
@@ -1293,6 +1299,7 @@
       "id": "mibu_underwater_chest",
       "name": "Mibu Village underwater chest Prayer Bead",
       "area": "Ashina Depths",
+      "location": "Mibu Village lake, underwater chest requiring Mibu Breathing Technique",
       "sourceType": "chest",
       "itemLotParamRowId": 1500320,
       "eventFlag": 6796,
@@ -1863,6 +1870,7 @@
       "id": "fountainhead_underwater_chest",
       "name": "Fountainhead Palace lake chest Prayer Bead",
       "area": "Fountainhead Palace",
+      "location": "Great Sakura lake, underwater chest near Mibu Manor after defeating Okami Leader Shizu",
       "sourceType": "chest",
       "itemLotParamRowId": 2500020,
       "eventFlag": 6797,
@@ -1983,6 +1991,7 @@
       "id": "sunken_valley_treasure_1",
       "name": "Sunken Valley treasure Prayer Bead 1",
       "area": "Sunken Valley",
+      "location": "One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved",
       "sourceType": "treasure",
       "itemLotParamRowId": 1700020,
       "eventFlag": 6792,
@@ -2158,6 +2167,7 @@
       "id": "sunken_valley_treasure_2",
       "name": "Sunken Valley treasure Prayer Bead 2",
       "area": "Sunken Valley",
+      "location": "One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved",
       "sourceType": "treasure",
       "itemLotParamRowId": 1700030,
       "eventFlag": 6793,
@@ -2278,6 +2288,7 @@
       "id": "sunken_valley_treasure_3",
       "name": "Sunken Valley treasure Prayer Bead 3",
       "area": "Sunken Valley",
+      "location": "One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved",
       "sourceType": "treasure",
       "itemLotParamRowId": 1700040,
       "eventFlag": 6794,
@@ -4373,6 +4384,19 @@
           "itemLotParamRowId": 2001,
           "memoryGoodsId": 5200,
           "memoryItemIdHex": "50140040",
+          "acquisitionMetadata": {
+            "area": "Ashina Outskirts",
+            "location": "Ashina Outskirts - Ashina Castle Gate Fortress battlefield",
+            "acquisition": "Defeat Gyoubu Oniwa at the castle gate battlefield to receive Memory: Gyoubu Oniwa.",
+            "confidence": "Probable",
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro boss guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+              }
+            ]
+          },
           "status": "defeated",
           "confidence": "Verified",
           "evidence": [
@@ -4418,7 +4442,6 @@
               "stateConfidence": "verified"
             }
           ],
-          "acquisitionMetadata": {},
           "notes": [
             "The persistent ItemLotParam Memory award flag is ON in this character save."
           ],
@@ -4457,6 +4480,19 @@
           "itemLotParamRowId": 2031,
           "memoryGoodsId": 5201,
           "memoryItemIdHex": "51140040",
+          "acquisitionMetadata": {
+            "area": "Hirata Estate",
+            "location": "Hirata Estate - Hidden Temple below Hirata Audience Chamber",
+            "acquisition": "Use the Hidden Temple Key to enter the chamber below Hirata Audience Chamber, then defeat Lady Butterfly.",
+            "confidence": "Probable",
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro boss guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+              }
+            ]
+          },
           "status": "defeated",
           "confidence": "Verified",
           "evidence": [
@@ -4502,7 +4538,6 @@
               "stateConfidence": "verified"
             }
           ],
-          "acquisitionMetadata": {},
           "notes": [
             "The persistent ItemLotParam Memory award flag is ON in this character save."
           ],
@@ -4541,6 +4576,19 @@
           "itemLotParamRowId": 2081,
           "memoryGoodsId": 5202,
           "memoryItemIdHex": "52140040",
+          "acquisitionMetadata": {
+            "area": "Ashina Castle",
+            "location": "Ashina Castle - Upper Tower rooftop",
+            "acquisition": "Reach the rooftop at the top of Ashina Castle and defeat Genichiro Ashina.",
+            "confidence": "Probable",
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro boss guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+              }
+            ]
+          },
           "status": "defeated",
           "confidence": "Verified",
           "evidence": [
@@ -4586,7 +4634,6 @@
               "stateConfidence": "verified"
             }
           ],
-          "acquisitionMetadata": {},
           "notes": [
             "The persistent ItemLotParam Memory award flag is ON in this character save."
           ],
@@ -4625,6 +4672,19 @@
           "itemLotParamRowId": 2021,
           "memoryGoodsId": 5203,
           "memoryItemIdHex": "53140040",
+          "acquisitionMetadata": {
+            "area": "Senpou Temple",
+            "location": "Senpou Temple - Hall of Illusions",
+            "acquisition": "Ring the bell in Senpou Temple Main Hall to enter the Hall of Illusions, then defeat the Folding Screen Monkeys.",
+            "confidence": "Probable",
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro boss guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+              }
+            ]
+          },
           "status": "defeated",
           "confidence": "Verified",
           "evidence": [
@@ -4670,7 +4730,6 @@
               "stateConfidence": "verified"
             }
           ],
-          "acquisitionMetadata": {},
           "notes": [
             "The persistent ItemLotParam Memory award flag is ON in this character save."
           ],
@@ -4709,6 +4768,19 @@
           "itemLotParamRowId": 2011,
           "memoryGoodsId": 5204,
           "memoryItemIdHex": "54140040",
+          "acquisitionMetadata": {
+            "area": "Sunken Valley",
+            "location": "Sunken Valley - Guardian Ape's Watering Hole",
+            "acquisition": "Reach the Guardian Ape's Watering Hole beyond the Gun Fort and defeat the Guardian Ape.",
+            "confidence": "Probable",
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro boss guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+              }
+            ]
+          },
           "status": "defeated",
           "confidence": "Verified",
           "evidence": [
@@ -4754,7 +4826,6 @@
               "stateConfidence": "verified"
             }
           ],
-          "acquisitionMetadata": {},
           "notes": [
             "The persistent ItemLotParam Memory award flag is ON in this character save."
           ],
@@ -4793,6 +4864,19 @@
           "itemLotParamRowId": 2051,
           "memoryGoodsId": 5205,
           "memoryItemIdHex": "55140040",
+          "acquisitionMetadata": {
+            "area": "Ashina Depths",
+            "location": "Ashina Depths - Wedding Cave Door",
+            "acquisition": "Cross Mibu Village to the Wedding Cave Door and defeat the Corrupted Monk illusion.",
+            "confidence": "Probable",
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro boss guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+              }
+            ]
+          },
           "status": "defeated",
           "confidence": "Verified",
           "evidence": [
@@ -4838,7 +4922,6 @@
               "stateConfidence": "verified"
             }
           ],
-          "acquisitionMetadata": {},
           "notes": [
             "The persistent ItemLotParam Memory award flag is ON in this character save."
           ],
@@ -4877,6 +4960,19 @@
           "itemLotParamRowId": 2091,
           "memoryGoodsId": 5206,
           "memoryItemIdHex": "56140040",
+          "acquisitionMetadata": {
+            "area": "Ashina Castle",
+            "location": "Ashina Castle - Upper Tower rooftop",
+            "acquisition": "Choose to break the Iron Code and stay loyal to Kuro at the rooftop choice, then defeat Great Shinobi Owl.",
+            "confidence": "Probable",
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro boss guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+              }
+            ]
+          },
           "status": "defeated",
           "confidence": "Verified",
           "evidence": [
@@ -4922,7 +5018,6 @@
               "stateConfidence": "verified"
             }
           ],
-          "acquisitionMetadata": {},
           "notes": [
             "The persistent ItemLotParam Memory award flag is ON in this character save."
           ],
@@ -4961,6 +5056,19 @@
           "itemLotParamRowId": 2101,
           "memoryGoodsId": 5207,
           "memoryItemIdHex": "57140040",
+          "acquisitionMetadata": {
+            "area": "Hirata Estate - second memory",
+            "location": "Hirata Estate, second memory - Hidden Temple below Hirata Audience Chamber",
+            "acquisition": "Unlock the second Hirata memory through the Purification route, then defeat Owl (Father) in the Hidden Temple.",
+            "confidence": "Probable",
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro boss guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+              }
+            ]
+          },
           "status": "not_defeated",
           "confidence": "Verified",
           "evidence": [
@@ -4999,7 +5107,6 @@
               "stateConfidence": "verified"
             }
           ],
-          "acquisitionMetadata": {},
           "notes": [
             "The persistent ItemLotParam Memory award flag is OFF in this character save."
           ],
@@ -5038,6 +5145,19 @@
           "itemLotParamRowId": 2061,
           "memoryGoodsId": 5208,
           "memoryItemIdHex": "58140040",
+          "acquisitionMetadata": {
+            "area": "Fountainhead Palace",
+            "location": "Fountainhead Palace - Vermilion Bridge",
+            "acquisition": "Enter Fountainhead Palace through the Wedding Cave palanquin and defeat the True Monk on the Vermilion Bridge.",
+            "confidence": "Probable",
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro boss guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+              }
+            ]
+          },
           "status": "defeated",
           "confidence": "Verified",
           "evidence": [
@@ -5083,7 +5203,6 @@
               "stateConfidence": "verified"
             }
           ],
-          "acquisitionMetadata": {},
           "notes": [
             "The persistent ItemLotParam Memory award flag is ON in this character save."
           ],
@@ -5122,6 +5241,19 @@
           "itemLotParamRowId": 2071,
           "memoryGoodsId": 5209,
           "memoryItemIdHex": "59140040",
+          "acquisitionMetadata": {
+            "area": "Fountainhead Palace",
+            "location": "Fountainhead Palace - Divine Realm",
+            "acquisition": "Reach the Divine Realm at the end of Fountainhead Palace and defeat the Divine Dragon.",
+            "confidence": "Probable",
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro boss guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+              }
+            ]
+          },
           "status": "not_defeated",
           "confidence": "Verified",
           "evidence": [
@@ -5160,7 +5292,6 @@
               "stateConfidence": "verified"
             }
           ],
-          "acquisitionMetadata": {},
           "notes": [
             "The persistent ItemLotParam Memory award flag is OFF in this character save."
           ],
@@ -5199,6 +5330,19 @@
           "itemLotParamRowId": 2041,
           "memoryGoodsId": 5210,
           "memoryItemIdHex": "5A140040",
+          "acquisitionMetadata": {
+            "area": "Ashina Outskirts",
+            "location": "Ashina Outskirts - Flames of Hatred battlefield",
+            "acquisition": "After defeating the Divine Dragon, return through the burning Ashina Outskirts and defeat the Demon of Hatred at the castle gate battlefield.",
+            "confidence": "Probable",
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro boss guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+              }
+            ]
+          },
           "status": "not_defeated",
           "confidence": "Verified",
           "evidence": [
@@ -5237,7 +5381,6 @@
               "stateConfidence": "verified"
             }
           ],
-          "acquisitionMetadata": {},
           "notes": [
             "The persistent ItemLotParam Memory award flag is OFF in this character save."
           ],
@@ -5276,6 +5419,19 @@
           "itemLotParamRowId": 2131,
           "memoryGoodsId": 5211,
           "memoryItemIdHex": "5B140040",
+          "acquisitionMetadata": {
+            "area": "Ashina Reservoir",
+            "location": "Ashina Reservoir - field beyond the Secret Passage",
+            "acquisition": "On a non-Shura route, return to the Secret Passage field and defeat Genichiro, Way of Tomoe followed by Isshin, the Sword Saint.",
+            "confidence": "Probable",
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro boss guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+              }
+            ]
+          },
           "status": "not_defeated",
           "confidence": "Verified",
           "evidence": [
@@ -5314,7 +5470,6 @@
               "stateConfidence": "verified"
             }
           ],
-          "acquisitionMetadata": {},
           "notes": [
             "The persistent ItemLotParam Memory award flag is OFF in this character save."
           ],
@@ -5353,6 +5508,19 @@
           "itemLotParamRowId": 2121,
           "memoryGoodsId": 5212,
           "memoryItemIdHex": "5C140040",
+          "acquisitionMetadata": {
+            "area": "Ashina Castle",
+            "location": "Ashina Castle - Upper Tower rooftop",
+            "acquisition": "Choose to obey the Iron Code for the Shura route, then defeat Emma and Isshin Ashina on the castle rooftop.",
+            "confidence": "Probable",
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro boss guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+              }
+            ]
+          },
           "status": "not_defeated",
           "confidence": "Verified",
           "evidence": [
@@ -5391,7 +5559,6 @@
               "stateConfidence": "verified"
             }
           ],
-          "acquisitionMetadata": {},
           "notes": [
             "The persistent ItemLotParam Memory award flag is OFF in this character save."
           ],
@@ -5430,6 +5597,19 @@
           "itemLotParamRowId": 2017,
           "memoryGoodsId": 5213,
           "memoryItemIdHex": "5D140040",
+          "acquisitionMetadata": {
+            "area": "Ashina Depths",
+            "location": "Ashina Depths - cave between Poison Pool and Hidden Forest",
+            "acquisition": "After defeating the Guardian Ape in Sunken Valley, defeat the Headless Ape rematch in the Ashina Depths cave.",
+            "confidence": "Probable",
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro boss guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+              }
+            ]
+          },
           "status": "not_defeated",
           "confidence": "Verified",
           "evidence": [
@@ -5468,7 +5648,6 @@
               "stateConfidence": "verified"
             }
           ],
-          "acquisitionMetadata": {},
           "notes": [
             "The persistent ItemLotParam Memory award flag is OFF in this character save."
           ],
@@ -5634,6 +5813,7 @@
           "id": "general_naomori_kawarada_bead",
           "name": "General Naomori Kawarada Prayer Bead",
           "area": "Ashina Outskirts",
+          "location": "Outskirts Wall - Gate Path, courtyard immediately beyond the Idol",
           "sourceType": "miniboss_drop",
           "itemLotParamRowId": 10200000,
           "eventFlag": 6760,
@@ -5734,6 +5914,7 @@
           "id": "general_tenzen_yamauchi",
           "name": "General Tenzen Yamauchi Prayer Bead",
           "area": "Ashina Outskirts",
+          "location": "Outskirts Wall - Stairway, courtyard immediately after the Chained Ogre",
           "sourceType": "miniboss_drop",
           "itemLotParamRowId": 10200100,
           "eventFlag": 6762,
@@ -6526,6 +6707,7 @@
           "id": "ashina_castle_hidden_chest",
           "name": "Ashina Castle hidden wall chest Prayer Bead",
           "area": "Ashina Castle",
+          "location": "Upper Tower - Antechamber, chest behind the shinobi wall near the samurai armor displays",
           "sourceType": "chest",
           "itemLotParamRowId": 1110170,
           "eventFlag": 6790,
@@ -6721,6 +6903,7 @@
           "id": "mibu_underwater_chest",
           "name": "Mibu Village underwater chest Prayer Bead",
           "area": "Ashina Depths",
+          "location": "Mibu Village lake, underwater chest requiring Mibu Breathing Technique",
           "sourceType": "chest",
           "itemLotParamRowId": 1500320,
           "eventFlag": 6796,
@@ -7291,6 +7474,7 @@
           "id": "fountainhead_underwater_chest",
           "name": "Fountainhead Palace lake chest Prayer Bead",
           "area": "Fountainhead Palace",
+          "location": "Great Sakura lake, underwater chest near Mibu Manor after defeating Okami Leader Shizu",
           "sourceType": "chest",
           "itemLotParamRowId": 2500020,
           "eventFlag": 6797,
@@ -7411,6 +7595,7 @@
           "id": "sunken_valley_treasure_1",
           "name": "Sunken Valley treasure Prayer Bead 1",
           "area": "Sunken Valley",
+          "location": "One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved",
           "sourceType": "treasure",
           "itemLotParamRowId": 1700020,
           "eventFlag": 6792,
@@ -7586,6 +7771,7 @@
           "id": "sunken_valley_treasure_2",
           "name": "Sunken Valley treasure Prayer Bead 2",
           "area": "Sunken Valley",
+          "location": "One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved",
           "sourceType": "treasure",
           "itemLotParamRowId": 1700030,
           "eventFlag": 6793,
@@ -7706,6 +7892,7 @@
           "id": "sunken_valley_treasure_3",
           "name": "Sunken Valley treasure Prayer Bead 3",
           "area": "Sunken Valley",
+          "location": "One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved",
           "sourceType": "treasure",
           "itemLotParamRowId": 1700040,
           "eventFlag": 6794,
@@ -9527,6 +9714,7 @@
           "id": "general_naomori_kawarada_bead",
           "name": "General Naomori Kawarada Prayer Bead",
           "area": "Ashina Outskirts",
+          "location": "Outskirts Wall - Gate Path, courtyard immediately beyond the Idol",
           "sourceType": "miniboss_drop",
           "itemLotParamRowId": 10200000,
           "eventFlag": 6760,
@@ -9730,7 +9918,8 @@
           ],
           "acquisitionMetadata": {
             "area": "Ashina Outskirts",
-            "location": null,
+            "location": "Outskirts Wall - Gate Path, courtyard immediately beyond the Idol",
+            "acquisition": "Defeat General Naomori Kawarada and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 10200000,
             "shopLineupParamRowId": null,
@@ -9744,6 +9933,7 @@
           "id": "general_tenzen_yamauchi",
           "name": "General Tenzen Yamauchi Prayer Bead",
           "area": "Ashina Outskirts",
+          "location": "Outskirts Wall - Stairway, courtyard immediately after the Chained Ogre",
           "sourceType": "miniboss_drop",
           "itemLotParamRowId": 10200100,
           "eventFlag": 6762,
@@ -9895,7 +10085,8 @@
           ],
           "acquisitionMetadata": {
             "area": "Ashina Outskirts",
-            "location": null,
+            "location": "Outskirts Wall - Stairway, courtyard immediately after the Chained Ogre",
+            "acquisition": "Defeat General Tenzen Yamauchi and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 10200100,
             "shopLineupParamRowId": null,
@@ -10062,6 +10253,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Outskirts",
             "location": "Outskirts Wall - Stairway",
+            "acquisition": "Defeat Chained Ogre and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 50201000,
             "shopLineupParamRowId": null,
@@ -10320,6 +10512,7 @@
           "acquisitionMetadata": {
             "area": "Hirata Estate",
             "location": "Estate Path garden area after the bridge",
+            "acquisition": "Defeat Shinobi Hunter Enshin of Misen and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 10500000,
             "shopLineupParamRowId": null,
@@ -10486,6 +10679,7 @@
           "acquisitionMetadata": {
             "area": "Hirata Estate",
             "location": "Hirata Estate - Main Hall, first memory",
+            "acquisition": "Defeat Juzou the Drunkard and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 10700000,
             "shopLineupParamRowId": null,
@@ -10704,6 +10898,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Castle",
             "location": "Ashina Castle main stairway, in front of the castle tower",
+            "acquisition": "Defeat General Kuranosuke Matsumoto and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 10202000,
             "shopLineupParamRowId": null,
@@ -10870,6 +11065,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Castle",
             "location": "Upper Tower - Ashina Dojo",
+            "acquisition": "Defeat Ashina Elite - Jinsuke Saze and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 14000000,
             "shopLineupParamRowId": null,
@@ -11128,6 +11324,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Reservoir",
             "location": "Moon-view tower area reached from Ashina Reservoir idol",
+            "acquisition": "Defeat Seven Ashina Spears - Shikibu Toshikatsu Yamauchi and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 10212000,
             "shopLineupParamRowId": null,
@@ -11294,6 +11491,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Reservoir",
             "location": "Well below the friendly samurai near Ashina Reservoir",
+            "acquisition": "Defeat Lone Shadow Longswordsman and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 14702000,
             "shopLineupParamRowId": null,
@@ -11460,6 +11658,7 @@
           "acquisitionMetadata": {
             "area": "Senpou Temple",
             "location": "Senpou Temple - Shugendo bridge",
+            "acquisition": "Defeat Armored Warrior and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 11300000,
             "shopLineupParamRowId": null,
@@ -11473,6 +11672,7 @@
           "id": "ashina_castle_hidden_chest",
           "name": "Ashina Castle hidden wall chest Prayer Bead",
           "area": "Ashina Castle",
+          "location": "Upper Tower - Antechamber, chest behind the shinobi wall near the samurai armor displays",
           "sourceType": "chest",
           "itemLotParamRowId": 1110170,
           "eventFlag": 6790,
@@ -11624,7 +11824,8 @@
           ],
           "acquisitionMetadata": {
             "area": "Ashina Castle",
-            "location": null,
+            "location": "Upper Tower - Antechamber, chest behind the shinobi wall near the samurai armor displays",
+            "acquisition": "Open the chest at Upper Tower - Antechamber, chest behind the shinobi wall near the samurai armor displays.",
             "sourceType": "chest",
             "itemLotParamRowId": 1110170,
             "shopLineupParamRowId": null,
@@ -11883,6 +12084,7 @@
           "acquisitionMetadata": {
             "area": "Senpou Temple",
             "location": "Temple Grounds lower temple dark chamber",
+            "acquisition": "Defeat Long-arm Centipede Sen'un and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 10400000,
             "shopLineupParamRowId": null,
@@ -11896,6 +12098,7 @@
           "id": "mibu_underwater_chest",
           "name": "Mibu Village underwater chest Prayer Bead",
           "area": "Ashina Depths",
+          "location": "Mibu Village lake, underwater chest requiring Mibu Breathing Technique",
           "sourceType": "chest",
           "itemLotParamRowId": 1500320,
           "eventFlag": 6796,
@@ -12139,7 +12342,8 @@
           ],
           "acquisitionMetadata": {
             "area": "Ashina Depths",
-            "location": null,
+            "location": "Mibu Village lake, underwater chest requiring Mibu Breathing Technique",
+            "acquisition": "Open the chest at Mibu Village lake, underwater chest requiring Mibu Breathing Technique.",
             "sourceType": "chest",
             "itemLotParamRowId": 1500320,
             "shopLineupParamRowId": null,
@@ -12306,6 +12510,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Depths",
             "location": "Poison Pool",
+            "acquisition": "Defeat Snake Eyes Shirahagi and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 11901100,
             "shopLineupParamRowId": null,
@@ -12472,6 +12677,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Castle",
             "location": "Upper Tower - Antechamber, bottom of tower after castle invasion",
+            "acquisition": "Defeat Chained Ogre Ashina Castle and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 50200000,
             "shopLineupParamRowId": null,
@@ -12638,6 +12844,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Castle",
             "location": "Upper Tower - Ashina Dojo during castle invasion",
+            "acquisition": "Defeat Lone Shadow Vilehand and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 14700000,
             "shopLineupParamRowId": null,
@@ -12804,6 +13011,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Castle",
             "location": "Great Serpent Shrine during castle invasion",
+            "acquisition": "Defeat Lone Shadow Masanaga the Spear-Bearer and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 14701000,
             "shopLineupParamRowId": null,
@@ -12970,6 +13178,7 @@
           "acquisitionMetadata": {
             "area": "Hirata Estate",
             "location": "Bamboo Thicket Slope, second Hirata memory",
+            "acquisition": "Defeat Lone Shadow Masanaga the Spear-Bearer Hirata Revisit and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 14703100,
             "shopLineupParamRowId": null,
@@ -13136,6 +13345,7 @@
           "acquisitionMetadata": {
             "area": "Fountainhead Palace",
             "location": "Mibu Manor courtyard rooftops",
+            "acquisition": "Defeat Sakura Bull of the Palace and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 13800000,
             "shopLineupParamRowId": null,
@@ -13149,6 +13359,7 @@
           "id": "fountainhead_underwater_chest",
           "name": "Fountainhead Palace lake chest Prayer Bead",
           "area": "Fountainhead Palace",
+          "location": "Great Sakura lake, underwater chest near Mibu Manor after defeating Okami Leader Shizu",
           "sourceType": "chest",
           "itemLotParamRowId": 2500020,
           "eventFlag": 6797,
@@ -13392,7 +13603,8 @@
           ],
           "acquisitionMetadata": {
             "area": "Fountainhead Palace",
-            "location": null,
+            "location": "Great Sakura lake, underwater chest near Mibu Manor after defeating Okami Leader Shizu",
+            "acquisition": "Open the chest at Great Sakura lake, underwater chest near Mibu Manor after defeating Okami Leader Shizu.",
             "sourceType": "chest",
             "itemLotParamRowId": 2500020,
             "shopLineupParamRowId": null,
@@ -13406,6 +13618,7 @@
           "id": "sunken_valley_treasure_1",
           "name": "Sunken Valley treasure Prayer Bead 1",
           "area": "Sunken Valley",
+          "location": "One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved",
           "sourceType": "treasure",
           "itemLotParamRowId": 1700020,
           "eventFlag": 6792,
@@ -13609,7 +13822,8 @@
           ],
           "acquisitionMetadata": {
             "area": "Sunken Valley",
-            "location": null,
+            "location": "One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved",
+            "acquisition": "Collect the Prayer Bead at One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved.",
             "sourceType": "treasure",
             "itemLotParamRowId": 1700020,
             "shopLineupParamRowId": null,
@@ -13776,6 +13990,7 @@
           "acquisitionMetadata": {
             "area": "Sunken Valley",
             "location": "Gun Fort room after the Gun Fort idol",
+            "acquisition": "Defeat Long-arm Centipede Giraffe and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 10401100,
             "shopLineupParamRowId": null,
@@ -13789,6 +14004,7 @@
           "id": "sunken_valley_treasure_2",
           "name": "Sunken Valley treasure Prayer Bead 2",
           "area": "Sunken Valley",
+          "location": "One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved",
           "sourceType": "treasure",
           "itemLotParamRowId": 1700030,
           "eventFlag": 6793,
@@ -14032,7 +14248,8 @@
           ],
           "acquisitionMetadata": {
             "area": "Sunken Valley",
-            "location": null,
+            "location": "One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved",
+            "acquisition": "Collect the Prayer Bead at One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved.",
             "sourceType": "treasure",
             "itemLotParamRowId": 1700030,
             "shopLineupParamRowId": null,
@@ -14046,6 +14263,7 @@
           "id": "sunken_valley_treasure_3",
           "name": "Sunken Valley treasure Prayer Bead 3",
           "area": "Sunken Valley",
+          "location": "One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved",
           "sourceType": "treasure",
           "itemLotParamRowId": 1700040,
           "eventFlag": 6794,
@@ -14289,7 +14507,8 @@
           ],
           "acquisitionMetadata": {
             "area": "Sunken Valley",
-            "location": null,
+            "location": "One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved",
+            "acquisition": "Collect the Prayer Bead at One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved.",
             "sourceType": "treasure",
             "itemLotParamRowId": 1700040,
             "shopLineupParamRowId": null,
@@ -14456,6 +14675,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Outskirts",
             "location": "Ashina Outskirts - Ashina Castle Gate, attic chest after Gyoubu Oniwa",
+            "acquisition": "Open the chest at Ashina Outskirts - Ashina Castle Gate, attic chest after Gyoubu Oniwa.",
             "sourceType": "chest",
             "itemLotParamRowId": 1100310,
             "shopLineupParamRowId": null,
@@ -14674,6 +14894,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Castle",
             "location": "Ashina Castle gate route after Gyoubu Oniwa",
+            "acquisition": "Defeat Blazing Bull and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 13700000,
             "shopLineupParamRowId": null,
@@ -14932,6 +15153,7 @@
           "acquisitionMetadata": {
             "area": "Hirata Estate",
             "location": "Hirata Audience Chamber hidden wall chest behind Juzou the Drunkard",
+            "acquisition": "Open the chest at Hirata Audience Chamber hidden wall chest behind Juzou the Drunkard.",
             "sourceType": "chest",
             "itemLotParamRowId": 1000500,
             "shopLineupParamRowId": null,
@@ -15128,6 +15350,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Castle",
             "location": "Abandoned Dungeon Entrance merchant tent",
+            "acquisition": "Purchase the Prayer Bead at Abandoned Dungeon Entrance merchant tent.",
             "sourceType": "shop",
             "itemLotParamRowId": null,
             "shopLineupParamRowId": 1110000,
@@ -15386,6 +15609,7 @@
           "acquisitionMetadata": {
             "area": "Senpou Temple",
             "location": "Temple Grounds pond, underwater after acquiring diving",
+            "acquisition": "Collect the Prayer Bead at Temple Grounds pond, underwater after acquiring diving.",
             "sourceType": "treasure",
             "itemLotParamRowId": 2000040,
             "shopLineupParamRowId": null,
@@ -15604,6 +15828,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Depths",
             "location": "Hidden Forest",
+            "acquisition": "Defeat Tokujiro the Glutton and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 10702000,
             "shopLineupParamRowId": null,
@@ -15822,6 +16047,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Depths",
             "location": "Watermill",
+            "acquisition": "Defeat O'Rin of the Water and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 70000000,
             "shopLineupParamRowId": null,
@@ -16040,6 +16266,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Depths",
             "location": "Watermill house attic shrine before Corrupted Monk",
+            "acquisition": "Collect the Prayer Bead at Watermill house attic shrine before Corrupted Monk.",
             "sourceType": "treasure",
             "itemLotParamRowId": 1500040,
             "shopLineupParamRowId": null,
@@ -16258,6 +16485,7 @@
           "acquisitionMetadata": {
             "area": "Sunken Valley",
             "location": "Sunken Valley idol",
+            "acquisition": "Defeat Snake Eyes Shirafuji and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 11900000,
             "shopLineupParamRowId": null,
@@ -16476,6 +16704,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Depths",
             "location": "Poison Pool, Headless Ape rematch",
+            "acquisition": "Defeat the Headless Ape rematch; the fight awards two Prayer Beads.",
             "sourceType": "boss_drop",
             "itemLotParamRowId": 2015,
             "shopLineupParamRowId": null,
@@ -16734,6 +16963,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Depths",
             "location": "Poison Pool, Headless Ape rematch",
+            "acquisition": "Defeat the Headless Ape rematch; the fight awards two Prayer Beads.",
             "sourceType": "boss_drop",
             "itemLotParamRowId": 2016,
             "shopLineupParamRowId": null,
@@ -16992,6 +17222,7 @@
           "acquisitionMetadata": {
             "area": "Hirata Estate",
             "location": "Hirata Estate - Main Hall, second memory",
+            "acquisition": "Defeat Juzou the Drunkard Hirata Revisit and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 10700100,
             "shopLineupParamRowId": null,
@@ -17210,6 +17441,7 @@
           "acquisitionMetadata": {
             "area": "Fountainhead Palace",
             "location": "Great Sakura",
+            "acquisition": "Defeat Okami Leader Shizu and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 13100000,
             "shopLineupParamRowId": null,
@@ -17468,6 +17700,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Reservoir",
             "location": "Ashina Reservoir after Divine Dragon",
+            "acquisition": "Defeat Seven Ashina Spears - Shume Masaji Oniwa and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 10212100,
             "shopLineupParamRowId": null,
@@ -17686,6 +17919,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Castle",
             "location": "Upper Tower - Ashina Dojo after Divine Dragon",
+            "acquisition": "Defeat Ashina Elite - Ujinari Mizou and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 14001000,
             "shopLineupParamRowId": null,
@@ -17944,6 +18178,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Castle",
             "location": "Old Grave after Divine Dragon",
+            "acquisition": "Defeat Shigekichi of the Red Guard and collect the Prayer Bead reward.",
             "sourceType": "miniboss_drop",
             "itemLotParamRowId": 10701000,
             "shopLineupParamRowId": null,
@@ -18171,6 +18406,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Outskirts",
             "location": "Outskirts Wall - Gate Path",
+            "acquisition": "Defeat General Naomori Kawarada and collect the Gourd Seed reward.",
             "sourceType": "boss_drop",
             "itemLotParamRowId": 10200001,
             "shopLineupParamRowId": null,
@@ -18208,6 +18444,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Outskirts",
             "location": "Building immediately after Chained Ogre / Outskirts Wall - Stairway",
+            "acquisition": "Collect the Gourd Seed at Building immediately after Chained Ogre / Outskirts Wall - Stairway.",
             "sourceType": "treasure",
             "itemLotParamRowId": 1100200,
             "shopLineupParamRowId": null,
@@ -18245,6 +18482,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Outskirts",
             "location": "Vendor near Gyoubu arena / Ashina Castle Gate Fortress",
+            "acquisition": "Purchase the Gourd Seed at Vendor near Gyoubu arena / Ashina Castle Gate Fortress.",
             "sourceType": "shop",
             "itemLotParamRowId": null,
             "shopLineupParamRowId": 1100101,
@@ -18282,6 +18520,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Castle",
             "location": "Chest near Upper Tower - Antechamber Sculptor Idol",
+            "acquisition": "Collect the Gourd Seed at Chest near Upper Tower - Antechamber Sculptor Idol.",
             "sourceType": "treasure",
             "itemLotParamRowId": 1110020,
             "shopLineupParamRowId": null,
@@ -18319,6 +18558,7 @@
           "acquisitionMetadata": {
             "area": "Dilapidated Temple",
             "location": "Fujioka shop after rescuing him in Ashina Castle",
+            "acquisition": "Purchase the Gourd Seed at Fujioka shop after rescuing him in Ashina Castle.",
             "sourceType": "shop",
             "itemLotParamRowId": null,
             "shopLineupParamRowId": 1100400,
@@ -18356,6 +18596,7 @@
           "acquisitionMetadata": {
             "area": "Senpou Temple",
             "location": "First temple with immortal monks / rafters area",
+            "acquisition": "Collect the Gourd Seed at First temple with immortal monks / rafters area.",
             "sourceType": "treasure",
             "itemLotParamRowId": 2000730,
             "shopLineupParamRowId": null,
@@ -18393,6 +18634,7 @@
           "acquisitionMetadata": {
             "area": "Sunken Valley",
             "location": "Under-Shrine Valley / Gun Fort route climbing section, near small hut",
+            "acquisition": "Collect the Gourd Seed at Under-Shrine Valley / Gun Fort route climbing section, near small hut.",
             "sourceType": "treasure",
             "itemLotParamRowId": 1700820,
             "shopLineupParamRowId": null,
@@ -18430,6 +18672,7 @@
           "acquisitionMetadata": {
             "area": "Ashina Depths",
             "location": "Mibu Village, by the large glowing tree",
+            "acquisition": "Collect the Gourd Seed at Mibu Village, by the large glowing tree.",
             "sourceType": "treasure",
             "itemLotParamRowId": 1500010,
             "shopLineupParamRowId": null,
@@ -18467,6 +18710,7 @@
           "acquisitionMetadata": {
             "area": "Fountainhead Palace",
             "location": "Chest near Palace Grounds Sculptor Idol",
+            "acquisition": "Collect the Gourd Seed at Chest near Palace Grounds Sculptor Idol.",
             "sourceType": "treasure",
             "itemLotParamRowId": 2500000,
             "shopLineupParamRowId": null,
@@ -21174,10 +21418,16 @@
                 "label": "Fextralife Shinobi Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Shinobi+Esoteric+Text",
                 "evidence": "States that the Sculptor gives the text after at least 1 skill point is acquired."
+              },
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Shinobi Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -21289,10 +21539,16 @@
                 "label": "Fextralife Shinobi Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Shinobi+Esoteric+Text",
                 "evidence": "States that the Sculptor gives the text after at least 1 skill point is acquired."
+              },
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Shinobi Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -21388,10 +21644,16 @@
                 "label": "Fextralife Prosthetic Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Esoteric+Text",
                 "evidence": "States that the Sculptor gives the text after any three Prosthetic Tools are fitted."
+              },
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Prosthetic Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -21501,10 +21763,16 @@
                 "label": "Fextralife Prosthetic Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Esoteric+Text",
                 "evidence": "States that the Sculptor gives the text after any three Prosthetic Tools are fitted."
+              },
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Prosthetic Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -21592,10 +21860,16 @@
                 "label": "Fextralife Ashina Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Ashina+Esoteric+Text",
                 "evidence": "States Tengu gives the text after the rat quest and lists the later Isshin tower location."
+              },
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Ashina Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -21707,10 +21981,16 @@
                 "label": "Fextralife Ashina Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Ashina+Esoteric+Text",
                 "evidence": "States Tengu gives the text after the rat quest and lists the later Isshin tower location."
+              },
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Ashina Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -21820,10 +22100,16 @@
                 "label": "Fextralife Ashina Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Ashina+Esoteric+Text",
                 "evidence": "States Tengu gives the text after the rat quest and lists the later Isshin tower location."
+              },
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Ashina Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -21911,10 +22197,16 @@
                 "label": "Fextralife Senpou Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Senpou+Esoteric+Text",
                 "evidence": "States that the text is located in a small shrine near the Main Hall Idol and describes the cave route."
+              },
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Temple Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -22018,10 +22310,16 @@
                 "label": "Fextralife Senpou Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Senpou+Esoteric+Text",
                 "evidence": "States that the text is located in a small shrine near the Main Hall Idol and describes the cave route."
+              },
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Temple Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -22117,10 +22415,16 @@
                 "label": "Fextralife Senpou Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Senpou+Esoteric+Text",
                 "evidence": "States that the text is located in a small shrine near the Main Hall Idol and describes the cave route."
+              },
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Temple Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -22216,10 +22520,16 @@
                 "label": "Fextralife Senpou Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Senpou+Esoteric+Text",
                 "evidence": "States that the text is located in a small shrine near the Main Hall Idol and describes the cave route."
+              },
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Temple Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -22325,10 +22635,16 @@
                 "label": "Fextralife Mushin Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Mushin+Esoteric+Text",
                 "evidence": "States the Great Serpent Shrine Tengu acquisition route and later Emma fallback."
+              },
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Mushin Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -22436,10 +22752,16 @@
                 "label": "Fextralife Mushin Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Mushin+Esoteric+Text",
                 "evidence": "States the Great Serpent Shrine Tengu acquisition route and later Emma fallback."
+              },
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Mushin Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -22548,10 +22870,16 @@
                 "label": "Fextralife Mushin Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Mushin+Esoteric+Text",
                 "evidence": "States the Great Serpent Shrine Tengu acquisition route and later Emma fallback."
+              },
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Mushin Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -22600,7 +22928,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Special Combat Arts",
-            "acquisitionMethod": "Acquire the Mortal Blade from the Divine Child of Rejuvenation in the Inner Sanctum after defeating Folding Screen Monkeys.",
+            "acquisitionMethod": "Obtain the Mortal Blade from the Divine Child after defeating the Folding Screen Monkeys.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "not_applicable_direct_acquisition",
@@ -22628,10 +22956,16 @@
                 "label": "Fextralife Mortal Draw",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Mortal+Draw",
                 "evidence": "Mortal Draw page states it requires Mortal Blade ownership and no skill points; Mortal Blade is obtained from the Divine Child after Folding Screen Monkeys."
+              },
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro skills and combat styles guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-combat-styles-skills-locations/"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Senpou Temple - Inner Sanctum"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -22685,7 +23019,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Special Combat Arts",
-            "acquisitionMethod": "Defeat Isshin, The Sword Saint after choosing to Break the Iron Code.",
+            "acquisitionMethod": "Complete a non-Shura route and defeat Isshin, the Sword Saint.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "not_applicable_direct_acquisition",
@@ -22713,10 +23047,16 @@
                 "label": "Fextralife Dragon Flash",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Dragon+Flash",
                 "evidence": "Dragon Flash page states it is acquired after defeating Isshin, The Sword Saint and requires choosing to Break the Iron Code."
+              },
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro skills and combat styles guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-combat-styles-skills-locations/"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Ashina Reservoir - field beyond the Secret Passage"
           },
           "status": "missing",
           "confidence": "verified",
@@ -22792,10 +23132,16 @@
                 "label": "Fextralife Floating Passage",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Floating+Passage",
                 "evidence": "Floating Passage page states it requires no skill points and is unlocked via the Floating Passage Text bought from Pot Noble Harunaga for five Treasure Carp Scales."
+              },
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro skills and combat styles guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-combat-styles-skills-locations/"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Hirata Estate - Pot Noble Harunaga near Dragonspring"
           },
           "status": "missing",
           "confidence": "verified",
@@ -22843,7 +23189,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Special Combat Arts",
-            "acquisitionMethod": "Defeat Isshin Ashina after choosing to Obey the Iron Code.",
+            "acquisitionMethod": "Complete the Shura route and defeat Isshin Ashina.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "not_applicable_direct_acquisition",
@@ -22871,10 +23217,16 @@
                 "label": "Fextralife One Mind",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/One+Mind",
                 "evidence": "One Mind page states it is acquired after defeating Isshin Ashina and requires choosing to Obey the Iron Code."
+              },
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro skills and combat styles guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-combat-styles-skills-locations/"
               }
             ],
             "acquisitionMetadataConfidence": "Probable",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Ashina Castle - Upper Tower rooftop"
           },
           "status": "missing",
           "confidence": "verified",
@@ -22929,7 +23281,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Shinobi Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Shinobi Arts tree at any Sculptor's Idol after obtaining the Shinobi Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -22945,9 +23297,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Shinobi Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -23008,7 +23367,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Shinobi Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Shinobi Arts tree at any Sculptor's Idol after obtaining the Shinobi Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -23024,9 +23383,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Shinobi Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -23087,7 +23453,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Shinobi Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Shinobi Arts tree at any Sculptor's Idol after obtaining the Shinobi Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -23103,9 +23469,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Shinobi Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -23166,7 +23539,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Shinobi Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Shinobi Arts tree at any Sculptor's Idol after obtaining the Shinobi Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -23182,9 +23555,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Shinobi Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -23245,7 +23625,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Shinobi Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Shinobi Arts tree at any Sculptor's Idol after obtaining the Shinobi Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -23261,9 +23641,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Shinobi Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -23318,7 +23705,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Shinobi Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Shinobi Arts tree at any Sculptor's Idol after obtaining the Shinobi Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -23334,9 +23721,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Shinobi Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -23397,7 +23791,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Shinobi Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Shinobi Arts tree at any Sculptor's Idol after obtaining the Shinobi Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -23413,9 +23807,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Shinobi Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -23470,7 +23871,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Shinobi Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Shinobi Arts tree at any Sculptor's Idol after obtaining the Shinobi Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -23486,9 +23887,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Shinobi Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -23549,7 +23957,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Shinobi Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Shinobi Arts tree at any Sculptor's Idol after obtaining the Shinobi Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -23565,9 +23973,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Shinobi Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -23628,7 +24043,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Shinobi Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Shinobi Arts tree at any Sculptor's Idol after obtaining the Shinobi Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -23644,9 +24059,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Shinobi Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -23701,7 +24123,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Shinobi Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Shinobi Arts tree at any Sculptor's Idol after obtaining the Shinobi Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -23717,9 +24139,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Shinobi Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -23780,7 +24209,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Prosthetic Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Prosthetic Arts tree at any Sculptor's Idol after obtaining the Prosthetic Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -23796,9 +24225,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Prosthetic Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -23859,7 +24295,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Prosthetic Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Prosthetic Arts tree at any Sculptor's Idol after obtaining the Prosthetic Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -23875,9 +24311,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Prosthetic Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -23932,7 +24375,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Prosthetic Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Prosthetic Arts tree at any Sculptor's Idol after obtaining the Prosthetic Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -23948,9 +24391,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Prosthetic Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -24005,7 +24455,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Prosthetic Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Prosthetic Arts tree at any Sculptor's Idol after obtaining the Prosthetic Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -24021,9 +24471,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Prosthetic Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -24078,7 +24535,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Prosthetic Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Prosthetic Arts tree at any Sculptor's Idol after obtaining the Prosthetic Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -24094,9 +24551,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Prosthetic Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -24157,7 +24621,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Prosthetic Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Prosthetic Arts tree at any Sculptor's Idol after obtaining the Prosthetic Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -24173,9 +24637,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Prosthetic Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -24236,7 +24707,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Prosthetic Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Prosthetic Arts tree at any Sculptor's Idol after obtaining the Prosthetic Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -24252,9 +24723,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Prosthetic Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -24315,7 +24793,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Prosthetic Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Prosthetic Arts tree at any Sculptor's Idol after obtaining the Prosthetic Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -24331,9 +24809,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Prosthetic Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -24394,7 +24879,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Prosthetic Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Prosthetic Arts tree at any Sculptor's Idol after obtaining the Prosthetic Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -24410,9 +24895,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Prosthetic Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -24467,7 +24959,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Prosthetic Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Prosthetic Arts tree at any Sculptor's Idol after obtaining the Prosthetic Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -24483,9 +24975,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Prosthetic Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -24540,7 +25039,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Ashina Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Ashina Arts tree at any Sculptor's Idol after obtaining the Ashina Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -24556,9 +25055,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Ashina Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -24619,7 +25125,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Ashina Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Ashina Arts tree at any Sculptor's Idol after obtaining the Ashina Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -24635,9 +25141,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Ashina Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -24698,7 +25211,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Ashina Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Ashina Arts tree at any Sculptor's Idol after obtaining the Ashina Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -24714,9 +25227,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Ashina Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -24777,7 +25297,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Ashina Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Ashina Arts tree at any Sculptor's Idol after obtaining the Ashina Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -24793,9 +25313,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Ashina Arts skill menu"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -24856,7 +25383,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Temple Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Temple Arts tree at any Sculptor's Idol after obtaining the Senpou Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -24872,9 +25399,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Temple Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -24929,7 +25463,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Temple Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Temple Arts tree at any Sculptor's Idol after obtaining the Senpou Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -24945,9 +25479,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Temple Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -25002,7 +25543,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Temple Arts",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Spend Skill Points in the Temple Arts tree at any Sculptor's Idol after obtaining the Senpou Esoteric Text.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -25018,9 +25559,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "GameWith Sekiro skill tree guide",
+                "url": "https://gamewith.net/sekiro/article/show/8490"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Any Sculptor's Idol - Temple Arts skill menu"
           },
           "status": "missing",
           "confidence": "verified",
@@ -25075,7 +25623,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Special Skills",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Defeat the Chained Ogre in Ashina Outskirts.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -25091,9 +25639,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro skills and combat styles guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-combat-styles-skills-locations/"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Ashina Outskirts - Outskirts Wall - Stairway"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -25154,7 +25709,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Special Skills",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Defeat the Blazing Bull on the route into Ashina Castle.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -25170,9 +25725,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro skills and combat styles guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-combat-styles-skills-locations/"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Ashina Castle - castle gate route"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -25233,7 +25795,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Special Skills",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Defeat the Chained Ogre at the bottom of Ashina Castle during the Interior Ministry invasion.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -25249,9 +25811,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro skills and combat styles guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-combat-styles-skills-locations/"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Ashina Castle - Upper Tower - Antechamber during the invasion"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -25312,7 +25881,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Special Skills",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Defeat the Sakura Bull of the Palace.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -25328,9 +25897,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro skills and combat styles guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-combat-styles-skills-locations/"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Fountainhead Palace - Mibu Manor courtyard rooftops"
           },
           "status": "missing",
           "confidence": "verified",
@@ -25385,7 +25961,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Special Skills",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Defeat O'Rin of the Water near the Watermill Idol.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -25401,9 +25977,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro skills and combat styles guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-combat-styles-skills-locations/"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Ashina Depths - Watermill"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -25464,7 +26047,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Special Skills",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Defeat the Armored Warrior on the Shugendo bridge.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -25480,9 +26063,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro skills and combat styles guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-combat-styles-skills-locations/"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Senpou Temple - Shugendo bridge"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -25543,7 +26133,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Special Skills",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Defeat the Corrupted Monk illusion beyond Mibu Village.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -25559,9 +26149,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro skills and combat styles guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-combat-styles-skills-locations/"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Ashina Depths - Wedding Cave Door"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -25622,7 +26219,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Special Skills",
-            "acquisitionMethod": "Unknown; acquisition guidance for this non-Combat-Art skill has not been promoted from source material in this batch.",
+            "acquisitionMethod": "Purchase the Anti-air Deathblow Text from Blackhat Badger for 1,200 sen, or later retrieve it from the Offering Box if his shop is unavailable.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -25638,9 +26235,16 @@
             "notes": [
               "Ownership status is not inferred from prerequisites, skill tree text ownership, or this acquisition metadata."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Unknown",
-            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro skills and combat styles guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-combat-styles-skills-locations/"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Do not infer unlocked status from prerequisites, skill tree text ownership, bosses, vendors, or acquisition metadata. Status remains driven only by verified inventory_weapon evidence.",
+            "location": "Ashina Castle - Blackhat Badger below Old Grave; later the Dilapidated Temple Offering Box"
           },
           "status": "missing",
           "confidence": "verified",
@@ -25687,7 +26291,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Ninjutsu",
-            "acquisitionMethod": "Awarded by a major-boss ItemLot; ownership uses the dedicated persistent get-item flag.",
+            "acquisitionMethod": "Defeat Genichiro Ashina on the Ashina Castle rooftop.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -25703,9 +26307,16 @@
             "notes": [
               "The dedicated ItemLotParam get-item flag is authoritative Ninjutsu ownership evidence."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Verified",
-            "ownershipInferencePolicy": "Status is driven by the dedicated persistent ItemLotParam get-item flag."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro skills and combat styles guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-combat-styles-skills-locations/"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Status is driven by the dedicated persistent ItemLotParam get-item flag.",
+            "location": "Ashina Castle - Upper Tower rooftop"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -25751,7 +26362,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Ninjutsu",
-            "acquisitionMethod": "Awarded by a major-boss ItemLot; ownership uses the dedicated persistent get-item flag.",
+            "acquisitionMethod": "Defeat the Folding Screen Monkeys in the Hall of Illusions.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -25767,9 +26378,16 @@
             "notes": [
               "The dedicated ItemLotParam get-item flag is authoritative Ninjutsu ownership evidence."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Verified",
-            "ownershipInferencePolicy": "Status is driven by the dedicated persistent ItemLotParam get-item flag."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro skills and combat styles guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-combat-styles-skills-locations/"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Status is driven by the dedicated persistent ItemLotParam get-item flag.",
+            "location": "Senpou Temple - Hall of Illusions"
           },
           "status": "unlocked",
           "confidence": "verified",
@@ -25815,7 +26433,7 @@
           ],
           "acquisitionMetadata": {
             "skillTree": "Ninjutsu",
-            "acquisitionMethod": "Awarded by a major-boss ItemLot; ownership uses the dedicated persistent get-item flag.",
+            "acquisitionMethod": "Defeat the Headless Ape rematch, then sever its immortality with the Mortal Blade.",
             "requiredPrerequisiteSkills": [],
             "skillPointCost": null,
             "skillPointCostType": "unknown",
@@ -25831,9 +26449,16 @@
             "notes": [
               "The dedicated ItemLotParam get-item flag is authoritative Ninjutsu ownership evidence."
             ],
-            "sourceReferences": [],
-            "acquisitionMetadataConfidence": "Verified",
-            "ownershipInferencePolicy": "Status is driven by the dedicated persistent ItemLotParam get-item flag."
+            "sourceReferences": [
+              {
+                "type": "community-guide",
+                "label": "PowerPyx Sekiro skills and combat styles guide",
+                "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-all-combat-styles-skills-locations/"
+              }
+            ],
+            "acquisitionMetadataConfidence": "Probable",
+            "ownershipInferencePolicy": "Status is driven by the dedicated persistent ItemLotParam get-item flag.",
+            "location": "Ashina Depths - cave between Poison Pool and Hidden Forest"
           },
           "status": "missing",
           "confidence": "verified",
@@ -25923,7 +26548,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Fountainhead Palace",
+            "acquisition": "Obtain from Divine Dragon. Reach Fountainhead Palace Defeat the Divine Dragon"
           },
           "status": "missing",
           "confidence": "verified",
@@ -25975,7 +26602,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Inner Sanctum",
+            "area": "Senpou Temple",
             "source": "Divine Child of Rejuvenation quest",
             "npc": "Divine Child of Rejuvenation",
             "boss": null,
@@ -25995,7 +26622,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Inner Sanctum",
+            "acquisition": "Obtain from Divine Child of Rejuvenation quest. Progress the Divine Child rice quest Provide the serpent viscera quest items Continue the Return route until Frozen Tears are received"
           },
           "status": "missing",
           "confidence": "verified",
@@ -26047,7 +26676,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Senpou Temple / Sunken Valley route",
+            "area": "Senpou Temple",
             "source": "Great Serpent route step",
             "npc": null,
             "boss": null,
@@ -26066,7 +26695,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Senpou Temple / Sunken Valley route",
+            "acquisition": "Obtain from Great Serpent route step. Progress the Great Serpent route tied to the Return ending Use Puppeteer Ninjutsu on the kite route where required"
           },
           "status": "missing",
           "confidence": "verified",
@@ -26136,7 +26767,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Sunken Valley",
+            "acquisition": "Obtain from Great Serpent cave route. Reach the Sunken Valley serpent cave route"
           },
           "status": "collected",
           "confidence": "verified",
@@ -26202,7 +26835,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Dilapidated Temple / Ashina Castle",
+            "area": "Dilapidated Temple",
             "source": "Emma and Kuro eavesdrop route",
             "npc": "Emma",
             "boss": null,
@@ -26221,7 +26854,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Dilapidated Temple / Ashina Castle",
+            "acquisition": "Obtain from Emma and Kuro eavesdrop route. Stay loyal to Kuro Progress the Purification eavesdrop route before Divine Dragon"
           },
           "status": "missing",
           "confidence": "verified",
@@ -26273,7 +26908,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Hirata Estate - second memory",
+            "area": "Hirata Estate",
             "source": "Owl (Father)",
             "npc": null,
             "boss": "Owl (Father)",
@@ -26293,7 +26928,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Hirata Estate - second memory",
+            "acquisition": "Obtain from Owl (Father). Obtain Father's Bell Charm Enter the second Hirata memory Defeat Owl (Father)"
           },
           "status": "missing",
           "confidence": "verified",
@@ -26364,7 +27001,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Ashina Castle",
+            "acquisition": "Obtain from Great Shinobi Owl. Stay loyal to Kuro at the Owl choice Defeat Great Shinobi Owl"
           },
           "status": "collected",
           "confidence": "verified",
@@ -26430,7 +27069,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Senpou Temple - Inner Sanctum",
+            "area": "Senpou Temple",
             "source": "Divine Child of Rejuvenation",
             "npc": "Divine Child of Rejuvenation",
             "boss": "Folding Screen Monkeys",
@@ -26449,7 +27088,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Senpou Temple - Inner Sanctum",
+            "acquisition": "Obtain from Divine Child of Rejuvenation. Defeat Folding Screen Monkeys Speak with the Divine Child"
           },
           "status": "collected",
           "confidence": "verified",
@@ -26515,7 +27156,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Ashina Depths - Wedding Cave Door",
+            "area": "Ashina Depths",
             "source": "Wedding Cave",
             "npc": null,
             "boss": "Corrupted Monk",
@@ -26534,7 +27175,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Ashina Depths - Wedding Cave Door",
+            "acquisition": "Obtain from Wedding Cave. Defeat Corrupted Monk in Ashina Depths Reach the Wedding Cave Door area"
           },
           "status": "collected",
           "confidence": "verified",
@@ -26600,7 +27243,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Sunken Valley - Guardian Ape's Watering Hole",
+            "area": "Sunken Valley",
             "source": "Lotus after Guardian Ape",
             "npc": null,
             "boss": "Guardian Ape",
@@ -26618,7 +27261,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Sunken Valley - Guardian Ape's Watering Hole",
+            "acquisition": "Obtain from Lotus after Guardian Ape. Defeat Guardian Ape"
           },
           "status": "collected",
           "confidence": "verified",
@@ -26702,7 +27347,9 @@
                 "label": "Fextralife Shinobi Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Shinobi+Esoteric+Text"
               }
-            ]
+            ],
+            "location": "Dilapidated Temple",
+            "acquisition": "Obtain from Sculptor. Acquire at least 1 skill point"
           },
           "status": "collected",
           "confidence": "verified",
@@ -26786,7 +27433,9 @@
                 "label": "Fextralife Prosthetic Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Esoteric+Text"
               }
-            ]
+            ],
+            "location": "Dilapidated Temple",
+            "acquisition": "Obtain from Sculptor. Fit any three Prosthetic Tools"
           },
           "status": "collected",
           "confidence": "verified",
@@ -26852,7 +27501,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Ashina Outskirts / Ashina Castle",
+            "area": "Ashina Outskirts",
             "source": "Tengu of Ashina rat quest; later fallback through Isshin/Emma",
             "npc": "Tengu of Ashina",
             "boss": null,
@@ -26870,7 +27519,9 @@
                 "label": "Fextralife Ashina Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Ashina+Esoteric+Text"
               }
-            ]
+            ],
+            "location": "Ashina Outskirts / Ashina Castle",
+            "acquisition": "Obtain from Tengu of Ashina rat quest; later fallback through Isshin/Emma. Complete Tengu's rat quest or later fallback route"
           },
           "status": "collected",
           "confidence": "verified",
@@ -26936,7 +27587,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Senpou Temple, Mt. Kongo",
+            "area": "Senpou Temple",
             "source": "Small shrine near Main Hall Idol",
             "npc": null,
             "boss": null,
@@ -26954,7 +27605,9 @@
                 "label": "Fextralife Senpou Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Senpou+Esoteric+Text"
               }
-            ]
+            ],
+            "location": "Senpou Temple, Mt. Kongo",
+            "acquisition": "Obtain from Small shrine near Main Hall Idol. Reach Senpou Temple Main Hall area"
           },
           "status": "collected",
           "confidence": "verified",
@@ -27020,7 +27673,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Great Serpent Shrine / fallback through Emma",
+            "area": "Ashina Castle",
             "source": "Tengu of Ashina or Emma fallback",
             "npc": "Tengu of Ashina",
             "boss": null,
@@ -27039,7 +27692,9 @@
                 "label": "Fextralife Mushin Esoteric Text",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Mushin+Esoteric+Text"
               }
-            ]
+            ],
+            "location": "Great Serpent Shrine / fallback through Emma",
+            "acquisition": "Obtain from Tengu of Ashina or Emma fallback. Learn a final skill in a skill tree Speak to Tengu or later fallback NPC"
           },
           "status": "missing",
           "confidence": "verified",
@@ -27099,7 +27754,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Inner Sanctum",
+            "area": "Senpou Temple",
             "source": "Divine Child route",
             "npc": "Divine Child of Rejuvenation",
             "boss": null,
@@ -27117,7 +27772,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Inner Sanctum",
+            "acquisition": "Obtain from Divine Child route. Progress the Return route"
           },
           "status": "missing",
           "confidence": "Verified",
@@ -27207,7 +27864,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Story progression",
+            "area": "Ashina Castle",
             "source": "Kuro route context",
             "npc": "Kuro",
             "boss": null,
@@ -27225,7 +27882,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Story progression",
+            "acquisition": "Obtain from Kuro route context. Progress the non-Shura story route"
           },
           "status": "collected",
           "confidence": "verified",
@@ -27291,7 +27950,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Story progression",
+            "area": "Ashina Castle",
             "source": "Kuro route context",
             "npc": "Kuro",
             "boss": null,
@@ -27309,7 +27968,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Story progression",
+            "acquisition": "Obtain from Kuro route context. Progress the non-Shura story route"
           },
           "status": "collected",
           "confidence": "verified",
@@ -27375,7 +28036,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Story progression",
+            "area": "Ashina Castle",
             "source": "Kuro route context",
             "npc": "Kuro",
             "boss": null,
@@ -27393,7 +28054,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Story progression",
+            "acquisition": "Obtain from Kuro route context. Progress the non-Shura story route"
           },
           "status": "collected",
           "confidence": "verified",
@@ -27467,7 +28130,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Senpou Temple / Inner Sanctum route",
+            "area": "Senpou Temple",
             "source": "Return route context",
             "npc": "Divine Child of Rejuvenation",
             "boss": null,
@@ -27485,7 +28148,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Senpou Temple / Inner Sanctum route",
+            "acquisition": "Obtain from Return route context. Progress the Return route"
           },
           "status": "missing",
           "confidence": "Verified",
@@ -27583,7 +28248,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Senpou Temple / Inner Sanctum route",
+            "area": "Senpou Temple",
             "source": "Return route context",
             "npc": "Divine Child of Rejuvenation",
             "boss": null,
@@ -27601,7 +28266,9 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "location": "Senpou Temple / Inner Sanctum route",
+            "acquisition": "Obtain from Return route context. Progress the Return route"
           },
           "status": "missing",
           "confidence": "Verified",
@@ -27699,7 +28366,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Ashina Outskirts - Castle Gate",
+            "area": "Ashina Outskirts",
             "source": "Gyoubu Oniwa",
             "npc": null,
             "boss": "Gyoubu Oniwa",
@@ -27717,7 +28384,9 @@
                 "label": "Fextralife Prosthetic Tools",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Prosthetic+Tools"
               }
-            ]
+            ],
+            "location": "Ashina Outskirts - Castle Gate",
+            "acquisition": "Obtain from Gyoubu Oniwa. Defeat Gyoubu Oniwa"
           },
           "status": "collected",
           "confidence": "Verified",
@@ -27833,7 +28502,9 @@
                 "label": "Fextralife Shuriken Wheel",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Shuriken+Wheel"
               }
-            ]
+            ],
+            "location": "Ashina Outskirts",
+            "acquisition": "Obtain from Corpse near Outskirts Wall - Gate Path Idol. Reach Outskirts Wall - Gate Path"
           },
           "status": "collected",
           "confidence": "Verified",
@@ -27955,7 +28626,9 @@
                 "label": "Fextralife Robert's Firecrackers",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Robert%27s+Firecrackers"
               }
-            ]
+            ],
+            "location": "Ashina Outskirts",
+            "acquisition": "Obtain from Crow's Bed Memorial Mob; later Battlefield Memorial Mob backup. Reach a merchant selling Robert's Firecrackers"
           },
           "status": "collected",
           "confidence": "Verified",
@@ -28107,7 +28780,9 @@
                 "label": "Fextralife Flame Barrel",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Flame+Barrel"
               }
-            ]
+            ],
+            "location": "Hirata Estate",
+            "acquisition": "Obtain from Estate Path campfire. Reach Hirata Estate Estate Path"
           },
           "status": "collected",
           "confidence": "Verified",
@@ -28223,7 +28898,9 @@
                 "label": "Fextralife Shinobi Axe of the Monkey",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Shinobi+Axe+of+the+Monkey"
               }
-            ]
+            ],
+            "location": "Hirata Estate",
+            "acquisition": "Obtain from Temple building near Estate Path. Reach Hirata Estate Estate Path"
           },
           "status": "collected",
           "confidence": "Verified",
@@ -28339,7 +29016,9 @@
                 "label": "Fextralife Mist Raven's Feathers",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Mist+Raven%27s+Feathers"
               }
-            ]
+            ],
+            "location": "Hirata Estate",
+            "acquisition": "Obtain from Three-story pagoda. Reach Hirata Estate bamboo thicket route"
           },
           "status": "collected",
           "confidence": "Verified",
@@ -28455,7 +29134,9 @@
                 "label": "Fextralife Sabimaru",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Sabimaru"
               }
-            ]
+            ],
+            "location": "Ashina Castle",
+            "acquisition": "Obtain from Chest below Upper Tower - Antechamber. Reach Ashina Castle Upper Tower"
           },
           "status": "collected",
           "confidence": "Verified",
@@ -28553,7 +29234,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Ashina Castle - Old Grave",
+            "area": "Ashina Castle",
             "source": "Blackhat Badger",
             "npc": "Blackhat Badger",
             "boss": null,
@@ -28571,7 +29252,9 @@
                 "label": "Fextralife Iron Fortress",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Iron+Fortress"
               }
-            ]
+            ],
+            "location": "Ashina Castle - Old Grave",
+            "acquisition": "Obtain from Blackhat Badger. Reach Old Grave and Blackhat Badger's shop"
           },
           "status": "missing",
           "confidence": "Verified",
@@ -28669,7 +29352,7 @@
             }
           ],
           "acquisitionMetadata": {
-            "area": "Sunken Valley - Gun Fort",
+            "area": "Sunken Valley",
             "source": "Long-arm Centipede Giraffe room",
             "npc": null,
             "boss": "Long-arm Centipede Giraffe",
@@ -28688,7 +29371,9 @@
                 "label": "Fextralife Large Fan",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Large+Fan"
               }
-            ]
+            ],
+            "location": "Sunken Valley - Gun Fort",
+            "acquisition": "Obtain from Long-arm Centipede Giraffe room. Reach Gun Fort Defeat Long-arm Centipede Giraffe"
           },
           "status": "collected",
           "confidence": "Verified",
@@ -28805,7 +29490,9 @@
                 "label": "Fextralife Gyoubu's Broken Horn",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Gyoubu%27s+Broken+Horn"
               }
-            ]
+            ],
+            "location": "Ashina Reservoir",
+            "acquisition": "Obtain from Gatehouse chest. Obtain the Gatehouse Key Reach Ashina Reservoir gatehouse"
           },
           "status": "collected",
           "confidence": "Verified",
@@ -28921,7 +29608,9 @@
                 "label": "Fextralife Slender Finger",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Slender+Finger"
               }
-            ]
+            ],
+            "location": "Sunken Valley",
+            "acquisition": "Obtain from Guardian Ape. Defeat Guardian Ape"
           },
           "status": "collected",
           "confidence": "Verified",
@@ -29038,7 +29727,9 @@
                 "label": "Fextralife Malcontent's Ring",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Malcontent%27s+Ring"
               }
-            ]
+            ],
+            "location": "Ashina Depths",
+            "acquisition": "Obtain from Shichimen Warrior in Guardian Ape's Burrow. Defeat Headless Ape encounter Defeat the Shichimen Warrior in Guardian Ape's Burrow"
           },
           "status": "missing",
           "confidence": "Verified",
@@ -29161,7 +29852,10 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "acquisition": "Shura requires choosing to obey Owl and follow the Iron Code at the Ashina Castle rooftop choice.",
+            "area": "Ashina Castle",
+            "location": "Ashina Castle - Upper Tower rooftop"
           },
           "sourceReferences": [
             {
@@ -29236,7 +29930,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Sunken Valley - Guardian Ape's Watering Hole",
+                  "area": "Sunken Valley",
                   "source": "Lotus after Guardian Ape",
                   "npc": null,
                   "boss": "Guardian Ape",
@@ -29254,7 +29948,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Sunken Valley - Guardian Ape's Watering Hole",
+                  "acquisition": "Obtain from Lotus after Guardian Ape. Defeat Guardian Ape"
                 }
               }
             },
@@ -29300,7 +29996,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Ashina Depths - Wedding Cave Door",
+                  "area": "Ashina Depths",
                   "source": "Wedding Cave",
                   "npc": null,
                   "boss": "Corrupted Monk",
@@ -29319,7 +30015,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Ashina Depths - Wedding Cave Door",
+                  "acquisition": "Obtain from Wedding Cave. Defeat Corrupted Monk in Ashina Depths Reach the Wedding Cave Door area"
                 }
               }
             },
@@ -29384,7 +30082,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Ashina Castle",
+                  "acquisition": "Obtain from Great Shinobi Owl. Stay loyal to Kuro at the Owl choice Defeat Great Shinobi Owl"
                 }
               }
             }
@@ -29491,7 +30191,9 @@
                           "label": "Fextralife Endings",
                           "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                         }
-                      ]
+                      ],
+                      "location": "Ashina Castle",
+                      "acquisition": "Obtain from Great Shinobi Owl. Stay loyal to Kuro at the Owl choice Defeat Great Shinobi Owl"
                     }
                   }
                 }
@@ -29549,7 +30251,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Sunken Valley - Guardian Ape's Watering Hole",
+                  "area": "Sunken Valley",
                   "source": "Lotus after Guardian Ape",
                   "npc": null,
                   "boss": "Guardian Ape",
@@ -29567,7 +30269,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Sunken Valley - Guardian Ape's Watering Hole",
+                  "acquisition": "Obtain from Lotus after Guardian Ape. Defeat Guardian Ape"
                 }
               }
             },
@@ -29613,7 +30317,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Ashina Depths - Wedding Cave Door",
+                  "area": "Ashina Depths",
                   "source": "Wedding Cave",
                   "npc": null,
                   "boss": "Corrupted Monk",
@@ -29632,7 +30336,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Ashina Depths - Wedding Cave Door",
+                  "acquisition": "Obtain from Wedding Cave. Defeat Corrupted Monk in Ashina Depths Reach the Wedding Cave Door area"
                 }
               }
             },
@@ -29697,7 +30403,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Ashina Castle",
+                  "acquisition": "Obtain from Great Shinobi Owl. Stay loyal to Kuro at the Owl choice Defeat Great Shinobi Owl"
                 }
               }
             },
@@ -29778,7 +30486,9 @@
                           "label": "Fextralife Endings",
                           "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                         }
-                      ]
+                      ],
+                      "location": "Ashina Castle",
+                      "acquisition": "Obtain from Great Shinobi Owl. Stay loyal to Kuro at the Owl choice Defeat Great Shinobi Owl"
                     }
                   }
                 }
@@ -29797,7 +30507,10 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "acquisition": "Shura requires choosing to obey Owl and follow the Iron Code at the Ashina Castle rooftop choice.",
+            "area": "Ashina Castle",
+            "location": "Ashina Castle - Upper Tower rooftop"
           },
           "notes": [
             "Potential permanent block evidence is present, but its permanence is not verified strongly enough to mark this ending blocked."
@@ -29822,7 +30535,10 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "acquisition": "Immortal Severance is the baseline non-Shura ending: stay loyal to Kuro, defeat the Divine Dragon, then give only Divine Dragon's Tears to Kuro.",
+            "area": "Ashina Reservoir",
+            "location": "Ashina Reservoir finale and Kuro's final choice"
           },
           "sourceReferences": [
             {
@@ -29897,7 +30613,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Senpou Temple - Inner Sanctum",
+                  "area": "Senpou Temple",
                   "source": "Divine Child of Rejuvenation",
                   "npc": "Divine Child of Rejuvenation",
                   "boss": "Folding Screen Monkeys",
@@ -29916,7 +30632,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Senpou Temple - Inner Sanctum",
+                  "acquisition": "Obtain from Divine Child of Rejuvenation. Defeat Folding Screen Monkeys Speak with the Divine Child"
                 }
               }
             },
@@ -29974,7 +30692,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Fountainhead Palace",
+                  "acquisition": "Obtain from Divine Dragon. Reach Fountainhead Palace Defeat the Divine Dragon"
                 }
               }
             },
@@ -30039,7 +30759,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Ashina Castle",
+                  "acquisition": "Obtain from Great Shinobi Owl. Stay loyal to Kuro at the Owl choice Defeat Great Shinobi Owl"
                 }
               }
             }
@@ -30131,7 +30853,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Senpou Temple - Inner Sanctum",
+                  "area": "Senpou Temple",
                   "source": "Divine Child of Rejuvenation",
                   "npc": "Divine Child of Rejuvenation",
                   "boss": "Folding Screen Monkeys",
@@ -30150,7 +30872,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Senpou Temple - Inner Sanctum",
+                  "acquisition": "Obtain from Divine Child of Rejuvenation. Defeat Folding Screen Monkeys Speak with the Divine Child"
                 }
               }
             },
@@ -30208,7 +30932,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Fountainhead Palace",
+                  "acquisition": "Obtain from Divine Dragon. Reach Fountainhead Palace Defeat the Divine Dragon"
                 }
               }
             },
@@ -30273,7 +30999,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Ashina Castle",
+                  "acquisition": "Obtain from Great Shinobi Owl. Stay loyal to Kuro at the Owl choice Defeat Great Shinobi Owl"
                 }
               }
             }
@@ -30291,7 +31019,10 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "acquisition": "Immortal Severance is the baseline non-Shura ending: stay loyal to Kuro, defeat the Divine Dragon, then give only Divine Dragon's Tears to Kuro.",
+            "area": "Ashina Reservoir",
+            "location": "Ashina Reservoir finale and Kuro's final choice"
           },
           "notes": [
             "Route is still possible by currently verified evidence, but the save is missing required item(s): Divine Dragon's Tears."
@@ -30318,7 +31049,10 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "acquisition": "Purification requires staying loyal to Kuro, completing the Emma/eavesdrop route before Divine Dragon, using Father's Bell Charm to enter the second Hirata memory, defeating Owl (Father), and giving Aromatic Flower plus Divine Dragon's Tears to Kuro.",
+            "area": "Ashina Reservoir",
+            "location": "Ashina Reservoir finale and Kuro's final choice"
           },
           "sourceReferences": [
             {
@@ -30405,7 +31139,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Fountainhead Palace",
+                  "acquisition": "Obtain from Divine Dragon. Reach Fountainhead Palace Defeat the Divine Dragon"
                 }
               }
             },
@@ -30444,7 +31180,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Dilapidated Temple / Ashina Castle",
+                  "area": "Dilapidated Temple",
                   "source": "Emma and Kuro eavesdrop route",
                   "npc": "Emma",
                   "boss": null,
@@ -30463,7 +31199,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Dilapidated Temple / Ashina Castle",
+                  "acquisition": "Obtain from Emma and Kuro eavesdrop route. Stay loyal to Kuro Progress the Purification eavesdrop route before Divine Dragon"
                 }
               }
             },
@@ -30502,7 +31240,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Hirata Estate - second memory",
+                  "area": "Hirata Estate",
                   "source": "Owl (Father)",
                   "npc": null,
                   "boss": "Owl (Father)",
@@ -30522,7 +31260,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Hirata Estate - second memory",
+                  "acquisition": "Obtain from Owl (Father). Obtain Father's Bell Charm Enter the second Hirata memory Defeat Owl (Father)"
                 }
               }
             },
@@ -30568,7 +31308,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Story progression",
+                  "area": "Ashina Castle",
                   "source": "Kuro route context",
                   "npc": "Kuro",
                   "boss": null,
@@ -30586,7 +31326,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Story progression",
+                  "acquisition": "Obtain from Kuro route context. Progress the non-Shura story route"
                 }
               }
             }
@@ -30720,7 +31462,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Fountainhead Palace",
+                  "acquisition": "Obtain from Divine Dragon. Reach Fountainhead Palace Defeat the Divine Dragon"
                 }
               }
             },
@@ -30759,7 +31503,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Dilapidated Temple / Ashina Castle",
+                  "area": "Dilapidated Temple",
                   "source": "Emma and Kuro eavesdrop route",
                   "npc": "Emma",
                   "boss": null,
@@ -30778,7 +31522,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Dilapidated Temple / Ashina Castle",
+                  "acquisition": "Obtain from Emma and Kuro eavesdrop route. Stay loyal to Kuro Progress the Purification eavesdrop route before Divine Dragon"
                 }
               }
             },
@@ -30817,7 +31563,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Hirata Estate - second memory",
+                  "area": "Hirata Estate",
                   "source": "Owl (Father)",
                   "npc": null,
                   "boss": "Owl (Father)",
@@ -30837,7 +31583,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Hirata Estate - second memory",
+                  "acquisition": "Obtain from Owl (Father). Obtain Father's Bell Charm Enter the second Hirata memory Defeat Owl (Father)"
                 }
               }
             },
@@ -30883,7 +31631,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Story progression",
+                  "area": "Ashina Castle",
                   "source": "Kuro route context",
                   "npc": "Kuro",
                   "boss": null,
@@ -30901,7 +31649,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Story progression",
+                  "acquisition": "Obtain from Kuro route context. Progress the non-Shura story route"
                 }
               }
             }
@@ -30921,7 +31671,10 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "acquisition": "Purification requires staying loyal to Kuro, completing the Emma/eavesdrop route before Divine Dragon, using Father's Bell Charm to enter the second Hirata memory, defeating Owl (Father), and giving Aromatic Flower plus Divine Dragon's Tears to Kuro.",
+            "area": "Ashina Reservoir",
+            "location": "Ashina Reservoir finale and Kuro's final choice"
           },
           "notes": [
             "Route is still possible by currently verified evidence, but the save is missing required item(s): Divine Dragon's Tears, Father's Bell Charm, Aromatic Flower."
@@ -30948,7 +31701,10 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "acquisition": "Return requires completing the Divine Child quest, obtaining Frozen Tears, then giving Frozen Tears and Divine Dragon's Tears to Kuro.",
+            "area": "Ashina Reservoir",
+            "location": "Ashina Reservoir finale and Kuro's final choice"
           },
           "sourceReferences": [
             {
@@ -31035,7 +31791,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Fountainhead Palace",
+                  "acquisition": "Obtain from Divine Dragon. Reach Fountainhead Palace Defeat the Divine Dragon"
                 }
               }
             },
@@ -31074,7 +31832,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Inner Sanctum",
+                  "area": "Senpou Temple",
                   "source": "Divine Child of Rejuvenation quest",
                   "npc": "Divine Child of Rejuvenation",
                   "boss": null,
@@ -31094,7 +31852,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Inner Sanctum",
+                  "acquisition": "Obtain from Divine Child of Rejuvenation quest. Progress the Divine Child rice quest Provide the serpent viscera quest items Continue the Return route until Frozen Tears are received"
                 }
               }
             },
@@ -31133,7 +31893,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Senpou Temple / Sunken Valley route",
+                  "area": "Senpou Temple",
                   "source": "Great Serpent route step",
                   "npc": null,
                   "boss": null,
@@ -31152,7 +31912,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Senpou Temple / Sunken Valley route",
+                  "acquisition": "Obtain from Great Serpent route step. Progress the Great Serpent route tied to the Return ending Use Puppeteer Ninjutsu on the kite route where required"
                 }
               }
             },
@@ -31216,7 +31978,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Sunken Valley",
+                  "acquisition": "Obtain from Great Serpent cave route. Reach the Sunken Valley serpent cave route"
                 }
               }
             },
@@ -31267,7 +32031,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Inner Sanctum",
+                  "area": "Senpou Temple",
                   "source": "Divine Child route",
                   "npc": "Divine Child of Rejuvenation",
                   "boss": null,
@@ -31285,7 +32049,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Inner Sanctum",
+                  "acquisition": "Obtain from Divine Child route. Progress the Return route"
                 }
               }
             },
@@ -31336,7 +32102,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Senpou Temple / Inner Sanctum route",
+                  "area": "Senpou Temple",
                   "source": "Return route context",
                   "npc": "Divine Child of Rejuvenation",
                   "boss": null,
@@ -31354,7 +32120,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Senpou Temple / Inner Sanctum route",
+                  "acquisition": "Obtain from Return route context. Progress the Return route"
                 }
               }
             },
@@ -31405,7 +32173,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Senpou Temple / Inner Sanctum route",
+                  "area": "Senpou Temple",
                   "source": "Return route context",
                   "npc": "Divine Child of Rejuvenation",
                   "boss": null,
@@ -31423,7 +32191,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Senpou Temple / Inner Sanctum route",
+                  "acquisition": "Obtain from Return route context. Progress the Return route"
                 }
               }
             }
@@ -31567,7 +32337,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Fountainhead Palace",
+                  "acquisition": "Obtain from Divine Dragon. Reach Fountainhead Palace Defeat the Divine Dragon"
                 }
               }
             },
@@ -31606,7 +32378,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Inner Sanctum",
+                  "area": "Senpou Temple",
                   "source": "Divine Child of Rejuvenation quest",
                   "npc": "Divine Child of Rejuvenation",
                   "boss": null,
@@ -31626,7 +32398,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Inner Sanctum",
+                  "acquisition": "Obtain from Divine Child of Rejuvenation quest. Progress the Divine Child rice quest Provide the serpent viscera quest items Continue the Return route until Frozen Tears are received"
                 }
               }
             },
@@ -31665,7 +32439,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Senpou Temple / Sunken Valley route",
+                  "area": "Senpou Temple",
                   "source": "Great Serpent route step",
                   "npc": null,
                   "boss": null,
@@ -31684,7 +32458,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Senpou Temple / Sunken Valley route",
+                  "acquisition": "Obtain from Great Serpent route step. Progress the Great Serpent route tied to the Return ending Use Puppeteer Ninjutsu on the kite route where required"
                 }
               }
             },
@@ -31748,7 +32524,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Sunken Valley",
+                  "acquisition": "Obtain from Great Serpent cave route. Reach the Sunken Valley serpent cave route"
                 }
               }
             },
@@ -31799,7 +32577,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Inner Sanctum",
+                  "area": "Senpou Temple",
                   "source": "Divine Child route",
                   "npc": "Divine Child of Rejuvenation",
                   "boss": null,
@@ -31817,7 +32595,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Inner Sanctum",
+                  "acquisition": "Obtain from Divine Child route. Progress the Return route"
                 }
               }
             },
@@ -31868,7 +32648,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Senpou Temple / Inner Sanctum route",
+                  "area": "Senpou Temple",
                   "source": "Return route context",
                   "npc": "Divine Child of Rejuvenation",
                   "boss": null,
@@ -31886,7 +32666,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Senpou Temple / Inner Sanctum route",
+                  "acquisition": "Obtain from Return route context. Progress the Return route"
                 }
               }
             },
@@ -31937,7 +32719,7 @@
                   }
                 ],
                 "acquisitionMetadata": {
-                  "area": "Senpou Temple / Inner Sanctum route",
+                  "area": "Senpou Temple",
                   "source": "Return route context",
                   "npc": "Divine Child of Rejuvenation",
                   "boss": null,
@@ -31955,7 +32737,9 @@
                       "label": "Fextralife Endings",
                       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
                     }
-                  ]
+                  ],
+                  "location": "Senpou Temple / Inner Sanctum route",
+                  "acquisition": "Obtain from Return route context. Progress the Return route"
                 }
               }
             }
@@ -31975,7 +32759,10 @@
                 "label": "Fextralife Endings",
                 "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Endings"
               }
-            ]
+            ],
+            "acquisition": "Return requires completing the Divine Child quest, obtaining Frozen Tears, then giving Frozen Tears and Divine Dragon's Tears to Kuro.",
+            "area": "Ashina Reservoir",
+            "location": "Ashina Reservoir finale and Kuro's final choice"
           },
           "notes": [
             "Route is still possible by currently verified evidence, but the save is missing required item(s): Divine Dragon's Tears, Frozen Tears, Fresh Serpent Viscera."

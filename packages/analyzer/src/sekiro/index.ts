@@ -1062,6 +1062,7 @@ function gourdLocationEntity(location: AnyRecord): AnyRecord {
       acquisitionMetadata: {
         area: pyGet(location, "area", null),
         location: pyGet(location, "location", null),
+        acquisition: pyGet(location, "acquisition", null),
         sourceType: pyGet(location, "sourceType", null),
         itemLotParamRowId: pyGet(location, "itemLotParamRowId", null),
         shopLineupParamRowId: pyGet(location, "shopLineupParamRowId", null),
@@ -1145,6 +1146,7 @@ function prayerLocationEntity(location: AnyRecord): AnyRecord {
       acquisitionMetadata: {
         area: pyGet(location, "area", null),
         location: pyGet(location, "location", null),
+        acquisition: pyGet(location, "acquisition", null),
         sourceType: pyGet(location, "sourceType", null),
         itemLotParamRowId: pyGet(location, "itemLotParamRowId", null),
         shopLineupParamRowId: pyGet(location, "shopLineupParamRowId", null),
@@ -1189,6 +1191,9 @@ function genericEntityEventFlags(entities: AnyRecord[]): number[] {
 const SOURCES_USED = [
   "SoulSplitter wiki: Sekiro item pickup flags extracted via Yapped; right-most column is event flag.",
   "PowerPyx Prayer Bead guide: exact human-readable Prayer Bead location/source enemy names.",
+  "PowerPyx boss guide: human-readable major boss locations and route requirements.",
+  "PowerPyx skills and combat styles guide: individual skill reward and merchant locations.",
+  "GameWith skill guide: skill-tree acquisition and Sculptor's Idol guidance.",
   "SoulsMods Paramdex: ItemLotParam and ShopLineupParam field definitions.",
   "sekiro-online/params: EquipParamGoods row data for boss Memory goods names.",
   "sekiro-online/params: ItemLotParam row data for boss Memory award entries.",

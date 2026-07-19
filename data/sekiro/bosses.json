@@ -42,7 +42,20 @@
           "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
         }
       ],
-      "statusRules": []
+      "statusRules": [],
+      "acquisitionMetadata": {
+        "area": "Ashina Outskirts",
+        "location": "Ashina Outskirts - Ashina Castle Gate Fortress battlefield",
+        "acquisition": "Defeat Gyoubu Oniwa at the castle gate battlefield to receive Memory: Gyoubu Oniwa.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-guide",
+            "label": "PowerPyx Sekiro boss guide",
+            "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+          }
+        ]
+      }
     },
     {
       "id": "lady_butterfly",
@@ -76,7 +89,20 @@
           "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
         }
       ],
-      "statusRules": []
+      "statusRules": [],
+      "acquisitionMetadata": {
+        "area": "Hirata Estate",
+        "location": "Hirata Estate - Hidden Temple below Hirata Audience Chamber",
+        "acquisition": "Use the Hidden Temple Key to enter the chamber below Hirata Audience Chamber, then defeat Lady Butterfly.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-guide",
+            "label": "PowerPyx Sekiro boss guide",
+            "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+          }
+        ]
+      }
     },
     {
       "id": "genichiro",
@@ -110,7 +136,20 @@
           "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
         }
       ],
-      "statusRules": []
+      "statusRules": [],
+      "acquisitionMetadata": {
+        "area": "Ashina Castle",
+        "location": "Ashina Castle - Upper Tower rooftop",
+        "acquisition": "Reach the rooftop at the top of Ashina Castle and defeat Genichiro Ashina.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-guide",
+            "label": "PowerPyx Sekiro boss guide",
+            "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+          }
+        ]
+      }
     },
     {
       "id": "screen_monkeys",
@@ -144,7 +183,20 @@
           "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
         }
       ],
-      "statusRules": []
+      "statusRules": [],
+      "acquisitionMetadata": {
+        "area": "Senpou Temple",
+        "location": "Senpou Temple - Hall of Illusions",
+        "acquisition": "Ring the bell in Senpou Temple Main Hall to enter the Hall of Illusions, then defeat the Folding Screen Monkeys.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-guide",
+            "label": "PowerPyx Sekiro boss guide",
+            "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+          }
+        ]
+      }
     },
     {
       "id": "guardian_ape",
@@ -178,7 +230,20 @@
           "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
         }
       ],
-      "statusRules": []
+      "statusRules": [],
+      "acquisitionMetadata": {
+        "area": "Sunken Valley",
+        "location": "Sunken Valley - Guardian Ape's Watering Hole",
+        "acquisition": "Reach the Guardian Ape's Watering Hole beyond the Gun Fort and defeat the Guardian Ape.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-guide",
+            "label": "PowerPyx Sekiro boss guide",
+            "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+          }
+        ]
+      }
     },
     {
       "id": "corrupted_monk",
@@ -212,7 +277,20 @@
           "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
         }
       ],
-      "statusRules": []
+      "statusRules": [],
+      "acquisitionMetadata": {
+        "area": "Ashina Depths",
+        "location": "Ashina Depths - Wedding Cave Door",
+        "acquisition": "Cross Mibu Village to the Wedding Cave Door and defeat the Corrupted Monk illusion.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-guide",
+            "label": "PowerPyx Sekiro boss guide",
+            "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+          }
+        ]
+      }
     },
     {
       "id": "great_shinobi_owl",
@@ -246,7 +324,20 @@
           "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
         }
       ],
-      "statusRules": []
+      "statusRules": [],
+      "acquisitionMetadata": {
+        "area": "Ashina Castle",
+        "location": "Ashina Castle - Upper Tower rooftop",
+        "acquisition": "Choose to break the Iron Code and stay loyal to Kuro at the rooftop choice, then defeat Great Shinobi Owl.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-guide",
+            "label": "PowerPyx Sekiro boss guide",
+            "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+          }
+        ]
+      }
     },
     {
       "id": "foster_father",
@@ -280,7 +371,20 @@
           "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
         }
       ],
-      "statusRules": []
+      "statusRules": [],
+      "acquisitionMetadata": {
+        "area": "Hirata Estate - second memory",
+        "location": "Hirata Estate, second memory - Hidden Temple below Hirata Audience Chamber",
+        "acquisition": "Unlock the second Hirata memory through the Purification route, then defeat Owl (Father) in the Hidden Temple.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-guide",
+            "label": "PowerPyx Sekiro boss guide",
+            "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+          }
+        ]
+      }
     },
     {
       "id": "true_monk",
@@ -314,7 +418,20 @@
           "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
         }
       ],
-      "statusRules": []
+      "statusRules": [],
+      "acquisitionMetadata": {
+        "area": "Fountainhead Palace",
+        "location": "Fountainhead Palace - Vermilion Bridge",
+        "acquisition": "Enter Fountainhead Palace through the Wedding Cave palanquin and defeat the True Monk on the Vermilion Bridge.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-guide",
+            "label": "PowerPyx Sekiro boss guide",
+            "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+          }
+        ]
+      }
     },
     {
       "id": "divine_dragon",
@@ -348,7 +465,20 @@
           "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
         }
       ],
-      "statusRules": []
+      "statusRules": [],
+      "acquisitionMetadata": {
+        "area": "Fountainhead Palace",
+        "location": "Fountainhead Palace - Divine Realm",
+        "acquisition": "Reach the Divine Realm at the end of Fountainhead Palace and defeat the Divine Dragon.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-guide",
+            "label": "PowerPyx Sekiro boss guide",
+            "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+          }
+        ]
+      }
     },
     {
       "id": "demon_of_hatred",
@@ -382,7 +512,20 @@
           "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
         }
       ],
-      "statusRules": []
+      "statusRules": [],
+      "acquisitionMetadata": {
+        "area": "Ashina Outskirts",
+        "location": "Ashina Outskirts - Flames of Hatred battlefield",
+        "acquisition": "After defeating the Divine Dragon, return through the burning Ashina Outskirts and defeat the Demon of Hatred at the castle gate battlefield.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-guide",
+            "label": "PowerPyx Sekiro boss guide",
+            "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+          }
+        ]
+      }
     },
     {
       "id": "sword_saint_isshin",
@@ -416,7 +559,20 @@
           "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
         }
       ],
-      "statusRules": []
+      "statusRules": [],
+      "acquisitionMetadata": {
+        "area": "Ashina Reservoir",
+        "location": "Ashina Reservoir - field beyond the Secret Passage",
+        "acquisition": "On a non-Shura route, return to the Secret Passage field and defeat Genichiro, Way of Tomoe followed by Isshin, the Sword Saint.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-guide",
+            "label": "PowerPyx Sekiro boss guide",
+            "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+          }
+        ]
+      }
     },
     {
       "id": "isshin_ashina",
@@ -450,7 +606,20 @@
           "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
         }
       ],
-      "statusRules": []
+      "statusRules": [],
+      "acquisitionMetadata": {
+        "area": "Ashina Castle",
+        "location": "Ashina Castle - Upper Tower rooftop",
+        "acquisition": "Choose to obey the Iron Code for the Shura route, then defeat Emma and Isshin Ashina on the castle rooftop.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-guide",
+            "label": "PowerPyx Sekiro boss guide",
+            "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+          }
+        ]
+      }
     },
     {
       "id": "headless_ape",
@@ -484,7 +653,20 @@
           "details": "Candidate SoulSplitter 930x boss split flag. Current conclusion: these flags are not reliable persistent boss-completion evidence, so this signal is not promoted to bossDefeatFlag and cannot drive defeated/not_defeated status."
         }
       ],
-      "statusRules": []
+      "statusRules": [],
+      "acquisitionMetadata": {
+        "area": "Ashina Depths",
+        "location": "Ashina Depths - cave between Poison Pool and Hidden Forest",
+        "acquisition": "After defeating the Guardian Ape in Sunken Valley, defeat the Headless Ape rematch in the Ashina Depths cave.",
+        "confidence": "Probable",
+        "sourceReferences": [
+          {
+            "type": "community-guide",
+            "label": "PowerPyx Sekiro boss guide",
+            "url": "https://www.powerpyx.com/sekiro-shadows-die-twice-boss-guide-all-bosses/"
+          }
+        ]
+      }
     }
   ],
   "memoryItemIds": [

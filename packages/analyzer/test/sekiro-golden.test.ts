@@ -131,6 +131,43 @@ describe("Sekiro analyzer golden parity", () => {
     });
   });
 
+  it("provides acquisition and location guidance for every report entity", async () => {
+    const fixture = await readFixture();
+    const report = await analyzeSekiroSave(fixture, await readSekiroData(), {
+      fileName: "S0000.sl2",
+    });
+    const shape = report.parseSekiroSaveShape;
+
+    for (const categoryKey of [
+      "gourdSeeds",
+      "prayerBeads",
+      "prosthetics",
+      "prostheticUpgrades",
+      "skills",
+      "keyItems",
+      "endings",
+      "bosses",
+    ]) {
+      for (const entity of shape[categoryKey].entities) {
+        const metadata = entity.acquisitionMetadata ?? {};
+        const acquisition = metadata.acquisition ?? metadata.acquisitionMethod;
+
+        assert.equal(
+          typeof acquisition === "string" &&
+            acquisition.trim().length > 0 &&
+            !/^unknown\b/i.test(acquisition),
+          true,
+          `${categoryKey}/${entity.id} must provide Acquisition guidance`,
+        );
+        assert.equal(
+          typeof metadata.location === "string" && metadata.location.trim().length > 0,
+          true,
+          `${categoryKey}/${entity.id} must provide Location guidance`,
+        );
+      }
+    }
+  });
+
   it("reconciles exact progression across late-game fixtures", async () => {
     const data = await readSekiroData();
     const cases = [

@@ -48,7 +48,9 @@
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 10200000 maps to event flag 6760."
         }
-      ]
+      ],
+      "location": "Outskirts Wall - Gate Path, courtyard immediately beyond the Idol",
+      "acquisition": "Defeat General Naomori Kawarada and collect the Prayer Bead reward."
     },
     {
       "id": "general_tenzen_yamauchi",
@@ -64,7 +66,9 @@
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 10200100 maps to event flag 6762."
         }
-      ]
+      ],
+      "location": "Outskirts Wall - Stairway, courtyard immediately after the Chained Ogre",
+      "acquisition": "Defeat General Tenzen Yamauchi and collect the Prayer Bead reward."
     },
     {
       "id": "chained_ogre_outskirts",
@@ -86,7 +90,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Outskirts Wall - Stairway Prayer Bead is dropped by the Chained Ogre miniboss."
         }
-      ]
+      ],
+      "acquisition": "Defeat Chained Ogre and collect the Prayer Bead reward."
     },
     {
       "id": "shinobi_hunter_enshin",
@@ -126,7 +131,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Hirata Estate Estate Path Prayer Bead is dropped by Shinobi Hunter Enshin of Misen."
         }
-      ]
+      ],
+      "acquisition": "Defeat Shinobi Hunter Enshin of Misen and collect the Prayer Bead reward."
     },
     {
       "id": "juzou_the_drunkard_hirata",
@@ -148,7 +154,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Hirata Estate - Main Hall Prayer Bead is dropped by Juzou the Drunkard in the first Hirata memory."
         }
-      ]
+      ],
+      "acquisition": "Defeat Juzou the Drunkard and collect the Prayer Bead reward."
     },
     {
       "id": "general_kuranosuke_matsumoto",
@@ -193,7 +200,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Castle Prayer Bead on the main stairway is dropped by General Kuranosuke Matsumoto."
         }
-      ]
+      ],
+      "acquisition": "Defeat General Kuranosuke Matsumoto and collect the Prayer Bead reward."
     },
     {
       "id": "ashina_elite_jinsuke_saze",
@@ -215,7 +223,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Upper Tower - Ashina Dojo Prayer Bead is dropped by Ashina Elite - Jinsuke Saze."
         }
-      ]
+      ],
+      "acquisition": "Defeat Ashina Elite - Jinsuke Saze and collect the Prayer Bead reward."
     },
     {
       "id": "seven_ashina_spears_shikibu",
@@ -255,7 +264,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Reservoir Prayer Bead reached from the reservoir idol is dropped by Seven Ashina Spears - Shikibu Toshikatsu Yamauchi."
         }
-      ]
+      ],
+      "acquisition": "Defeat Seven Ashina Spears - Shikibu Toshikatsu Yamauchi and collect the Prayer Bead reward."
     },
     {
       "id": "lone_shadow_longswordsman",
@@ -277,7 +287,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Reservoir well Prayer Bead is dropped by Lone Shadow Longswordman."
         }
-      ]
+      ],
+      "acquisition": "Defeat Lone Shadow Longswordsman and collect the Prayer Bead reward."
     },
     {
       "id": "armored_warrior",
@@ -299,7 +310,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Senpou Temple - Shugendo Prayer Bead is dropped by Armored Warrior."
         }
-      ]
+      ],
+      "acquisition": "Defeat Armored Warrior and collect the Prayer Bead reward."
     },
     {
       "id": "ashina_castle_hidden_chest",
@@ -315,7 +327,9 @@
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 1110170 maps to event flag 6790."
         }
-      ]
+      ],
+      "location": "Upper Tower - Antechamber, chest behind the shinobi wall near the samurai armor displays",
+      "acquisition": "Open the chest at Upper Tower - Antechamber, chest behind the shinobi wall near the samurai armor displays."
     },
     {
       "id": "long_arm_centipede_senun",
@@ -355,7 +369,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Senpou Temple Temple Grounds Prayer Bead is dropped by Long-arm Centipede Sen'un."
         }
-      ]
+      ],
+      "acquisition": "Defeat Long-arm Centipede Sen'un and collect the Prayer Bead reward."
     },
     {
       "id": "mibu_underwater_chest",
@@ -389,7 +404,9 @@
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 1500320 maps to event flag 6796."
         }
-      ]
+      ],
+      "location": "Mibu Village lake, underwater chest requiring Mibu Breathing Technique",
+      "acquisition": "Open the chest at Mibu Village lake, underwater chest requiring Mibu Breathing Technique."
     },
     {
       "id": "snake_eyes_shirahagi",
@@ -411,7 +428,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Depths / Poison Pool Prayer Bead is dropped by Snake Eyes Shirahagi."
         }
-      ]
+      ],
+      "acquisition": "Defeat Snake Eyes Shirahagi and collect the Prayer Bead reward."
     },
     {
       "id": "chained_ogre_ashina_castle",
@@ -433,7 +451,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Castle - Upper Tower Antechamber Prayer Bead after castle invasion is dropped by Chained Ogre."
         }
-      ]
+      ],
+      "acquisition": "Defeat Chained Ogre Ashina Castle and collect the Prayer Bead reward."
     },
     {
       "id": "lone_shadow_vilehand",
@@ -455,7 +474,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Castle - Upper Tower Dojo Prayer Bead during castle invasion is dropped by Lone Shadow Vilehand."
         }
-      ]
+      ],
+      "acquisition": "Defeat Lone Shadow Vilehand and collect the Prayer Bead reward."
     },
     {
       "id": "lone_shadow_masanaga_serpent_shrine",
@@ -477,7 +497,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Great Serpent Shrine Prayer Bead during castle invasion is dropped by Lone Shadow Masanaga the Spear-Bearer."
         }
-      ]
+      ],
+      "acquisition": "Defeat Lone Shadow Masanaga the Spear-Bearer and collect the Prayer Bead reward."
     },
     {
       "id": "lone_shadow_masanaga_hirata_revisit",
@@ -499,7 +520,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Purification-route Hirata Estate Bamboo Thicket Slope Prayer Bead is dropped by Lone Shadow Masanaga the Spear-Bearer."
         }
-      ]
+      ],
+      "acquisition": "Defeat Lone Shadow Masanaga the Spear-Bearer Hirata Revisit and collect the Prayer Bead reward."
     },
     {
       "id": "sakura_bull",
@@ -521,7 +543,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Fountainhead Palace / Mibu Manor Prayer Bead is dropped by Sakura Bull."
         }
-      ]
+      ],
+      "acquisition": "Defeat Sakura Bull of the Palace and collect the Prayer Bead reward."
     },
     {
       "id": "fountainhead_underwater_chest",
@@ -555,7 +578,9 @@
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 2500020 maps to event flag 6797."
         }
-      ]
+      ],
+      "location": "Great Sakura lake, underwater chest near Mibu Manor after defeating Okami Leader Shizu",
+      "acquisition": "Open the chest at Great Sakura lake, underwater chest near Mibu Manor after defeating Okami Leader Shizu."
     },
     {
       "id": "sunken_valley_treasure_1",
@@ -594,7 +619,9 @@
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 1700020 maps to event flag 6792."
         }
-      ]
+      ],
+      "location": "One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved",
+      "acquisition": "Collect the Prayer Bead at One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved."
     },
     {
       "id": "long_arm_centipede_giraffe",
@@ -616,7 +643,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Sunken Valley Gun Fort Prayer Bead is dropped by Long-arm Centipede Giraffe."
         }
-      ]
+      ],
+      "acquisition": "Defeat Long-arm Centipede Giraffe and collect the Prayer Bead reward."
     },
     {
       "id": "sunken_valley_treasure_2",
@@ -650,7 +678,9 @@
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 1700030 maps to event flag 6793."
         }
-      ]
+      ],
+      "location": "One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved",
+      "acquisition": "Collect the Prayer Bead at One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved."
     },
     {
       "id": "sunken_valley_treasure_3",
@@ -684,7 +714,9 @@
           "source": "SoulSplitter Sekiro item pickup flags",
           "details": "Row 1700040 maps to event flag 6794."
         }
-      ]
+      ],
+      "location": "One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved",
+      "acquisition": "Collect the Prayer Bead at One of three verified Sunken Valley treasure pickups: Under-Shrine Valley cliff route, Gun Fort tunnel, or Poison Pool statue head; exact row ordering is unresolved."
     },
     {
       "id": "ashina_castle_gate_attic_chest",
@@ -706,7 +738,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Outskirts - Ashina Castle Gate Prayer Bead is collected from the attic chest after Gyoubu Oniwa."
         }
-      ]
+      ],
+      "acquisition": "Open the chest at Ashina Outskirts - Ashina Castle Gate, attic chest after Gyoubu Oniwa."
     },
     {
       "id": "blazing_bull",
@@ -751,7 +784,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Outskirts / Ashina Castle Gate Prayer Bead is dropped by Blazing Bull."
         }
-      ]
+      ],
+      "acquisition": "Defeat Blazing Bull and collect the Prayer Bead reward."
     },
     {
       "id": "hirata_audience_chamber_hidden_chest",
@@ -791,7 +825,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Hirata Audience Chamber Prayer Bead is in the hidden wall chest behind the first Juzou encounter."
         }
-      ]
+      ],
+      "acquisition": "Open the chest at Hirata Audience Chamber hidden wall chest behind Juzou the Drunkard."
     },
     {
       "id": "abandoned_dungeon_memorial_mob",
@@ -820,7 +855,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Abandoned Dungeon Entrance Prayer Bead is bought from the merchant for 1400 sen."
         }
-      ]
+      ],
+      "acquisition": "Purchase the Prayer Bead at Abandoned Dungeon Entrance merchant tent."
     },
     {
       "id": "senpou_temple_underwater",
@@ -860,7 +896,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Senpou Temple - Temple Grounds Prayer Bead is underwater in the pond and requires the diving ability."
         }
-      ]
+      ],
+      "acquisition": "Collect the Prayer Bead at Temple Grounds pond, underwater after acquiring diving."
     },
     {
       "id": "tokujiro_the_glutton",
@@ -905,7 +942,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Depths - Hidden Forest Prayer Bead is dropped by Tokujiro the Glutton."
         }
-      ]
+      ],
+      "acquisition": "Defeat Tokujiro the Glutton and collect the Prayer Bead reward."
     },
     {
       "id": "orin_of_the_water",
@@ -950,7 +988,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Depths - Watermill Prayer Bead is dropped by O'Rin of the Water."
         }
-      ]
+      ],
+      "acquisition": "Defeat O'Rin of the Water and collect the Prayer Bead reward."
     },
     {
       "id": "mibu_watermill_attic",
@@ -995,7 +1034,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Depths - Watermill Prayer Bead is in the attic shrine of the house before Corrupted Monk."
         }
-      ]
+      ],
+      "acquisition": "Collect the Prayer Bead at Watermill house attic shrine before Corrupted Monk."
     },
     {
       "id": "snake_eyes_shirafuji",
@@ -1040,7 +1080,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Sunken Valley idol Prayer Bead is dropped by Snake Eyes Shirafuji."
         }
-      ]
+      ],
+      "acquisition": "Defeat Snake Eyes Shirafuji and collect the Prayer Bead reward."
     },
     {
       "id": "headless_ape_bead_1",
@@ -1085,7 +1126,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Depths - Poison Pool Headless Ape rematch drops two Prayer Beads."
         }
-      ]
+      ],
+      "acquisition": "Defeat the Headless Ape rematch; the fight awards two Prayer Beads."
     },
     {
       "id": "headless_ape_bead_2",
@@ -1125,7 +1167,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Ashina Depths - Poison Pool Headless Ape rematch drops two Prayer Beads."
         }
-      ]
+      ],
+      "acquisition": "Defeat the Headless Ape rematch; the fight awards two Prayer Beads."
     },
     {
       "id": "juzou_the_drunkard_hirata_revisit",
@@ -1165,7 +1208,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Purification-route Hirata Estate - Main Hall Prayer Bead is dropped by Juzou the Drunkard in the second memory."
         }
-      ]
+      ],
+      "acquisition": "Defeat Juzou the Drunkard Hirata Revisit and collect the Prayer Bead reward."
     },
     {
       "id": "okami_leader_shizu",
@@ -1210,7 +1254,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The Fountainhead Palace - Great Sakura Prayer Bead is dropped by Okami Leader Shizu."
         }
-      ]
+      ],
+      "acquisition": "Defeat Okami Leader Shizu and collect the Prayer Bead reward."
     },
     {
       "id": "seven_ashina_spears_shume",
@@ -1250,7 +1295,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The post-Divine Dragon Ashina Reservoir Prayer Bead is dropped by Seven Spears Ashina - Shume Masaji Oniwa."
         }
-      ]
+      ],
+      "acquisition": "Defeat Seven Ashina Spears - Shume Masaji Oniwa and collect the Prayer Bead reward."
     },
     {
       "id": "ashina_elite_ujinari_mizou",
@@ -1295,7 +1341,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The post-Divine Dragon Upper Tower - Ashina Dojo Prayer Bead is dropped by Ujinari Mizou."
         }
-      ]
+      ],
+      "acquisition": "Defeat Ashina Elite - Ujinari Mizou and collect the Prayer Bead reward."
     },
     {
       "id": "shigekichi_red_guard",
@@ -1335,7 +1382,8 @@
           "source": "PowerPyx Prayer Bead guide",
           "details": "The post-Divine Dragon Ashina Castle - Old Grave Prayer Bead is dropped by Shigekichi of the Red Guard."
         }
-      ]
+      ],
+      "acquisition": "Defeat Shigekichi of the Red Guard and collect the Prayer Bead reward."
     }
   ],
   "unresolved": [
